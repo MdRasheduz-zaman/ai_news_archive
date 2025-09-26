@@ -14,8 +14,8 @@ if [ ! -d .git ]; then
     exit 1
 fi
 
-# Add all new files
-git add .
+# Add only HTML files and essential files
+git add *.html .nojekyll .gitignore README.md
 
 # Check if there are changes to commit
 if git diff --staged --quiet; then
@@ -33,8 +33,12 @@ else
     git push origin main
     
     echo "✅ Newsletter archive updated successfully!"
-    echo "🌐 Your archive will be updated at your GitHub Pages URL in a few minutes."
+    echo "🌐 Your archive will be updated at:"
+    echo "   https://mdrasheduz-zaman.github.io/ai_news_archive/"
+    echo "   (Updates may take 2-5 minutes to appear)"
 fi
 
 echo "📊 Current newsletters in archive:"
 ls -la *.html | grep -v index.html
+echo ""
+echo "📍 Archive URL: https://mdrasheduz-zaman.github.io/ai_news_archive/"

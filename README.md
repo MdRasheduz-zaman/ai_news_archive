@@ -4,7 +4,7 @@ This repository contains the archive of AI Newsletter issues.
 
 ## View the Newsletter Archive
 
-Visit the live archive at: https://[MdRasheduz-zaman].github.io/ai-news-archive/
+Visit the live archive at: https://mdrasheduz-zaman.github.io/ai_news_archive/
 
 ## Issues
 
@@ -17,4 +17,4 @@ This newsletter covers the latest developments, insights, and trends in artifici
 
 ## License
 
-© Md Rasheduzzaman all rights reserved.
+© Md Rasheduzzaman 2025 all rights reserved.
