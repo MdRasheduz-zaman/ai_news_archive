@@ -21,3 +21,12 @@
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Internal documentation - DO NOT COMMIT
+INTERNAL_GUIDE.md
+SCRIPT_SETUP.md
+
+# Backup files
+*.backup
+*.bak
+*~
