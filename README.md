@@ -4,7 +4,7 @@ This repository contains the archive of AI Newsletter issues.
 
 ## View the Newsletter Archive
 
-Visit the live archive at: https://[your-username].github.io/ai-newsletter-archive/
+Visit the live archive at: https://[MdRasheduz-zaman].github.io/ai-news-archive/
 
 ## Issues
 
@@ -13,16 +13,8 @@ Visit the live archive at: https://[your-username].github.io/ai-newsletter-archi
 
 ## About
 
-This newsletter covers the latest developments, insights, and trends in artificial intelligence, machine learning, and related technologies.
-
-## Updating the Archive
-
-When adding new newsletter issues:
-1. Place the HTML file in the output folder
-2. Update the index.html to include the new issue
-3. Commit and push to GitHub
-4. The GitHub Pages site will automatically update
+This newsletter covers the latest developments, insights, and trends in artificial intelligence, machine learning, and related technologies in Biology.
 
 ## License
 
-© 2025 All rights reserved.
+© Md Rasheduzzaman all rights reserved.
