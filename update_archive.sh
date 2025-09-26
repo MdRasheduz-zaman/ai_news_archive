@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Update Newsletter Archive Script
+# Update Newsletter Archive Script with RSS Feed Generation
 # Usage: ./update_archive.sh
 
 echo "📧 Updating AI Newsletter Archive..."
@@ -14,8 +14,17 @@ if [ ! -d .git ]; then
     exit 1
 fi
 
+# Generate RSS feed
+echo "📡 Generating RSS feed..."
+if command -v python3 &> /dev/null; then
+    python3 generate_rss.py
+else
+    echo "⚠️  Python3 not found. RSS feed not updated."
+    echo "   Please run: python3 generate_rss.py manually"
+fi
+
 # Add only HTML files and essential files
-git add *.html .nojekyll .gitignore README.md
+git add *.html .nojekyll .gitignore README.md feed.xml
 
 # Check if there are changes to commit
 if git diff --staged --quiet; then
@@ -38,7 +47,9 @@ else
     echo "   (Updates may take 2-5 minutes to appear)"
 fi
 
+echo ""
 echo "📊 Current newsletters in archive:"
-ls -la *.html | grep -v index.html
+ls -la *.html | grep -v index.html | grep AI_Newsletter
 echo ""
 echo "📍 Archive URL: https://mdrasheduz-zaman.github.io/ai_news_archive/"
+echo "📡 RSS Feed URL: https://mdrasheduz-zaman.github.io/ai_news_archive/feed.xml"
