@@ -1,4 +1,4 @@
-# AI Newsletter Archive
+# PythRaSh's AI Newsletter Archive
 
 Welcome to the PythRaSh's AI Newsletter Archive - Your weekly digest of artificial intelligence insights, breakthrough research, and industry developments. Claude MCP Server is used to curate related stuffs for you!
 
