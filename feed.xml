@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>AI Newsletter</title>
+        <description>Your Weekly Digest of AI Insights - Covering the latest developments, insights, and trends in artificial intelligence</description>
+        <link>https://mdrasheduz-zaman.github.io/ai_news_archive/</link>
+        <atom:link href="https://mdrasheduz-zaman.github.io/ai_news_archive/feed.xml" rel="self" type="application/rss+xml"/>
+        <language>en-us</language>
+        <lastBuildDate>Mon, 23 Sep 2025 00:00:00 GMT</lastBuildDate>
+        <pubDate>Mon, 23 Sep 2025 00:00:00 GMT</pubDate>
+        <ttl>1440</ttl>
+        <generator>AI Newsletter Archive</generator>
+        <copyright>© 2025 AI Newsletter. All rights reserved.</copyright>
+        <managingEditor>your-email@example.com (AI Newsletter Team)</managingEditor>
+        <webMaster>your-email@example.com (AI Newsletter Team)</webMaster>
+        <category>Technology</category>
+        <category>Artificial Intelligence</category>
+        <category>Machine Learning</category>
+        
+        <!-- September 23, 2025 Issue -->
+        <item>
+            <title>AI Newsletter - Issue #2</title>
+            <description><![CDATA[
+                Latest updates in AI technology, breakthrough research, and industry insights.
+                This issue covers recent developments in generative AI, new research papers, 
+                and practical applications of machine learning in various industries.
+            ]]></description>
+            <link>https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_09_23.html</link>
+            <guid isPermaLink="true">https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_09_23.html</guid>
+            <pubDate>Mon, 23 Sep 2025 00:00:00 GMT</pubDate>
+            <dc:creator>AI Newsletter Team</dc:creator>
+            <category>AI Technology</category>
+            <category>Research</category>
+        </item>
+        
+        <!-- September 15, 2025 Issue -->
+        <item>
+            <title>AI Newsletter - Issue #1</title>
+            <description><![CDATA[
+                Exploring the frontiers of artificial intelligence and machine learning developments.
+                Our inaugural issue featuring groundbreaking AI research, industry trends,
+                and expert insights into the future of artificial intelligence.
+            ]]></description>
+            <link>https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_09_15.html</link>
+            <guid isPermaLink="true">https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_09_15.html</guid>
+            <pubDate>Sun, 15 Sep 2025 00:00:00 GMT</pubDate>
+            <dc:creator>AI Newsletter Team</dc:creator>
+            <category>Machine Learning</category>
+            <category>AI Trends</category>
+        </item>
+    </channel>
+</rss>
