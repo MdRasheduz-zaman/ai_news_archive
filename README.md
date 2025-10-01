@@ -14,6 +14,7 @@ Add this RSS feed to your favorite reader (Feedly, Inoreader, etc.) to get notif
 
 ## 📰 Latest Issues
 
+- **Issue #2** - [September 30, 2025](https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_09_30.html)
 - **Issue #2** - [September 23, 2025](https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_09_23.html)
 - **Issue #1** - [September 15, 2025](https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_09_15.html)
 
@@ -39,4 +40,4 @@ For feedback or suggestions, please open an issue in this repository.
 
 ---
 
-© PythRaSh's AI Newsletter All rights reserved.
+© 2025 PythRaSh's AI Newsletter All rights reserved.

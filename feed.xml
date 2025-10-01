@@ -6,47 +6,64 @@
         <link>https://mdrasheduz-zaman.github.io/ai_news_archive/</link>
         <atom:link href="https://mdrasheduz-zaman.github.io/ai_news_archive/feed.xml" rel="self" type="application/rss+xml"/>
         <language>en-us</language>
-        <lastBuildDate>Mon, 23 Sep 2025 00:00:00 GMT</lastBuildDate>
-        <pubDate>Mon, 23 Sep 2025 00:00:00 GMT</pubDate>
+        <lastBuildDate>Tue, 30 Sep 2025 00:00:00 GMT</lastBuildDate>
+        <pubDate>Tue, 30 Sep 2025 00:00:00 GMT</pubDate>
         <ttl>1440</ttl>
         <generator>PythRaSh's AI Newsletter Archive</generator>
         <copyright>© 2025 PythRaSh's AI Newsletter. All rights reserved.</copyright>
-        <managingEditor>your-email@example.com (AI Newsletter Team)</managingEditor>
-        <webMaster>your-email@example.com (AI Newsletter Team)</webMaster>
+        <managingEditor>md.rasheduzzaman.ugoe@gmail.com (AI Newsletter Team)</managingEditor>
+        <webMaster>md.rasheduzzaman.ugoe@gmail.com (AI Newsletter Team)</webMaster>
         <category>Technology</category>
         <category>Artificial Intelligence</category>
         <category>Machine Learning</category>
-        
-        <!-- September 23, 2025 Issue -->
+
+        <!-- September 30, 2025 Issue -->
         <item>
-            <title>AI Newsletter - Issue #2</title>
+            <title>AI Newsletter - Issue #3</title>
             <description><![CDATA[
+                Newsletter from September 30, 2025.
                 Latest updates in AI technology in Biology, breakthrough research, and industry insights.
-                This issue covers recent developments in generative AI, new research papers, 
-                and practical applications of machine learning in various industries.
+                Read the full newsletter for detailed coverage of recent AI developments.
             ]]></description>
-            <link>https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_09_23.html</link>
-            <guid isPermaLink="true">https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_09_23.html</guid>
-            <pubDate>Mon, 23 Sep 2025 00:00:00 GMT</pubDate>
+            <link>https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_09_30.html</link>
+            <guid isPermaLink="true">https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_09_30.html</guid>
+            <pubDate>Tue, 30 Sep 2025 00:00:00 GMT</pubDate>
             <dc:creator>AI Newsletter Team</dc:creator>
             <category>AI Technology</category>
             <category>Research</category>
         </item>
-        
+
+        <!-- September 23, 2025 Issue -->
+        <item>
+            <title>AI Newsletter - Issue #2</title>
+            <description><![CDATA[
+                Newsletter from September 23, 2025.
+                Latest updates in AI technology in Biology, breakthrough research, and industry insights.
+                Read the full newsletter for detailed coverage of recent AI developments.
+            ]]></description>
+            <link>https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_09_23.html</link>
+            <guid isPermaLink="true">https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_09_23.html</guid>
+            <pubDate>Tue, 23 Sep 2025 00:00:00 GMT</pubDate>
+            <dc:creator>AI Newsletter Team</dc:creator>
+            <category>AI Technology</category>
+            <category>Research</category>
+        </item>
+
         <!-- September 15, 2025 Issue -->
         <item>
             <title>AI Newsletter - Issue #1</title>
             <description><![CDATA[
-                Exploring the frontiers of artificial intelligence and machine learning developments in Biology.
-                Our inaugural issue featuring groundbreaking AI research, industry trends,
-                and expert insights into the future of artificial intelligence.
+                Newsletter from September 15, 2025.
+                Latest updates in AI technology in Biology, breakthrough research, and industry insights.
+                Read the full newsletter for detailed coverage of recent AI developments.
             ]]></description>
             <link>https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_09_15.html</link>
             <guid isPermaLink="true">https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_09_15.html</guid>
-            <pubDate>Sun, 15 Sep 2025 00:00:00 GMT</pubDate>
+            <pubDate>Mon, 15 Sep 2025 00:00:00 GMT</pubDate>
             <dc:creator>AI Newsletter Team</dc:creator>
-            <category>Machine Learning</category>
-            <category>AI Trends</category>
+            <category>AI Technology</category>
+            <category>Research</category>
         </item>
+
     </channel>
 </rss>
