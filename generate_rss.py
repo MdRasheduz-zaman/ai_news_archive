@@ -77,9 +77,9 @@ def create_rss_feed():
     
     ET.SubElement(channel, 'ttl').text = '1440'
     ET.SubElement(channel, 'generator').text = 'AI Newsletter Archive'
-    ET.SubElement(channel, 'copyright').text = '© 2025 AI Newsletter. All rights reserved.'
-    ET.SubElement(channel, 'managingEditor').text = 'your-email@example.com (AI Newsletter Team)'
-    ET.SubElement(channel, 'webMaster').text = 'your-email@example.com (AI Newsletter Team)'
+    ET.SubElement(channel, 'copyright').text = "© 2025 PythRaSh's AI Newsletter. All rights reserved."
+    ET.SubElement(channel, 'managingEditor').text = 'md.rasheduzzaman.ugoe@gmail.com (AI Newsletter Team)'
+    ET.SubElement(channel, 'webMaster').text = 'md.rasheduzzaman.ugoe@gmail (AI Newsletter Team)'
     
     # Add categories
     categories = ['Technology', 'Artificial Intelligence', 'Machine Learning']
