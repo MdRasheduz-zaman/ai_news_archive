@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PythRaSh's AI Newsletter - Week of November 19, 2025</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111111; background-color: #f5f5f5; }
+        table { border-collapse: collapse; width: 100%; }
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #FFFFFF; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+        .content { padding: 30px 20px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #667eea; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #111111; font-size: 20px; margin-bottom: 15px; }
+        .section p { margin-bottom: 15px; font-size: 16px; }
+        .section ul { margin-left: 20px; margin-bottom: 15px; }
+        .section ul li { margin-bottom: 10px; }
+        .event-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .event-card h3 { color: #667eea; font-size: 22px; margin-bottom: 15px; }
+        .event-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .event-card a:hover { text-decoration: underline; }
+        .event-card ul { margin-left: 20px; }
+        .event-card ul li { margin-bottom: 8px; }
+        .quick-updates { background: #f8f9ff; border-radius: 8px; padding: 20px; }
+        .quick-updates ul { list-style: none; }
+        .quick-updates li { margin-bottom: 15px; padding: 15px; background: white; border-radius: 6px; border-left: 3px solid #667eea; }
+        .quick-updates li strong { color: #667eea; }
+        .quick-updates a { color: #667eea; text-decoration: none; }
+        .quick-updates a:hover { text-decoration: underline; }
+        .research-paper { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .research-paper h4 { color: #111111; font-size: 18px; margin-bottom: 10px; }
+        .research-paper a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .research-paper a:hover { text-decoration: underline; }
+        .research-paper .meta { color: #666; font-size: 14px; margin-bottom: 10px; }
+        .repo-card { background: #f8f9ff; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 3px solid #667eea; }
+        .repo-card h4 { color: #111111; margin-bottom: 8px; }
+        .repo-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .repo-card a:hover { text-decoration: underline; }
+        .star-count { color: #666; font-size: 14px; }
+        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .product-card h4 { color: #111111; margin-bottom: 8px; }
+        .product-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .product-card a:hover { text-decoration: underline; }
+        .product-meta { color: #666; font-size: 14px; margin-bottom: 10px; }
+        .share-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px 20px; text-align: center; }
+        .share-section h2 { color: white; margin-bottom: 20px; }
+        .share-text { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 15px; margin-bottom: 20px; font-size: 14px; line-height: 1.5; text-align: left; }
+        .share-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .share-btn { background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
+        .share-btn:hover { background: rgba(255,255,255,0.3); color: white; text-decoration: none; }
+        .footer { background: #f5f5f5; padding: 30px 20px; text-align: center; color: #666; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #667eea; text-decoration: none; margin: 0 10px; font-size: 14px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer p { font-size: 14px; margin-bottom: 10px; }
+        .footer .address { font-size: 12px; color: #999; margin-top: 20px; line-height: 1.5; }
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .content { padding: 20px 15px !important; }
+            .header { padding: 30px 15px !important; }
+            .header h1 { font-size: 24px !important; }
+            .share-buttons { flex-direction: column !important; gap: 10px !important; }
+            .share-btn { display: block !important; width: 100% !important; }
+        }
+    </style>
+</head>
+<body>
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+            <td align="center" style="background-color: #f5f5f5; padding: 20px 0;">
+                <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                        <td style="text-align: center; padding: 10px; font-size: 12px; color: #666;">
+                            <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_11_19.html" style="color: #667eea; text-decoration: none;">View in Browser</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="header">
+                            <h1>PythRaSh's AI Newsletter</h1>
+                            <p>Week of November 19, 2025</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="content">
+                            <div class="section">
+                                <p><strong>Hi, There!</strong> This week marks a transformational moment for computational biology and precision medicine. We're witnessing the convergence of genomic science and large language models—what researchers are calling the "biological GPT" era. The landmark collaboration between Sheba Medical Center, Mount Sinai, and NVIDIA to decode the previously dismissed 98% of human DNA represents a paradigm shift in how we understand genetic regulation and disease.</p>
+                            </div>
+                            <div class="section">
+                                <h2>🚀 EVENT OF THE WEEK</h2>
+                                <div class="event-card">
+                                    <h3><a href="https://www.startuphub.ai/ai-news/startup-news/2025/the-genomic-llm-is-here-to-decode-98-of-human-dna/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_11_19">Sheba Medical Center, Mount Sinai, and NVIDIA Build Genomic LLM to Decode 98% of Human DNA</a></h3>
+                                    <p>In a landmark three-year collaboration announced November 18, 2025, Sheba Medical Center, Mount Sinai's Icahn School of Medicine, and NVIDIA are building a Genomic Foundation Model (gFM) to decode the 98% of the human genome previously dismissed as "junk DNA."</p>
+                                    <p><strong>Why this matters:</strong> This Genomic LLM promises to unlock regulatory logic hidden across vast genomic regions, enabling researchers to understand how genetic variants influence disease susceptibility and drug response.</p>
+                                    <p><strong>Key takeaways:</strong></p>
+                                    <ul>
+                                        <li>Genomic foundation models now scale to analyze regulatory regions previously inaccessible to traditional methods</li>
+                                        <li>Clinical partnerships ensure AI models are validated against real patient outcomes</li>
+                                        <li>Open global access could democratize precision medicine worldwide</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="section">
+                                <h2>⚡ Quick Updates</h2>
+                                <div class="quick-updates">
+                                    <ul>
+                                        <li><strong><a href="https://news.microsoft.com/source/features/ai/2-ai-breakthroughs-unlock-new-potential-for-health-and-science/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_11_19">Microsoft and Mayo Clinic</a>:</strong> RAD-DINO breakthrough in radiology AI published in Nature Machine Intelligence.</li>
+                                        <li><strong><a href="https://www.eurekalert.org/news-releases/1103153?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_11_19">BGI-Research Releases Genos</a>:</strong> Open-source Human-Centric genomic foundation model achieving single-nucleotide precision.</li>
+                                        <li><strong><a href="https://www.sciencedirect.com/science/article/pii/S0031699725075118?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_11_19">Insilico Medicine's AI-Designed Drug</a>:</strong> Positive Phase IIa clinical trial results for ISM001-055.</li>
+                                        <li><strong><a href="https://nchstats.com/breakthroughs-in-medical-test-equipment/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_11_19">UK NHS Deploys AI Stroke Detection</a>:</strong> All 107 stroke centres in England implemented AI tools.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="section">
+                                <h2>📚 Top Research Papers</h2>
+                                <div class="research-paper">
+                                    <h4><a href="https://www.nature.com/articles/s41592-024-02523-z?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_11_19">Nucleotide Transformer: Building and Evaluating Robust Foundation Models for Human Genomics</a></h4>
+                                    <p class="meta"><strong>Publisher:</strong> Nature Methods | <strong>Published:</strong> November 28, 2024</p>
+                                    <p>Landmark paper introducing Nucleotide Transformer, a series of genomics foundation models for predicting protein structure, function, and genomic features.</p>
+                                </div>
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/pdf/2511.14744v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_11_19">Measuring AI Progress in Drug Discovery: A Reproducible Leaderboard for the Tox21 Challenge</a></h4>
+                                    <p class="meta"><strong>Publisher:</strong> arXiv | <strong>Posted:</strong> November 18, 2025</p>
+                                    <p>Critical analysis examining whether toxicity prediction has improved, revealing surprising stagnation in this crucial field.</p>
+                                </div>
+                                <div class="research-paper">
+                                    <h4><a href="https://academic.oup.com/nsr/article/12/4/nwaf028/7979309?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_11_19">Foundation Models in Bioinformatics</a></h4>
+                                    <p class="meta"><strong>Publisher:</strong> National Science Review | <strong>Published:</strong> March 7, 2025</p>
+                                    <p>Comprehensive review examining foundation models across genomics, transcriptomics, proteomics, drug discovery, and single-cell analysis.</p>
+                                </div>
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/html/2502.07272v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_11_19">Generator: A Long-Context Generative Genomic Foundation Model</a></h4>
+                                    <p class="meta"><strong>Publisher:</strong> arXiv | <strong>Posted:</strong> February 11, 2025</p>
+                                    <p>Transformer decoder-based generative model with 98k base pair context for designing novel DNA sequences.</p>
+                                </div>
+                            </div>
+                            <div class="section">
+                                <h2>💻 Top GitHub Repos of the Week</h2>
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/openai/openai-agents-python?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_11_19">OpenAI Agents Python</a></h4>
+                                    <p class="star-count">⭐ 6,800+ | Official OpenAI</p>
+                                    <p>Lightweight framework for multi-agent workflows. Ideal for healthcare coordination between diagnostic imaging AI, drug interaction checkers, and treatment planners.</p>
+                                </div>
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/microsoft/graphrag?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_11_19">Microsoft GraphRAG</a></h4>
+                                    <p class="star-count">⭐ 20,000+ | Microsoft Research</p>
+                                    <p>Graph-based RAG excels at biomedical knowledge - disease-gene-drug interactions, metabolic pathways, protein networks.</p>
+                                </div>
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/HKUDS/LightRAG?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_11_19">LightRAG</a></h4>
+                                    <p class="star-count">⭐ 8,500+ | EMNLP 2025</p>
+                                    <p>Simple and fast RAG ideal for resource-constrained clinical settings and real-time clinical decision support.</p>
+                                </div>
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/instadeepai/nucleotide-transformer?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_11_19">Nucleotide Transformer</a></h4>
+                                    <p class="star-count">⭐ 1,200+ | InstaDeep/BioNTech</p>
+                                    <p>Essential genomics AI tool. Pre-trained for genomic analysis, enabling precision medicine research globally.</p>
+                                </div>
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/pydantic/pydantic-ai?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_11_19">Pydantic AI</a></h4>
+                                    <p class="star-count">⭐ 11,000+ | Official Pydantic</p>
+                                    <p>Type-safe AI agent framework crucial for medical data handling and EHR integration.</p>
+                                </div>
+                            </div>
+                            <div class="section">
+                                <h2>📖 Learning Blog of the Week</h2>
+                                <h3>The Rise of Genomic Foundation Models: From "Junk DNA" to Precision Medicine</h3>
+                                <p><strong>Focus:</strong> Computational Genomics | <strong>Relevance:</strong> Clinical Translation</p>
+                                <p>The convergence of transformer architectures with genomic science is reshaping modern biology. Today's genomic foundation models are learning regulatory logic from unlabeled DNA at scale, transforming how we understand genetic disease.</p>
+                                <p><strong>What computational biologists should understand:</strong></p>
+                                <ul>
+                                    <li>Foundation models use transfer learning—pre-training on massive data, then fine-tuning for tasks</li>
+                                    <li>These models capture patterns across regulatory regions that traditional approaches miss</li>
+                                    <li>Interpretability remains crucial for clinical applications</li>
+                                    <li>Validation requires connecting predictions to functional experiments and outcomes</li>
+                                </ul>
+                            </div>
+                            <div class="section">
+                                <h2>🛠️ Top AI Products of the Week</h2>
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/posts/ogment-mcp-builder?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_11_19">Ogment MCP-Builder</a></h4>
+                                    <p class="product-meta">Healthcare Integration | HIPAA Compliant</p>
+                                    <p>Make medical databases and clinical tools accessible in ChatGPT & Claude with built-in HIPAA compliance.</p>
+                                </div>
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/posts/oura-7-0?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_11_19">Oura 7.0</a></h4>
+                                    <p class="product-meta">Health Research | Longitudinal Data</p>
+                                    <p>Continuous sleep, activity, and physiological tracking for research on circadian rhythms and health trends.</p>
+                                </div>
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/posts/spinesly-2?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_11_19">Spinesly</a></h4>
+                                    <p class="product-meta">Practice Management | Multi-specialty</p>
+                                    <p>Integrated appointment scheduling, patient records, and insurance claims for healthcare practices.</p>
+                                </div>
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/posts/bluedot-2-0?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_11_19">Bluedot 2.0</a></h4>
+                                    <p class="product-meta">Clinical Documentation | HIPAA Compliant</p>
+                                    <p>Bot-free transcription for sensitive medical consultations and clinical documentation.</p>
+                                </div>
+                            </div>
+                            <div class="section">
+                                <h2>⚠️ AI Criticism & Concerns</h2>
+                                <div class="product-card">
+                                    <h4>OpenAI Downgrades Manipulation Risks</h4>
+                                    <p>OpenAI no longer classifies mass manipulation as "critical risk." Experts warn this signals competitive pressure overrides safety in healthcare AI applications.</p>
+                                </div>
+                                <div class="product-card">
+                                    <h4>AI Transparency and Bias in Medical Applications</h4>
+                                    <p>AI systems as "black boxes" are problematic in healthcare. AI can amplify training data biases, leading to dangerous clinical outcomes. Clinicians need understanding of AI reasoning.</p>
+                                </div>
+                                <div class="product-card">
+                                    <h4>AI Chatbots Violate Mental Health Ethics</h4>
+                                    <p>Research shows AI chatbots routinely violate mental health ethics standards. Concerning as people increasingly turn to AI for mental health support.</p>
+                                </div>
+                            </div>
+                            <div class="section">
+                                <h2>Closing Note</h2>
+                                <p>This week represents a pivotal transition in computational biology. We're moving beyond AI as research tool toward AI as clinical infrastructure. The Genomic LLM collaboration bridges academic development and clinical deployment.</p>
+                                <p>Thank you for reading PythRaSh's AI Newsletter! Share with colleagues interested in AI applications in biology and healthcare.</p>
+                                <p><strong>Have feedback?</strong> Reply to this email - I read every response!</p>
+                                <p>See you next week!<br><strong>Md Rasheduzzaman</strong><br><em>Bioinformatics Researcher & AI Educator</em></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="share-section">
+                            <h2>Share This Week's Insights</h2>
+                            <p>Found this newsletter valuable? Share it with your network!</p>
+                            <div class="share-text">
+                                <strong>Twitter:</strong> "🧬 This week in AI + Biology (Nov 19): Genomic LLM to decode 98% of human DNA by Sheba/Mount Sinai/NVIDIA. AI drugs in clinical trials. Foundation models revolutionizing precision medicine. #AIinBiology #ComputationalGenomics"
+                            </div>
+                            <div class="share-text">
+                                <strong>LinkedIn:</strong> "Exciting AI + healthcare developments this week. Genomic LLM collaboration represents paradigm shift in understanding genetic disease. Combined with AI therapeutics reaching clinical trials—we're witnessing transition from research tools to clinical infrastructure."
+                            </div>
+                            <div class="share-buttons">
+                                <a href="https://twitter.com/intent/tweet?text=Check%20out%20this%20week%27s%20PythRaSh%20AI%20Newsletter&url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2Fai_news_archive%2FAI_Newsletter_2025_11_19.html%3Futm_source%3Dtwitter" class="share-btn" target="_blank">Share on Twitter</a>
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2Fai_news_archive%2FAI_Newsletter_2025_11_19.html%3Futm_source%3Dlinkedin" class="share-btn" target="_blank">Share on LinkedIn</a>
+                                <a href="mailto:?subject=PythRaSh%20AI%20Newsletter%20-%20Week%20of%20Nov%2019&body=Check%20out%20this%20week%27s%20newsletter" class="share-btn">Forward via Email</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="footer">
+                            <div class="footer-links">
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Unsubscribe</a> | <a href="https://forms.gle/ueS3aqeJsujHA48L9">Update Preferences</a>
+                            </div>
+                            <p><strong>PythRaSh's AI Newsletter</strong></p>
+                            <p>Bioinformatics Researcher & AI Educator</p>
+                            <div class="address">
+                                Fleischerwiese 4, Greifswald-17489, Germany<br>
+                                Email: md.rasheduzzaman.ugoe@gmail.com
+                            </div>
+                            <p style="margin-top: 20px;">
+                                <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/">Newsletter Archive</a> | <a href="https://mdrasheduz-zaman.github.io/PythRaSh/">Website</a> | <a href="https://www.linkedin.com/in/md-rashed-uz-zaman">LinkedIn</a>
+                            </p>
+                            <p style="margin-top: 15px; font-size: 12px; color: #999;">
+                                You're receiving this email because you subscribed to PythRaSh's AI Newsletter.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
