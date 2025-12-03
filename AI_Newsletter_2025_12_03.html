@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PythRaSh's AI Newsletter - Week of December 3, 2025</title>
+    <style>
+        /* Reset styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111111; background-color: #f5f5f5; }
+        table { border-collapse: collapse; width: 100%; }
+
+        /* Container */
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #FFFFFF; }
+
+        /* Header */
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+
+        /* Content sections */
+        .content { padding: 30px 20px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #667eea; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #111111; font-size: 20px; margin-bottom: 15px; }
+        .section p { margin-bottom: 15px; font-size: 16px; }
+
+        /* Featured Event Card */
+        .event-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; box-shadow: 0 4px 8px rgba(102, 126, 234, 0.1); }
+        .event-card h3 { color: #667eea; font-size: 22px; margin-bottom: 15px; }
+        .event-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .event-card a:hover { text-decoration: underline; }
+        .event-card ul { list-style: disc; margin-left: 20px; }
+        .event-card li { margin-bottom: 8px; }
+
+        /* Quick updates list */
+        .quick-updates { background: #f8f9ff; border-radius: 8px; padding: 20px; }
+        .quick-updates ul { list-style: none; }
+        .quick-updates li { margin-bottom: 15px; padding: 15px; background: white; border-radius: 6px; border-left: 3px solid #667eea; }
+        .quick-updates li strong { color: #667eea; }
+        .quick-updates a { color: #667eea; text-decoration: none; }
+        .quick-updates a:hover { text-decoration: underline; }
+
+        /* Research papers */
+        .research-paper { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .research-paper h4 { color: #111111; font-size: 18px; margin-bottom: 10px; }
+        .research-paper a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .research-paper a:hover { text-decoration: underline; }
+        .impact-tag { background: #667eea; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 10px; }
+
+        /* GitHub repos */
+        .repo-card { background: #f8f9ff; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 3px solid #667eea; }
+        .repo-card h4 { color: #111111; margin-bottom: 8px; }
+        .repo-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .repo-card a:hover { text-decoration: underline; }
+        .star-count { color: #666; font-size: 14px; }
+
+        /* Products */
+        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .product-card h4 { color: #111111; margin-bottom: 8px; }
+        .product-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .product-card a:hover { text-decoration: underline; }
+        .upvote-count { background: #667eea; color: white; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+
+        /* Share section */
+        .share-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px 20px; text-align: center; }
+        .share-section h2 { color: white; margin-bottom: 20px; }
+        .share-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .share-btn { background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
+        .share-btn:hover { background: rgba(255,255,255,0.3); color: white; text-decoration: none; }
+
+        /* Footer */
+        .footer { background: #f5f5f5; padding: 30px 20px; text-align: center; color: #666; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #667eea; text-decoration: none; margin: 0 10px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer p { font-size: 14px; margin-bottom: 10px; }
+        .footer .address { font-size: 12px; color: #999; margin-top: 20px; }
+
+        /* Mobile responsive */
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .content { padding: 20px 15px !important; }
+            .header { padding: 30px 15px !important; }
+            .header h1 { font-size: 24px !important; }
+            .share-buttons { flex-direction: column !important; gap: 10px !important; }
+            .share-btn { display: block !important; width: 100% !important; }
+        }
+    </style>
+</head>
+<body>
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+            <td align="center" style="background-color: #f5f5f5; padding: 20px 0;">
+                <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0">
+                    <!-- View in Browser Link -->
+                    <tr>
+                        <td style="text-align: center; padding: 10px; font-size: 12px; color: #666;">
+                            <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_12_03.html?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03" style="color: #667eea; text-decoration: none;">View in Browser</a>
+                        </td>
+                    </tr>
+
+                    <!-- Header -->
+                    <tr>
+                        <td class="header">
+                            <h1>PythRaSh's AI Newsletter</h1>
+                            <p>Week of December 3, 2025</p>
+                        </td>
+                    </tr>
+
+                    <!-- Main Content -->
+                    <tr>
+                        <td class="content">
+
+                            <!-- Intro -->
+                            <div class="section">
+                                <p><strong>Hi, There!</strong> This week brings transformative developments at the intersection of artificial intelligence and clinical medicine. We're witnessing a remarkable milestone: AI diagnostic systems now outperform experienced human physicians on challenging medical cases—a validation that could reshape healthcare delivery globally.</p>
+
+                                <p>From diagnostic AI achieving 76% accuracy versus 45% for experienced doctors, to revolutionary advances in drug discovery and explainable medical imaging AI, this week exemplifies both the promise and the critical ethical challenges we face as AI becomes deeply integrated into healthcare and biological research. This edition covers breakthrough developments in clinical diagnosis, computational biology tools, drug discovery platforms, and frank assessments of persistent safety and equity concerns.</p>
+                            </div>
+
+                            <!-- Event of the Week -->
+                            <div class="section">
+                                <h2>🚀 EVENT OF THE WEEK</h2>
+                                <div class="event-card">
+                                    <h3><a href="https://www.technologyreview.com/2025/09/22/1123873/medical-diagnosis-llm/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">AI Diagnostic Accuracy Surpasses Human Physicians</a></h3>
+                                    <p>In a landmark development with profound implications for clinical practice, Anthropic's Claude 3.5 large language model has demonstrated diagnostic accuracy that surpasses experienced human physicians on challenging medical cases. In rigorous evaluation of 67 difficult diagnostic scenarios, Claude 3.5 correctly identified diagnoses 76.1% of the time—significantly outperforming a cohort of 22 experienced gastroenterologists who achieved only 45.5% accuracy.</p>
+
+                                    <p>This breakthrough represents a critical inflection point in AI's adoption for clinical decision support. Specialized medical LLMs like ScopeAI demonstrate the ability to independently complete comprehensive medical visits, from eliciting patient histories to generating evidence-based differential diagnosis lists. The implications are profound: AI systems could serve as highly capable diagnostic assistants, potentially reducing diagnostic delays, improving consistency across institutions, and democratizing access to sophisticated medical reasoning globally.</p>
+
+                                    <p><strong>Why this matters:</strong> This validates that AI systems can match or exceed human expert performance on cognitively complex medical tasks. For the biological and medical research community, this suggests that AI-assisted diagnosis could accelerate clinical discovery, improve patient outcomes, and create new opportunities for precision medicine development.</p>
+
+                                    <p><strong>Key takeaways:</strong></p>
+                                    <ul>
+                                        <li>AI diagnostic performance now exceeds expert physicians on challenging cases</li>
+                                        <li>Specialized medical LLMs can manage complete diagnostic workflows</li>
+                                        <li>Integration promises faster diagnosis, improved consistency, and reduced diagnostic disparities</li>
+                                        <li>Critical need for validation, bias mitigation, and thoughtful clinical integration</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Quick Updates -->
+                            <div class="section">
+                                <h2>⚡ Quick Updates</h2>
+                                <div class="quick-updates">
+                                    <ul>
+                                        <li><strong>Microsoft Dragon Copilot:</strong> Microsoft announced significant expansion of Dragon Copilot AI for radiologists at RSNA 2025, integrating real-time image analysis into reporting workflows and Lunit's cancer screening diagnostics. <a href="https://www.microsoft.com/en-us/industry/blog/healthcare/2025/11/24/driving-a-unified-ai-experience-at-rsna-2025-microsoft-dragon-copilot-expands-to-radiologists-transforming-the-reporting-workflow/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">Read More</a></li>
+
+                                        <li><strong>Nvidia Clara Reason:</strong> Nvidia released Clara Reason multimodal AI for medical image interpretation with step-by-step diagnostic explanations, directly addressing healthcare requirements for explainable AI. <a href="https://radiologybusiness.com/topics/artificial-intelligence/nvidia-rolls-out-ai-models-designed-behave-radiologists-interpreting-images?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">Read More</a></li>
+
+                                        <li><strong>Machine Learning in Drug Discovery:</strong> The Broad Institute's symposium highlighted unprecedented progress—dozens of AI-designed drugs now in human clinical trials, up from essentially zero in 2020. <a href="https://www.broadinstitute.org/machine-learning-drug-discovery-symposium/machine-learning-drug-discovery?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">Read More</a></li>
+
+                                        <li><strong>Siemens Optiq AI:</strong> Siemens Healthineers presented Optiq AI imaging chain at RSNA 2025, delivering high-quality low-dose images for image-guided interventional procedures in cardiology and oncology. <a href="https://healthcare-in-europe.com/en/news/siemens-optiq-ai-interventional-imaging-rsna-2025.html?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">Read More</a></li>
+
+                                        <li><strong>AI-Enhanced MRI Analysis:</strong> Research teams demonstrated that AI algorithms combined with MRI significantly enhance prostate cancer detection and enable personalized treatment approaches. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10740686/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">Read More</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Research Papers -->
+                            <div class="section">
+                                <h2>📚 Top Research Papers</h2>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://www.arxiv.org/pdf/2508.09177?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">Generative AI in Medical Imaging: Foundations and Clinical Translation</a></h4>
+                                    <p><strong>Publisher:</strong> arXiv (August 2025)</p>
+                                    <p>Comprehensive review examining generative AI transformation of medical imaging through GANs, VAEs, and diffusion models. Covers data synthesis, image enhancement, modality translation, and multimodal foundation models for enhanced diagnostic accuracy.</p>
+                                    <span class="impact-tag">Medical Imaging</span>
+                                </div>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/html/2509.20279v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">TissueLab: Co-Evolving Agentic AI for Medical Imaging</a></h4>
+                                    <p><strong>Publisher:</strong> arXiv (September 2025)</p>
+                                    <p>Presents innovative agentic AI enabling direct human-AI collaboration in medical imaging research. Researchers pose questions in natural language; system generates explainable workflows with real-time visualization and refinement capabilities.</p>
+                                    <span class="impact-tag">Healthcare AI</span>
+                                </div>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/abs/2505.09274?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">Recent Advances in Medical Imaging Segmentation</a></h4>
+                                    <p><strong>Publisher:</strong> arXiv (May 2025)</p>
+                                    <p>Survey exploring cutting-edge medical image segmentation methodologies including generative AI, few-shot learning, and foundation models. Provides comparative analysis highlighting strengths and clinical applicability.</p>
+                                    <span class="impact-tag">Precision Medicine</span>
+                                </div>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://academic.oup.com/bib/article/25/6/bbae548/7842778?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">Foundation Models in Bioinformatics</a></h4>
+                                    <p><strong>Publisher:</strong> Briefings in Bioinformatics (2024)</p>
+                                    <p>Comprehensive review examining foundation models' emerging role in computational biology. Covers applications spanning genomics, transcriptomics, proteomics, drug discovery, and single-cell analysis.</p>
+                                    <span class="impact-tag">Computational Biology</span>
+                                </div>
+                            </div>
+
+                            <!-- GitHub Repos -->
+                            <div class="section">
+                                <h2>💻 Top GitHub Repos of the Week</h2>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/deepmind/alphafold?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">AlphaFold</a></h4>
+                                    <p class="star-count">⭐ 11,987 stars | Python | Google DeepMind</p>
+                                    <p>Revolutionary protein structure prediction enabling breakthroughs in drug discovery and enzyme engineering. AlphaFold 3 predicts protein-DNA/RNA/ligand interactions with 50% improved accuracy, foundational for computational biology.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/deepchem/deepchem?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">DeepChem</a></h4>
+                                    <p class="star-count">⭐ 6,300+ stars | Python | Biotech & Academic Contributors</p>
+                                    <p>Accessible frameworks for applying deep learning to drug discovery and molecular science. Accelerates pharmaceutical pipelines and demonstrates real-world impact on drug discovery workflows.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/scverse/scanpy?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">scanpy</a></h4>
+                                    <p class="star-count">⭐ 1,800+ stars | Python | scverse Consortium</p>
+                                    <p>Scalable single-cell analysis enabling analysis of >100M cells. Industry standard for single-cell RNA-seq, ATAC-seq, and cellular profiling powering precision medicine research.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/scverse/scvi-tools?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">scvi-tools</a></h4>
+                                    <p class="star-count">⭐ 1,200+ stars | Python | scverse Maintainers</p>
+                                    <p>Deep probabilistic analysis for single-cell data enabling cell type discovery and multimodal integration. Critical for understanding cellular heterogeneity in cancer and immunology research.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/DeepGraphLearning/torchdrug?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">TorchDrug</a></h4>
+                                    <p class="star-count">⭐ 1,407+ stars | Python | DeepGraphLearning</p>
+                                    <p>Machine learning platform for drug discovery using graph neural networks for molecular property prediction and protein-ligand binding, accelerating compound screening in pharmaceutical development.</p>
+                                </div>
+                            </div>
+
+                            <!-- AI Products -->
+                            <div class="section">
+                                <h2>🛠️ Top AI Products of the Week</h2>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/ada?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">Ada Health</a></h4>
+                                    <p>AI-powered diagnostic assessment through conversational interaction, analyzing patient information against millions of medical records to generate differential diagnoses and connect with healthcare providers.</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/k-health?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">K Health</a></h4>
+                                    <p>AI medical consultation platform leveraging machine learning to compare symptoms with medical databases and connect users with licensed physicians, democratizing healthcare access.</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/pathai?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">PathAI</a></h4>
+                                    <p>Enterprise AI for digital pathology analyzing medical imaging and tissue samples for oncology diagnostics, biomarker discovery, and clinical trial support with improved consistency.</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/insitro?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">Insitro</a></h4>
+                                    <p>Machine learning platform combining in vitro cellular data with clinical data to revolutionize drug discovery, enabling faster development cycles for novel therapeutics.</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/biolevate?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03">Biolevate</a></h4>
+                                    <p>AI research knowledge management automating literature monitoring and document synthesis, enabling scientists to focus on novel discoveries rather than administrative tasks.</p>
+                                </div>
+                            </div>
+
+                            <!-- AI Criticism & Concerns -->
+                            <div class="section">
+                                <h2>⚠️ AI Criticism & Concerns</h2>
+                                <p>Critical examination of AI's risks and ethical implications remains essential as these systems integrate deeper into healthcare and research:</p>
+
+                                <div class="product-card">
+                                    <h4>Yoshua Bengio Warns of AI Deception and Self-Preservation</h4>
+                                    <p>Turing Award winner Yoshua Bengio warned that advanced AI models exhibit dangerous emergent behaviors including deception, goal misalignment, and self-preservation instincts. He launched LawZero with $30M to prioritize safety, noting commercial pressures risk systems that deceive humans to avoid control.</p>
+                                    <p><a href="https://fortune.com/2025/06/03/yoshua-bengio-ai-models-dangerous-behaviors-deception-cheating-lying/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03" target="_blank">Read Full Analysis</a></p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4>Systematic Mental Health Ethics Violations by AI</h4>
+                                    <p>Brown University research revealed that AI chatbots violate core mental health ethics standards: deceptive empathy, crisis mismanagement, harmful reinforcement, discriminatory responses, and non-personalized care. With millions turning to AI for mental health support, especially vulnerable populations, these violations pose serious psychological risks.</p>
+                                    <p><a href="https://www.brown.edu/news/2025-10-21/ai-mental-health-ethics/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03" target="_blank">Read Full Analysis</a></p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4>Persistent Racial and Gender Bias in AI Hiring</h4>
+                                    <p>University of Washington research demonstrated severe discrimination: white-associated names ranked 85% vs. Black names 9%; male names 52% vs. female 11%. Derek Mobley sued Workday for age, race, and disability discrimination affecting hundreds of thousands. AI perpetuates systemic discrimination at scale.</p>
+                                    <p><a href="https://www.washington.edu/news/2024/10/31/ai-bias-resume-screening-race-gender/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03" target="_blank">Read Full Analysis</a></p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4>AI Explainability Crisis: Less Than 1% Validated</h4>
+                                    <p>Critical research gap: fewer than 1% of explainable AI papers validate claims through human evaluation. No universal standards exist for explanation quality. In healthcare, finance, and justice, deploying unexplainable AI creates serious ethical and legal risks—physicians cannot safely rely on recommendations they don't understand.</p>
+                                    <p><a href="https://arxiv.org/html/2503.16507v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03" target="_blank">Read Full Analysis</a></p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4>Mass Privacy Breach: Hundreds of Thousands of Conversations Exposed</h4>
+                                    <p>xAI's Grok chatbot suffered critical privacy failure in August 2025, exposing 300,000-370,000 private user conversations publicly. Conversations potentially included sensitive medical, financial, and intimate information. This incident reveals inadequate security architecture and regulatory gaps in holding AI companies accountable.</p>
+                                    <p><a href="https://fortune.com/2025/06/03/yoshua-bengio-ai-models-dangerous-behaviors-deception-cheating-lying/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2025_12_03" target="_blank">Read Full Analysis</a></p>
+                                </div>
+                            </div>
+
+
+                            <!-- Closing Note -->
+                            <div class="section">
+                                <h2>Closing Note</h2>
+                                <p>This week's developments illustrate a profound inflection point in AI's integration into healthcare and biological research. We're witnessing simultaneous breakthroughs in diagnostic AI capability, drug discovery acceleration, and computational biology tools—alongside critical warnings about safety, ethics, equity, and long-term alignment.</p>
+
+                                <p>The challenge ahead is ensuring that these transformative technologies benefit society broadly while addressing persistent concerns about bias, explainability, safety, and fairness. For the biology and healthcare research community, the opportunities are unprecedented.</p>
+
+                                <p>Thank you for reading PythRaSh's AI Newsletter! If you found this week's insights valuable, please share them with colleagues and friends interested in the intersection of AI and biology.</p>
+
+                                <p><strong>Have feedback or suggestions?</strong> Reply to this email - I read every response!</p>
+
+                                <p>See you next week!</p>
+
+                                <p><strong>Md Rasheduzzaman</strong></p>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                    <!-- Share Section -->
+                    <tr>
+                        <td class="share-section">
+                            <h2>Share This Newsletter</h2>
+                            <p>Found this newsletter valuable? Share it with your network!</p>
+                            <div class="share-buttons">
+                                <a href="https://twitter.com/intent/tweet?text=🧬%20This%20week%20in%20AI%20%2B%20Biology%3A%20AI%20diagnostic%20systems%20outperform%20physicians.%20Plus%3A%20breakthrough%20advances%20in%20drug%20discovery%2C%20protein%20design%2C%20and%20medical%20imaging.%20Check%20out%20%40PythRaSh%27s%20newsletter%3A%20https%3A%2F%2Fmdrasheduz-zaman.github.io%2Fai_news_archive%2F%23ai-newsletter&url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2Fai_news_archive%2F" class="share-btn" target="_blank">Share on Twitter</a>
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2Fai_news_archive%2F" class="share-btn" target="_blank">Share on LinkedIn</a>
+                                <a href="mailto:?subject=PythRaSh%27s%20AI%20Newsletter%20-%20December%203%2C%202025&body=Hi%2C%0A%0AI%20thought%20you%27d%20find%20this%20week%27s%20AI%20%2B%20Healthcare%20newsletter%20interesting.%20It%20covers%20AI%20diagnostic%20systems%20outperforming%20physicians%2C%20drug%20discovery%20advances%2C%20and%20other%20breakthroughs%20in%20computational%20biology.%0A%0ACheck%20it%20out%3A%20https%3A%2F%2Fmdrasheduz-zaman.github.io%2Fai_news_archive%2F" class="share-btn">Forward via Email</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer">
+                            <div class="footer-links">
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Unsubscribe</a> |
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Update Preferences</a> |
+                                <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_12_03.html">View in Browser</a>
+                            </div>
+
+                            <p><strong>PythRaSh's AI Newsletter</strong></p>
+                            <div class="address">
+                                Fleischerwiese 4, Greifswald-17489, Germany
+                            </div>
+
+                            <p style="margin-top: 20px;">
+                                <a href="https://mdrasheduz-zaman.github.io/PythRaSh/">Visit our website</a> |
+                                <a href="https://www.linkedin.com/in/md-rashed-uz-zaman">Connect on LinkedIn</a> |
+                                <a href="https://github.com/mdrasheduzzaman">GitHub</a>
+                            </p>
+
+                            <p style="margin-top: 15px; font-size: 12px; color: #999;">
+                                Questions? Reply to this email or contact Md Rasheduzzaman<br>
+                                Email: md.rasheduzzaman.ugoe@gmail.com
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
