@@ -6,8 +6,8 @@
         <link>https://mdrasheduz-zaman.github.io/ai_news_archive/</link>
         <atom:link href="https://mdrasheduz-zaman.github.io/ai_news_archive/feed.xml" rel="self" type="application/rss+xml"/>
         <language>en-us</language>
-        <lastBuildDate>Wed, 03 Dec 2025 00:00:00 GMT</lastBuildDate>
-        <pubDate>Wed, 03 Dec 2025 00:00:00 GMT</pubDate>
+        <lastBuildDate>Wed, 10 Dec 2025 00:00:00 GMT</lastBuildDate>
+        <pubDate>Wed, 10 Dec 2025 00:00:00 GMT</pubDate>
         <ttl>1440</ttl>
         <generator>PythRaSh's AI Newsletter Archive</generator>
         <copyright>© 2025 PythRaSh's AI Newsletter. All rights reserved.</copyright>
@@ -16,6 +16,22 @@
         <category>Technology</category>
         <category>Artificial Intelligence</category>
         <category>Machine Learning</category>
+
+        <!-- December 10, 2025 Issue -->
+        <item>
+            <title>AI Newsletter - Issue #13</title>
+            <description><![CDATA[
+                Newsletter from December 10, 2025.
+                Latest updates in AI technology in Biology, breakthrough research, and industry insights.
+                Read the full newsletter for detailed coverage of recent AI developments.
+            ]]></description>
+            <link>https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_12_10.html</link>
+            <guid isPermaLink="true">https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2025_12_10.html</guid>
+            <pubDate>Wed, 10 Dec 2025 00:00:00 GMT</pubDate>
+            <dc:creator>AI Newsletter Team</dc:creator>
+            <category>AI Technology</category>
+            <category>Research</category>
+        </item>
 
         <!-- December 03, 2025 Issue -->
         <item>
