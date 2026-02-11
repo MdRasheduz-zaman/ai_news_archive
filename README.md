@@ -13,6 +13,8 @@ Stay updated with our latest issues: **https://mdrasheduz-zaman.github.io/ai_new
 Add this RSS feed to your favorite reader (Feedly, Inoreader, etc.) to get notified when new issues are published.
 
 ## 📰 Latest Issues
+
+- **Issue #21** - [February 11, 2026](https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_02_11.html)
 - **Issue #20** - [February 04, 2026](https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_02_04.html)
 - **Issue #19** - [January 28, 2026](https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_01_28.html)
 - **Issue #18** - [January 21, 2026](https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_01_21.html)

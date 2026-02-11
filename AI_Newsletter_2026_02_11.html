@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PythRaSh's AI Newsletter - Week of February 11, 2026</title>
+    <style>
+        /* Reset styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111111; background-color: #f5f5f5; }
+        table { border-collapse: collapse; width: 100%; }
+
+        /* Container */
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #FFFFFF; }
+
+        /* Header */
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+
+        /* Content sections */
+        .content { padding: 30px 20px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #667eea; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #111111; font-size: 20px; margin-bottom: 15px; }
+        .section p { margin-bottom: 15px; font-size: 16px; }
+
+        /* Featured Event Card */
+        .event-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; box-shadow: 0 4px 8px rgba(102, 126, 234, 0.1); }
+        .event-card h3 { color: #667eea; font-size: 22px; margin-bottom: 15px; }
+        .event-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .event-card a:hover { text-decoration: underline; }
+
+        /* Quick updates list */
+        .quick-updates { background: #f8f9ff; border-radius: 8px; padding: 20px; }
+        .quick-updates ul { list-style: none; }
+        .quick-updates li { margin-bottom: 15px; padding: 15px; background: white; border-radius: 6px; border-left: 3px solid #667eea; }
+        .quick-updates li strong { color: #667eea; }
+        .quick-updates a { color: #667eea; text-decoration: none; }
+        .quick-updates a:hover { text-decoration: underline; }
+
+        /* Research papers */
+        .research-paper { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .research-paper h4 { color: #111111; font-size: 18px; margin-bottom: 10px; }
+        .research-paper a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .research-paper a:hover { text-decoration: underline; }
+        .impact-tag { background: #667eea; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 10px; }
+
+        /* GitHub repos */
+        .repo-card { background: #f8f9ff; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 3px solid #667eea; }
+        .repo-card h4 { color: #111111; margin-bottom: 8px; }
+        .repo-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .repo-card a:hover { text-decoration: underline; }
+        .star-count { color: #666; font-size: 14px; }
+
+        /* Products */
+        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .product-card h4 { color: #111111; margin-bottom: 8px; }
+        .product-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .product-card a:hover { text-decoration: underline; }
+        .upvote-count { background: #667eea; color: white; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+
+        /* Blog card */
+        .blog-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .blog-card h4 { color: #667eea; font-size: 18px; margin-bottom: 10px; }
+        .blog-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .blog-card a:hover { text-decoration: underline; }
+
+        /* Share section */
+        .share-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px 20px; text-align: center; }
+        .share-section h2 { color: white; margin-bottom: 20px; }
+        .share-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .share-btn { background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
+        .share-btn:hover { background: rgba(255,255,255,0.3); color: white; text-decoration: none; }
+
+        /* Footer */
+        .footer { background: #f5f5f5; padding: 30px 20px; text-align: center; color: #666; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #667eea; text-decoration: none; margin: 0 10px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer p { font-size: 14px; margin-bottom: 10px; }
+        .footer .address { font-size: 12px; color: #999; margin-top: 20px; }
+
+        /* Mobile responsive */
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .content { padding: 20px 15px !important; }
+            .header { padding: 30px 15px !important; }
+            .header h1 { font-size: 24px !important; }
+            .share-buttons { flex-direction: column !important; gap: 10px !important; }
+            .share-btn { display: block !important; width: 100% !important; }
+        }
+    </style>
+</head>
+<body>
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+            <td align="center" style="background-color: #f5f5f5; padding: 20px 0;">
+                <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0">
+                    <!-- View in Browser Link -->
+                    <tr>
+                        <td style="text-align: center; padding: 10px; font-size: 12px; color: #666;">
+                            <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026-02-11.html" style="color: #667eea; text-decoration: none;">View in Browser</a>
+                        </td>
+                    </tr>
+
+                    <!-- Header -->
+                    <tr>
+                        <td class="header">
+                            <h1>PythRaSh's AI Newsletter</h1>
+                            <p>Week of February 11, 2026</p>
+                        </td>
+                    </tr>
+
+                    <!-- Main Content -->
+                    <tr>
+                        <td class="content">
+
+                            <!-- Intro -->
+                            <div class="section">
+                                <p><strong>Hi, There!</strong> This week marks a watershed moment for AI in biology: the U.S. Department of Energy's Berkeley Lab has launched the OPAL project to build foundational AI models purpose-built for biological discovery&mdash;models that will eventually run autonomous laboratories. Meanwhile, Stanford's SleepFM is turning routine sleep studies into comprehensive disease screening tools, Harvard researchers are solving the clinical AI scalability problem with "context switching," and billion-dollar pharma-AI partnerships are becoming the norm rather than the exception. From genomic foundation models to AI-driven crop breeding, the convergence of artificial intelligence and life sciences is accelerating at an unprecedented pace.</p>
+                            </div>
+
+                            <!-- Event of the Week -->
+                            <div class="section">
+                                <h2>🚀 EVENT OF THE WEEK</h2>
+                                <div class="event-card">
+                                    <h3><a href="https://newscenter.lbl.gov/2026/02/02/foundational-ai-models-to-accelerate-biological-discovery/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">Berkeley Lab Launches OPAL: Foundational AI Models for Biological Discovery</a></h3>
+                                    <p>The U.S. Department of Energy's Lawrence Berkeley National Laboratory, alongside Oak Ridge, Argonne, and Pacific Northwest national laboratories, has launched the Orchestrated Platform for Autonomous Laboratories (OPAL) as part of the Genesis Mission. This ambitious project aims to develop powerful, general-purpose biology AI foundation models&mdash;analogous to what GPT-4 is for language&mdash;but purpose-built for biological systems.</p>
+
+                                    <p>OPAL integrates robotic systems, AI agents, and standardized data-sharing platforms to accelerate the entire biotechnology pipeline from gene discovery to commercialized technology. Berkeley Lab's team is focused on foundation models for microbial engineering that link genes to their function in organisms, enabling experiments that would otherwise take weeks, months, or years.</p>
+
+                                    <p><strong>Why this matters:</strong> Unlike previous biological AI tools, OPAL's foundation models are designed to be general-purpose and capable of controlling AI agents to manage entire scientific investigations autonomously. This is the first major national laboratory initiative to build biology-specific foundation models at this scale.</p>
+
+                                    <p><strong>Key takeaways:</strong></p>
+                                    <ul>
+                                        <li>First DOE initiative to build biology-specific AI foundation models comparable to LLMs</li>
+                                        <li>Combines four national laboratories and industry partners for unprecedented scale</li>
+                                        <li>Models will eventually control autonomous lab agents, enabling 24/7 experimentation</li>
+                                        <li>Addresses the data bottleneck in biological AI with standardized data-sharing platforms</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Quick Updates -->
+                            <div class="section">
+                                <h2>⚡ Quick Updates</h2>
+                                <div class="quick-updates">
+                                    <ul>
+                                        <li><strong>Stanford Medicine:</strong> SleepFM, a multimodal AI foundation model trained on ~600,000 hours of sleep data from 65,000 participants, can predict 130+ diseases from one night's sleep&mdash;including Parkinson's (C-index 0.89) and heart attacks (0.81). Published in Nature Medicine. <a href="https://med.stanford.edu/news/all-news/2026/01/ai-sleep-disease.html?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">Read More</a></li>
+
+                                        <li><strong>Harvard Medical School (Nature Medicine):</strong> Researchers propose "context switching" as the paradigm for scaling medical AI&mdash;allowing models to adjust reasoning at inference without retraining, addressing contextual errors that have hindered clinical deployment. <a href="https://www.nature.com/articles/s41591-025-04184-7?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">Read More</a></li>
+
+                                        <li><strong>NVIDIA &amp; Eli Lilly:</strong> A $1 billion partnership to accelerate AI-driven drug discovery, combining NVIDIA's computational biology platform with Eli Lilly's pharmaceutical pipeline. One of the largest AI-pharma deals to date. <a href="https://www.bio-itworld.com/news/2026/01/12/nvidia-bets-big-on-ai-driven-drug-discovery--physical-ai--and-a--1-billion-eli-lilly-partnership?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">Read More</a></li>
+
+                                        <li><strong>University College London:</strong> Launched a &euro;60M AI-driven drug discovery project&mdash;one of the largest European investments in AI-pharmaceutical research, focused on accelerating novel therapeutic compound identification. <a href="https://www.ucl.ac.uk/news/2026/jan/ai-driven-drug-discovery-project-launches-eu60m-budget?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">Read More</a></li>
+
+                                        <li><strong>Illumina:</strong> Introduced the Billion Cell Atlas&mdash;the world's largest genome-wide genetic perturbation dataset&mdash;with founding partners AstraZeneca, Merck, and Eli Lilly, building the most comprehensive map of human disease biology to date. <a href="https://www.illumina.com/company/news-center/press-releases/press-release-details.html?newsid=fda84c92-b4b3-4691-a402-35555abe8605&utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">Read More</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Research Papers -->
+                            <div class="section">
+                                <h2>📚 Top Research Papers</h2>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://www.nature.com/articles/s41591-025-04133-4?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">A Multimodal Sleep Foundation Model for Disease Prediction (SleepFM)</a></h4>
+                                    <p><strong>Institution:</strong> Stanford Medicine | <strong>Published in:</strong> Nature Medicine, January 2026</p>
+                                    <p>Stanford researchers developed SleepFM, a multimodal AI foundation model trained on nearly 600,000 hours of polysomnography data from 65,000 participants. Using a novel "leave-one-out contrastive learning" technique, the model predicts over 130 health conditions, with exceptional performance for Parkinson's disease (C-index 0.89), dementia (0.85), and heart attacks (0.81).</p>
+                                    <span class="impact-tag">High Impact - Diagnostics</span>
+                                </div>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://www.nature.com/articles/s41591-025-04184-7?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">Scaling Medical AI Across Clinical Contexts</a></h4>
+                                    <p><strong>Institution:</strong> Harvard Medical School | <strong>Published in:</strong> Nature Medicine, February 2026</p>
+                                    <p>Harvard researchers propose "context switching" as the defining paradigm for deploying medical AI clinically. The approach addresses contextual errors&mdash;outputs that appear plausible but miss patient-specific information&mdash;by allowing models to adjust reasoning at inference without retraining.</p>
+                                    <span class="impact-tag">Clinical AI Scalability</span>
+                                </div>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/pdf/2601.22203v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">Retrieval-Augmented Genomic Foundation Models with Gengram</a></h4>
+                                    <p><strong>Institution:</strong> Zhejiang Lab &amp; BGI-HangzhouAI | <strong>Published on:</strong> arXiv, January 2026</p>
+                                    <p>Gengram introduces a conditional memory module for multi-base genomic motifs, achieving up to 14% performance gains on functional genomics tasks. The module reveals biologically meaningful representations aligned with fundamental genomic knowledge.</p>
+                                    <span class="impact-tag">Genomics Innovation</span>
+                                </div>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://onlinelibrary.wiley.com/doi/full/10.1111/jipb.70008?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">Breeding 5.0: AI-Decoded Germplasm for Accelerated Crop Innovation</a></h4>
+                                    <p><strong>Institution:</strong> Journal of Integrative Plant Biology | <strong>Published on:</strong> Wiley, 2026</p>
+                                    <p>Introduces "Breeding 5.0"&mdash;multimodal foundation models applied to crop science for germplasm data mining, phenotype-gene association modeling, and environmental adaptability analysis spanning the entire breeding chain.</p>
+                                    <span class="impact-tag">Agriculture &amp; Food Security</span>
+                                </div>
+                            </div>
+
+                            <!-- GitHub Repos -->
+                            <div class="section">
+                                <h2>💻 Top GitHub Repos of the Week</h2>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/Project-MONAI/MONAI?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">MONAI (Medical Open Network for AI)</a></h4>
+                                    <p class="star-count">⭐ 6,000+ stars | 500+ contributors | Python</p>
+                                    <p>The go-to AI toolkit for healthcare imaging, supporting MRI, CT, pathology, and ultrasound deep learning workflows. Backed by NVIDIA and King's College London. Essential for diagnostic AI, tumor segmentation, and organ detection.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/pydantic/pydantic-ai?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">Pydantic AI</a></h4>
+                                    <p class="star-count">⭐ 10,000+ stars | Rapidly trending | Python</p>
+                                    <p>Type-safe GenAI agent framework ideal for building clinical decision support systems and medical literature analysis agents where data integrity is critical. Active daily development with strong community adoption.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/openai/openai-agents-python?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">OpenAI Agents Python</a></h4>
+                                    <p class="star-count">⭐ 15,000+ stars | Explosive growth | Python</p>
+                                    <p>OpenAI's lightweight multi-agent framework for coordinated AI workflows. Applicable to drug discovery pipelines, clinical trial automation, and biomedical research agents handling data retrieval, analysis, and reporting simultaneously.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/BGI-HangzhouAI/Genos?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">Genos (Gengram)</a></h4>
+                                    <p class="star-count">⭐ 100+ stars | New &amp; growing | Python</p>
+                                    <p>A genomic foundation model with retrieval-augmented learning for genomic sequence analysis. Achieves up to 14% performance gains on functional genomics tasks&mdash;a practical tool for variant interpretation and gene function prediction.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/DeepGraphLearning/torchdrug?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">TorchDrug</a></h4>
+                                    <p class="star-count">⭐ 1,500+ stars | Established | Python</p>
+                                    <p>Purpose-built ML platform for drug discovery: molecular property prediction, molecule generation, retrosynthesis, and protein representation learning using graph neural networks.</p>
+                                </div>
+                            </div>
+
+                            <!-- Learning Blog -->
+                            <div class="section">
+                                <h2>📖 Learning Blog of the Week</h2>
+                                <div class="blog-card">
+                                    <h4><a href="https://hbr.org/2026/02/ai-doesnt-reduce-work-it-intensifies-it?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">AI Doesn't Reduce Work&mdash;It Intensifies It</a></h4>
+                                    <p><strong>Author:</strong> Aruna Ranganathan &amp; Xingqi Maggie Ye | <strong>Publication:</strong> Harvard Business Review</p>
+                                    <p>A groundbreaking eight-month ethnographic study reveals that AI tools consistently intensified work rather than reducing it. Workers voluntarily adopted faster paces, broader scopes, and extended hours. The research warns that while initial productivity surges benefit organizations short-term, they lead to lower quality work and burnout long-term.</p>
+                                    <p><strong>What you'll learn:</strong></p>
+                                    <ul>
+                                        <li>Why AI adoption paradoxically increases workload</li>
+                                        <li>How to recognize and prevent AI-driven burnout in research teams</li>
+                                        <li>Practical strategies for sustainable AI integration in scientific workflows</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- AI Products -->
+                            <div class="section">
+                                <h2>🛠️ Top AI Products of the Week</h2>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/supaboard-ai?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">Supaboard</a></h4>
+                                    <p><span class="upvote-count">629 upvotes</span> | Category: Data Analytics</p>
+                                    <p>Ask questions in plain English, get accurate answers from 600+ data sources. Built-in agents apply business logic for governed, accurate analysis&mdash;ideal for querying clinical databases and genomic repositories without SQL.</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/thesys?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">Agent Builder by Thesys</a></h4>
+                                    <p><span class="upvote-count">452 upvotes</span> | Category: No-Code AI</p>
+                                    <p>Build AI agents that respond with UI&mdash;charts, cards, forms, and reports&mdash;instead of text. Healthcare organizations can create patient-facing health assessment tools and research data visualization systems without coding.</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/bayeslab-2?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">BayesLab</a></h4>
+                                    <p><span class="upvote-count">368 upvotes</span> | Category: Data Analytics</p>
+                                    <p>Autonomous AI analyst for deep data analysis and premium slide generation. Perfect for analyzing clinical trial data, genomics datasets, and epidemiological studies with publication-ready outputs.</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/normain?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11">Normain</a></h4>
+                                    <p><span class="upvote-count">363 upvotes</span> | Category: Document Analysis</p>
+                                    <p>Extraction-first AI for complex documents, delivering structured, traceable insights grounded in source material. Valuable for parsing medical literature, regulatory documents, and clinical protocols.</p>
+                                </div>
+                            </div>
+
+                            <!-- AI Criticism & Concerns -->
+                            <div class="section">
+                                <h2>⚠️ AI Criticism &amp; Concerns</h2>
+                                <h3>Critical Perspectives on AI Ethics and Safety</h3>
+                                <p>As AI rapidly integrates into healthcare and biology, critical examination of risks and ethical implications remains essential. Here are this week's key discussions:</p>
+
+                                <div class="product-card">
+                                    <h4>When Guardrails Collapse: The Grok Controversy</h4>
+                                    <p>The Grok scandal has been called the "Cambridge Analytica moment" for generative AI. California's Attorney General issued a cease and desist to xAI after the model was allegedly used to generate millions of harmful images, with safety teams reportedly understaffed and sidelined. The controversy has triggered investigations across the UK, EU, and multiple countries.</p>
+                                    <p><a href="https://www.internationalaffairs.org.au/australianoutlook/when-guardrails-collapse-what-the-grok-controversy-reveals-about-the-future-of-ai-ethics/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11" target="_blank">Read More</a></p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4>HBR Study: AI Intensifies Work Rather Than Reducing It</h4>
+                                    <p>UC-Berkeley researchers found in an eight-month study that AI tools led workers to voluntarily adopt faster paces, broader scopes, and extended hours. The AI-driven workflow created constant attention-switching and open task accumulation, warning that the "productivity surge" may lead to burnout and attrition.</p>
+                                    <p><a href="https://hbr.org/2026/02/ai-doesnt-reduce-work-it-intensifies-it?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11" target="_blank">Read More</a></p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4>Nature: The World Must Come Together for AI Safety in 2026</h4>
+                                    <p>Nature's editorial warns that the AI industry has shifted from cautious research to a commercial arms race with fewer safety checks and weaker governance. With the EU AI Act coming into effect, the editorial calls for global policy coordination to balance innovation with responsible guardrails.</p>
+                                    <p><a href="https://www.nature.com/articles/d41586-025-04106-0?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11" target="_blank">Read More</a></p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4>WEF Global Risks Report: AI Among Top Rising Concerns</h4>
+                                    <p>The World Economic Forum's 2026 Global Risks Report identifies AI as one of the fastest-rising risk concerns, citing AI-driven disinformation, job displacement, and power concentration among few corporations as systemic threats to democracy and economic stability.</p>
+                                    <p><a href="https://www.weforum.org/podcasts/radio-davos/episodes/global-risks-report-2026/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_11" target="_blank">Read More</a></p>
+                                </div>
+                            </div>
+
+
+                            <!-- Closing Note -->
+                            <div class="section">
+                                <h2>Closing Note</h2>
+                                <p>This week paints a picture of an AI-biology landscape at an inflection point. On one hand, we see transformative potential: Berkeley Lab's OPAL project building biology-specific foundation models, Stanford's SleepFM turning sleep data into disease prediction, and billion-dollar pharma partnerships accelerating drug discovery. On the other, critical voices remind us that AI intensifies work rather than reducing it, and that safety guardrails are fragile when competitive pressures mount.</p>
+
+                                <p>For researchers and clinicians at the intersection of AI and biology, the message is clear: the tools are becoming powerful enough to fundamentally change how we do science&mdash;but only if we adopt them thoughtfully.</p>
+
+                                <p>Thank you for reading PythRaSh's AI Newsletter! If you found this week's insights valuable, please share them with colleagues and friends interested in AI and biology.</p>
+
+                                <p><strong>Have feedback or suggestions?</strong> Reply to this email - I read every response!</p>
+
+                                <p>See you next week!</p>
+
+                                <p><strong>Md Rasheduzzaman</strong></p>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                    <!-- Share Section -->
+                    <tr>
+                        <td class="share-section">
+                            <h2>Share This Newsletter</h2>
+                            <p>Found this newsletter valuable? Share it with your network!</p>
+                            <div class="share-buttons">
+                                <a href="https://twitter.com/intent/tweet?text=%F0%9F%A7%AC%20This%20week%20in%20AI%20%2B%20Biology%3A%20Berkeley%20Lab%27s%20OPAL%20project%2C%20Stanford%27s%20SleepFM%20predicting%20130%2B%20diseases%2C%20and%20%241B%20pharma-AI%20deals.%20Check%20out%20%40PythRaSh%27s%20newsletter%3A&url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn" target="_blank">Share on Twitter</a>
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&title=PythRaSh%27s%20AI%20Newsletter%20-%20AI%20%2B%20Biology%20Breakthroughs&summary=Exciting%20developments%20at%20the%20intersection%20of%20AI%20and%20healthcare%20this%20week.%20From%20DOE%27s%20foundational%20biology%20AI%20models%20to%20Harvard%27s%20context%20switching%20paradigm." class="share-btn" target="_blank">Share on LinkedIn</a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&quote=Check%20out%20this%20week%27s%20AI%20%2B%20Biology%20breakthroughs%20in%20PythRaSh%27s%20newsletter" class="share-btn" target="_blank">Share on Facebook</a>
+                                <a href="mailto:?subject=PythRaSh%27s%20AI%20Newsletter%20-%20Must%20Read!&body=Hi%2C%0A%0AI%20thought%20you%27d%20find%20this%20week%27s%20AI%20%2B%20Biology%20newsletter%20interesting.%20It%20covers%20Berkeley%20Lab%27s%20OPAL%20project%20for%20biology%20AI%20foundation%20models%2C%20Stanford%27s%20SleepFM%20predicting%20130%2B%20diseases%2C%20and%20other%20breakthroughs.%0A%0ACheck%20it%20out%3A%20https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn">Forward via Email</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer">
+                            <div class="footer-links">
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Unsubscribe</a> |
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Update Preferences</a> |
+                                <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026-02-11.html">View in Browser</a>
+                            </div>
+
+                            <p><strong>PythRaSh's AI Newsletter</strong></p>
+                            <div class="address">
+                                Fleischerwiese 4, Greifswald-17489, Germany
+                            </div>
+
+                            <p style="margin-top: 20px;">
+                                <a href="https://mdrasheduz-zaman.github.io/PythRaSh/">Visit our website</a> |
+                                <a href="https://www.linkedin.com/in/md-rashed-uz-zaman">Connect on LinkedIn</a> |
+                                <a href="https://github.com/mdrasheduz-zaman">GitHub</a>
+                            </p>
+
+                            <p style="margin-top: 15px; font-size: 12px; color: #999;">
+                                Questions? Reply to this email or contact Md Rasheduzzaman<br>
+                                Email: md.rasheduzzaman.ugoe@gmail.com
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
