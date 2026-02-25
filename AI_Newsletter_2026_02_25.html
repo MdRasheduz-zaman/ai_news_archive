@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PythRaSh's AI Newsletter - Week of February 25, 2026</title>
+    <style>
+        /* Reset styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111111; background-color: #f5f5f5; }
+        table { border-collapse: collapse; width: 100%; }
+        
+        /* Container */
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #FFFFFF; }
+        
+        /* Header */
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+        
+        /* Content sections */
+        .content { padding: 30px 20px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #667eea; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #111111; font-size: 20px; margin-bottom: 15px; }
+        .section p { margin-bottom: 15px; font-size: 16px; }
+        
+        /* Featured Event Card */
+        .event-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; box-shadow: 0 4px 8px rgba(102, 126, 234, 0.1); }
+        .event-card h3 { color: #667eea; font-size: 22px; margin-bottom: 15px; }
+        .event-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .event-card a:hover { text-decoration: underline; }
+        
+        /* Quick updates list */
+        .quick-updates { background: #f8f9ff; border-radius: 8px; padding: 20px; }
+        .quick-updates ul { list-style: none; }
+        .quick-updates li { margin-bottom: 15px; padding: 15px; background: white; border-radius: 6px; border-left: 3px solid #667eea; }
+        .quick-updates li strong { color: #667eea; }
+        .quick-updates a { color: #667eea; text-decoration: none; }
+        .quick-updates a:hover { text-decoration: underline; }
+        
+        /* Research papers */
+        .research-paper { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .research-paper h4 { color: #111111; font-size: 18px; margin-bottom: 10px; }
+        .research-paper a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .research-paper a:hover { text-decoration: underline; }
+        .impact-tag { background: #667eea; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 10px; }
+        
+        /* GitHub repos */
+        .repo-card { background: #f8f9ff; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 3px solid #667eea; }
+        .repo-card h4 { color: #111111; margin-bottom: 8px; }
+        .repo-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .repo-card a:hover { text-decoration: underline; }
+        .star-count { color: #666; font-size: 14px; }
+        
+        /* Products */
+        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .product-card h4 { color: #111111; margin-bottom: 8px; }
+        .product-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .product-card a:hover { text-decoration: underline; }
+        .upvote-count { background: #667eea; color: white; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+
+        /* Learning blog */
+        .blog-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .blog-card h4 { color: #667eea; font-size: 20px; margin-bottom: 10px; }
+        .blog-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .blog-card a:hover { text-decoration: underline; }
+        
+        /* Share section */
+        .share-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px 20px; text-align: center; }
+        .share-section h2 { color: white; margin-bottom: 20px; }
+        .share-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .share-btn { background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
+        .share-btn:hover { background: rgba(255,255,255,0.3); color: white; text-decoration: none; }
+        
+        /* Footer */
+        .footer { background: #f5f5f5; padding: 30px 20px; text-align: center; color: #666; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #667eea; text-decoration: none; margin: 0 10px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer p { font-size: 14px; margin-bottom: 10px; }
+        .footer .address { font-size: 12px; color: #999; margin-top: 20px; }
+        
+        /* Mobile responsive */
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .content { padding: 20px 15px !important; }
+            .header { padding: 30px 15px !important; }
+            .header h1 { font-size: 24px !important; }
+            .share-buttons { flex-direction: column !important; gap: 10px !important; }
+            .share-btn { display: block !important; width: 100% !important; }
+        }
+    </style>
+</head>
+<body>
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+            <td align="center" style="background-color: #f5f5f5; padding: 20px 0;">
+                <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0">
+                    <!-- View in Browser Link -->
+                    <tr>
+                        <td style="text-align: center; padding: 10px; font-size: 12px; color: #666;">
+                            <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026-02-25.html" style="color: #667eea; text-decoration: none;">View in Browser</a>
+                        </td>
+                    </tr>
+
+                    <!-- Header -->
+                    <tr>
+                        <td class="header">
+                            <h1>PythRaSh's AI Newsletter</h1>
+                            <p>Week of February 25, 2026</p>
+                        </td>
+                    </tr>
+                    
+                    <!-- Main Content -->
+                    <tr>
+                        <td class="content">
+                            
+                            <!-- Intro -->
+                            <div class="section">
+                                <p><strong>Hi, There!</strong> This week has been dominated by a seismic shift in AI-driven drug discovery. Isomorphic Labs dropped what scientists are calling "AlphaFold 4," while Merck teamed up with Mayo Clinic to put AI to work on real patient data. Meanwhile, Illumina mapped a billion cells, and generative AI proved it can outpace human research teams in medical data analysis. The convergence of AI and biology has never been more tangible — let's dive in.</p>
+                            </div>
+                            
+                            <!-- Event of the Week -->
+                            <div class="section">
+                                <h2>🚀 EVENT OF THE WEEK</h2>
+                                <div class="event-card">
+                                    <h3><a href="https://www.isomorphiclabs.com/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">Isomorphic Labs Releases IsoDDE — The "AlphaFold 4" of Drug Discovery</a></h3>
+                                    <p>Google DeepMind spinoff Isomorphic Labs released its IsoDDE (Isomorphic Drug Discovery Engine) on February 10, 2026 — and the scientific community is already calling it "AlphaFold 4." The platform reportedly doubles the accuracy of AlphaFold 3 in predicting molecular interactions for drug design, marking a generational leap in computational pharmacology.</p>
+                                    
+                                    <p>Unlike AlphaFold 3, which was made available through academic partnerships, IsoDDE remains proprietary and is being deployed through Isomorphic's multi-billion-dollar deals with Johnson & Johnson, Eli Lilly, and Novartis. The system goes beyond protein structure prediction: it integrates molecular dynamics simulation, drug-target binding affinity modeling, and generative chemistry into a single end-to-end pipeline.</p>
+                                    
+                                    <p><strong>Why this matters:</strong> IsoDDE represents the transition from AI as a research tool to AI as a core drug development platform. With three major pharma partners already onboard, this technology could fundamentally reshape how medicines are discovered and developed over the next decade.</p>
+                                    
+                                    <p><strong>Key takeaways:</strong></p>
+                                    <ul>
+                                        <li>IsoDDE doubles AlphaFold 3's accuracy in molecular interaction prediction</li>
+                                        <li>The platform is proprietary, deployed via partnerships with J&J, Lilly, and Novartis</li>
+                                        <li>It combines protein structure prediction, molecular dynamics, and generative chemistry into one pipeline</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Quick Updates -->
+                            <div class="section">
+                                <h2>⚡ Quick Updates</h2>
+                                <div class="quick-updates">
+                                    <ul>
+                                        <li><strong>Merck & Mayo Clinic:</strong> Launched an AI-powered drug discovery collaboration using Mayo Clinic Platform_Orchestrate, focusing on identifying targets for inflammatory bowel disease, atopic dermatitis, and multiple sclerosis — bringing clinical data directly into the drug development loop. <a href="https://www.merck.com/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">Merck</a></li>
+                                        
+                                        <li><strong>Illumina:</strong> Unveiled the Billion Cell Atlas, mapping over 1 billion cells with CRISPR perturbation data across 200+ disease-relevant cell lines. Merck, AstraZeneca, and Eli Lilly are early customers using the atlas for target identification and drug response prediction. <a href="https://www.illumina.com/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">Illumina</a></li>
+                                        
+                                        <li><strong>UCSF / Wayne State University:</strong> A new study published in Cell Reports Medicine shows that generative AI can analyze complex medical datasets and generate research insights significantly faster than human research teams while maintaining comparable accuracy. <a href="https://www.cell.com/cell-reports-medicine?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">Cell Reports Medicine</a></li>
+                                        
+                                        <li><strong>NVIDIA & Eli Lilly:</strong> Established a joint AI co-innovation lab focused on accelerating drug discovery through GPU-powered molecular simulation and generative chemistry models, leveraging NVIDIA's BioNeMo platform alongside Lilly's compound libraries. <a href="https://nvidianews.nvidia.com/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">NVIDIA News</a></li>
+                                        
+                                        <li><strong>Multi-Cancer Detection:</strong> A large-scale clinical trial demonstrated that AI-powered diagnostic systems can detect multiple cancer types with 94% accuracy from routine blood draws, using machine learning to identify circulating tumor DNA patterns. <a href="https://www.sciencedaily.com/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">ScienceDaily</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Research Papers -->
+                            <div class="section">
+                                <h2>📚 Top Research Papers</h2>
+                                
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/abs/2602.21178?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">XMorph: Explainable Multimodal Brain Tumor Analysis Using MRI and Morphological Data</a></h4>
+                                    <p><strong>Institution:</strong> arXiv (2602.21178v1)</p>
+                                    <p>XMorph combines MRI imaging data with morphological features to analyze brain tumors with 96% accuracy. What makes this paper stand out is its approach to explainability: it integrates GradCAM++ visualization with large language model explanations to give clinicians not just a prediction, but a human-readable rationale for that prediction. Addresses the critical barrier of clinical trust in AI diagnostics.</p>
+                                    <span class="impact-tag">Clinical Impact</span>
+                                </div>
+                                
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/abs/2602.21168?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">Sequential Counterfactual Inference in Clinical Data: Longitudinal Treatment Analysis</a></h4>
+                                    <p><strong>Institution:</strong> arXiv (2602.21168v1)</p>
+                                    <p>Introduces a counterfactual inference framework for longitudinal clinical data, validated on COVID-19 and Long COVID datasets. The framework lets researchers ask "what if" questions about treatment sequences — what would have happened if a patient received a different drug at week 3 instead of week 6? Combines causal inference with temporal modeling for treatment protocol optimization.</p>
+                                    <span class="impact-tag">Pandemic Preparedness</span>
+                                </div>
+                                
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/abs/2602.21165?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">PVminer: Patient Voice Detection Using NLP for Clinical Communication</a></h4>
+                                    <p><strong>Institution:</strong> arXiv (2602.21165v1)</p>
+                                    <p>PVminer uses NLP to detect and analyze "patient voice" patterns in clinical communication records, surfacing patient concerns and symptoms buried in unstructured notes that structured EHR fields often miss. Represents a growing recognition that patient-reported experiences are critical data sources for treatment optimization.</p>
+                                    <span class="impact-tag">Patient-Centered Care</span>
+                                </div>
+                                
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/abs/2602.21160?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">Epistemic Uncertainty Decomposition for Selective Prediction in Diabetic Retinopathy Screening</a></h4>
+                                    <p><strong>Institution:</strong> arXiv (2602.21160v1)</p>
+                                    <p>Tackles AI confidence calibration for diabetic retinopathy screening by separating epistemic uncertainty (what the model doesn't know) from aleatoric uncertainty (data noise). Creates a practical human-AI collaboration framework: AI handles clear-cut cases while flagging ambiguous ones for expert review — essential for safe deployment in resource-limited settings.</p>
+                                    <span class="impact-tag">Ophthalmology AI</span>
+                                </div>
+                            </div>
+                            
+                            <!-- GitHub Repos -->
+                            <div class="section">
+                                <h2>💻 Top GitHub Repos of the Week</h2>
+                                
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/deepchem/deepchem?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">DeepChem</a></h4>
+                                    <p class="star-count">⭐ 5,500+ stars | Python | Active development</p>
+                                    <p>The premier open-source toolkit for AI-driven drug discovery and molecular machine learning. Provides molecular featurization, graph neural networks for property prediction, and virtual screening workflows used across pharma and academia. The foundational library for chemistry meets deep learning.</p>
+                                </div>
+                                
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/scverse/scvi-tools?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">scvi-tools</a></h4>
+                                    <p class="star-count">⭐ 1,300+ stars | Python | Part of scverse ecosystem</p>
+                                    <p>The leading deep learning framework for single-cell RNA sequencing analysis. Uses variational autoencoders to model gene expression, enabling dataset integration, batch effect removal, and cell type discovery. Essential for Human Cell Atlas-scale projects and spatial transcriptomics.</p>
+                                </div>
+                                
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/microsoft/autogen?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">Microsoft AutoGen</a></h4>
+                                    <p class="star-count">⭐ 40,000+ stars | Python | Fastest-growing AI repo</p>
+                                    <p>Multi-agent conversational AI framework increasingly adopted in biomedical research for automated literature review, clinical trial analysis, and multi-step drug discovery pipelines where specialized agents handle chemistry, biology, and pharmacology sub-tasks collaboratively.</p>
+                                </div>
+                                
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/MouseLand/cellpose?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">Cellpose</a></h4>
+                                    <p class="star-count">⭐ 4,000+ stars | Python | Standard in microscopy labs</p>
+                                    <p>The go-to deep learning tool for automated cell segmentation in microscopy images. Used across neuroscience, cancer biology, and developmental biology, replacing hours of manual annotation with accurate cell boundary detection in fluorescence and brightfield microscopy.</p>
+                                </div>
+                                
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/mcp-use/mcp-use?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">mcp-use</a></h4>
+                                    <p class="star-count">⭐ 3,000+ stars | Python | Rapidly growing</p>
+                                    <p>Open-source framework for the Model Context Protocol (MCP), enabling AI agents to connect with external tools through a standardized interface. In bioinformatics, enables AI assistants that directly query genomic databases, run pipelines, and interact with lab systems.</p>
+                                </div>
+                            </div>
+
+                            <!-- Learning Blog -->
+                            <div class="section">
+                                <h2>📖 Learning Blog of the Week</h2>
+                                <div class="blog-card">
+                                    <h4><a href="https://blog.stephenturner.us/p/staying-current-in-data-science-and-computational-biology-2026?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">Staying Current in Data Science and Computational Biology: 2026 Edition</a></h4>
+                                    <p><strong>Author:</strong> Stephen Turner | <strong>Publication:</strong> Stephen Turner's Blog</p>
+                                    <p>Stephen Turner's updated guide to staying current in computational biology is a must-read for anyone at the intersection of data science and biological research. Building on his popular 2012 and 2017 editions, this 2026 version covers the explosion of AI tools in genomics, the rise of foundation models for biological sequences, and practical strategies for keeping up with the field's rapid evolution.</p>
+                                    <p><strong>What you'll learn:</strong></p>
+                                    <ul>
+                                        <li>How to build a sustainable information diet for computational biology in 2026</li>
+                                        <li>Which preprint servers, journals, and community channels matter most now</li>
+                                        <li>Practical tools for AI-assisted literature review and research discovery</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- AI Products -->
+                            <div class="section">
+                                <h2>🛠️ Top AI Products of the Week</h2>
+                                
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/posts/notion-custom-agents?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">Notion Custom Agents</a></h4>
+                                    <p><span class="upvote-count">190 upvotes</span> | Category: AI Productivity</p>
+                                    <p>Build autonomous AI teammates directly inside your Notion workspace. For research labs, this means custom agents that monitor publications in specific domains, summarize findings, and organize research notes automatically — all without leaving the platform where your team already collaborates.</p>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/posts/opal-2-0-by-google-labs?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">Opal 2.0 by Google Labs</a></h4>
+                                    <p><span class="upvote-count">174 upvotes</span> | Category: No-Code AI Workflows</p>
+                                    <p>A no-code AI workflow builder that empowers non-programmers to create automated pipelines. In wet-lab environments, researchers can connect data collection instruments, analysis tools, and reporting systems without writing code — democratizing AI adoption where coding skills may be limited.</p>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/posts/whisper-mind-ai?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">Whisper Mind AI</a></h4>
+                                    <p><span class="upvote-count">85 upvotes</span> | Category: AI Mental Health</p>
+                                    <p>An AI mental health companion using conversational AI for on-demand emotional support. Represents the growing intersection of AI and therapeutic applications, relevant to healthcare professionals exploring AI-assisted patient support between clinical visits.</p>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/posts/declaw?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25">DeClaw</a></h4>
+                                    <p><span class="upvote-count">70 upvotes</span> | Category: AI Security</p>
+                                    <p>PII detection and prompt injection protection for AI applications. Critical for healthcare AI deployments where patient data privacy is paramount — essential safeguards for any institution deploying AI systems that handle sensitive medical records or genomic data.</p>
+                                </div>
+                            </div>
+
+                            <!-- AI Criticism & Concerns -->
+                            <div class="section">
+                                <h2>⚠️ AI Criticism & Concerns</h2>
+                                <h3>Critical Perspectives on AI Ethics and Safety</h3>
+                                <p>As AI rapidly integrates into healthcare and biology, critical examination of risks and ethical implications remains essential. Here are this week's most important discussions:</p>
+                                
+                                <div class="product-card">
+                                    <h4>Anthropic Safety Researcher Resigns Over Alignment Concerns</h4>
+                                    <p>Mrinank Sharma, a prominent AI safety researcher at Anthropic, resigned on February 9, citing concerns about the pace of AI development outstripping safety research. His departure adds to a growing pattern of safety-focused researchers leaving major AI labs, raising questions about whether commercial pressures are undermining safety-first approaches. His work on constitutional AI and alignment techniques makes this departure particularly significant.</p>
+                                    <p><a href="https://www.reuters.com/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25" target="_blank">Read more at Reuters</a></p>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <h4>International AI Safety Report Warns of "Systemic Risks"</h4>
+                                    <p>A comprehensive report led by Yoshua Bengio and 100+ international experts warns that current AI systems pose "systemic risks" to global stability — including AI-generated disinformation, autonomous weapons, and power concentration. The report calls for binding international regulations and mandatory safety testing, echoing biosafety community calls for analogous biological research oversight.</p>
+                                    <p><a href="https://www.safe.ai/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25" target="_blank">Read the report</a></p>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <h4>OpenAI Researcher Resigns Over Ad-Testing Plans</h4>
+                                    <p>Zoe Hitzig, focused on AI governance at OpenAI, resigned over plans to test advertising within products. Critics argue that ad-supported AI creates incentives for manipulation over assistance — especially concerning in healthcare, where AI-recommended treatments could be influenced by pharma advertising rather than clinical evidence.</p>
+                                    <p><a href="https://www.theverge.com/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25" target="_blank">Read more at The Verge</a></p>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <h4>Anthropic Faces Pentagon and Distillation Controversies</h4>
+                                    <p>Anthropic faced dual controversies: criticism over Pentagon AI applications conflicting with its safety mission, and accusations that Chinese AI developers conducted "distillation attacks" on Claude. Critics question whether defense involvement aligns with beneficial AI commitments, while the distillation claims raise complex questions about AI knowledge sharing versus capability restriction.</p>
+                                    <p><a href="https://www.wired.com/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_02_25" target="_blank">Read more at WIRED</a></p>
+                                </div>
+                            </div>
+                            
+                            <!-- Closing Note -->
+                            <div class="section">
+                                <h2>Closing Note</h2>
+                                <p>This week's newsletter paints a vivid picture of where AI in biology is heading: from Isomorphic's proprietary drug discovery engine to billion-cell atlases and AI that outpaces human research teams. The tools are getting more powerful, but the ethical questions — researcher resignations, military applications, knowledge-sharing tensions — are keeping pace. As always, the most impactful work happens when we wield these tools thoughtfully. Stay curious, stay critical.</p>
+                                
+                                <p>Thank you for reading PythRaSh's AI Newsletter! If you found this week's insights valuable, please share them with colleagues and friends interested in the intersection of AI and biology.</p>
+                                
+                                <p><strong>Have feedback or suggestions?</strong> Reply to this email - I read every response!</p>
+                                
+                                <p>See you next week!</p>
+                                
+                                <p><strong>Md Rasheduzzaman</strong></p>
+                            </div>
+                            
+                        </td>
+                    </tr>
+                    
+                    <!-- Share Section -->
+                    <tr>
+                        <td class="share-section">
+                            <h2>Share This Newsletter</h2>
+                            <p>Found this newsletter valuable? Share it with your network!</p>
+                            <div class="share-buttons">
+                                <a href="https://twitter.com/intent/tweet?text=%F0%9F%A7%AC%20This%20week%20in%20AI%20%2B%20Biology%3A%20Isomorphic%20Labs%20releases%20%22AlphaFold%204%22%20for%20drug%20discovery%2C%20Illumina%20maps%201B%20cells%2C%20and%20AI%20diagnostics%20hit%2094%25%20cancer%20detection%20accuracy.%20Check%20out%20%40PythRaSh%27s%20newsletter%3A&url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn" target="_blank">Share on Twitter</a>
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&title=PythRaSh%27s%20AI%20Newsletter%20-%20AI%20%2B%20Biology%20Breakthroughs&summary=Isomorphic%20Labs%27%20IsoDDE%20engine%20is%20being%20called%20%22AlphaFold%204%22%20for%20drug%20discovery.%20Plus%20Merck-Mayo%20Clinic%20AI%20collaboration%20and%20more." class="share-btn" target="_blank">Share on LinkedIn</a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&quote=Check%20out%20this%20week%27s%20AI%20%2B%20Biology%20breakthroughs%20-%20AlphaFold%204%2C%20Billion%20Cell%20Atlas%2C%20and%20more" class="share-btn" target="_blank">Share on Facebook</a>
+                                <a href="mailto:?subject=PythRaSh%27s%20AI%20Newsletter%20-%20Must%20Read!&body=Hi%2C%0A%0AI%20thought%20you%27d%20find%20this%20week%27s%20AI%20%2B%20Biology%20newsletter%20interesting.%20It%20covers%20Isomorphic%20Labs%27%20IsoDDE%20%28%22AlphaFold%204%22%29%2C%20Illumina%27s%20Billion%20Cell%20Atlas%2C%20and%20other%20breakthroughs%20in%20computational%20biology.%0A%0ACheck%20it%20out%3A%20https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn">Forward via Email</a>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer">
+                            <div class="footer-links">
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Unsubscribe</a> |
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Update Preferences</a> |
+                                <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026-02-25.html">View in Browser</a>
+                            </div>
+                            
+                            <p><strong>PythRaSh's AI Newsletter</strong></p>
+                            <div class="address">
+                                Fleischerwiese 4, Greifswald-17489, Germany
+                            </div>
+                            
+                            <p style="margin-top: 20px;">
+                                <a href="https://mdrasheduz-zaman.github.io/PythRaSh/">Visit our website</a> |
+                                <a href="https://www.linkedin.com/in/md-rashed-uz-zaman">Connect on LinkedIn</a> |
+                                <a href="https://github.com/mdrasheduz-zaman">GitHub</a>
+                            </p>
+                            
+                            <p style="margin-top: 15px; font-size: 12px; color: #999;">
+                                Questions? Reply to this email or contact Md Rasheduzzaman<br>
+                                Email: md.rasheduzzaman.ugoe@gmail.com
+                            </p>
+                        </td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
