@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PythRaSh's AI Newsletter - Week of March 11, 2026</title>
+    <style>
+        /* Reset styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111111; background-color: #f5f5f5; }
+        table { border-collapse: collapse; width: 100%; }
+        
+        /* Container */
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #FFFFFF; }
+        
+        /* Header */
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+        
+        /* Content sections */
+        .content { padding: 30px 20px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #667eea; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #111111; font-size: 20px; margin-bottom: 15px; }
+        .section p { margin-bottom: 15px; font-size: 16px; }
+        
+        /* Featured Event Card */
+        .event-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; box-shadow: 0 4px 8px rgba(102, 126, 234, 0.1); }
+        .event-card h3 { color: #667eea; font-size: 22px; margin-bottom: 15px; }
+        .event-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .event-card a:hover { text-decoration: underline; }
+        
+        /* Quick updates list */
+        .quick-updates { background: #f8f9ff; border-radius: 8px; padding: 20px; }
+        .quick-updates ul { list-style: none; }
+        .quick-updates li { margin-bottom: 15px; padding: 15px; background: white; border-radius: 6px; border-left: 3px solid #667eea; }
+        .quick-updates li strong { color: #667eea; }
+        .quick-updates a { color: #667eea; text-decoration: none; }
+        .quick-updates a:hover { text-decoration: underline; }
+        
+        /* Research papers */
+        .research-paper { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .research-paper h4 { color: #111111; font-size: 18px; margin-bottom: 10px; }
+        .research-paper a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .research-paper a:hover { text-decoration: underline; }
+        .impact-tag { background: #667eea; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 10px; }
+        
+        /* GitHub repos */
+        .repo-card { background: #f8f9ff; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 3px solid #667eea; }
+        .repo-card h4 { color: #111111; margin-bottom: 8px; }
+        .repo-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .repo-card a:hover { text-decoration: underline; }
+        .star-count { color: #666; font-size: 14px; }
+        
+        /* Products */
+        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .product-card h4 { color: #111111; margin-bottom: 8px; }
+        .product-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .product-card a:hover { text-decoration: underline; }
+        .upvote-count { background: #667eea; color: white; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+        
+        /* Learning blog */
+        .blog-card { background: linear-gradient(135deg, #f0f4ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .blog-card h4 { color: #667eea; font-size: 18px; margin-bottom: 10px; }
+        .blog-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .blog-card a:hover { text-decoration: underline; }
+        
+        /* Share section */
+        .share-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px 20px; text-align: center; }
+        .share-section h2 { color: white; margin-bottom: 20px; }
+        .share-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .share-btn { background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
+        .share-btn:hover { background: rgba(255,255,255,0.3); color: white; text-decoration: none; }
+        
+        /* Footer */
+        .footer { background: #f5f5f5; padding: 30px 20px; text-align: center; color: #666; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #667eea; text-decoration: none; margin: 0 10px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer p { font-size: 14px; margin-bottom: 10px; }
+        .footer .address { font-size: 12px; color: #999; margin-top: 20px; }
+        
+        /* Mobile responsive */
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .content { padding: 20px 15px !important; }
+            .header { padding: 30px 15px !important; }
+            .header h1 { font-size: 24px !important; }
+            .share-buttons { flex-direction: column !important; gap: 10px !important; }
+            .share-btn { display: block !important; width: 100% !important; }
+        }
+    </style>
+</head>
+<body>
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+            <td align="center" style="background-color: #f5f5f5; padding: 20px 0;">
+                <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0">
+                    <!-- View in Browser Link -->
+                    <tr>
+                        <td style="text-align: center; padding: 10px; font-size: 12px; color: #666;">
+                            <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026-03-11.html" style="color: #667eea; text-decoration: none;">View in Browser</a>
+                        </td>
+                    </tr>
+
+                    <!-- Header -->
+                    <tr>
+                        <td class="header">
+                            <h1>PythRaSh's AI Newsletter</h1>
+                            <p>Week of March 11, 2026</p>
+                        </td>
+                    </tr>
+                    
+                    <!-- Main Content -->
+                    <tr>
+                        <td class="content">
+                            
+                            <!-- Intro -->
+                            <div class="section">
+                                <p><strong>Hi, There!</strong> This week, the spotlight is firmly on AI's deepening roots in biology and medicine—from an EMBL platform that finally puts a century-old cancer theory to the test, to billion-dollar drug discovery labs and agentic AI systems that outperform doctors in diagnosing rare diseases. Meanwhile, the regulatory landscape is heating up with federal agency proposals and a wave of state chatbot bills. Let's dive in.</p>
+                            </div>
+                            
+                            <!-- Event of the Week -->
+                            <div class="section">
+                                <h2>🚀 EVENT OF THE WEEK</h2>
+                                <div class="event-card">
+                                    <h3><a href="https://www.embl.org/news/science-technology/magic-ai-assisted-laser-tag-illuminates-cancer-origins/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">EMBL's MAGIC Platform Tests Century-Old Cancer Theory with AI Microscopy</a></h3>
+                                    <p>Scientists at the European Molecular Biology Laboratory (EMBL) Heidelberg have developed MAGIC (Machine Learning-Assisted Genomics and Imaging Convergence)—an automated platform combining AI-powered microscopy with single-cell genome sequencing to test Theodor Boveri's century-old hypothesis that chromosomal abnormalities drive cancer development.</p>
+                                    
+                                    <p>MAGIC operates like "AI-assisted laser tag," scanning for micronuclei—tiny DNA-containing structures linked to cancer—and tagging them with a photoconvertible dye. In less than a day, the system analyzed nearly 100,000 cells, revealing that over 10% of normal cell divisions spontaneously produce chromosomal errors. When the tumor suppressor gene p53 is mutated, this rate nearly doubles.</p>
+                                    
+                                    <p><strong>Why this matters:</strong> For over a century, scientists suspected chromosomal chaos was at the heart of cancer but lacked tools to test this at scale. MAGIC changes that by automating what was previously painstaking manual work, enabling researchers to study cancer's chromosomal origins with unprecedented speed and statistical power.</p>
+                                    
+                                    <p><strong>Key takeaways:</strong></p>
+                                    <ul>
+                                        <li>Over 10% of normal cell divisions produce chromosomal abnormalities spontaneously</li>
+                                        <li>p53 mutations nearly double this error rate—explaining why it's cancer's most commonly mutated gene</li>
+                                        <li>Developed with EMBL-EBI, DKFZ, and published in Nature</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Quick Updates -->
+                            <div class="section">
+                                <h2>⚡ Quick Updates</h2>
+                                <div class="quick-updates">
+                                    <ul>
+                                        <li><strong>NVIDIA & Eli Lilly:</strong> Announced a $1 billion AI co-innovation lab in the San Francisco Bay Area, combining Lilly's pharmaceutical expertise with NVIDIA's BioNeMo platform and Vera Rubin architecture for AI-driven drug discovery, robotics, and digital twins. <a href="https://nvidianews.nvidia.com/news/nvidia-and-lilly-announce-co-innovation-lab-to-reinvent-drug-discovery-in-the-age-of-ai?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">NVIDIA Newsroom</a></li>
+                                        
+                                        <li><strong>Illumina:</strong> Introduced the Billion Cell Atlas, capturing how 1 billion cells respond to CRISPR perturbations across 200+ disease-relevant cell lines. Created with AstraZeneca, Eli Lilly, and Merck to validate drug targets and train AI models at unprecedented scale. <a href="https://www.illumina.com/company/news-center/press-releases/press-release-details.html?newsid=fda84c92-b4b3-4691-a402-35555abe8605&utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">Illumina</a></li>
+                                        
+                                        <li><strong>Nature (DeepRare):</strong> Agentic AI system DeepRare outperforms experienced physicians in diagnosing rare diseases (64.4% vs 54.6% first-attempt accuracy), integrating 40+ tools with transparent reasoning that specialists agreed with 95.4% of the time. Over 600 institutions registered. <a href="https://www.nature.com/articles/d41586-026-00290-9?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">Nature</a></li>
+                                        
+                                        <li><strong>OpenAI:</strong> Released GPT-5.4 with native computer-use capabilities, 1 million token context window, 33% fewer false claims, and mid-response course correction. First general-purpose model with state-of-the-art computer-use for autonomous agent workflows. <a href="https://openai.com/index/introducing-gpt-5-4/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">OpenAI</a></li>
+                                        
+                                        <li><strong>Illumina (TruPath):</strong> Launched TruPath Genome for rapid whole-genome rare disease testing with improved accuracy in difficult "dark" genomic regions and a ~10-minute hands-on workflow producing 16 genomes per day. <a href="https://www.prnewswire.com/news-releases/illumina-launches-trupath-genome-setting-a-new-standard-in-genomic-insight-302695923.html?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">PR Newswire</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Research Papers -->
+                            <div class="section">
+                                <h2>📚 Top Research Papers</h2>
+                                
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/pdf/2603.09943v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">PathMem: Cognition-Aligned Memory for Pathology AI</a></h4>
+                                    <p><strong>Institution:</strong> Multiple institutions | <strong>arXiv:</strong> March 10, 2026</p>
+                                    <p>PathMem introduces a memory-centric multimodal framework for pathology that mirrors how human pathologists think—organizing diagnostic knowledge as long-term memory and using a Memory Transformer to activate relevant criteria during reasoning. Achieves 12.8% improvement in whole-slide image report precision and 9.7% improvement in open-ended diagnosis.</p>
+                                    <span class="impact-tag">Pathology AI</span>
+                                </div>
+                                
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/pdf/2603.09945v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">k-MTR: Cardiac MRI Analysis Directly from k-Space</a></h4>
+                                    <p><strong>Institution:</strong> Technical University of Munich | <strong>arXiv:</strong> March 10, 2026</p>
+                                    <p>Bypasses traditional image reconstruction entirely, extracting diagnostic cardiac information directly from raw MRI frequency data. Using 42,000 simulated subjects, achieves competitive performance across phenotype regression, disease classification, and anatomical segmentation without ever creating an image.</p>
+                                    <span class="impact-tag">Cardiac Imaging</span>
+                                </div>
+                                
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/pdf/2603.09940v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">SignalMC-MED: Benchmarking Biosignal Foundation Models</a></h4>
+                                    <p><strong>Institution:</strong> University of Oxford | <strong>arXiv:</strong> March 10, 2026</p>
+                                    <p>Establishes a comprehensive benchmark for evaluating AI on synchronized ECG and PPG biosignals. Across 22,256 visits and 20 clinical tasks, domain-specific biosignal models consistently outperform general time-series models, and multimodal ECG+PPG fusion yields robust improvements.</p>
+                                    <span class="impact-tag">Wearable Health AI</span>
+                                </div>
+                                
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/pdf/2603.09957v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">Think Before You Lie: How Reasoning Improves LLM Honesty</a></h4>
+                                    <p><strong>Institution:</strong> Google | <strong>arXiv:</strong> March 10, 2026</p>
+                                    <p>Contrary to human behavior, LLMs become more honest when reasoning through moral trade-offs. Deceptive regions in model representations are "metastable"—easily destabilized—while honest defaults are more robust. Critical implications for clinical AI trustworthiness.</p>
+                                    <span class="impact-tag">AI Safety</span>
+                                </div>
+                            </div>
+                            
+                            <!-- GitHub Repos -->
+                            <div class="section">
+                                <h2>💻 Top GitHub Repos of the Week</h2>
+                                
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/instadeepai/nucleotide-transformer?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">InstaDeep Nucleotide Transformer</a></h4>
+                                    <p class="star-count">⭐ 1,200+ stars | Python/JAX | Active development</p>
+                                    <p>Comprehensive suite of genomics foundation models: NTv3 (9 trillion base pairs, 1Mb context, single-base resolution), SegmentNT for genome segmentation, AgroNT for crop genomics, ChatNT for conversational genomic analysis, and single-cell transformers. Published in Nature Methods.</p>
+                                </div>
+                                
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/bytedance/deer-flow?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">DeerFlow 2.0 (ByteDance)</a></h4>
+                                    <p class="star-count">⭐ 12,000+ stars | Python/TypeScript | #1 GitHub Trending</p>
+                                    <p>Open-source SuperAgent harness with sub-agents, sandboxed execution, long-term memory, and extensible skills. Ground-up rewrite supporting Slack, Telegram, and Feishu channels. Multi-agent orchestration ideal for complex bioinformatics pipeline automation.</p>
+                                </div>
+                                
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/HKUDS/LightRAG?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">LightRAG</a></h4>
+                                    <p class="star-count">⭐ 20,000+ stars | Python | EMNLP 2025</p>
+                                    <p>Simple and fast Retrieval-Augmented Generation with graph-based architecture. Ideal for connecting drug-target relationships, gene-disease associations, and biomedical literature in structured knowledge graphs for AI-assisted clinical research.</p>
+                                </div>
+                                
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/e2b-dev/E2B?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">E2B</a></h4>
+                                    <p class="star-count">⭐ 8,000+ stars | TypeScript/Python | Active development</p>
+                                    <p>Open-source infrastructure for running AI-generated code in secure isolated sandboxes. Essential for reproducible computational biology workflows where untested bioinformatics scripts need safe execution before deployment on sensitive genomic data.</p>
+                                </div>
+                                
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/microsoft/graphrag?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">Microsoft GraphRAG</a></h4>
+                                    <p class="star-count">⭐ 25,000+ stars | Python | Microsoft Research</p>
+                                    <p>Modular graph-based RAG system for navigating complex biomedical knowledge—from protein interaction networks and drug pathways to clinical trial data—enabling AI agents to reason over interconnected biological data for drug discovery.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Learning Blog -->
+                            <div class="section">
+                                <h2>📖 Learning Blog of the Week</h2>
+                                <div class="blog-card">
+                                    <h4><a href="https://interactiveai.blogs.bristol.ac.uk/2026/01/16/ml4h-reproducibility-foundation-models-and-the-future-of-health-ai/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">ML4H: Reproducibility, Foundation Models, and the Future of Health AI</a></h4>
+                                    <p><strong>Author:</strong> Phillip Sloan | <strong>Publication:</strong> Interactive AI CDT Blog, University of Bristol</p>
+                                    <p>A firsthand account from the ML4H 2025 conference in San Diego exploring critical challenges in health AI. Covers Matthew McDermott's MEDS ecosystem for standardizing clinical data, Paul Liang's multimodal clinical foundation models, and Gabriel Brat's revealing paradox: radiologists often resist AI recommendations even when models are explainable.</p>
+                                    <p><strong>What you'll learn:</strong></p>
+                                    <ul>
+                                        <li>Why reproducibility remains the biggest bottleneck in clinical AI</li>
+                                        <li>How multimodal foundation models reshape medical reasoning</li>
+                                        <li>The human-AI trust gap in radiology and deployment implications</li>
+                                        <li>Why better benchmarks matter as much as better models</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- AI Products -->
+                            <div class="section">
+                                <h2>🛠️ Top AI Products of the Week</h2>
+                                
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/chronicle-6?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">Chronicle 2.0</a></h4>
+                                    <p><span class="upvote-count">645 upvotes</span> | Category: AI Presentations</p>
+                                    <p>AI-powered design partner that turns notes, prompts, or existing decks into beautiful, on-brand slides through conversation. No more "AI slop"—it asks questions, builds drafts, and lets you refine through dialogue. Perfect for conference presentations and grant proposals.</p>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/vozo?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">Visual Translate by Vozo</a></h4>
+                                    <p><span class="upvote-count">624 upvotes</span> | Category: Video Translation</p>
+                                    <p>Translates on-screen text inside videos—slides, diagrams, callouts, labels—while preserving original layout, style, and animation. Layered with voice dubbing, lip-sync, and subtitles for fully translated videos. A game-changer for global medical education.</p>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/claude?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">Claude Code Review</a></h4>
+                                    <p><span class="upvote-count">474 upvotes</span> | Category: Code Review</p>
+                                    <p>Anthropic's multi-agent code review dispatches AI agents on every pull request to catch bugs that quick reviews miss. Detects security issues, hidden logic flaws, and verifies findings to reduce false positives. Critical for bioinformatics code reliability.</p>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/fish-speech?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11">Fish Audio S2</a></h4>
+                                    <p><span class="upvote-count">354 upvotes</span> | Category: Open Source TTS</p>
+                                    <p>Open-source expressive text-to-speech with natural language voice direction across 80+ languages. Add cues like [whisper] or [laughing nervously] and generate multi-speaker dialogue. Valuable for patient education and multilingual clinical communication.</p>
+                                </div>
+                            </div>
+
+                            <!-- AI Criticism & Concerns -->
+                            <div class="section">
+                                <h2>⚠️ AI Criticism & Concerns</h2>
+                                
+                                <div class="product-card">
+                                    <h4>Steyer Proposes Federal AI Safety and Oversight Administration</h4>
+                                    <p>Tom Steyer called for establishing the "AI Safety and Oversight Administration" (ASOA), a dedicated federal agency to enforce safety standards, conduct algorithm audits, and investigate AI-related harm. The proposal includes mandatory safety testing for critical infrastructure AI, transparency in algorithmic decisions for loans, hiring, and criminal justice.</p>
+                                    <p><a href="https://science-technology.news-articles.net/content/2026/03/11/steyer-calls-for-ai-regulation-amid-growing-safety-concerns.html?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11" target="_blank">Read more</a></p>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <h4>78 Chatbot Bills Surge Across 27 States</h4>
+                                    <p>Six weeks into the 2026 legislative session, 78 chatbot bills targeting child safety and mental health are alive in 27 states—a rare bipartisan issue. Bills require AI disclosure, suicidal ideation detection protocols, and prevention of parasocial relationships with minors. Three in four teens use AI companions, fueling urgent legislative action.</p>
+                                    <p><a href="https://www.transparencycoalition.ai/news/chatbot-bill-surge-nationwide-concern-spurs-78-proposals-in-27-states?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11" target="_blank">Read more</a></p>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <h4>Meta Oversight Board Demands Deepfake Detection Overhaul</h4>
+                                    <p>The Meta Oversight Board labeled the company's deepfake detection fundamentally inadequate, especially during geopolitical conflicts. Demands include adoption of C2PA provenance standards, real-time AI detection, and dedicated community standards for synthetic content—highlighting the gap between AI generation capabilities and platform safety.</p>
+                                    <p><a href="https://www.androidheadlines.com/2026/03/meta-oversight-board-deepfake-detection-failure.html?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11" target="_blank">Read more</a></p>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <h4>AI Healthcare Bias: Persistent Discrimination Against Marginalized Groups</h4>
+                                    <p>Despite awareness campaigns, AI tools continue to systematically misjudge marginalized groups—downgrading women's care needs, offering unequal treatment plans by race, and embedding bias from drug dosing to triage. Researchers warn these biases amplify health disparities unless mandatory audits and diverse training data are enforced before clinical deployment.</p>
+                                    <p><a href="https://www.crescendo.ai/blog/ai-controversies?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_11" target="_blank">Read more</a></p>
+                                </div>
+                            </div>
+            
+                            <!-- Closing Note -->
+                            <div class="section">
+                                <h2>Closing Note</h2>
+                                <p>This week reinforces a powerful truth: AI in biology is no longer aspirational—it's operational. From EMBL's MAGIC platform validating century-old cancer theories to DeepRare outperforming doctors in rare disease diagnosis, the tools are becoming clinical-grade. But as the surge of chatbot bills and bias studies remind us, the pace of deployment must be matched by responsible governance.</p>
+                                
+                                <p>The billion-dollar investments from NVIDIA, Lilly, and Illumina signal that the infrastructure for AI-powered medicine is being built at scale. The question now is whether our safety frameworks can keep up.</p>
+                                
+                                <p>Thank you for reading PythRaSh's AI Newsletter! If you found this valuable, please share it with colleagues in biology and healthcare AI.</p>
+                                
+                                <p><strong>Have feedback or suggestions?</strong> Reply to this email - I read every response!</p>
+                                
+                                <p>See you next week!</p>
+                                
+                                <p><strong>Md Rasheduzzaman</strong></p>
+                            </div>
+                            
+                        </td>
+                    </tr>
+                    
+                    <!-- Share Section -->
+                    <tr>
+                        <td class="share-section">
+                            <h2>Share This Newsletter</h2>
+                            <p>Found this newsletter valuable? Share it with your network!</p>
+                            <div class="share-buttons">
+                                <a href="https://twitter.com/intent/tweet?text=%F0%9F%A7%AC%20This%20week%20in%20AI%20%2B%20Biology%3A%20EMBL%27s%20MAGIC%20platform%20tests%20a%20century-old%20cancer%20theory%2C%20DeepRare%20AI%20outperforms%20doctors%2C%20and%20%241B%20drug%20discovery%20labs%20are%20launching!%20Check%20out%20%40PythRaSh%27s%20newsletter%3A&url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn" target="_blank">Share on Twitter</a>
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&title=PythRaSh%27s%20AI%20Newsletter%20-%20AI%20%2B%20Biology%20Breakthroughs&summary=EMBL%27s%20MAGIC%20tests%20cancer%20theory%2C%20DeepRare%20outperforms%20doctors%2C%20NVIDIA-Lilly%20%241B%20lab" class="share-btn" target="_blank">Share on LinkedIn</a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&quote=Check%20out%20this%20week%27s%20AI%20%2B%20Biology%20breakthroughs" class="share-btn" target="_blank">Share on Facebook</a>
+                                <a href="mailto:?subject=PythRaSh%27s%20AI%20Newsletter%20-%20Must%20Read!&body=Hi%2C%0A%0AI%20thought%20you%27d%20find%20this%20week%27s%20AI%20%2B%20Biology%20newsletter%20interesting.%20It%20covers%20EMBL%27s%20MAGIC%20cancer%20platform%2C%20DeepRare%20AI%20for%20rare%20diseases%2C%20and%20NVIDIA-Lilly%27s%20%241B%20drug%20discovery%20lab.%0A%0ACheck%20it%20out%3A%20https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn">Forward via Email</a>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer">
+                            <div class="footer-links">
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Unsubscribe</a> |
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Update Preferences</a> |
+                                <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026-03-11.html">View in Browser</a>
+                            </div>
+                            
+                            <p><strong>PythRaSh's AI Newsletter</strong></p>
+                            <div class="address">
+                                Fleischerwiese 4, Greifswald-17489, Germany
+                            </div>
+                            
+                            <p style="margin-top: 20px;">
+                                <a href="https://mdrasheduz-zaman.github.io/PythRaSh/">Visit our website</a> |
+                                <a href="https://www.linkedin.com/in/md-rashed-uz-zaman">Connect on LinkedIn</a> |
+                                <a href="https://github.com/mdrasheduz-zaman">GitHub</a>
+                            </p>
+                            
+                            <p style="margin-top: 15px; font-size: 12px; color: #999;">
+                                Questions? Reply to this email or contact Md Rasheduzzaman<br>
+                                Email: md.rasheduzzaman.ugoe@gmail.com
+                            </p>
+                        </td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
