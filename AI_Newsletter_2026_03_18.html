@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PythRaSh's AI Newsletter - Week of March 18, 2026</title>
+    <style>
+        /* Reset styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111111; background-color: #f5f5f5; }
+        table { border-collapse: collapse; width: 100%; }
+        
+        /* Container */
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #FFFFFF; }
+        
+        /* Header */
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+        
+        /* Content sections */
+        .content { padding: 30px 20px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #667eea; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #111111; font-size: 20px; margin-bottom: 15px; }
+        .section p { margin-bottom: 15px; font-size: 16px; }
+        
+        /* Featured Event Card */
+        .event-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; box-shadow: 0 4px 8px rgba(102, 126, 234, 0.1); }
+        .event-card h3 { color: #667eea; font-size: 22px; margin-bottom: 15px; }
+        .event-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .event-card a:hover { text-decoration: underline; }
+        
+        /* Quick updates list */
+        .quick-updates { background: #f8f9ff; border-radius: 8px; padding: 20px; }
+        .quick-updates ul { list-style: none; }
+        .quick-updates li { margin-bottom: 15px; padding: 15px; background: white; border-radius: 6px; border-left: 3px solid #667eea; }
+        .quick-updates li strong { color: #667eea; }
+        .quick-updates a { color: #667eea; text-decoration: none; }
+        .quick-updates a:hover { text-decoration: underline; }
+        
+        /* Research papers */
+        .research-paper { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .research-paper h4 { color: #111111; font-size: 18px; margin-bottom: 10px; }
+        .research-paper a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .research-paper a:hover { text-decoration: underline; }
+        .impact-tag { background: #667eea; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 10px; }
+        
+        /* GitHub repos */
+        .repo-card { background: #f8f9ff; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 3px solid #667eea; }
+        .repo-card h4 { color: #111111; margin-bottom: 8px; }
+        .repo-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .repo-card a:hover { text-decoration: underline; }
+        .star-count { color: #666; font-size: 14px; }
+        
+        /* Products */
+        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .product-card h4 { color: #111111; margin-bottom: 8px; }
+        .product-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .product-card a:hover { text-decoration: underline; }
+        .upvote-count { background: #667eea; color: white; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+        
+        /* Learning blog */
+        .blog-card { background: linear-gradient(135deg, #f0f4ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .blog-card h3 { color: #667eea; font-size: 20px; margin-bottom: 10px; }
+        .blog-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .blog-card a:hover { text-decoration: underline; }
+        
+        /* Share section */
+        .share-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px 20px; text-align: center; }
+        .share-section h2 { color: white; margin-bottom: 20px; }
+        .share-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .share-btn { background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
+        .share-btn:hover { background: rgba(255,255,255,0.3); color: white; text-decoration: none; }
+        
+        /* Footer */
+        .footer { background: #f5f5f5; padding: 30px 20px; text-align: center; color: #666; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #667eea; text-decoration: none; margin: 0 10px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer p { font-size: 14px; margin-bottom: 10px; }
+        .footer .address { font-size: 12px; color: #999; margin-top: 20px; }
+        
+        /* Mobile responsive */
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .content { padding: 20px 15px !important; }
+            .header { padding: 30px 15px !important; }
+            .header h1 { font-size: 24px !important; }
+            .share-buttons { flex-direction: column !important; gap: 10px !important; }
+            .share-btn { display: block !important; width: 100% !important; }
+        }
+    </style>
+</head>
+<body>
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+            <td align="center" style="background-color: #f5f5f5; padding: 20px 0;">
+                <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0">
+                    <!-- View in Browser Link -->
+                    <tr>
+                        <td style="text-align: center; padding: 10px; font-size: 12px; color: #666;">
+                            <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026-03-18.html" style="color: #667eea; text-decoration: none;">View in Browser</a>
+                        </td>
+                    </tr>
+
+                    <!-- Header -->
+                    <tr>
+                        <td class="header">
+                            <h1>PythRaSh's AI Newsletter</h1>
+                            <p>Week of March 18, 2026</p>
+                        </td>
+                    </tr>
+                    
+                    <!-- Main Content -->
+                    <tr>
+                        <td class="content">
+                            
+                            <!-- Intro -->
+                            <div class="section">
+                                <p><strong>Hi, There!</strong> This week has been a landmark moment for structural biology and AI safety. The AlphaFold database just expanded to include <strong>1.7 million protein complex structures</strong> — a seismic shift that transforms our ability to understand how proteins interact, with direct implications for drug discovery and disease research. Meanwhile, the AI safety landscape grew more complex as both Anthropic and OpenAI began hiring weapons specialists, and AI deepfakes hit the midterm elections. On the tools front, open-source drug discovery is surging, new force field models are rewriting the rules of molecular dynamics, and federated learning is getting more robust for healthcare applications. Let's dive in! 🧬</p>
+                            </div>
+                            
+                            <!-- Event of the Week -->
+                            <div class="section">
+                                <h2>🚀 EVENT OF THE WEEK</h2>
+                                <div class="event-card">
+                                    <h3><a href="https://www.nature.com/articles/d41586-026-00787-3?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">AlphaFold Database Expands with 1.7 Million Protein Complex Structures</a></h3>
+                                    <p>The AlphaFold protein-structure database has reached a historic milestone by adding <strong>1.7 million high-confidence homodimer predictions</strong> — the first time the database includes predictions of protein complexes rather than just individual protein structures. A consortium of EMBL-EBI, Google DeepMind, NVIDIA, and Seoul National University collaborated to predict how identical protein pairs interact across 20 of the most studied species, including humans, mice, yeast, and WHO priority pathogens like <em>Mycobacterium tuberculosis</em>.</p>
+                                    
+                                    <p>An additional <strong>18 million lower-confidence homodimer predictions</strong> are available for bulk download, and heterodimer predictions (complexes of different proteins) are currently being analyzed for future release.</p>
+                                    
+                                    <p><strong>Why this matters:</strong> Protein-protein interactions are fundamental to virtually every biological process — from cell signaling to immune response to disease pathogenesis. This expansion unlocks entirely new dimensions of biological understanding, enabling researchers to study how proteins form functional complexes, identify drug targets at protein interfaces, and understand disease mechanisms at the molecular interaction level.</p>
+                                    
+                                    <p><strong>Key takeaways:</strong></p>
+                                    <ul>
+                                        <li>1.7M high-confidence homodimer structures now openly accessible</li>
+                                        <li>Covers 20 key species including humans and WHO priority pathogens</li>
+                                        <li>Consortium includes EMBL-EBI, Google DeepMind, NVIDIA, and Seoul National University</li>
+                                        <li>Heterodimer predictions (different protein pairs) are coming next</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Quick Updates -->
+                            <div class="section">
+                                <h2>⚡ Quick Updates</h2>
+                                <div class="quick-updates">
+                                    <ul>
+                                        <li><strong>UNC-Chapel Hill:</strong> Researchers are deploying AI and machine learning to accelerate antibody therapy development, using computational methods to predict and optimize antibody structures — potentially cutting years off biologic drug development timelines. <a href="https://www.unc.edu/posts/2026/03/03/ai-machine-learning-to-speed-antibody-therapy-development/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">UNC News</a></li>
+                                        
+                                        <li><strong>Bio-IT World:</strong> A comprehensive new report highlights how open-source tools are transforming drug discovery, with collaborative platforms like RDKit and molecular dynamics libraries enabling unprecedented cross-company collaboration in pharmaceutical pipelines. <a href="https://www.bio-itworld.com/news/2026/03/17/open-source--floats-all-boats--in-ai-driven-drug-discovery?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">Bio-IT World</a></li>
+                                        
+                                        <li><strong>Euronews:</strong> Both Anthropic and OpenAI are hiring weapons specialists — experts in chemicals and explosives — to build safety guardrails against catastrophic AI misuse, following the Pentagon-Anthropic standoff over autonomous weapons restrictions. <a href="https://www.euronews.com/next/2026/03/18/anthropic-and-openai-are-hiring-weapons-specialists-to-prevent-catastrophic-misuse?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">Euronews</a></li>
+                                        
+                                        <li><strong>Insilico Medicine:</strong> Launched Science MMAI Gym, a domain-specific training environment that transforms open-source LLMs like Qwen, Llama, and Mistral into pharmaceutical-grade drug discovery engines for real-world therapeutic development. <a href="https://www.opensourceforu.com/2026/01/insilico-opens-science-mmai-gym-to-turn-open-source-llms-into-drug-discovery-engines/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">OpenSourceForYou</a></li>
+                                        
+                                        <li><strong>ScienceDaily:</strong> New research demonstrates that generative AI can independently generate analysis algorithms from datasets, compressing months of biomedical data processing into hours — freeing researchers to focus on interpretation and experimental design. <a href="https://www.sciencedaily.com/releases/2026/02/260221060942.htm?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">ScienceDaily</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- Research Papers -->
+                            <div class="section">
+                                <h2>📚 Top Research Papers</h2>
+                                
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/pdf/2603.16770v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">Garnet: Training a Force Field for Proteins and Small Molecules from Scratch</a></h4>
+                                    <p><strong>Authors:</strong> Blanco-González et al. | <strong>Institution:</strong> Multiple | <strong>arXiv:</strong> q-bio.BM</p>
+                                    <p>Garnet is a graph neural network that assigns all force field parameters for diverse molecules using continuous atom typing. Trained on quantum mechanical, condensed phase, and protein NMR data <em>without</em> existing parameters, it matches current force fields on small molecules, folded proteins, protein complexes, and disordered proteins. It also reveals that the double exponential potential is a flexible alternative to the Lennard-Jones potential.</p>
+                                    <span class="impact-tag">Paradigm Shift in Molecular Dynamics</span>
+                                </div>
+                                
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/pdf/2603.16789v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">Conservative Continuous-Time Treatment Optimization</a></h4>
+                                    <p><strong>Authors:</strong> Schneider, Manten, Kilbertus | <strong>Institution:</strong> Multiple | <strong>arXiv:</strong> cs.LG, q-bio.QM</p>
+                                    <p>Develops a conservative framework for optimizing treatment strategies from irregularly sampled patient trajectories. Using controlled stochastic differential equations with a signature-based MMD regularizer, the framework prevents AI from recommending unsafe out-of-support treatments by penalizing plans that deviate from observed clinical data.</p>
+                                    <span class="impact-tag">Clinical AI Safety</span>
+                                </div>
+                                
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/pdf/2603.16846v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">FedAOT: Byzantine-Robust Federated Learning via Dynamic Meta-Layer Aggregation</a></h4>
+                                    <p><strong>Authors:</strong> Das, Sen | <strong>Institution:</strong> Multiple | <strong>arXiv:</strong> cs.LG</p>
+                                    <p>Federated learning enables multi-hospital AI training while keeping patient data private, but is vulnerable to malicious updates. FedAOT uses a meta-learning-inspired adaptive aggregation framework that dynamically weights client updates based on reliability, suppressing adversarial influence without predefined thresholds.</p>
+                                    <span class="impact-tag">Privacy-Preserving Healthcare AI</span>
+                                </div>
+                                
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/pdf/2603.16843v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">LEAFE: Learning Feedback-Grounded Agency from Reflective Experience</a></h4>
+                                    <p><strong>Authors:</strong> Ge et al. | <strong>Institution:</strong> Multiple | <strong>arXiv:</strong> cs.AI</p>
+                                    <p>LEAFE proposes a framework where LLM agents learn to recover from mistakes by summarizing environment feedback, backtracking to decision points, and exploring alternative paths. These corrections are distilled through supervised fine-tuning, achieving up to 14% gains on Pass@128 across agentic tasks — foundational for reliable AI in healthcare settings.</p>
+                                    <span class="impact-tag">Agentic AI Reliability</span>
+                                </div>
+                            </div>
+                            
+                            <!-- GitHub Repos -->
+                            <div class="section">
+                                <h2>💻 Top GitHub Repos of the Week</h2>
+                                
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/jwohlwend/boltz?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">Boltz</a></h4>
+                                    <p class="star-count">⭐ 3,842 stars | Biomolecular Interaction Prediction</p>
+                                    <p>State-of-the-art open-source biomolecular interaction prediction from MIT CSAIL. Predicts how proteins, DNA, RNA, and small molecules interact — a critical tool for computational drug discovery and understanding disease mechanisms at the molecular level. Especially relevant given this week's AlphaFold database expansion.</p>
+                                </div>
+                                
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/pachterlab/gget?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">gget</a></h4>
+                                    <p class="star-count">⭐ 1,108 stars | Genomic Database Querying</p>
+                                    <p>Developed by Caltech's Pachter Lab, gget is a free CLI tool and Python package for efficiently querying genomic databases including Ensembl, UniProt, and NCBI. Streamlines fetching gene sequences, protein structures, and functional annotations — an essential utility for any computational biology workflow.</p>
+                                </div>
+                                
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/mastra-ai/mastra?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">Mastra</a></h4>
+                                    <p class="star-count">⭐ 22,112 stars | AI Agent Framework</p>
+                                    <p>From the team behind Gatsby, Mastra is a comprehensive AI-powered application and agent framework with built-in RAG, workflows, and integrations. Its workflow orchestration is valuable for building automated research pipelines, lab data processing agents, and AI-powered literature review systems in biology.</p>
+                                </div>
+                                
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/QwenLM/Qwen-Agent?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">Qwen-Agent</a></h4>
+                                    <p class="star-count">⭐ 15,667 stars | Agent Framework with MCP Support</p>
+                                    <p>Alibaba's Qwen-Agent features Function Calling, MCP support, and Code Interpreter capabilities built on Qwen>=3.0. For biomedical researchers, it enables building custom AI agents that query databases, execute analysis code, and integrate with scientific APIs for automated bioinformatics workflows.</p>
+                                </div>
+                                
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/VoltAgent/voltagent?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">VoltAgent</a></h4>
+                                    <p class="star-count">⭐ 6,810 stars | AI Agent Engineering Platform</p>
+                                    <p>Open-source TypeScript AI Agent Engineering Platform emphasizing predictability and fault tolerance. In healthcare, it powers telemedicine bots, patient intake agents, and automated clinical documentation systems — with reliability guarantees for mission-critical applications.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Learning Blog -->
+                            <div class="section">
+                                <h2>📖 Learning Blog of the Week</h2>
+                                <div class="blog-card">
+                                    <h3><a href="https://www.mdpi.com/2079-7737/14/10/1453?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">AI and Machine Learning in Biology: From Genes to Proteins</a></h3>
+                                    <p><strong>Publication:</strong> MDPI Biology</p>
+                                    <p>This comprehensive review explores how AI and machine learning are revolutionizing biological research — from genomics and gene expression analysis to protein structure prediction and drug discovery. It covers foundation models adapted for biological sequences (like Evo for de novo protein design), deep learning for medical imaging, and computational approaches to predicting genetic mutation effects.</p>
+                                    <p><strong>What you'll learn:</strong></p>
+                                    <ul>
+                                        <li>How foundation models are being adapted for biological sequence understanding</li>
+                                        <li>Current state of AI-driven protein structure prediction and design</li>
+                                        <li>Practical applications of deep learning in genomics and clinical diagnostics</li>
+                                        <li>Key challenges and future directions in computational biology</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- AI Products -->
+                            <div class="section">
+                                <h2>🛠️ Top AI Products of the Week</h2>
+                                
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/naoma?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">Naoma AI Demo Agent</a></h4>
+                                    <p><span class="upvote-count">665 upvotes</span> | Category: B2B SaaS / Sales</p>
+                                    <p>The first video AI demo agent for B2B SaaS, delivering live, personalized demos in any language, 24/7. For healthcare SaaS companies, this could transform how clinical tools, diagnostic software, and EHR integrations are demonstrated to busy healthcare professionals — no more weeks-long demo booking cycles.</p>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/mulerun?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">MuleRun</a></h4>
+                                    <p><span class="upvote-count">587 upvotes</span> | Category: AI Productivity</p>
+                                    <p>A self-evolving personal AI that learns your work habits, decision patterns, and preferences. Runs 24/7 on a dedicated cloud VM and proactively prepares what you need. For research scientists, an AI that genuinely adapts to individual analysis workflows could save hours of repetitive work per week.</p>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/training-data-generator?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">Lightning Rod</a></h4>
+                                    <p><span class="upvote-count">354 upvotes</span> | Category: ML Training Data</p>
+                                    <p>Lightning Rod SDK converts real-world data — clinical notes, research papers, pathology reports — into verified, production-ready training datasets in hours using Python. Essential for biomedical AI researchers who need labeled datasets without manual curation or synthetic guesswork.</p>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/pinnacle?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18">Pinnacle</a></h4>
+                                    <p><span class="upvote-count">338 upvotes</span> | Category: Digital Health</p>
+                                    <p>An AI brain performance coach that uses built-in iPhone sensors to measure cognitive metrics and trains users through natural conversation. At the frontier of personalized digital therapeutics, Pinnacle could benefit healthcare professionals facing burnout and researchers needing sustained cognitive performance.</p>
+                                </div>
+                            </div>
+
+                            <!-- AI Criticism & Concerns -->
+                            <div class="section">
+                                <h2>⚠️ AI Criticism & Concerns</h2>
+                                
+                                <div class="product-card">
+                                    <h4>Pentagon-Anthropic Standoff Exposes AI Weapons Guardrails Crisis</h4>
+                                    <p>The Pentagon cancelled Anthropic's $200M contract and designated it a "supply chain risk" after the company insisted on contractual prohibitions against autonomous weapons use. OpenAI quickly secured a new defense deal with softer language. This saga exposes the fundamental tension between AI safety principles and national security demands — with implications for how AI companies navigate military contracts.</p>
+                                    <p><a href="https://fortune.com/2026/03/05/anthropic-openai-feud-pentagon-dispute-ai-safety-dilemma-personalities/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18" target="_blank">Read more at Fortune</a></p>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <h4>NCD Warns Senate: AI Risks Importing Disability Bias into Healthcare</h4>
+                                    <p>The National Council on Disability testified before the U.S. Senate, warning that AI technologies may develop the same biases about people with disabilities that healthcare professionals already harbor. The NCD urged Congress to ensure AI training datasets include disabled populations before biased systems become embedded in clinical decision-making at scale.</p>
+                                    <p><a href="https://www.ncd.gov/2026/03/04/ncd-warns-senate-committee-on-danger-of-importing-bias-into-healthcare-through-ai/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18" target="_blank">Read the NCD statement</a></p>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <h4>AI Deepfake Warfare Hits 2026 Midterm Elections</h4>
+                                    <p>Senate Republicans released an AI-fabricated ad of Democratic candidate James Talarico, marking the latest escalation in AI-powered political manipulation. No comprehensive federal law regulates political deepfakes, and even Texas's strict law only applies 30 days before elections — leaving most of the campaign cycle unprotected from AI-generated disinformation.</p>
+                                    <p><a href="https://www.cnn.com/2026/03/13/politics/james-talarico-ai-deepfake-republicans-midterms?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18" target="_blank">Read more at CNN</a></p>
+                                </div>
+                                
+                                <div class="product-card">
+                                    <h4>EU AI Transparency Code: Can Voluntary Standards Keep Up?</h4>
+                                    <p>The EU's Code of Practice for AI-generated content transparency is expected by mid-2026, preceding binding EU AI Act rules in August. While requiring machine-readable labeling of synthetic content, critics argue voluntary codes may be insufficient given how rapidly generative AI advances and the ease of circumvention by bad actors.</p>
+                                    <p><a href="https://www.techpolicy.press/what-the-eus-new-ai-code-of-practice-means-for-labeling-deepfakes/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_18" target="_blank">Read more at TechPolicy.Press</a></p>
+                                </div>
+                            </div>
+            
+                            <!-- Closing Note -->
+                            <div class="section">
+                                <h2>Closing Note</h2>
+                                <p>This week reminds us that AI's impact on biology is accelerating at breakneck speed. The AlphaFold database's expansion to protein complexes represents a quantum leap — moving from understanding individual proteins to understanding how they interact, which is where the real biology happens. Combined with breakthroughs like Garnet's automated force field discovery and conservative treatment optimization frameworks, we're seeing AI mature from a tool that assists biologists to one that fundamentally reshapes how we study life itself.</p>
+                                
+                                <p>But as our tools grow more powerful, so do the stakes. The Pentagon-Anthropic standoff, AI deepfakes in elections, and disability bias warnings remind us that building the technology is only half the challenge — building the governance frameworks to use it responsibly is equally urgent.</p>
+                                
+                                <p>Thank you for reading PythRaSh's AI Newsletter! If you found this valuable, please share it with colleagues and friends interested in AI.</p>
+                                
+                                <p><strong>Have feedback or suggestions?</strong> Reply to this email — I read every response!</p>
+                                
+                                <p>See you next week!</p>
+                                
+                                <p><strong>Md Rasheduzzaman</strong></p>
+                            </div>
+                            
+                        </td>
+                    </tr>
+                    
+                    <!-- Share Section -->
+                    <tr>
+                        <td class="share-section">
+                            <h2>Share This Newsletter</h2>
+                            <p>Found this newsletter valuable? Share it with your network!</p>
+                            <div class="share-buttons">
+                                <a href="https://twitter.com/intent/tweet?text=%F0%9F%A7%AC%20This%20week%20in%20AI%20%2B%20Biology%3A%20AlphaFold%20adds%201.7M%20protein%20complex%20structures%2C%20Garnet%20automates%20force%20field%20discovery%2C%20and%20the%20Pentagon-Anthropic%20standoff%20deepens.%20Full%20newsletter%20%E2%86%92%20%40PythRaSh&url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn" target="_blank">Share on Twitter</a>
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&title=PythRaSh%27s%20AI%20Newsletter%20-%20AlphaFold%20Protein%20Complexes%20%26%20More&summary=AlphaFold%20database%20expands%20with%201.7M%20protein%20complex%20structures%2C%20open-source%20drug%20discovery%20surges%2C%20and%20AI%20safety%20challenges%20deepen" class="share-btn" target="_blank">Share on LinkedIn</a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&quote=Check%20out%20this%20week%27s%20AI%20%2B%20Biology%20breakthroughs%20-%20AlphaFold%20protein%20complexes%20and%20more" class="share-btn" target="_blank">Share on Facebook</a>
+                                <a href="mailto:?subject=PythRaSh%27s%20AI%20Newsletter%20-%20Must%20Read!&body=Hi%2C%0A%0AI%20thought%20you%27d%20find%20this%20week%27s%20AI%20%2B%20Biology%20newsletter%20interesting.%20It%20covers%20AlphaFold%27s%20expansion%20to%20protein%20complexes%2C%20Garnet%20force%20field%20discovery%2C%20and%20critical%20AI%20safety%20developments.%0A%0ACheck%20it%20out%3A%20https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn">Forward via Email</a>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer">
+                            <div class="footer-links">
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Unsubscribe</a> |
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Update Preferences</a> |
+                                <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026-03-18.html">View in Browser</a>
+                            </div>
+                            
+                            <p><strong>PythRaSh's AI Newsletter</strong></p>
+                            <div class="address">
+                                Fleischerwiese 4, Greifswald-17489, Germany
+                            </div>
+                            
+                            <p style="margin-top: 20px;">
+                                <a href="https://mdrasheduz-zaman.github.io/PythRaSh/">Visit our website</a> |
+                                <a href="https://www.linkedin.com/in/md-rashed-uz-zaman">Connect on LinkedIn</a> |
+                                <a href="https://github.com/mdrasheduz-zaman">GitHub</a>
+                            </p>
+                            
+                            <p style="margin-top: 15px; font-size: 12px; color: #999;">
+                                Questions? Reply to this email or contact Md Rasheduzzaman<br>
+                                Email: md.rasheduzzaman.ugoe@gmail.com
+                            </p>
+                        </td>
+                    </tr>
+                    
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
