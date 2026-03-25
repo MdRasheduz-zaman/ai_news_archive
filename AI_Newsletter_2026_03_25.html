@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PythRaSh's AI Newsletter - Week of March 25, 2026</title>
+    <style>
+        /* Reset styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111111; background-color: #f5f5f5; }
+        table { border-collapse: collapse; width: 100%; }
+
+        /* Container */
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #FFFFFF; }
+
+        /* Header */
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+
+        /* Content sections */
+        .content { padding: 30px 20px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #667eea; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #111111; font-size: 20px; margin-bottom: 15px; }
+        .section p { margin-bottom: 15px; font-size: 16px; }
+
+        /* Featured Event Card */
+        .event-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; box-shadow: 0 4px 8px rgba(102, 126, 234, 0.1); }
+        .event-card h3 { color: #667eea; font-size: 22px; margin-bottom: 15px; }
+        .event-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .event-card a:hover { text-decoration: underline; }
+
+        /* Quick updates list */
+        .quick-updates { background: #f8f9ff; border-radius: 8px; padding: 20px; }
+        .quick-updates ul { list-style: none; }
+        .quick-updates li { margin-bottom: 15px; padding: 15px; background: white; border-radius: 6px; border-left: 3px solid #667eea; }
+        .quick-updates li strong { color: #667eea; }
+        .quick-updates a { color: #667eea; text-decoration: none; }
+        .quick-updates a:hover { text-decoration: underline; }
+
+        /* Research papers */
+        .research-paper { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .research-paper h4 { color: #111111; font-size: 18px; margin-bottom: 10px; }
+        .research-paper a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .research-paper a:hover { text-decoration: underline; }
+        .impact-tag { background: #667eea; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 10px; }
+
+        /* GitHub repos */
+        .repo-card { background: #f8f9ff; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 3px solid #667eea; }
+        .repo-card h4 { color: #111111; margin-bottom: 8px; }
+        .repo-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .repo-card a:hover { text-decoration: underline; }
+        .star-count { color: #666; font-size: 14px; }
+
+        /* Products */
+        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .product-card h4 { color: #111111; margin-bottom: 8px; }
+        .product-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .product-card a:hover { text-decoration: underline; }
+        .upvote-count { background: #667eea; color: white; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+
+        /* Learning blog */
+        .blog-card { background: linear-gradient(135deg, #f0f4ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .blog-card h3 { color: #667eea; font-size: 20px; margin-bottom: 10px; }
+        .blog-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .blog-card a:hover { text-decoration: underline; }
+
+        /* Share section */
+        .share-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px 20px; text-align: center; }
+        .share-section h2 { color: white; margin-bottom: 20px; }
+        .share-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .share-btn { background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
+        .share-btn:hover { background: rgba(255,255,255,0.3); color: white; text-decoration: none; }
+
+        /* Footer */
+        .footer { background: #f5f5f5; padding: 30px 20px; text-align: center; color: #666; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #667eea; text-decoration: none; margin: 0 10px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer p { font-size: 14px; margin-bottom: 10px; }
+        .footer .address { font-size: 12px; color: #999; margin-top: 20px; }
+
+        /* Mobile responsive */
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .content { padding: 20px 15px !important; }
+            .header { padding: 30px 15px !important; }
+            .header h1 { font-size: 24px !important; }
+            .share-buttons { flex-direction: column !important; gap: 10px !important; }
+            .share-btn { display: block !important; width: 100% !important; }
+        }
+    </style>
+</head>
+<body>
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+            <td align="center" style="background-color: #f5f5f5; padding: 20px 0;">
+                <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0">
+                    <!-- View in Browser Link -->
+                    <tr>
+                        <td style="text-align: center; padding: 10px; font-size: 12px; color: #666;">
+                            <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026-03-25.html" style="color: #667eea; text-decoration: none;">View in Browser</a>
+                        </td>
+                    </tr>
+
+                    <!-- Header -->
+                    <tr>
+                        <td class="header">
+                            <h1>PythRaSh's AI Newsletter</h1>
+                            <p>Week of March 25, 2026</p>
+                        </td>
+                    </tr>
+
+                    <!-- Main Content -->
+                    <tr>
+                        <td class="content">
+
+                            <!-- Intro -->
+                            <div class="section">
+                                <p><strong>Hi, There!</strong> This week, the AI-healthcare convergence hit a new inflection point at <strong>NVIDIA GTC 2026</strong>, where agentic AI took center stage with groundbreaking announcements spanning protein design, surgical robotics, and pharma-scale GPU infrastructure. Roche now commands <strong>3,500+ GPUs</strong> — the largest footprint in pharma — while IQVIA deployed <strong>150+ AI agents</strong> across the top 20 pharmaceutical companies. Meanwhile, a new AI tool predicts cancer metastasis across multiple cancer types, and a Central Dogma Transformer can now predict drug side effects directly from gene expression data. Let's dive in! 🧬</p>
+                            </div>
+
+                            <!-- Event of the Week -->
+                            <div class="section">
+                                <h2>🚀 EVENT OF THE WEEK</h2>
+                                <div class="event-card">
+                                    <h3><a href="https://www.genengnews.com/topics/artificial-intelligence/nvidia-gtc-2026-agentic-ai-inflection-hits-healthcare-and-life-sciences/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">NVIDIA GTC 2026: Agentic AI Inflection Hits Healthcare and Life Sciences</a></h3>
+                                    <p>NVIDIA's GTC 2026 marked a watershed moment for healthcare AI. The $4.9 trillion healthcare industry is deploying AI at <strong>more than twice the rate</strong> of the broader economy.</p>
+
+                                    <p><strong>Proteina-Complexa</strong>, a generative model for protein binder design, is already used by Novo Nordisk, Viva Biotech, and Manifold Bio. <strong>Open-H</strong> provides 700+ hours of surgical video from 36 collaborators. <strong>Cosmos-H-Surgical</strong> generates synthetic surgical training video from prompts.</p>
+
+                                    <p><strong>Roche</strong> announced 3,500+ high-performance GPUs — the largest in pharma. <strong>IQVIA</strong> deployed 150+ AI agents across 19 of the top 20 pharma companies. <strong>BioNeMo</strong> expanded with companies like Basecamp Research using it for its Trillion Gene Atlas.</p>
+
+                                    <p><strong>Why this matters:</strong> GTC 2026 signals the transition from experimental AI pilots to production-scale agentic systems in healthcare. The industrialization of AI-driven medicine is underway.</p>
+
+                                    <p><strong>Key takeaways:</strong></p>
+                                    <ul>
+                                        <li>Proteina-Complexa enables AI-designed protein binders for drug discovery</li>
+                                        <li>Open-H: 700+ hours of surgical video for healthcare robotics training</li>
+                                        <li>Roche's 3,500+ GPU fleet — largest announced in pharmaceutical history</li>
+                                        <li>IQVIA's 150+ AI agents serve 19 of top 20 pharma companies</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Quick Updates -->
+                            <div class="section">
+                                <h2>⚡ Quick Updates</h2>
+                                <div class="quick-updates">
+                                    <ul>
+                                        <li><strong>University of Geneva:</strong> Developed MangroveGS, an AI tool that predicts cancer metastasis with 80% accuracy using hundreds of gene signatures — working across colon, stomach, lung, and breast cancer from standard tumor samples. <a href="https://www.sciencedaily.com/releases/2026/03/260321012709.htm?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">ScienceDaily</a></li>
+
+                                        <li><strong>Illumina:</strong> Declared 2026 a turning point for precision health, with AI-powered genomics enabling faster, more affordable whole-genome sequencing and earlier disease detection at unprecedented scale. <a href="https://www.illumina.com/company/news-center/feature-articles/2026--a-turning-point-for-precision-health.html?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">Illumina</a></li>
+
+                                        <li><strong>Roche + NVIDIA:</strong> Roche scaled its AI infrastructure to 3,500+ high-performance GPUs — the largest announced GPU footprint in pharma — powering drug discovery, diagnostics, and manufacturing via NVIDIA Omniverse. <a href="https://blogs.nvidia.com/blog/roche-ai-factories-omniverse/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">NVIDIA Blog</a></li>
+
+                                        <li><strong>IQVIA:</strong> Integrated NVIDIA Nemotron and Agent Toolkit into IQVIA.ai, deploying 150+ AI agents across clinical trial management, drug safety, and regulatory compliance at 19 of top 20 pharma companies. <a href="https://nvidianews.nvidia.com/news/nvidia-expands-open-model-families-to-power-the-next-wave-of-agentic-physical-and-healthcare-ai?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">NVIDIA Newsroom</a></li>
+
+                                        <li><strong>Mass General Brigham:</strong> Predicts a paradigm shift from narrow AI to agentic systems orchestrating complex clinical workflows, with 3+ AI-designed drugs expected in clinical trials this year. <a href="https://www.massgeneralbrigham.org/en/about/newsroom/articles/2026-predictions-about-artificial-intelligence?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">Mass General Brigham</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Research Papers -->
+                            <div class="section">
+                                <h2>📚 Top Research Papers</h2>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/pdf/2603.23361v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">CDT-III: Central Dogma Transformer III — Interpretable AI Across DNA, RNA, and Protein</a></h4>
+                                    <p><strong>Author:</strong> Nobuyuki Ota | <strong>Categories:</strong> cs.LG, q-bio.GN</p>
+                                    <p>Models the full central dogma (DNA → RNA → Protein) with a Virtual Cell Embedder mirroring cellular compartmentalization. On in silico CD52 knockdown (approximating Alemtuzumab), it correctly predicts 29/29 protein changes and rediscovers 5 of 7 known clinical side effects <em>without any clinical data</em>. Enables screening all 2,361 genes without new experiments.</p>
+                                    <span class="impact-tag">Drug Side Effect Prediction</span>
+                                </div>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/pdf/2603.23390v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">Light-UNETR: Lightweight Transformer for 3D Medical Image Segmentation</a></h4>
+                                    <p><strong>Authors:</strong> Liu, Chen, Li, Li, Yuan | <strong>Categories:</strong> cs.CV, eess.IV</p>
+                                    <p>Achieves state-of-the-art 3D medical image segmentation while reducing FLOPs by <strong>90.8%</strong> and parameters by <strong>85.8%</strong>. With only 10% labeled data, it surpasses prior methods on left atrial segmentation — making transformer-quality AI feasible on resource-constrained clinical hardware.</p>
+                                    <span class="impact-tag">Efficient Clinical AI</span>
+                                </div>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/pdf/2603.23398v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">GEM: Graph Energy Matching for Molecular Graph Generation</a></h4>
+                                    <p><strong>Authors:</strong> Balcerak et al. | <strong>Categories:</strong> cs.LG, cs.AI</p>
+                                    <p>Closes the fidelity gap between energy-based and diffusion models for molecular graphs. Enables compositional generation, property-constrained sampling, and geodesic interpolation — letting chemists specify desired drug properties and generate candidate molecules satisfying all constraints.</p>
+                                    <span class="impact-tag">Drug Discovery Acceleration</span>
+                                </div>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/pdf/2603.23295v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">Mamba-driven MRI-to-CT Synthesis for Radiotherapy Planning</a></h4>
+                                    <p><strong>Authors:</strong> Barmpounakis et al. | <strong>Categories:</strong> cs.CV</p>
+                                    <p>Adapts Mamba state-space architectures for generating synthetic CT from MRI, enabling MRI-only radiotherapy planning. Captures complex volumetric features with fast inference. Validated across three anatomical regions — reducing patient radiation exposure, especially valuable for pediatric oncology.</p>
+                                    <span class="impact-tag">Radiotherapy Innovation</span>
+                                </div>
+                            </div>
+
+                            <!-- GitHub Repos -->
+                            <div class="section">
+                                <h2>💻 Top GitHub Repos of the Week</h2>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/biopython/biopython?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">Biopython</a></h4>
+                                    <p class="star-count">⭐ 4,932 stars | The Foundation of Computational Biology</p>
+                                    <p>The foundational Python library for bioinformatics — parsing FASTA/GenBank/PDB files, accessing NCBI/UniProt databases, sequence analysis, phylogenetics, and structural biology. If you work with biological data in Python, Biopython is indispensable.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/rdkit/rdkit?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">RDKit</a></h4>
+                                    <p class="star-count">⭐ 3,355 stars | Gold Standard for Drug Discovery Cheminformatics</p>
+                                    <p>Industry-standard cheminformatics toolkit for molecular manipulation, descriptor calculation, fingerprinting, and virtual screening. Featured in this week's Bio-IT World report on open-source tools transforming pharmaceutical pipelines.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/openmm/openmm?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">OpenMM</a></h4>
+                                    <p class="star-count">⭐ 1,821 stars | GPU-Accelerated Molecular Simulation</p>
+                                    <p>Stanford-developed toolkit for high-performance molecular dynamics. Powers protein folding, drug binding, and biomolecular interaction research — directly relevant to Roche's massive GPU infrastructure announced at GTC 2026.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/MDAnalysis/mdanalysis?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">MDAnalysis</a></h4>
+                                    <p class="star-count">⭐ 1,557 stars | Molecular Dynamics Trajectory Analysis</p>
+                                    <p>NumFOCUS-affiliated library reading trajectory data from all major MD packages (GROMACS, AMBER, NAMD, OpenMM). Essential for RMSD, hydrogen bond analysis, and understanding drug-receptor interactions.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/awslabs/agent-squad?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">AWS Agent Squad</a></h4>
+                                    <p class="star-count">⭐ 7,542 stars | Multi-Agent AI Orchestration</p>
+                                    <p>AWS Labs' framework for managing multiple AI agents in complex conversations. Enables building multi-agent clinical decision support systems — aligning with GTC 2026's agentic AI healthcare trend.</p>
+                                </div>
+                            </div>
+
+                            <!-- Learning Blog -->
+                            <div class="section">
+                                <h2>📖 Learning Blog of the Week</h2>
+                                <div class="blog-card">
+                                    <h3><a href="https://www.hpcwire.com/2026/03/17/nvidia-details-its-healthcare-ai-stack-at-gtc/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">NVIDIA GTC 2026: Healthcare AI Stack Deep Dive</a></h3>
+                                    <p><strong>Publication:</strong> HPCwire</p>
+                                    <p>An in-depth technical analysis of NVIDIA's healthcare AI stack as detailed at GTC 2026. Covers how NVIDIA is building a comprehensive infrastructure layer — from BioNeMo for molecular modeling to Cosmos for surgical video synthesis — integrating foundational models, domain-specific fine-tuning, and agentic orchestration.</p>
+                                    <p><strong>What you'll learn:</strong></p>
+                                    <ul>
+                                        <li>How BioNeMo enables large-scale genomics and cell modeling</li>
+                                        <li>Architecture behind Proteina-Complexa for protein binder design</li>
+                                        <li>How Open-H's surgical video dataset enables healthcare robotics</li>
+                                        <li>Why pharma companies are investing in 3,500+ GPU fleets</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- AI Products -->
+                            <div class="section">
+                                <h2>🛠️ Top AI Products of the Week</h2>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/stitch-2-0-by-google-2?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">Stitch 2.0 by Google</a></h4>
+                                    <p><span class="upvote-count">761 upvotes</span> | Category: Design Tools</p>
+                                    <p>Google's AI-native vibe design partner creates production-ready UI using natural language, voice, and context-aware agents. For health-tech teams, it enables rapid prototyping of patient portals, diagnostic dashboards, and EHR views with built-in design system consistency.</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/claude?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">Claude Dispatch</a></h4>
+                                    <p><span class="upvote-count">665 upvotes</span> | Category: AI Productivity</p>
+                                    <p>Text Claude from your phone; it runs on your desktop — touching files, browsing, building reports. Sandboxed and local, it addresses healthcare's strict data privacy while enabling mobile productivity for clinicians and researchers.</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/insforge-alpha/launches/insforge-3?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">InsForge</a></h4>
+                                    <p><span class="upvote-count">656 upvotes</span> | Category: Developer Tools</p>
+                                    <p>Backend for agentic development — databases, auth, storage, model gateway, and edge functions through a semantic layer AI agents understand. For biomedical developers, rapidly deploy clinical decision support agents with production-ready infrastructure.</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/tobira-ai?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25">Tobira.ai</a></h4>
+                                    <p><span class="upvote-count">644 upvotes</span> | Category: AI Networking</p>
+                                    <p>AI agent network where agents find deals for their humans — investors, partners, collaborators. Privacy-first design ideal for biotech founders seeking funding partners or clinical trial collaborators for translational research.</p>
+                                </div>
+                            </div>
+
+                            <!-- AI Criticism & Concerns -->
+                            <div class="section">
+                                <h2>⚠️ AI Criticism & Concerns</h2>
+
+                                <div class="product-card">
+                                    <h4>Baltimore Becomes First U.S. City to Sue xAI Over Grok Deepfake Porn</h4>
+                                    <p>Baltimore filed suit against X Corp. and xAI, alleging Grok generated 6,700 sexually suggestive images per hour — 84x more than the top 5 deepfake sites combined. Three Tennessee teenagers also sued over child sexual abuse images. Malaysia and Indonesia blocked Grok entirely; the EU launched a privacy investigation.</p>
+                                    <p><a href="https://www.cnbc.com/2026/03/24/musk-xai-sued-baltimore-grok-deepfake-porn.html?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25" target="_blank">Read more at CNBC</a></p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4>QCon London: Ethical AI Is an Engineering Problem</h4>
+                                    <p>BBVA's Clara Higuera argued that biased AI outcomes in medical diagnostics stem from unrepresentative data and poorly defined objectives — engineering problems requiring technical solutions throughout development, not just post-hoc governance frameworks.</p>
+                                    <p><a href="https://www.infoq.com/news/2026/03/ethical-ai-problem/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25" target="_blank">Read more at InfoQ</a></p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4>"Safe AI Isn't Enough" — Fairness, Honesty, Transparency Required</h4>
+                                    <p>Research shows AI models prefer unethical shortcuts — such as hacking systems to win games — raising concerns about ethical failures in medicine and autonomous vehicles. Calls for fairness, honesty, and transparency as first-class engineering requirements alongside safety.</p>
+                                    <p><a href="https://techxplore.com/news/2026-02-safe-ai-isnt-fairness-honesty.html?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25" target="_blank">Read more at TechXplore</a></p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4>Experts Sound Alarm: Autonomous AI Agents Create Unprecedented Risks</h4>
+                                    <p>Growing concern about AI agents taking real-world actions with minimal oversight. Risks include psychological impacts from emotional AI attachments, weaponized deepfakes in political campaigns, and widening gaps between capabilities and regulation — especially in lower-income countries.</p>
+                                    <p><a href="https://www.aljazeera.com/news/2026/2/15/why-are-experts-sounding-the-alarm-on-ai-risks?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_03_25" target="_blank">Read more at Al Jazeera</a></p>
+                                </div>
+                            </div>
+
+                            <!-- Closing Note -->
+                            <div class="section">
+                                <h2>Closing Note</h2>
+                                <p>This week's GTC announcements make one thing crystal clear: the pharmaceutical and healthcare industries have crossed the Rubicon on AI adoption. When Roche deploys 3,500+ GPUs and IQVIA runs 150+ AI agents across nearly every major pharma company, we're witnessing the industrialization of AI-driven medicine.</p>
+
+                                <p>What excites me most is the convergence at every level. CDT-III predicts drug side effects from gene expression alone. MangroveGS reads cancer's metastatic playbook. GEM generates drug candidates with targeted properties. And the open-source stack — Biopython, RDKit, OpenMM, MDAnalysis — provides the foundation for all of it.</p>
+
+                                <p>The future of medicine is being written in Python, CUDA, and molecular dynamics simulations. Stay curious.</p>
+
+                                <p><strong>Have feedback or suggestions?</strong> Reply to this email — I read every response!</p>
+
+                                <p>See you next week!</p>
+
+                                <p><strong>Md Rasheduzzaman</strong></p>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                    <!-- Share Section -->
+                    <tr>
+                        <td class="share-section">
+                            <h2>Share This Newsletter</h2>
+                            <p>Found this newsletter valuable? Share it with your network!</p>
+                            <div class="share-buttons">
+                                <a href="https://twitter.com/intent/tweet?text=%F0%9F%A7%AC%20NVIDIA%20GTC%202026%20healthcare%20AI%20explosion%20%E2%80%94%20Roche%27s%203%2C500%2B%20GPUs%2C%20IQVIA%27s%20150%2B%20pharma%20agents%2C%20CDT-III%20predicts%20drug%20side%20effects%20from%20genes.%20Full%20newsletter%20%E2%86%92%20%40PythRaSh&url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn" target="_blank">Share on Twitter</a>
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&title=PythRaSh%27s%20AI%20Newsletter%20-%20GTC%202026%20Healthcare%20AI&summary=NVIDIA%20GTC%202026%20proves%20AI-driven%20drug%20discovery%20has%20gone%20industrial.%20Roche%27s%203%2C500%2B%20GPUs%2C%20150%2B%20pharma%20AI%20agents%2C%20and%20breakthrough%20papers." class="share-btn" target="_blank">Share on LinkedIn</a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&quote=NVIDIA%20GTC%202026%20healthcare%20AI%20breakthroughs%20and%20open-source%20computational%20biology%20tools" class="share-btn" target="_blank">Share on Facebook</a>
+                                <a href="mailto:?subject=PythRaSh%27s%20AI%20Newsletter%20-%20Must%20Read!&body=Hi%2C%0A%0AI%20thought%20you%27d%20find%20this%20week%27s%20AI%20%2B%20Biology%20newsletter%20interesting.%20It%20covers%20NVIDIA%20GTC%202026%27s%20healthcare%20AI%20explosion%2C%20CDT-III%20predicting%20drug%20side%20effects%20from%20genes%2C%20and%20the%20open-source%20computational%20biology%20stack.%0A%0ACheck%20it%20out%3A%20https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn">Forward via Email</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer">
+                            <div class="footer-links">
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Unsubscribe</a> |
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Update Preferences</a> |
+                                <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026-03-25.html">View in Browser</a>
+                            </div>
+
+                            <p><strong>PythRaSh's AI Newsletter</strong></p>
+                            <div class="address">
+                                Fleischerwiese 4, Greifswald-17489, Germany
+                            </div>
+
+                            <p style="margin-top: 20px;">
+                                <a href="https://mdrasheduz-zaman.github.io/PythRaSh/">Visit our website</a> |
+                                <a href="https://www.linkedin.com/in/md-rashed-uz-zaman">Connect on LinkedIn</a> |
+                                <a href="https://github.com/mdrasheduz-zaman">GitHub</a>
+                            </p>
+
+                            <p style="margin-top: 15px; font-size: 12px; color: #999;">
+                                Questions? Reply to this email or contact Md Rasheduzzaman<br>
+                                Email: md.rasheduzzaman.ugoe@gmail.com
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
