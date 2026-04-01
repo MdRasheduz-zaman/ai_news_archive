@@ -14,7 +14,8 @@ Add this RSS feed to your favorite reader (Feedly, Inoreader, etc.) to get notif
 
 ## 📰 Latest Issues
 
-- **Issue #26** - [March 25, 2026](https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_03_25.html)
+- **Issue #28** - [April 01, 2026](https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_04_01.html)
+- **Issue #27** - [March 25, 2026](https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_03_25.html)
 - **Issue #26** - [March 18, 2026](https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_03_18.html)
 - **Issue #25** - [March 11, 2026](https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_03_11.html)
 - **Issue #24** - [March 04, 2026](https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_03_04.html)
