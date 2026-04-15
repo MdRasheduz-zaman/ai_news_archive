@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PythRaSh's AI Newsletter - Week of April 15, 2026</title>
+    <style>
+        /* Reset styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111111; background-color: #f5f5f5; }
+        table { border-collapse: collapse; width: 100%; }
+
+        /* Container */
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #FFFFFF; }
+
+        /* Header */
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+
+        /* Content sections */
+        .content { padding: 30px 20px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #667eea; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #111111; font-size: 20px; margin-bottom: 15px; }
+        .section p { margin-bottom: 15px; font-size: 16px; }
+
+        /* Apology notice */
+        .apology-notice { background: #fff3cd; border-radius: 8px; padding: 15px 20px; margin-bottom: 20px; border-left: 4px solid #ffc107; font-size: 15px; color: #856404; }
+
+        /* Featured Event Card */
+        .event-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; box-shadow: 0 4px 8px rgba(102, 126, 234, 0.1); }
+        .event-card h3 { color: #667eea; font-size: 22px; margin-bottom: 15px; }
+        .event-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .event-card a:hover { text-decoration: underline; }
+
+        /* Quick updates list */
+        .quick-updates { background: #f8f9ff; border-radius: 8px; padding: 20px; }
+        .quick-updates ul { list-style: none; }
+        .quick-updates li { margin-bottom: 15px; padding: 15px; background: white; border-radius: 6px; border-left: 3px solid #667eea; }
+        .quick-updates li strong { color: #667eea; }
+        .quick-updates a { color: #667eea; text-decoration: none; }
+        .quick-updates a:hover { text-decoration: underline; }
+
+        /* Research papers */
+        .research-paper { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .research-paper h4 { color: #111111; font-size: 18px; margin-bottom: 10px; }
+        .research-paper a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .research-paper a:hover { text-decoration: underline; }
+        .impact-tag { background: #667eea; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 10px; }
+
+        /* GitHub repos */
+        .repo-card { background: #f8f9ff; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 3px solid #667eea; }
+        .repo-card h4 { color: #111111; margin-bottom: 8px; }
+        .repo-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .repo-card a:hover { text-decoration: underline; }
+        .star-count { color: #666; font-size: 14px; }
+
+        /* Products */
+        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .product-card h4 { color: #111111; margin-bottom: 8px; }
+        .product-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .product-card a:hover { text-decoration: underline; }
+        .upvote-count { background: #667eea; color: white; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+
+        /* Learning blog */
+        .blog-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; }
+        .blog-card h4 { color: #667eea; font-size: 18px; margin-bottom: 10px; }
+        .blog-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .blog-card a:hover { text-decoration: underline; }
+
+        /* Share section */
+        .share-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px 20px; text-align: center; }
+        .share-section h2 { color: white; margin-bottom: 20px; }
+        .share-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .share-btn { background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
+        .share-btn:hover { background: rgba(255,255,255,0.3); color: white; text-decoration: none; }
+
+        /* Footer */
+        .footer { background: #f5f5f5; padding: 30px 20px; text-align: center; color: #666; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #667eea; text-decoration: none; margin: 0 10px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer p { font-size: 14px; margin-bottom: 10px; }
+        .footer .address { font-size: 12px; color: #999; margin-top: 20px; }
+
+        /* Mobile responsive */
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .content { padding: 20px 15px !important; }
+            .header { padding: 30px 15px !important; }
+            .header h1 { font-size: 24px !important; }
+            .share-buttons { flex-direction: column !important; gap: 10px !important; }
+            .share-btn { display: block !important; width: 100% !important; }
+        }
+    </style>
+</head>
+<body>
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+            <td align="center" style="background-color: #f5f5f5; padding: 20px 0;">
+                <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0">
+                    <!-- View in Browser Link -->
+                    <tr>
+                        <td style="text-align: center; padding: 10px; font-size: 12px; color: #666;">
+                            <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026-04-15.html" style="color: #667eea; text-decoration: none;">View in Browser</a>
+                        </td>
+                    </tr>
+
+                    <!-- Header -->
+                    <tr>
+                        <td class="header">
+                            <h1>PythRaSh's AI Newsletter</h1>
+                            <p>Week of April 15, 2026</p>
+                        </td>
+                    </tr>
+
+                    <!-- Main Content -->
+                    <tr>
+                        <td class="content">
+
+                            <!-- Apology Notice -->
+                            <div class="apology-notice">
+                                <strong>A note from us:</strong> We apologize for missing last week's edition — we experienced technical difficulties that prevented us from publishing. We're back this week with an extra-packed issue to make up for it. Thank you for your patience!
+                            </div>
+
+                            <!-- Intro -->
+                            <div class="section">
+                                <p><strong>Hi, There!</strong> This week, a seismic shift in the AI-biology landscape: Anthropic — the company behind Claude — has acquired a biotech startup for $400 million, signaling that frontier AI labs are no longer content to merely partner with pharma but are building drug discovery directly into their platforms. Meanwhile, Eli Lilly has lit up the world's most powerful pharmaceutical AI supercomputer, UVA has released free AI tools that design drugs while treating proteins as flexible structures, and a new fMRI foundation model trained on nearly 350,000 brain sessions is rewriting what's possible in neuroimaging. Let's dive in.</p>
+                            </div>
+
+                            <!-- Event of the Week -->
+                            <div class="section">
+                                <h2>🚀 EVENT OF THE WEEK</h2>
+                                <div class="event-card">
+                                    <h3><a href="https://techcrunch.com/2026/04/03/anthropic-buys-biotech-startup-coefficient-bio-in-400m-deal-reports/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">Anthropic Acquires Coefficient Bio for $400M — Frontier AI Lab Enters Drug Discovery</a></h3>
+                                    <p>On April 3, 2026, <strong>Anthropic acquired Coefficient Bio for roughly $400 million</strong> in an all-stock deal — marking the first time a frontier AI lab has made a major direct acquisition in the drug discovery space. Coefficient Bio, a nine-person startup with former <strong>Genentech, Roivant, and Evozyne</strong> computational biologists, built a platform for AI-driven drug R&D, clinical regulatory strategies, and drug candidate discovery.</p>
+
+                                    <p>The founding team's background is in <strong>building biology-specific models from the architecture level up</strong> — not general-purpose AI applied to biology. This follows Eli Lilly's $2.75 billion commitment to Insilico Medicine and signals massive convergence of AI and pharmaceutical R&D, with over 200 AI-designed drug programs now in clinical development.</p>
+
+                                    <p><strong>Why this matters:</strong> This signals a paradigm shift from "AI companies partnering with pharma" to "AI companies becoming pharma." If frontier AI labs build biology into their core platforms, the boundary between AI capability and drug discovery infrastructure dissolves — with profound implications for how new medicines are created.</p>
+
+                                    <p><strong>Key takeaways:</strong></p>
+                                    <ul>
+                                        <li>First major acquisition of a biotech startup by a frontier AI lab</li>
+                                        <li>Coefficient Bio brings biology-native modeling expertise from Genentech, Roivant, and Evozyne</li>
+                                        <li>Follows Eli Lilly's $2.75B Insilico deal — massive AI-pharma convergence underway</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Quick Updates -->
+                            <div class="section">
+                                <h2>⚡ Quick Updates</h2>
+                                <div class="quick-updates">
+                                    <ul>
+                                        <li><strong>Eli Lilly Launches LillyPod:</strong> Inaugurated the world's first NVIDIA DGX SuperPOD with DGX B300 — 1,016 Blackwell Ultra GPUs delivering 9,000+ petaflops for training protein diffusion models, small-molecule neural networks, and genomics foundation models across 700TB of data. <a href="https://blogs.nvidia.com/blog/lilly-ai-factory-nvidia-blackwell-dgx-superpod/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">NVIDIA Blog</a></li>
+
+                                        <li><strong>FDA Evolves AI "Breakthrough" Criteria:</strong> Over 1,200 devices have received breakthrough designation since 2016, but the FDA now prioritizes multi-problem AI solutions that physicians simply cannot replicate — algorithms that merely improve existing capabilities no longer qualify. <a href="https://www.statnews.com/2026/04/02/how-fda-stance-breakthrough-ai-medical-device-evolving/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">STAT News</a></li>
+
+                                        <li><strong>UVA Releases YuelDesign:</strong> A free suite of AI diffusion tools that design drug molecules while treating proteins as flexible, dynamic structures — accounting for "induced fit" rather than using rigid protein snapshots like existing methods. <a href="https://www.uvahealth.com/news/new-ai-tech-to-speed-drug-development?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">UVA Health</a></li>
+
+                                        <li><strong>MSU's GPS Model in Cell:</strong> ML model predicts how chemicals influence gene expression from molecular structure alone, discovering compounds that reduced liver cancer tumors in mice and showed promise for idiopathic pulmonary fibrosis. <a href="https://humanmedicine.msu.edu/news/2026-msu-study-demonstrates-faster-discovery-of-therapeutic-drugs-through-ai.html?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">MSU</a></li>
+
+                                        <li><strong>EIC Awards €118M for AI Cancer Research:</strong> The European Innovation Council selected 30 breakthrough projects including generative-AI agents to revolutionize medical diagnosis and treatment of cancer. <a href="https://eic.ec.europa.eu/news/eic-awards-eu118-million-30-breakthrough-research-projects-under-eic-pathfinder-challenges-2026-04-01_en?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">EIC</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Research Papers -->
+                            <div class="section">
+                                <h2>📚 Top Research Papers</h2>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/pdf/2604.12683v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">Brain-DiT: A Universal Multi-state fMRI Foundation Model</a></h4>
+                                    <p><strong>Authors:</strong> Xia, Ye, Pan, Shen, Wang, Liu | <strong>Publisher:</strong> arXiv (cs.CV, q-bio.NC)</p>
+                                    <p>First universal fMRI foundation model pretrained on 349,898 sessions from 24 datasets spanning resting, task, disease, and sleep brain states. Uses metadata-conditioned diffusion pretraining with a Diffusion Transformer, learning multi-scale representations. Different clinical applications prefer different scales: Alzheimer's classification benefits from global representations, while demographic prediction relies on fine-grained local structure.</p>
+                                    <span class="impact-tag">Neuroscience</span>
+                                </div>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/pdf/2604.12693v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">Risk-Calibrated Learning: Minimizing Fatal Errors in Medical AI</a></h4>
+                                    <p><strong>Authors:</strong> Mohammadi-Seif, Baeza-Yates | <strong>Publisher:</strong> arXiv (cs.CV)</p>
+                                    <p>Addresses "semantic incoherence" — high-confidence errors like classifying malignant tumors as benign. Embeds a clinical severity matrix into the optimization landscape, achieving safety improvements from 20% (breast histopathology) to 92.4% (prostate histopathology) compared to baselines across four medical imaging modalities.</p>
+                                    <span class="impact-tag">Clinical Safety</span>
+                                </div>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/pdf/2604.12969v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">AbdomenGen: Controllable Abdominal Anatomy Generation via Diffusion</a></h4>
+                                    <p><strong>Authors:</strong> Bhandari, Dahal, Segars, Lo | <strong>Publisher:</strong> arXiv (cs.CV)</p>
+                                    <p>Sequential volume-conditioned diffusion framework for generating synthetic abdominal anatomies. Introduces Volume Control Scalar decoupling organ size from body habitus. Achieves strong geometric fidelity across 11 organs (liver dice 0.83) and reduces distributional distance by 73.6% for hepatomegaly cohort matching.</p>
+                                    <span class="impact-tag">Medical Imaging</span>
+                                </div>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/pdf/2604.13021v1?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">Vision-Language Modeling for CT Enterography in IBD</a></h4>
+                                    <p><strong>Authors:</strong> Minoccheri, Wittrup, Najarian, Stidham | <strong>Publisher:</strong> arXiv (cs.CV, cs.AI)</p>
+                                    <p>First vision-language study on abdominal CT enterography for inflammatory bowel disease. Discovers per-slice tissue contrast matters more than spatial coverage, and RAG improves report generation by 7–14 percentage points. Pseudolabel framework enables comparison without expert annotations.</p>
+                                    <span class="impact-tag">Gastroenterology</span>
+                                </div>
+                            </div>
+
+                            <!-- GitHub Repos -->
+                            <div class="section">
+                                <h2>💻 Top GitHub Repos of the Week</h2>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/gcorso/DiffDock?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">DiffDock</a></h4>
+                                    <p class="star-count">⭐ ~1,800 stars | MIT CSAIL | Python</p>
+                                    <p>Diffusion generative model for molecular docking — predicting how drug molecules bind to protein targets. Treats docking as a generative problem over translations, rotations, and torsion angles. Directly relevant to this week's Anthropic/Coefficient Bio acquisition, as diffusion-based docking forms the computational backbone of AI-first drug design.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/sokrypton/ColabFold?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">ColabFold</a></h4>
+                                    <p class="star-count">⭐ ~2,800 stars | Community | Python/Jupyter</p>
+                                    <p>Makes protein structure prediction accessible by combining MMseqs2 with AlphaFold2 in Google Colab notebooks. Any researcher with a browser can predict protein structures including multimers and custom templates — the democratization tool that made structural biology accessible to labs worldwide.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/ollama/ollama?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">Ollama (v0.19)</a></h4>
+                                    <p class="star-count">⭐ 130,000+ stars | Go | MLX on Apple Silicon</p>
+                                    <p>Ollama v0.19 rebuilds Apple Silicon inference on MLX for massive local AI speedups. For healthcare teams with sensitive patient data, run powerful LLMs entirely on-premises — no data leaves the institution, addressing HIPAA and data sovereignty requirements.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/agno-agi/agno?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">Agno</a></h4>
+                                    <p class="star-count">⭐ 22,000+ stars | Python | Multi-modal Agents</p>
+                                    <p>Formerly Phidata — a model-agnostic framework for building multi-modal AI agents with ~3μs instantiation, teams of agents, memory/knowledge, and 100+ tool integrations. Ideal for biotech research assistants combining literature search, data analysis, and experiment planning.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/docling-project/docling?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">Docling</a></h4>
+                                    <p class="star-count">⭐ 20,000+ stars | IBM Research | Python</p>
+                                    <p>Parses PDFs, scientific papers, patents, and clinical reports into structured JSON/Markdown for LLMs and RAG. Specialized support for tables, figures, equations, and chemical structures — essential for pharma teams extracting data from research papers and regulatory filings.</p>
+                                </div>
+                            </div>
+
+                            <!-- Learning Blog -->
+                            <div class="section">
+                                <h2>📖 Learning Blog of the Week</h2>
+                                <div class="blog-card">
+                                    <h4><a href="https://www.uvahealth.com/news/new-ai-tech-to-speed-drug-development?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">New AI Diffusion Models to Speed Drug Development</a></h4>
+                                    <p><strong>Publication:</strong> UVA Health / News-Medical.net</p>
+                                    <p>An accessible explainer covering UVA's development of YuelDesign, YuelPocket, and YuelBond — free AI tools using diffusion models to design drug molecules. The key innovation: treating proteins as flexible, dynamic structures rather than rigid snapshots. The article explains "induced fit" (how proteins change shape during drug binding), why this matters for drug efficacy, and how the three tools cover the full drug design pipeline. All tools are released free for researchers worldwide.</p>
+                                    <p><strong>What you'll learn:</strong></p>
+                                    <ul>
+                                        <li>How AI diffusion models generate drug molecules by treating proteins as flexible rather than rigid</li>
+                                        <li>Why "induced fit" is critical for drug design accuracy</li>
+                                        <li>How YuelDesign, YuelPocket, and YuelBond cover the full drug design pipeline</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- AI Products -->
+                            <div class="section">
+                                <h2>🛠️ Top AI Products of the Week</h2>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/velo-4?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">Velo</a></h4>
+                                    <p><span class="upvote-count">673 upvotes</span> | Category: AI Video Communication</p>
+                                    <p>Turns raw screen recordings into polished, ready-to-share video messages with AI. For researchers, enables faster communication of experimental results, surgical techniques, or imaging findings — record your screen while narrating, and Velo automatically edits and packages it professionally.</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/novavoice?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">NovaVoice</a></h4>
+                                    <p><span class="upvote-count">584 upvotes</span> | Category: Voice AI / Productivity</p>
+                                    <p>A "Voice OS" for 200+ WPM dictation with context-aware text. Remembers contacts, links, and executes actions across apps by voice. For clinicians: dictate clinical notes, lab observations, or research summaries hands-free while working at the bench or bedside.</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/notion-mcp?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">Notion MCP</a></h4>
+                                    <p><span class="upvote-count">491 upvotes</span> | Category: AI Workspace Integration</p>
+                                    <p>Connects AI tools (ChatGPT, Claude, Cursor) directly to Notion with real-time read/write access. For research labs: AI agents can automatically update experiment logs, compile meeting notes, generate reports, and organize literature references.</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/google-gemma?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15">Google Gemma 4</a></h4>
+                                    <p><span class="upvote-count">450 upvotes</span> | Category: Open AI Models</p>
+                                    <p>Google DeepMind's most capable open model family with advanced reasoning and multimodal processing. Open-weight models can be fine-tuned on domain-specific data (genomics, proteomics, clinical text) without sharing sensitive data externally — enabling institutional AI sovereignty.</p>
+                                </div>
+                            </div>
+
+                            <!-- AI Criticism & Concerns -->
+                            <div class="section">
+                                <h2>⚠️ AI Criticism &amp; Concerns</h2>
+                                <h3>Critical Perspectives on AI Ethics and Safety</h3>
+                                <p>As AI rapidly integrates into drug discovery and clinical practice, critical examination of risks and ethical implications remains essential.</p>
+
+                                <div class="product-card">
+                                    <h4>Anthropic vs. Pentagon: AI Company Refuses to Remove Ethical Guardrails</h4>
+                                    <p>The Trump administration ordered federal agencies to cease using Anthropic technology after CEO Dario Amodei refused to remove restrictions preventing Claude from mass domestic surveillance or autonomous weapons. The confrontation highlights the growing tension between national security demands and AI safety principles — raising questions about who controls the ethical boundaries of powerful AI.</p>
+                                    <p><a href="https://www.internationalaffairs.org.au/australianoutlook/when-guardrails-collapse-what-the-grok-controversy-reveals-about-the-future-of-ai-ethics/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15" target="_blank">Read More</a></p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4>ICLR 2026: 21% of Peer Reviews Were AI-Generated</h4>
+                                    <p>A retrospective analysis revealed 21% of peer reviews were entirely AI-generated, and over 50% showed AI involvement. The conference rejected 497 papers for AI-use policy violations and desk-rejected another 779. This raises fundamental questions about the integrity of scientific peer review — the mechanism the research community relies on to validate knowledge.</p>
+                                    <p><a href="https://blog.iclr.cc/2026/03/31/a-retrospective-on-the-iclr-2026-review-process/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15" target="_blank">Read More</a></p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4>Grok's Aurora Scandal: 3 Million Sexualized Images in 11 Days</h4>
+                                    <p>Elon Musk's Grok generated approximately 3 million sexualized images of real people without consent through its Aurora model, with some involving minors. Multiple countries moved to restrict or ban the service. The incident demonstrates how rapidly safety norms collapse when engagement and competitive pressure override responsible deployment.</p>
+                                    <p><a href="https://www.crescendo.ai/blog/ai-controversies?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15" target="_blank">Read More</a></p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4>FDA's Generative AI Gap: No LLM Medical Device Authorized</h4>
+                                    <p>Despite granting "breakthrough" designations to AI chatbots like RecovryAI, the FDA has yet to actually authorize any device relying on generative AI. LLMs' unpredictable outputs challenge traditional safety/efficacy validation designed for deterministic algorithms — creating a critical regulatory bottleneck for deploying LLM-based clinical tools.</p>
+                                    <p><a href="https://www.statnews.com/2026/04/02/fda-ai-breakthrough-medical-device-stat-health-tech/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_04_15" target="_blank">Read More</a></p>
+                                </div>
+                            </div>
+
+                            <!-- Closing Note -->
+                            <div class="section">
+                                <h2>Closing Note</h2>
+                                <p>This week's convergence of frontier AI labs acquiring biotech startups, pharmaceutical supercomputers going live, and regulatory frameworks struggling to keep pace with generative AI paints a vivid picture: the boundary between AI companies and drug discovery companies is dissolving. As Anthropic embeds biology-native modeling into its platform and Eli Lilly trains genomics models on 9,000 petaflops, we're witnessing the emergence of institutions that are simultaneously AI labs and pharmaceutical companies. The question isn't whether this convergence will transform medicine, but whether governance can evolve fast enough to ensure it transforms medicine safely.</p>
+
+                                <p>Thank you for reading PythRaSh's AI Newsletter! If you found this week's insights valuable, please share them with colleagues and friends interested in the intersection of AI and biology.</p>
+
+                                <p><strong>Have feedback or suggestions?</strong> Reply to this email - I read every response!</p>
+
+                                <p>See you next week!</p>
+
+                                <p><strong>Md Rasheduzzaman</strong></p>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                    <!-- Share Section -->
+                    <tr>
+                        <td class="share-section">
+                            <h2>Share This Newsletter</h2>
+                            <p>Found this newsletter valuable? Share it with your network!</p>
+                            <div class="share-buttons">
+                                <a href="https://twitter.com/intent/tweet?text=%F0%9F%A7%AC%20Anthropic%20just%20acquired%20a%20biotech%20startup%20for%20%24400M!%20Plus%20Eli%20Lilly%27s%209%2C000-petaflop%20drug%20discovery%20supercomputer%2C%20a%20universal%20brain%20fMRI%20foundation%20model%2C%20and%20free%20AI%20diffusion%20tools%20for%20drug%20design.%20%23AIinMedicine&url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2Fai_news_archive%2FAI_Newsletter_2026-04-15.html" class="share-btn" target="_blank">Share on Twitter</a>
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2Fai_news_archive%2FAI_Newsletter_2026-04-15.html&title=PythRaSh%27s%20AI%20Newsletter%20-%20Anthropic%20Enters%20Drug%20Discovery&summary=Frontier%20AI%20labs%20are%20now%20directly%20acquiring%20drug%20discovery%20companies." class="share-btn" target="_blank">Share on LinkedIn</a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdrasheduz-zaman.github.io%2Fai_news_archive%2FAI_Newsletter_2026-04-15.html&quote=Anthropic%20acquires%20Coefficient%20Bio%20for%20%24400M%20%E2%80%94%20frontier%20AI%20enters%20drug%20discovery!" class="share-btn" target="_blank">Share on Facebook</a>
+                                <a href="mailto:?subject=PythRaSh%27s%20AI%20Newsletter%20-%20Anthropic%20Enters%20Drug%20Discovery&body=Hi%2C%0A%0AThis%20week%27s%20AI%20%2B%20Biology%20newsletter%20covers%20Anthropic%27s%20%24400M%20biotech%20acquisition%2C%20Eli%20Lilly%27s%20AI%20supercomputer%2C%20and%20breakthrough%20medical%20AI%20research.%0A%0ACheck%20it%20out%3A%20https%3A%2F%2Fmdrasheduz-zaman.github.io%2Fai_news_archive%2FAI_Newsletter_2026-04-15.html" class="share-btn">Forward via Email</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer">
+                            <div class="footer-links">
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Unsubscribe</a> |
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Update Preferences</a> |
+                                <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026-04-15.html">View in Browser</a>
+                            </div>
+
+                            <p><strong>PythRaSh's AI Newsletter</strong></p>
+                            <div class="address">
+                                PythRaSh's AI Newsletter, Fleischerwiese 4, Greifswald-17489, Germany
+                            </div>
+
+                            <p style="margin-top: 20px;">
+                                <a href="https://mdrasheduz-zaman.github.io/PythRaSh/">Visit our website</a> |
+                                <a href="https://www.linkedin.com/in/md-rashed-uz-zaman">Connect on LinkedIn</a> |
+                                <a href="https://github.com/mdrasheduz-zaman">GitHub</a>
+                            </p>
+
+                            <p style="margin-top: 15px; font-size: 12px; color: #999;">
+                                Questions? Reply to this email or contact Md Rasheduzzaman<br>
+                                Email: md.rasheduzzaman.ugoe@gmail.com
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
