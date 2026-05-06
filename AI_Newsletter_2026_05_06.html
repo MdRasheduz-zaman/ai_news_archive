@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PythRaSh's AI Newsletter - Week of May 6, 2026</title>
+    <style>
+        /* Reset styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111111; background-color: #f5f5f5; }
+        table { border-collapse: collapse; width: 100%; }
+
+        /* Container */
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #FFFFFF; }
+
+        /* Header */
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+
+        /* Content sections */
+        .content { padding: 30px 20px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #667eea; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #111111; font-size: 20px; margin-bottom: 15px; }
+        .section p { margin-bottom: 15px; font-size: 16px; }
+
+        /* Apology notice */
+        .apology-notice { background: #fff3cd; border-radius: 8px; padding: 15px 20px; margin-bottom: 20px; border-left: 4px solid #ffc107; font-size: 15px; color: #856404; }
+
+        /* Featured Event Card */
+        .event-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; box-shadow: 0 4px 8px rgba(102, 126, 234, 0.1); }
+        .event-card h3 { color: #667eea; font-size: 22px; margin-bottom: 15px; }
+        .event-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .event-card a:hover { text-decoration: underline; }
+
+        /* Quick updates list */
+        .quick-updates { background: #f8f9ff; border-radius: 8px; padding: 20px; }
+        .quick-updates ul { list-style: none; }
+        .quick-updates li { margin-bottom: 15px; padding: 15px; background: white; border-radius: 6px; border-left: 3px solid #667eea; }
+        .quick-updates li strong { color: #667eea; }
+        .quick-updates a { color: #667eea; text-decoration: none; }
+        .quick-updates a:hover { text-decoration: underline; }
+
+        /* Research papers */
+        .research-paper { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .research-paper h4 { color: #111111; font-size: 18px; margin-bottom: 10px; }
+        .research-paper a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .research-paper a:hover { text-decoration: underline; }
+        .impact-tag { background: #667eea; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 10px; }
+
+        /* GitHub repos */
+        .repo-card { background: #f8f9ff; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 3px solid #667eea; }
+        .repo-card h4 { color: #111111; margin-bottom: 8px; }
+        .repo-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .repo-card a:hover { text-decoration: underline; }
+        .star-count { color: #666; font-size: 14px; }
+
+        /* Products */
+        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .product-card h4 { color: #111111; margin-bottom: 8px; }
+        .product-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .product-card a:hover { text-decoration: underline; }
+        .upvote-count { background: #667eea; color: white; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+
+        /* Share section */
+        .share-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px 20px; text-align: center; }
+        .share-section h2 { color: white; margin-bottom: 20px; }
+        .share-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .share-btn { background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
+        .share-btn:hover { background: rgba(255,255,255,0.3); color: white; text-decoration: none; }
+
+        /* Footer */
+        .footer { background: #f5f5f5; padding: 30px 20px; text-align: center; color: #666; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #667eea; text-decoration: none; margin: 0 10px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer p { font-size: 14px; margin-bottom: 10px; }
+        .footer .address { font-size: 12px; color: #999; margin-top: 20px; }
+
+        /* Mobile responsive */
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .content { padding: 20px 15px !important; }
+            .header { padding: 30px 15px !important; }
+            .header h1 { font-size: 24px !important; }
+            .share-buttons { flex-direction: column !important; gap: 10px !important; }
+            .share-btn { display: block !important; width: 100% !important; }
+        }
+    </style>
+</head>
+<body>
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+            <td align="center" style="background-color: #f5f5f5; padding: 20px 0;">
+                <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0">
+                    <!-- View in Browser Link -->
+                    <tr>
+                        <td style="text-align: center; padding: 10px; font-size: 12px; color: #666;">
+                            <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_05_06.html" style="color: #667eea; text-decoration: none;">View in Browser</a>
+                        </td>
+                    </tr>
+
+                    <!-- Header -->
+                    <tr>
+                        <td class="header">
+                            <h1>PythRaSh's AI Newsletter</h1>
+                            <p>Issue #30 &nbsp;|&nbsp; Week of May 6, 2026</p>
+                        </td>
+                    </tr>
+
+                    <!-- Main Content -->
+                    <tr>
+                        <td class="content">
+
+                            <!-- Apology Notice -->
+                            <div class="apology-notice">
+                                <strong>A sincere apology:</strong> We missed the last two editions — April 22 and April 29 — due to ongoing technical difficulties. We are truly sorry for the interruption and deeply appreciate your patience. We're back this week with a packed issue covering the most significant AI + Biology developments from the past two weeks. Thank you for sticking with us!
+                            </div>
+
+                            <!-- Intro -->
+                            <div class="section">
+                                <p><strong>Hi, there!</strong> This fortnight's theme is <strong>AI Enters the Life Sciences Mainstream.</strong> OpenAI launched its first biology-specific reasoning model named after Rosalind Franklin. A landmark JAMA study revealed that all 21 leading LLMs fail more than 80% of early differential diagnoses. Clinical AI funding hit new highs, and new arXiv papers are proving that bigger models are not automatically safer in clinical contexts. A lot happened across two weeks — let's dive in.</p>
+                            </div>
+
+                            <!-- Event of the Week -->
+                            <div class="section">
+                                <h2>🚀 EVENT OF THE WEEK</h2>
+                                <div class="event-card">
+                                    <h3><a href="https://openai.com/index/introducing-gpt-rosalind/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">OpenAI Launches GPT-Rosalind — The First Frontier AI Model Built for Life Sciences</a></h3>
+                                    <p>On April 16, 2026, OpenAI unveiled <strong>GPT-Rosalind</strong>, a frontier reasoning model purpose-built for biology, drug discovery, genomics, and translational medicine — named after <strong>Rosalind Franklin</strong>, the British chemist whose X-ray crystallography work revealed the structure of DNA.</p>
+
+                                    <p>Unlike general-purpose models, GPT-Rosalind is optimised for multi-step scientific workflows: target discovery, pathway analysis, protein engineering, literature synthesis, and hypothesis generation. It combines improved tool use with deeper domain understanding across chemistry, protein biology, and genomics. Launch partners include <strong>Amgen, Moderna, the Allen Institute, and Thermo Fisher Scientific</strong>.</p>
+
+                                    <p>Simultaneously, <strong>Novo Nordisk</strong> announced it would deploy GPT-Rosalind across its entire R&amp;D pipeline, manufacturing operations, and commercial functions — with full integration scaled by end of 2026, covering the full medicine lifecycle from discovery through to supply chain.</p>
+
+                                    <p><strong>Why this matters:</strong> GPT-Rosalind signals that frontier AI labs are building biology into their core platforms — not merely partnering with pharma. For biology researchers, this is a step-change in the kind of AI assistance available for complex, multi-step scientific work.</p>
+
+                                    <p><strong>Key takeaways:</strong></p>
+                                    <ul>
+                                        <li>First frontier AI model specifically designed for biological reasoning and drug discovery workflows</li>
+                                        <li>Named after Rosalind Franklin — a meaningful symbolic choice for the life sciences community</li>
+                                        <li>Novo Nordisk partnership signals immediate real-world industrial deployment at scale</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Quick Updates -->
+                            <div class="section">
+                                <h2>⚡ Quick Updates</h2>
+                                <div class="quick-updates">
+                                    <ul>
+                                        <li><strong>Aidoc Raises $150M Series E:</strong> The clinical AI company behind the CARE foundation model — deployed in nearly 2,000 hospitals and analysing 60M+ patient cases annually — closed a $150M round led by Goldman Sachs Growth Equity (General Catalyst, SoftBank Vision Fund 2, NVIDIA Ventures). Funds expand imaging modalities and add automated draft radiology report generation. Total funding now exceeds $500M. <a href="https://www.medtechdive.com/news/aidoc-raises-150m-to-advance-clinical-ai-foundation-model/819042/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">MedTech Dive</a></li>
+
+                                        <li><strong>FDA Issues RFI on AI for Clinical Trials:</strong> On April 29, the FDA published a formal Request for Information seeking industry input on a pilot program to assess how AI technologies can improve efficiency, speed, and decision quality in early-phase clinical trials — a key regulatory step toward formalising AI's role in drug development. <a href="https://advocacy.sba.gov/2026/04/30/fda-requests-information-on-ai-enabled-optimization-of-early-phase-clinical-trials-pilot-program/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">SBA Office of Advocacy</a></li>
+
+                                        <li><strong>ALP Bio Raises €1.9M for AI-Organoid Platform:</strong> The Swiss startup combines human immune organoids with generative AI to predict and reduce antibody immunogenicity risks before expensive late-stage trials — addressing one of the costliest failure modes in biologic drug development. <a href="https://afs.lambda-bio.com/blog/top-biotech-news-29-april-2026/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">Lambda Biologics</a></li>
+
+                                        <li><strong>UC Berkeley &amp; UCSF Launch Voio — AI Radiology Startup:</strong> Researchers from the UC Berkeley/UCSF Joint Program in Computational Precision Health spun out Voio, building AI models that generate draft radiology reports and predict patient risk for cancer, osteoporosis, and heart failure years in advance. <a href="https://news.berkeley.edu/2026/04/16/uc-berkeley-and-ucsf-researchers-are-using-ai-to-revolutionize-medical-imaging/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">Berkeley News</a></li>
+
+                                        <li><strong>FDA Approves First-Ever PROTAC Therapy:</strong> Pfizer and Arvinas received early FDA approval for Veppanu (ARV-471), the first-ever approved PROTAC protein degrader, targeting ESR1-mutated metastatic breast cancer — validating the structural biology pipeline where AI tools like AlphaFold are playing a growing role. <a href="https://afs.lambda-bio.com/blog/top-biotech-news-29-april-2026/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">Lambda Bio</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Research Papers -->
+                            <div class="section">
+                                <h2>📚 Top Research Papers</h2>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/abs/2605.00925?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">Haiku: Linking Spatial Biology and Clinical Histology via Tri-Modal Contrastive Learning</a></h4>
+                                    <p><strong>Authors:</strong> Yan Cui, Jacob S. Leiby, Wenhui Lei, Dokyoon Kim et al. | <strong>Published:</strong> April 30, 2026 | arXiv 2605.00925</p>
+                                    <p>Haiku is a tri-modal contrastive learning model trained on 26.7 million spatial proteomics patches from 3,218 tissue sections across 1,606 patients and 11 organ types. It links molecular, morphological, and clinical data in a shared embedding space — enabling three-way cross-modal retrieval (Recall@50 = 0.611), survival prediction (C-index 0.737, +7.91% over unimodal), and zero-shot biomarker inference (Pearson correlation 0.718 across 52 biomarkers) from text descriptions alone.</p>
+                                    <span class="impact-tag">Spatial Proteomics</span>
+                                    <span class="impact-tag">Cancer Prognostics</span>
+                                </div>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/abs/2605.04039?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">SaFE-Scale: Safety and Accuracy Follow Different Scaling Laws in Clinical LLMs</a></h4>
+                                    <p><strong>Authors:</strong> Sebastian Wind, Tri-Thien Nguyen et al. | University Hospital Erlangen / TU Munich | <strong>Published:</strong> May 5, 2026 | arXiv 2605.04039</p>
+                                    <p>SaFE-Scale challenges the assumption that larger, more accurate clinical LLMs are automatically safer. Evaluating 34 LLMs across 6 deployment conditions on the RadSaFE-200 radiology safety benchmark, they found clean verified evidence reduced high-risk errors from 12.0% to 2.6% — while agentic RAG and max-context prompting left dangerous overconfidence elevated. Bigger does not mean safer: evidence quality, not scale, determines clinical AI safety.</p>
+                                    <span class="impact-tag">Clinical Safety</span>
+                                    <span class="impact-tag">Radiology AI</span>
+                                </div>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/abs/2604.16104?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">Dual-Modal Lung Cancer AI: Interpretable Radiology + Microscopy with Clinical Risk Integration</a></h4>
+                                    <p><strong>Authors:</strong> Baramee Sukumal, Aueaphum Aueawatthanaphisut | <strong>Published:</strong> April 17, 2026 | arXiv 2604.16104</p>
+                                    <p>An interpretable AI system fusing CT radiology with H&amp;E histopathology to classify five lung cancer categories — adenocarcinoma, squamous cell carcinoma, small cell lung cancer, and normal tissue — with 0.87 accuracy and AUROC &gt; 0.97. Six explainability techniques (Grad-CAM, Grad-CAM++, Integrated Gradients, Occlusion, Saliency Maps, SmoothGrad) generate tumour localisations aligned with expert radiologist judgment. Grad-CAM++ showed the highest faithfulness.</p>
+                                    <span class="impact-tag">Lung Cancer</span>
+                                    <span class="impact-tag">Interpretable AI</span>
+                                </div>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/abs/2603.00193?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">MARBLE: Multimodal Alignment for Genomic Biomarker Prediction in Computational Pathology</a></h4>
+                                    <p><strong>Authors:</strong> Multiple institutions (Stanford lead) | <strong>Published:</strong> March 2026 | arXiv 2603.00193</p>
+                                    <p>MARBLE aligns H&amp;E histopathology representations with genomic biomarkers generated by LLMs and protein language models, learning features that generalise across cancer types and institutions. At inference time, no genomic sequencing is required — molecular biomarkers are inferred directly from routine pathology slides. Significant improvements in cross-cohort biomarker prediction over unimodal image-only baselines.</p>
+                                    <span class="impact-tag">Precision Oncology</span>
+                                    <span class="impact-tag">Computational Pathology</span>
+                                </div>
+                            </div>
+
+                            <!-- GitHub Repos -->
+                            <div class="section">
+                                <h2>💻 Top GitHub Repos of the Week</h2>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/chemprop/chemprop?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">chemprop</a></h4>
+                                    <p class="star-count">⭐ ~2,400 stars | MIT | Python</p>
+                                    <p>The gold-standard neural network framework for predicting molecular properties (ADME, toxicity, bioactivity) using message-passing networks on molecular graphs. Widely adopted in pharma for early-stage compound screening and structure-activity relationship analysis. Actively maintained by the MIT/Chemprop team.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/a-r-j/graphein?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">graphein</a></h4>
+                                    <p class="star-count">⭐ ~1,200 stars | Python</p>
+                                    <p>Builds graph representations of protein structures from PDB and AlphaFold outputs — enabling GNN-based analysis of protein-protein interactions, binding pockets, and drug-protein docking. An essential tool for structure-based drug design and protein engineering pipelines.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/mims-harvard/TDC?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">Therapeutics Data Commons (TDC)</a></h4>
+                                    <p class="star-count">⭐ ~1,200 stars | Harvard MIMS | Python</p>
+                                    <p>66+ curated ML-ready benchmark datasets spanning drug-target interaction, ADMET property prediction, molecular generation, and clinical outcome modelling. The standard infrastructure for fairly benchmarking drug discovery AI models across the research community.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/mlmed/torchxrayvision?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">torchxrayvision</a></h4>
+                                    <p class="star-count">⭐ ~1,100 stars | Python | Clinical AI</p>
+                                    <p>Unified library providing access to 9 major chest X-ray datasets (CheXpert, NIH, MIMIC-CXR, PadChest) plus pre-trained models for classification, segmentation, and feature extraction. Reduces clinical AI setup from weeks to hours — essential for pneumonia, atelectasis, and cardiomegaly detection research.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/topics/medical-ai?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">MedResearcher-R1</a></h4>
+                                    <p class="star-count">⭐ ~501 stars | Python | Agentic Medical AI</p>
+                                    <p>An agentic deep research model trained with knowledge-informed trajectory synthesis for medical scenarios. Enables autonomous synthesis of biomedical literature, clinical guidelines, and patient case data — supporting clinical decision support, medical education, and hypothesis generation at scale.</p>
+                                </div>
+                            </div>
+
+                            <!-- AI Products -->
+                            <div class="section">
+                                <h2>🛠️ Top AI Products of the Week</h2>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/open-wearables?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">Open Wearables</a></h4>
+                                    <p><span class="upvote-count">624 upvotes</span> | Open Source &amp; Self-Hosted | Health Infrastructure</p>
+                                    <p>A fully open-source, MIT-licensed platform providing a single API for every wearable device (Whoop, Oura, Apple Watch, Garmin). Includes open health scoring algorithms and AI-ready structured context for building personalised health products — metabolic tracking, recovery analytics, clinical monitoring — with full self-hosting for data privacy compliance.</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/plurai?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">Plurai</a></h4>
+                                    <p><span class="upvote-count">729 upvotes</span> | AI Agent Reliability | Developer Tools</p>
+                                    <p>Vibe-training for AI agent reliability: describe what your agent should and should not do, and Plurai auto-generates training data, validates it, and deploys a custom guard model in minutes — no annotation pipeline needed. Built on BARRED research; 8× lower cost than GPT-as-judge with 43% fewer failures. Critical for healthcare AI teams needing fast, compliant guardrails.</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/openai?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">GPT-5.5 by OpenAI</a></h4>
+                                    <p><span class="upvote-count">469 upvotes</span> | General-Purpose AI | Research &amp; Analysis</p>
+                                    <p>OpenAI's most advanced model to date, excelling at coding, research, data analysis, and multi-step autonomous task execution with minimal guidance. For biology researchers: a powerful assistant for literature synthesis, data wrangling, protocol design, and scientific writing — and the general reasoning backbone powering GPT-Rosalind (this week's main story).</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/deepseek?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06">DeepSeek-V4</a></h4>
+                                    <p><span class="upvote-count">396 upvotes</span> | Open-Source | 1M Context LLM</p>
+                                    <p>Open-source MoE model (V4-Pro: 1.6T params, V4-Flash: 284B params) with a 1 million token context window via novel hybrid attention — enabling analysis of entire genomic datasets, full clinical trial corpora, or complete scientific literature in a single pass. Open-source and self-hostable, critical for sensitive clinical and genomic data environments.</p>
+                                </div>
+                            </div>
+
+                            <!-- AI Criticism & Concerns -->
+                            <div class="section">
+                                <h2>⚠️ AI Criticism &amp; Concerns</h2>
+                                <h3>Critical Perspectives on AI Ethics and Safety</h3>
+                                <p>As AI rapidly integrates into clinical practice and drug discovery, critical examination of risks and ethical implications remains essential.</p>
+
+                                <div class="product-card">
+                                    <h4>JAMA Study: All 21 Leading LLMs Fail 80%+ of Early Differential Diagnoses</h4>
+                                    <p>A Mass General Brigham study published in JAMA Network Open found that every major LLM tested — including frontier models from OpenAI, Anthropic, Google, xAI, and DeepSeek — failed more than 80% of early differential diagnoses when patient data was incomplete. While the same models achieved 91% final diagnosis accuracy with complete records, the critical early triage stage showed consistent, severe failure across all 21 models. "Marketing LLMs as diagnostic agents risks fostering false confidence precisely where they are least reliable," the researchers concluded.</p>
+                                    <p><a href="https://www.theregister.com/2026/04/15/ai_gets_early_medical_diagnosis/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06" target="_blank">Read More — The Register</a></p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4>Americans' Trust in AI Healthcare Drops to 42% — Down from 52% in 2024</h4>
+                                    <p>A 2026 U.S. News survey found only 42% of Americans are open to AI being used as part of their healthcare, down from 52% just two years ago. Fewer also believe AI can make healthcare more efficient (55%, down from 64%). The erosion is driven by growing coverage of AI diagnostic failures and hallucinations in clinical settings. As AI healthcare adoption accelerates, this trust gap risks creating serious patient compliance and adoption barriers — particularly in communities already distrustful of the medical system.</p>
+                                    <p><a href="https://www.usnews.com/news/health-news/articles/2026-04-07/americans-may-be-losing-trust-for-ai-in-health-care-survey?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06" target="_blank">Read More — U.S. News</a></p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4>AI Recommends Different Treatments Based on Race, Gender, and Income — Not Just Health</h4>
+                                    <p>A study analysing over 1.7 million AI-generated clinical vignette responses found that race, gender, income, and housing status influenced AI treatment recommendations — even when patients had identical health conditions. Researchers tested nine AI programs with 1,000 ER cases, keeping medical symptoms constant while varying demographics, and found recommendations changed based on personal characteristics rather than clinical need. Deployed at scale, such systems could systematically amplify existing healthcare disparities.</p>
+                                    <p><a href="https://codex.ucsf.edu/news/editors-pick-study-finds-ai-medical-tools-show-bias-potential-misdiagnosis-and-patient-harm?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06" target="_blank">Read More — UCSF CoDEx</a></p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4>EU AI Act High-Risk Healthcare Requirements Take Effect August 2026 — Is the Industry Ready?</h4>
+                                    <p>Starting August 1, 2026, the EU AI Act's core requirements for high-risk AI systems — including medical devices and clinical decision support — become enforceable. Requirements include conformity assessments, technical documentation, post-market monitoring, human oversight obligations, and transparency mandates. Industry analysts warn that most European healthcare AI deployments are not yet compliant, and penalties of up to €30M or 6% of global turnover could force emergency changes to AI validation across EU health systems.</p>
+                                    <p><a href="https://www.jmir.org/2026/1/e79613?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_05_06" target="_blank">Read More — JMIR</a></p>
+                                </div>
+                            </div>
+
+                            <!-- Closing Note -->
+                            <div class="section">
+                                <h2>Closing Note</h2>
+                                <p>Two weeks is a long time in AI — and this fortnight proved it. We went from OpenAI naming a life sciences model after a crystallography pioneer to a landmark JAMA study exposing systematic failure at the clinical front line. The acceleration is real, and so are the gaps. As GPT-Rosalind ships to pharma partners, PROTAC therapies reach patients, and the EU AI Act approaches enforcement, the convergence of capability and accountability is becoming unavoidable.</p>
+
+                                <p>Bigger models are not automatically safer. Faster deployment is not automatically better. The researchers behind SaFE-Scale and the JAMA differential diagnosis study are doing the hard work of establishing that principle empirically. Their work matters as much as the breakthroughs.</p>
+
+                                <p>Thank you for your continued patience through our technical difficulties, and for reading PythRaSh's AI Newsletter. If you found this week's insights valuable, please share them with colleagues at the intersection of AI and biology.</p>
+
+                                <p><strong>Have feedback or suggestions?</strong> Reply to this email — I read every message!</p>
+
+                                <p>See you next week!</p>
+
+                                <p><strong>Md Rasheduzzaman</strong></p>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                    <!-- Share Section -->
+                    <tr>
+                        <td class="share-section">
+                            <h2>Share This Newsletter</h2>
+                            <p>Found this valuable? Share it with your network!</p>
+                            <div class="share-buttons">
+                                <a href="https://twitter.com/intent/tweet?text=%F0%9F%A7%AC%20OpenAI%20just%20launched%20GPT-Rosalind%2C%20a%20frontier%20AI%20model%20built%20for%20life%20sciences%20%E2%80%94%20named%20after%20Rosalind%20Franklin!%20Plus%20new%20spatial%20proteomics%20AI%2C%20clinical%20LLM%20safety%20research%2C%20and%20a%20landmark%20JAMA%20study%20on%20LLM%20diagnosis%20failures.%20%23AIinMedicine%20%23DrugDiscovery&url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2Fai_news_archive%2FAI_Newsletter_2026_05_06.html" class="share-btn" target="_blank">Share on Twitter</a>
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2Fai_news_archive%2FAI_Newsletter_2026_05_06.html&title=PythRaSh%27s%20AI%20Newsletter%20-%20OpenAI%20Launches%20GPT-Rosalind%20for%20Life%20Sciences&summary=OpenAI%20enters%20life%20sciences%20with%20GPT-Rosalind%2C%20a%20JAMA%20study%20exposes%20LLM%20diagnostic%20failures%2C%20and%20Aidoc%20raises%20%24150M%20for%20clinical%20AI." class="share-btn" target="_blank">Share on LinkedIn</a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdrasheduz-zaman.github.io%2Fai_news_archive%2FAI_Newsletter_2026_05_06.html&quote=OpenAI%20launches%20GPT-Rosalind%20%E2%80%94%20the%20first%20frontier%20AI%20model%20built%20specifically%20for%20life%20sciences%20and%20drug%20discovery!" class="share-btn" target="_blank">Share on Facebook</a>
+                                <a href="mailto:?subject=PythRaSh%27s%20AI%20Newsletter%20-%20OpenAI%20Launches%20GPT-Rosalind%20for%20Life%20Sciences&body=Hi%2C%0A%0AThis%20edition%20of%20PythRaSh%27s%20AI%20Newsletter%20covers%20OpenAI%27s%20GPT-Rosalind%20for%20drug%20discovery%2C%20a%20JAMA%20study%20on%20LLM%20diagnostic%20failures%2C%20and%20new%20spatial%20proteomics%20AI%20research.%0A%0ACheck%20it%20out%3A%20https%3A%2F%2Fmdrasheduz-zaman.github.io%2Fai_news_archive%2FAI_Newsletter_2026_05_06.html" class="share-btn">Forward via Email</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer">
+                            <div class="footer-links">
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Unsubscribe</a> |
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Update Preferences</a> |
+                                <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_05_06.html">View in Browser</a>
+                            </div>
+
+                            <p><strong>PythRaSh's AI Newsletter</strong></p>
+                            <div class="address">
+                                PythRaSh's AI Newsletter, Fleischerwiese 4, Greifswald-17489, Germany
+                            </div>
+
+                            <p style="margin-top: 20px;">
+                                <a href="https://mdrasheduz-zaman.github.io/PythRaSh/">Visit our website</a> |
+                                <a href="https://www.linkedin.com/in/md-rashed-uz-zaman">Connect on LinkedIn</a> |
+                                <a href="https://github.com/mdrasheduz-zaman">GitHub</a>
+                            </p>
+
+                            <p style="margin-top: 15px; font-size: 12px; color: #999;">
+                                Questions? Reply to this email or contact Md Rasheduzzaman<br>
+                                Email: md.rasheduzzaman.ugoe@gmail.com
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
