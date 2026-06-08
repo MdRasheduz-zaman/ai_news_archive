@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PythRaSh's AI Newsletter - Issue #34 | Week of June 2, 2026</title>
+    <style>
+        /* Reset styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111111; background-color: #f5f5f5; }
+        table { border-collapse: collapse; width: 100%; }
+
+        /* Container */
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #FFFFFF; }
+
+        /* Header */
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+
+        /* Content sections */
+        .content { padding: 30px 20px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #667eea; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #111111; font-size: 20px; margin-bottom: 15px; }
+        .section p { margin-bottom: 15px; font-size: 16px; }
+
+        /* Featured Event Card */
+        .event-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; box-shadow: 0 4px 8px rgba(102, 126, 234, 0.1); }
+        .event-card h3 { color: #667eea; font-size: 22px; margin-bottom: 15px; }
+        .event-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .event-card a:hover { text-decoration: underline; }
+        .event-card ul { padding-left: 20px; margin-bottom: 15px; }
+        .event-card li { margin-bottom: 8px; font-size: 16px; }
+
+        /* Quick updates list */
+        .quick-updates { background: #f8f9ff; border-radius: 8px; padding: 20px; }
+        .quick-updates ul { list-style: none; }
+        .quick-updates li { margin-bottom: 15px; padding: 15px; background: white; border-radius: 6px; border-left: 3px solid #667eea; font-size: 15px; }
+        .quick-updates li strong { color: #667eea; }
+        .quick-updates a { color: #667eea; text-decoration: none; }
+        .quick-updates a:hover { text-decoration: underline; }
+
+        /* Research papers */
+        .research-paper { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .research-paper h4 { color: #111111; font-size: 18px; margin-bottom: 10px; }
+        .research-paper a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .research-paper a:hover { text-decoration: underline; }
+        .research-paper p { font-size: 15px; margin-bottom: 10px; }
+        .impact-tag { background: #667eea; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 10px; }
+
+        /* GitHub repos */
+        .repo-card { background: #f8f9ff; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 3px solid #667eea; }
+        .repo-card h4 { color: #111111; margin-bottom: 8px; }
+        .repo-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .repo-card a:hover { text-decoration: underline; }
+        .repo-card p { font-size: 15px; margin-bottom: 0; }
+        .star-count { color: #666; font-size: 14px; display: block; margin-bottom: 8px; }
+
+        /* Products */
+        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .product-card h4 { color: #111111; margin-bottom: 8px; }
+        .product-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .product-card a:hover { text-decoration: underline; }
+        .product-card p { font-size: 15px; margin-bottom: 8px; }
+        .upvote-count { background: #667eea; color: white; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+
+        /* Critics / Concerns */
+        .concern-card { background: #fff8f0; border: 1px solid #ffe0b2; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 4px solid #ff9800; }
+        .concern-card h4 { color: #e65100; font-size: 17px; margin-bottom: 10px; }
+        .concern-card p { font-size: 15px; margin-bottom: 0; }
+
+        /* Share section */
+        .share-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px 20px; text-align: center; }
+        .share-section h2 { color: white; margin-bottom: 10px; border-bottom: none; }
+        .share-section p { color: rgba(255,255,255,0.9); font-size: 16px; margin-bottom: 0; }
+        .share-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+        .share-btn { background: rgba(255,255,255,0.2); color: white; padding: 12px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; }
+        .share-btn:hover { background: rgba(255,255,255,0.3); color: white; text-decoration: none; }
+
+        /* Footer */
+        .footer { background: #f5f5f5; padding: 30px 20px; text-align: center; color: #666; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #667eea; text-decoration: none; margin: 0 10px; font-size: 14px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer p { font-size: 14px; margin-bottom: 10px; }
+        .footer .address { font-size: 12px; color: #999; margin-top: 10px; }
+        .footer .social-links a { color: #667eea; text-decoration: none; margin: 0 8px; font-size: 14px; }
+
+        /* Mobile responsive */
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .content { padding: 20px 15px !important; }
+            .header { padding: 30px 15px !important; }
+            .header h1 { font-size: 22px !important; }
+            .share-buttons { flex-direction: column !important; gap: 10px !important; }
+            .share-btn { display: block !important; width: 100% !important; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tr>
+            <td align="center" style="background-color: #f5f5f5; padding: 20px 0;">
+                <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0">
+
+                    <!-- View in Browser -->
+                    <tr>
+                        <td style="text-align: center; padding: 10px; font-size: 12px; color: #666;">
+                            <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026-06-08.html" style="color: #667eea; text-decoration: none;">View in Browser</a>
+                        </td>
+                    </tr>
+
+                    <!-- Header -->
+                    <tr>
+                        <td class="header">
+                            <h1>PythRaSh's AI Newsletter</h1>
+                            <p>Issue #34 &nbsp;|&nbsp; Week of June 2, 2026</p>
+                        </td>
+                    </tr>
+
+                    <!-- Main Content -->
+                    <tr>
+                        <td class="content">
+
+                            <!-- Intro -->
+                            <div class="section">
+                                <p><strong>Hi, There!</strong></p>
+                                <p>This week's theme is <strong>The AI Medical Establishment Goes All-In.</strong> When Mayo Clinic and Microsoft announce a purpose-built frontier AI model owned by the clinic itself, AI in medicine has moved past experimentation into institutional infrastructure. Alongside that, ASCO 2026 delivered the most consequential cancer plenary in years — including a drug that nearly doubled survival in one of the deadliest cancers. The WHO published its first structured framework for AI in health policy. And FutureHouse's Robin, validated in <em>Nature</em>, showed that AI can now run an entire scientific discovery cycle in 2.5 months. The pace is not slowing down.</p>
+                            </div>
+
+                            <!-- Big Story of the Week -->
+                            <div class="section">
+                                <h2>🚀 BIG STORY OF THE WEEK</h2>
+                                <div class="event-card">
+                                    <h3><a href="https://news.microsoft.com/source/2026/06/02/mayo-clinic-and-microsoft-collaborate-to-develop-a-frontier-ai-model-for-healthcare/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">Mayo Clinic and Microsoft Collaborate to Build a Frontier AI Model for Healthcare — Owned by the Clinic, Distributed to the World</a></h3>
+
+                                    <p>On June 2, 2026, Mayo Clinic and Microsoft announced a strategic collaboration to develop and deploy a <strong>frontier AI model designed specifically for healthcare</strong> — and owned entirely by Mayo Clinic.</p>
+
+                                    <p>The partnership combines Mayo Clinic's de-identified clinical health data and 165 years of longitudinal clinical expertise with Microsoft's advanced AI, cloud infrastructure, and superintelligence capabilities through Azure. The model is designed to synthesize diverse clinical data — from imaging and labs to clinical notes — to support <strong>earlier diagnoses, more personalized treatment decisions, and better patient outcomes</strong>.</p>
+
+                                    <p>Three design decisions distinguish this from prior industry partnerships:</p>
+
+                                    <p><strong>Clinic-owned model:</strong> The frontier model will be owned by Mayo Clinic, not Microsoft — preserving Mayo's commitment to patient trust, clinical rigor, and responsible data stewardship. Microsoft plans to make it available through <strong>Azure Foundry APIs</strong>, enabling health organizations worldwide to access its capabilities.</p>
+
+                                    <p><strong>Real-world deployment first:</strong> The model is being deployed within Mayo Clinic's own clinical environment before external release — where it can be continuously tested and refined through real patient care. This is the clinical validation loop the industry has consistently lacked.</p>
+
+                                    <p><strong>Frontier, not fine-tuned:</strong> Rather than fine-tuning an existing general-purpose model on healthcare tasks, the collaboration is building a new frontier model for medicine — domain-specific infrastructure rather than a wrapper.</p>
+
+                                    <p><strong>Why this matters:</strong> The question of who owns proprietary clinical training data has been the central unresolved question in healthcare AI. Mayo's ownership structure is a direct answer: the institution holding the data holds the model. Microsoft gets global distribution. This partnership will be the template other major health systems watch closely.</p>
+
+                                    <p><strong>Key takeaways:</strong></p>
+                                    <ul>
+                                        <li>Mayo Clinic owns the model; Microsoft provides AI and Azure Foundry API infrastructure for global distribution</li>
+                                        <li>Built on one of the most longitudinally rich de-identified clinical datasets in the world</li>
+                                        <li>First major health system to build a frontier (not fine-tuned) AI model in direct partnership with a hyperscaler</li>
+                                    </ul>
+
+                                    <p style="margin-top:15px; font-size:14px; color:#555;">
+                                        <strong>Sources:</strong>
+                                        <a href="https://news.microsoft.com/source/2026/06/02/mayo-clinic-and-microsoft-collaborate-to-develop-a-frontier-ai-model-for-healthcare/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">Microsoft Blog</a> |
+                                        <a href="https://newsnetwork.mayoclinic.org/discussion/mayo-clinic-and-microsoft-collaborate-to-develop-a-frontier-ai-model-for-healthcare/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">Mayo Clinic News</a> |
+                                        <a href="https://www.mobihealthnews.com/news/microsoft-partners-mayo-clinic-develop-frontier-ai-model-healthcare?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">MobiHealthNews</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Quick Updates -->
+                            <div class="section">
+                                <h2>⚡ Quick Updates</h2>
+                                <div class="quick-updates">
+                                    <ul>
+                                        <li><strong>WHO Publishes First AI in Health Policy Framework — Sets Evidence Standards Before Models Proliferate:</strong> On June 2, the World Health Organization released "Artificial Intelligence and Evidence-Informed Policy – Emerging Challenges and Opportunities," jointly developed by WHO's AI and Science departments. The paper redirects attention to where the evidence base is actually shaped: how health problems are <em>defined</em>, how policy options are <em>designed</em>, and how impact is <em>assessed</em>. AI could make health policy smarter — or weaker — depending on governance. <a href="https://www.who.int/news/item/02-06-2026-new-who-discussion-paper-sets-out-opportunities-and-risks-of-ai-in-evidence-informed-health-policy?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">WHO</a></li>
+
+                                        <li><strong>ASCO 2026: Daraxonrasib Nearly Doubles Median Survival in Metastatic Pancreatic Cancer — Standing Ovation, Simultaneous NEJM Publication:</strong> The RASolute 302 Phase 3 trial showed daraxonrasib achieved 11.1 months median overall survival vs. 5.5 months on chemotherapy — the largest survival gain ever recorded in second-line metastatic pancreatic cancer. The drug targets RAS-mutant and RAS-wild-type mPDAC equally. Grade 3+ adverse events: 43.6% vs. 57.5% with chemo; treatment discontinuation: 1.2% vs. 11.2%. Presented in the ASCO plenary and published simultaneously in the <em>New England Journal of Medicine</em>. FDA had already granted expanded access. <a href="https://www.asco.org/about-asco/press-center/multi-selective-ras-inhibitor-nearly-doubles-survival-pancreatic-cancer?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">ASCO</a> | <a href="https://ecancer.org/en/news/28376-asco-2026-daraxonrasib-doubles-median-overall-survival-in-metastatic-pancreatic-cancer?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">ecancer</a></li>
+
+                                        <li><strong>GLP-1 Drugs Linked to 30% Lower Breast Cancer Risk in 111,000-Woman Cohort Study — Presented at ASCO:</strong> A large retrospective cohort study of 111,646 women (BMI ≥25, ages 45–80) found that GLP-1 receptor agonist users (Ozempic, Wegovy) were approximately 30% less likely to develop breast cancer. Published in <em>JCO Oncology Practice</em>. Mechanism is unclear — could be weight loss, direct GLP-1 receptor activity in breast tissue, or metabolic changes. These were observational studies; causation is not established. <a href="https://www.sciencedaily.com/releases/2026/06/260605023400.htm?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">ScienceDaily</a> | <a href="https://www.healthline.com/health-news/glp-1-drugs-lower-breast-cancer-incidence?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">Healthline</a></li>
+
+                                        <li><strong>ITIF Policy Brief: AI Drug Discovery Needs Matching Policy — Highlights FutureHouse's Robin in Nature:</strong> The Information Technology and Innovation Foundation (June 2) called for reform of incentives, data access, and regulation to support AI drug discovery. The brief spotlighted FutureHouse's Robin — published in <em>Nature</em> — as proof-of-concept: Robin identified ripasudil (a glaucoma drug) as a candidate for dry age-related macular degeneration in <strong>2.5 months</strong>, confirmed a 7.5× increase in phagocytosis, and is estimated <strong>200× faster</strong> than conventional workflows. <a href="https://itif.org/publications/2026/06/02/ai-drug-discovery-systems-could-strengthen-biopharmaceutical-innovation/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">ITIF</a> | <a href="https://www.nature.com/articles/s41586-026-10652-y?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">Nature</a></li>
+
+                                        <li><strong>AI-Assisted Analysis Finds Autism Has at Least Two Biologically Distinct Subtypes with Different Brain Connectivity Patterns:</strong> A June 3 study using AI-assisted brain connectivity analysis found autism may include at least two biologically distinct subtypes, each marked by different patterns of brain communication. Implications are significant for clinical trial design — heterogeneous autism populations likely require stratified enrollment — and for personalized intervention across subtypes. <a href="https://www.sciencedaily.com/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">ScienceDaily</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Research Papers -->
+                            <div class="section">
+                                <h2>📚 Top Research Papers</h2>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://www.nature.com/articles/s41586-026-10652-y?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">Robin — First End-to-End Multi-Agent System for Autonomous Scientific Discovery</a></h4>
+                                    <p><strong>Nature (s41586-026-10652-y) | May 2026 | FutureHouse</strong></p>
+                                    <p>FutureHouse's Robin is a multi-agent system that autonomously generates scientific hypotheses, designs experiments, analyzes biological data, and refines therapeutic strategies — with human scientists executing wet lab experiments while AI runs the full intellectual loop. Applied to dry age-related macular degeneration (dAMD), Robin identified <strong>ripasudil</strong> (a ROCK inhibitor approved for glaucoma) as a repurposing candidate, confirmed it increased retinal pigment epithelium phagocytosis by <strong>7.5×</strong>, and completed the discovery cycle in <strong>2.5 months</strong>. FutureHouse estimates a <strong>200-fold reduction</strong> in researcher time vs. a conventional workflow. Open-source code available on GitHub.</p>
+                                    <p><strong>Impact:</strong> This is the clearest demonstration that a multi-agent AI system can function as a genuine participant in scientific discovery — not just a literature tool. The bottleneck in discovery is no longer hypothesis generation; it may now be wet lab throughput. This paper will anchor the next 12 months of autonomous AI scientist discourse.</p>
+                                    <span class="impact-tag">Breakthrough Discovery</span>
+                                </div>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/abs/2606.07488?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">CoMetaPNS — Continual Meta-Learning for Personalized Cardiac Electrophysiology Simulations</a></h4>
+                                    <p><strong>arXiv 2606.07488 | June 5, 2026</strong></p>
+                                    <p>A continual meta-learning framework for personalized cardiac simulation surrogates that integrates new patient data sequentially without costly full retraining — and can identify whether incoming data comes from a known or unknown cardiac dynamics source. Uses a continual Bayesian Gaussian Mixture Model over a memory buffer for task identity inference. Demonstrates superior forecasting, computational scalability, and resilience to catastrophic forgetting vs. baselines on synthetic cardiac data.</p>
+                                    <p><strong>Impact:</strong> Personalized virtual heart simulations for clinical decision support require models that update without forgetting — precisely the problem blocking deployment. CoMetaPNS shows scalable, personalized cardiac AI surrogates are achievable without catastrophic forgetting, clearing a major prerequisite for AI-based cardiac surgery planning tools in clinical settings.</p>
+                                    <span class="impact-tag">Clinical Deployment</span>
+                                </div>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://arxiv.org/abs/2606.07489?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">How AI Agents Reshape Knowledge Work: Autonomy, Efficiency, and Scope</a></h4>
+                                    <p><strong>arXiv 2606.07489 | June 5, 2026 | Harvard / Perplexity</strong></p>
+                                    <p>A Harvard/Perplexity study using production data from Perplexity's Search and Computer products (Feb–May 2026). Key findings: Computer performs <strong>26 minutes of autonomous work per session vs. 33 seconds for Search</strong>; reduces task completion time from 269 to 36 minutes (<strong>87% reduction</strong>) and cost by 94% vs. humans using Search alone. Per-query dissatisfaction rates 55% lower on Computer. Computer queries more often cross occupational boundaries and bundle interdependent subtasks into composite tasks absent from Search usage.</p>
+                                    <p><strong>Impact:</strong> Directly relevant to research labs — AI agents don't just speed up known workflows, they change <em>which tasks</em> researchers attempt. For biomedical research, tasks historically requiring specialized research assistants (literature synthesis, multi-step analysis, hypothesis building) are now automatable. The constraint on discovery timelines increasingly shifts to physical experiment throughput.</p>
+                                    <span class="impact-tag">Research Workflows</span>
+                                </div>
+
+                                <div class="research-paper">
+                                    <h4><a href="https://www.nature.com/articles/s41598-026-49861-w?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">From Intelligent Models to Clinical Tools — The Evolving Landscape of AI in Medical Imaging</a></h4>
+                                    <p><strong>Nature Scientific Reports | 2026</strong></p>
+                                    <p>A comprehensive review documenting AI integration in medical imaging across oncology, cardiology, and ophthalmology — analyzing the shift from descriptive to predictive and prescriptive analytics. Documents current clinical deployment barriers: computational cost, data privacy constraints, regulatory pathways, and the interpretability-accuracy tradeoff. Reviews how AI is increasingly embedded in clinical workflow orchestration rather than used as a standalone diagnostic adjunct.</p>
+                                    <p><strong>Impact:</strong> Provides a systematic baseline for the current state of medical imaging AI — a field where capability has outpaced clinical integration. The review's documentation of deployment barriers is the policy and engineering roadmap for what health systems must solve in the next 3–5 years.</p>
+                                    <span class="impact-tag">Policy Roadmap</span>
+                                </div>
+                            </div>
+
+                            <!-- GitHub Repos -->
+                            <div class="section">
+                                <h2>💻 Top GitHub Repos of the Week</h2>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/Future-House/robin?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">Future-House/robin</a></h4>
+                                    <span class="star-count">⭐ ~1,200 stars | Released with the Nature paper this week</span>
+                                    <p>Open-source code for the Robin multi-agent autonomous scientific discovery system. Integrates FutureHouse's Crow (literature QA), Falcon (literature search), and Finch (data analysis) agents into a unified pipeline that autonomously cycles through hypothesis → experimental design → data analysis → refinement. Directly applicable to drug repurposing, target identification, and mechanism elucidation workflows.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/Future-House/paper-qa?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">Future-House/paper-qa</a></h4>
+                                    <span class="star-count">⭐ ~7,500 stars | Highest-accuracy scientific literature RAG</span>
+                                    <p>PaperQA2/Crow — the highest-accuracy RAG system for scientific literature, outperforming all other tools on RAG-QA Arena's science benchmark by over 10 points. Supports PDFs, Word documents, and source code. Native clinical trial query integration via the clinicaltrials.gov API. Now the foundation of Robin's literature reasoning loop and the most practical starting point for labs building AI literature agents.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/Project-MONAI/MONAI?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">Project-MONAI/MONAI</a></h4>
+                                    <span class="star-count">⭐ ~5,100 stars | Medical Open Network for AI</span>
+                                    <p>PyTorch-native framework for medical image analysis. Domain-specific transforms, data loaders, and pre-trained models for CT, MRI, and pathology across 2D/3D tasks. Backed by NVIDIA and deployed at research institutions worldwide. With AI digital pathology biomarkers for prostate cancer risk stratification presented at ASCO 2026 this week, MONAI remains the foundational toolkit for clinical imaging AI development.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/ArcInstitute/evo2?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">ArcInstitute/evo2</a></h4>
+                                    <span class="star-count">⭐ ~3,200 stars | Arc Institute genomic foundation model</span>
+                                    <p>Arc Institute's genomic foundation model trained on 9.3 trillion nucleotides across all domains of life — capable of whole-genome generation and zero-shot prediction of variant effects on DNA, RNA, and proteins. As genomics-based biomarkers and precision oncology tools dominate the clinical AI pipeline (including ASCO 2026's AI digital pathology prostate results), Evo2 provides the upstream sequence-level model enabling these downstream applications.</p>
+                                </div>
+
+                                <div class="repo-card">
+                                    <h4><a href="https://github.com/microsoft/health-architectures?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">microsoft/health-architectures</a></h4>
+                                    <span class="star-count">⭐ ~2,000 stars | HIPAA-compliant Azure healthcare AI patterns</span>
+                                    <p>Microsoft's open-source reference architectures for building HIPAA-compliant healthcare AI applications on Azure — FHIR server integration, clinical NLP pipelines, and patient data orchestration patterns. With the Mayo Clinic/Microsoft frontier healthcare AI model announced this week, this repo provides the foundational infrastructure patterns that health systems building similar capabilities on Azure will need.</p>
+                                </div>
+                            </div>
+
+                            <!-- AI Products -->
+                            <div class="section">
+                                <h2>🛠️ Top AI Products of the Week</h2>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.perplexity.ai/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">Perplexity Personal Computer — Hybrid Local/Cloud AI Orchestration</a></h4>
+                                    <p><em>Announced June 2, 2026</em></p>
+                                    <p>Perplexity announced a hybrid reasoning system that automatically distributes AI tasks between local devices and the cloud. Sensitive data — financial records, medical information — stays on-device via small local models; complex workloads route to cloud inference. Orchestrates across 19 AI models (Claude, Gemini, GPT, Grok, and others). The Harvard/Perplexity arXiv paper published this week documents real-world performance: 87% time reduction, 94% cost reduction vs. Search-only research workflows. Critical for clinical teams handling PHI who need AI capabilities without cloud data transmission risk.</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.futurehouse.org/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">FutureHouse Platform (Crow + Robin) — Open-Access AI Scientific Research Agents</a></h4>
+                                    <p><em>Open for academic use — major coverage following the Nature paper this week</em></p>
+                                    <p>FutureHouse's research agent platform — including Crow (literature QA), Owl (scientific Q&A), and the Robin multi-agent discovery system — is publicly accessible for research use. Crow achieves superhuman performance on scientific literature synthesis. Robin demonstrated autonomous drug repurposing discovery in 2.5 months. The platform is the AI layer for biological hypothesis generation, literature synthesis, and drug target identification — without requiring in-house ML infrastructure. Free for academic use.</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/fundraisly?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">Fundraisly — AI-Powered Grant &amp; Funding Discovery for Researchers</a></h4>
+                                    <p><span class="upvote-count">~680 upvotes</span> &nbsp;| Product Hunt Week of June 1, 2026</p>
+                                    <p>Helps researchers, nonprofits, and startups identify matching grant opportunities, draft applications, and track funding deadlines using AI-powered semantic matching against grant databases. Particularly relevant for academic biology and healthcare research teams navigating the increasing complexity of NIH, Wellcome Trust, EU Horizon, and biotech VC funding landscapes — where grant identification and application drafting consume disproportionate researcher time.</p>
+                                </div>
+
+                                <div class="product-card">
+                                    <h4><a href="https://www.producthunt.com/products/mina?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_08">Mina Meeting Assistant — AI Note-Taking with Structured Action Item Tracking</a></h4>
+                                    <p><span class="upvote-count">~510 upvotes</span> &nbsp;| Product Hunt Week of June 1, 2026</p>
+                                    <p>Records, transcribes, and summarizes meetings with automatic action item extraction, assignee tagging, and deadline tracking. For clinical research teams running multi-site trials — IRB reviews, sponsor check-ins, lab standups — Mina provides structured capture of decisions and action items that typically get lost between meeting and follow-up. CRM integration means commitments propagate to project management systems automatically.</p>
+                                </div>
+                            </div>
+
+                            <!-- AI Criticism & Concerns -->
+                            <div class="section">
+                                <h2>⚠️ AI Criticism &amp; Concerns</h2>
+
+                                <div class="concern-card">
+                                    <h4>Mayo Clinic's Clinical Data Is the Model — Who Governs the Training Set?</h4>
+                                    <p>Mayo Clinic owns the model, which sounds like progress on the data ownership question. But governance runs deeper: the de-identified patient data used to train this model came from patients who consented to <em>care</em>, not AI model development. Medical consent frameworks were designed before frontier AI existed. They do not contemplate patients' longitudinal clinical data becoming the competitive moat of a commercially distributed AI product available via API. The ownership structure resolves the enterprise question. It does not resolve the patient consent question — and Mayo's announcement did not address it.</p>
+                                </div>
+
+                                <div class="concern-card">
+                                    <h4>Daraxonrasib's Survival Benefit Is Real — the Access Gap May Not Be</h4>
+                                    <p>Daraxonrasib nearly doubles median survival in a cancer that kills ~95% of patients within five years. This is extraordinary medicine. But Revolution Medicines has not disclosed pricing, and the regulatory pathway is not yet complete. The history of breakthrough oncology drugs is documented: survival gains that were real, and access that never materialized broadly — especially in lower-income settings where metastatic pancreatic cancer incidence is rising. The Phase 3 result is not the endpoint.</p>
+                                </div>
+
+                                <div class="concern-card">
+                                    <h4>GLP-1 Breast Cancer Findings: "30% Lower Risk" Headline, Observational Study Fine Print</h4>
+                                    <p>Media coverage of the GLP-1 breast cancer data converged on "30% lower risk" without consistently surfacing the critical caveat: this was an observational retrospective cohort study, not a randomized controlled trial. Mechanism is unknown. Confounding is substantial — GLP-1 users differ systematically from non-users in BMI trajectory, healthcare engagement, and comorbidities. The finding is compelling enough to justify trials. It is not compelling enough to prescribe GLP-1s for breast cancer prevention, which some coverage risks implying.</p>
+                                </div>
+
+                                <div class="concern-card">
+                                    <h4>Robin Automated the Hypothesis Loop — Humans Still Did Every Experiment</h4>
+                                    <p>The Robin headline is "AI Discovers Drug Candidate." The paper is more precise: Robin generated and refined hypotheses; human scientists executed all physical lab experiments. The wet lab throughput bottleneck remains entirely human. As AI accelerates hypothesis generation and experimental design, the constraint on discovery timelines increasingly falls on physical experiment infrastructure — not intellectual infrastructure. Robotics, automated lab platforms, and AI-to-wet-lab interfaces are the next convergence point. Robin's 2.5-month timeline should accelerate investment there — not be misread as evidence that physical experiments have been automated.</p>
+                                </div>
+                            </div>
+
+                            <!-- Closing Note -->
+                            <div class="section">
+                                <h2>Closing Note</h2>
+                                <p>This week had a common thread running beneath the headlines: institutional medicine has stopped testing AI and started building it. Mayo Clinic isn't evaluating AI vendors — it's co-developing the model. The WHO isn't watching AI proliferate — it's writing the governance framework. ASCO isn't speculating about AI-assisted oncology — it's presenting Phase 3 results for the next standard of care in pancreatic cancer.</p>
+
+                                <p>What remains absent is what was absent last week: liability frameworks, patient consent structures for AI training, access equity plans for breakthrough drugs, and training requirements for the clinicians who will use all of this in practice. The capability is outpacing the scaffolding that makes it trustworthy.</p>
+
+                                <p>Robin compressed a drug discovery cycle to 2.5 months. The next question isn't how fast AI can generate hypotheses — it's what happens when an AI-generated hypothesis is wrong, and whether the scientific community has built the review infrastructure to catch that before it reaches patients. The failure modes of autonomous scientific discovery have not yet been stress-tested at scale.</p>
+
+                                <p>Thank you for reading. Reply anytime — I read every message.</p>
+
+                                <p><strong>Md Rasheduzzaman</strong></p>
+                            </div>
+
+                        </td>
+                    </tr>
+
+                    <!-- Share Section -->
+                    <tr>
+                        <td class="share-section">
+                            <h2>Share This Newsletter</h2>
+                            <p>Found this week's insights valuable? Share with your network!</p>
+                            <div class="share-buttons">
+                                <a href="https://twitter.com/intent/tweet?text=🧬%20This%20week%20in%20AI%20%2B%20Biology%3A%20Mayo%20Clinic%20%2B%20Microsoft%20build%20a%20frontier%20healthcare%20AI%2C%20daraxonrasib%20doubles%20pancreatic%20cancer%20survival%2C%20and%20FutureHouse%27s%20Robin%20discovers%20a%20drug%20in%202.5%20months.%20%40PythRaSh%27s%20newsletter%3A&url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn" target="_blank">Share on Twitter/X</a>
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&title=PythRaSh%27s%20AI%20Newsletter%20%23034%20%E2%80%94%20The%20AI%20Medical%20Establishment%20Goes%20All-In&summary=Mayo%20Clinic%20%2B%20Microsoft%20build%20a%20frontier%20AI%20model%2C%20daraxonrasib%20nearly%20doubles%20pancreatic%20cancer%20survival%2C%20FutureHouse%27s%20Robin%20does%20drug%20discovery%20in%202.5%20months." class="share-btn" target="_blank">Share on LinkedIn</a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&quote=Check%20out%20this%20week%27s%20AI%20%2B%20Biology%20newsletter%20%E2%80%94%20major%20breakthroughs%20in%20healthcare%20AI%2C%20cancer%20treatment%2C%20and%20autonomous%20drug%20discovery" class="share-btn" target="_blank">Share on Facebook</a>
+                                <a href="mailto:?subject=PythRaSh%27s%20AI%20Newsletter%20%23034%20%E2%80%94%20Must%20Read!&body=Hi%2C%0A%0AI%20thought%20you%27d%20find%20this%20week%27s%20AI%20%2B%20Biology%20newsletter%20interesting.%20It%20covers%20the%20Mayo%20Clinic%2FMicrosoft%20frontier%20AI%20model%2C%20ASCO%202026%20pancreatic%20cancer%20breakthrough%2C%20FutureHouse%27s%20Robin%20autonomous%20drug%20discovery%2C%20and%20more.%0A%0ACheck%20it%20out%3A%20https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn">Forward via Email</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer">
+                            <div class="footer-links">
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Unsubscribe</a> |
+                                <a href="https://forms.gle/ueS3aqeJsujHA48L9">Update Preferences</a> |
+                                <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026-06-08.html">View in Browser</a>
+                            </div>
+
+                            <p><strong>PythRaSh's AI Newsletter</strong></p>
+                            <div class="address">
+                                Fleischerwiese 4, Greifswald-17489, Germany
+                            </div>
+
+                            <div class="social-links" style="margin-top: 20px;">
+                                <a href="https://mdrasheduz-zaman.github.io/PythRaSh/">Website</a> |
+                                <a href="https://www.linkedin.com/in/md-rashed-uz-zaman">LinkedIn</a> |
+                                <a href="https://github.com/mdrasheduz-zaman">GitHub</a>
+                            </div>
+
+                            <p style="margin-top: 15px; font-size: 12px; color: #999;">
+                                Questions? Reply to this email or contact Md Rasheduzzaman<br>
+                                md.rasheduzzaman.ugoe@gmail.com
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
