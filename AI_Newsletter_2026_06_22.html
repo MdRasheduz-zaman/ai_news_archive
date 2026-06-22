@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PythRaSh's AI Newsletter - Issue #36 | Week of June 16, 2026</title>
+    <style>
+        /* Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111111; background-color: #f5f5f5; }
+        table { border-collapse: collapse; width: 100%; }
+
+        /* Container */
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #FFFFFF; }
+
+        /* Header */
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+
+        /* Content */
+        .content { padding: 30px 20px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #667eea; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #111111; font-size: 20px; margin-bottom: 15px; }
+        .section p { margin-bottom: 15px; font-size: 16px; }
+
+        /* Event card */
+        .event-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; box-shadow: 0 4px 8px rgba(102,126,234,0.1); }
+        .event-card h3 { color: #667eea; font-size: 21px; margin-bottom: 15px; }
+        .event-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .event-card a:hover { text-decoration: underline; }
+        .event-card ul { padding-left: 20px; margin-bottom: 15px; }
+        .event-card li { margin-bottom: 8px; font-size: 15px; }
+        .event-card p { font-size: 15px; }
+
+        /* Quick updates */
+        .quick-updates { background: #f8f9ff; border-radius: 8px; padding: 20px; }
+        .quick-updates ul { list-style: none; }
+        .quick-updates li { margin-bottom: 15px; padding: 15px; background: white; border-radius: 6px; border-left: 3px solid #667eea; font-size: 15px; }
+        .quick-updates li strong { color: #667eea; }
+        .quick-updates a { color: #667eea; text-decoration: none; }
+        .quick-updates a:hover { text-decoration: underline; }
+
+        /* Research papers */
+        .research-paper { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .research-paper h4 { color: #111111; font-size: 17px; margin-bottom: 10px; }
+        .research-paper h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .research-paper h4 a:hover { text-decoration: underline; }
+        .research-paper p { font-size: 15px; margin-bottom: 10px; }
+        .impact-tag { background: #667eea; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 6px; }
+
+        /* Repos */
+        .repo-card { background: #f8f9ff; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 3px solid #667eea; }
+        .repo-card h4 { color: #111111; margin-bottom: 6px; }
+        .repo-card h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .repo-card h4 a:hover { text-decoration: underline; }
+        .repo-card p { font-size: 15px; margin-bottom: 0; }
+        .star-count { color: #666; font-size: 13px; display: block; margin-bottom: 8px; }
+
+        /* Products */
+        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .product-card h4 { color: #111111; margin-bottom: 6px; }
+        .product-card h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .product-card h4 a:hover { text-decoration: underline; }
+        .product-card p { font-size: 15px; margin-bottom: 8px; }
+        .upvote-count { background: #667eea; color: white; padding: 2px 8px; border-radius: 3px; font-size: 12px; }
+
+        /* Critics */
+        .concern-card { background: #fff8f0; border: 1px solid #ffe0b2; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 4px solid #ff9800; }
+        .concern-card h4 { color: #e65100; font-size: 17px; margin-bottom: 10px; }
+        .concern-card p { font-size: 15px; margin-bottom: 0; }
+
+        /* Share section */
+        .share-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px 20px; text-align: center; }
+        .share-section h2 { color: white; margin-bottom: 10px; border-bottom: none; }
+        .share-section p { color: rgba(255,255,255,0.9); font-size: 16px; margin-bottom: 0; }
+        .share-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+        .share-btn { background: rgba(255,255,255,0.2); color: white; padding: 12px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; }
+        .share-btn:hover { background: rgba(255,255,255,0.3); }
+
+        /* Footer */
+        .footer { background: #f5f5f5; padding: 30px 20px; text-align: center; color: #666; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #667eea; text-decoration: none; margin: 0 10px; font-size: 14px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer p { font-size: 14px; margin-bottom: 10px; }
+        .footer .address { font-size: 12px; color: #999; margin-top: 10px; }
+        .footer .social-links a { color: #667eea; text-decoration: none; margin: 0 8px; font-size: 14px; }
+
+        /* Mobile */
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .content { padding: 20px 15px !important; }
+            .header { padding: 30px 15px !important; }
+            .header h1 { font-size: 22px !important; }
+            .share-buttons { flex-direction: column !important; gap: 10px !important; }
+            .share-btn { display: block !important; width: 100% !important; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+        <td align="center" style="background-color:#f5f5f5; padding:20px 0;">
+            <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0">
+
+                <!-- View in Browser -->
+                <tr>
+                    <td style="text-align:center; padding:10px; font-size:12px; color:#666;">
+                        <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026-06-22.html" style="color:#667eea; text-decoration:none;">View in Browser</a>
+                    </td>
+                </tr>
+
+                <!-- Header -->
+                <tr>
+                    <td class="header">
+                        <h1>PythRaSh's AI Newsletter</h1>
+                        <p>Issue #36 &nbsp;|&nbsp; Week of June 16, 2026</p>
+                    </td>
+                </tr>
+
+                <!-- Content -->
+                <tr>
+                    <td class="content">
+
+                        <!-- Intro -->
+                        <div class="section">
+                            <p><strong>Hi, There!</strong></p>
+                            <p>This week's theme is <strong>Science's New Power Centers.</strong> The biggest story isn't a new model or a new trial — it's a person. John Jumper, the Nobel laureate who led AlphaFold, announced he's leaving Google DeepMind for Anthropic after nearly nine years, and the move says more about where AI-driven biology is heading than any single paper could. Meanwhile, the infrastructure underneath that shift kept compounding: AlphaGenome quietly crossed a million API calls a day, the BIO International Convention opened in San Diego with 22+ sessions on where AI actually pays off in biotech, and a Doudna-founded CRISPR company picked up public funding for an AI-assisted gene-editing platform. The thread connecting it all: scientific firepower — talent, data, and capital — is consolidating into a smaller number of very well-resourced places.</p>
+                        </div>
+
+                        <!-- Big Story -->
+                        <div class="section">
+                            <h2>🚀 BIG STORY OF THE WEEK</h2>
+                            <div class="event-card">
+                                <h3><a href="https://www.cnbc.com/2026/06/19/john-jumper-to-leave-google-deepmind-for-anthropic.html?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">Nobel Laureate John Jumper Leaves DeepMind for Anthropic, Capping a Year of Quiet AI-for-Science Infrastructure Building</a></h3>
+
+                                <p>On June 19, 2026, John Jumper announced on X that he is leaving Google DeepMind after nearly nine years to join Anthropic. Jumper said he plans to take time to recharge before starting in his new role; neither he nor Anthropic has disclosed what that role will be.</p>
+
+                                <p>Jumper led the AlphaFold team at DeepMind and shared the 2024 Nobel Prize in Chemistry with DeepMind CEO Demis Hassabis and the University of Washington's David Baker, for work on protein structure prediction and design. AlphaFold is one of the clearest examples of AI producing direct, measurable scientific value: its public database now offers <strong>more than 200 million protein structure predictions</strong>, used by millions of researchers worldwide as basic infrastructure for biology — the equivalent of a periodic table for protein shape.</p>
+
+                                <p><strong>Why this matters:</strong> This isn't a random departure. Throughout 2026, Anthropic has been methodically building what amounts to AI-for-science infrastructure: opening wet labs, publishing research on AI agents for biological workflows, and announcing flagship partnerships in February with the Allen Institute and the Howard Hughes Medical Institute (which runs the Janelia Research Campus). Those partnerships embed Claude-powered agents directly into scientific data pipelines — targeting the months-long bottlenecks in single-cell genomics, connectomics, and imaging analysis that currently separate raw experimental data from validated biological insight. Anthropic is hosting a virtual event, "The Briefing: AI for Science," on June 30 — Jumper's hire reads as a marker of intent ahead of it. Recruiting the individual scientist most associated with AI's biggest biology win to date is as much a statement about where the next one will come from as it is a hire.</p>
+
+                                <p><strong>Key takeaways:</strong></p>
+                                <ul>
+                                    <li>Jumper departs DeepMind after nearly nine years, joining Anthropic in an undisclosed role</li>
+                                    <li>He shared the 2024 Nobel Prize in Chemistry for AlphaFold, now underpinning 200M+ protein structure predictions used worldwide</li>
+                                    <li>The move follows a year of Anthropic infrastructure-building: wet labs, biology agent research, and February partnerships with the Allen Institute and HHMI/Janelia</li>
+                                    <li>Anthropic streams "The Briefing: AI for Science" on June 30 — likely the next signal of how serious this bet is</li>
+                                </ul>
+
+                                <p style="margin-top:15px; font-size:14px; color:#555;">
+                                    <strong>Sources:</strong>
+                                    <a href="https://www.cnbc.com/2026/06/19/john-jumper-to-leave-google-deepmind-for-anthropic.html?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">CNBC</a> |
+                                    <a href="https://www.techtimes.com/articles/318754/20260620/alphafold-nobel-laureate-john-jumper-joins-anthropic-after-nine-years-deepmind.htm?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">Tech Times</a> |
+                                    <a href="https://www.synbiobeta.com/read/anthropic-is-hiring-biologists-building-wet-labs-and-betting-big-on-drug-discovery?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">SynBioBeta</a> |
+                                    <a href="https://www.anthropic.com/research/agents-in-biology?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">Anthropic</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Updates -->
+                        <div class="section">
+                            <h2>⚡ Quick Updates</h2>
+                            <div class="quick-updates">
+                                <ul>
+                                    <li><strong>AlphaGenome Crosses 1 Million API Calls a Day, Used by Nearly 3,000 Scientists in 160 Countries:</strong> Roughly five months after DeepMind open-sourced AlphaGenome, the DNA-sequence model is now handling about a million requests daily, per DeepMind's Pushmeet Kohli. Scientists are applying it to cancer, neurodegenerative disease, and infectious disease research — feeding sequences up to a million base pairs and getting back predictions of regulatory activity. It's the genomics analog to what AlphaFold did for protein structure, and the adoption curve looks similar. <a href="https://spectrum.ieee.org/alphagenome-ai-gene-regulation?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">IEEE Spectrum</a></li>
+
+                                    <li><strong>BIO International Convention 2026 Opens in San Diego With 22+ AI Sessions and an Industry Adoption Benchmark:</strong> The biotech industry's largest annual gathering (June 22–25, San Diego Convention Center) kicked off this week with its AI Summit headlined by new Benchling data on AI adoption rates across biotech — broken down by company size, clinical stage, and modality. The stated goal: separate use cases with real ROI from ones where "the hype still exceeds the outputs." 130+ sessions across 18 focus areas. <a href="https://convention.bio.org/program/ai-summit?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">BIO 2026</a></li>
+
+                                    <li><strong>Scribe Therapeutics Awarded $25M+ From California's Stem Cell Agency for AI-Assisted CRISPR Programs (June 18):</strong> Scribe Therapeutics, co-founded by Nobel laureate Jennifer Doudna, received more than $25 million from CIRM (California Institute for Regenerative Medicine) across two preclinical programs — STX-1200 and STX-1400 — aimed at single-dose, durable lowering of Lp(a) and triglycerides for cardiometabolic disease. The awards follow Scribe's recent data showcases on its proprietary AI platform for engineering next-generation CRISPR enzymes. <a href="https://www.biospace.com/press-releases/scribe-therapeutics-awarded-more-than-25-million-from-cirm-to-accelerate-additional-crispr-based-gene-editing-therapies-for-cardiometabolic-disease-into-clinical-trials?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">BioSpace</a></li>
+
+                                    <li><strong>AlphaFold Database Adds Millions of Protein-Complex Predictions, Moving Beyond Single-Protein Shapes:</strong> DeepMind and EMBL-EBI expanded the AlphaFold Database with millions of new homodimer (protein-pair) predictions, giving researchers structural insight into how proteins physically interact with each other — not just what each one looks like alone. Interaction prediction at this scale has been a harder computational problem than single-structure prediction. <a href="https://www.nature.com/articles/d41586-026-00787-3?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">Nature</a> | <a href="https://www.embl.org/news/science-technology/first-complexes-alphafold-database/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">EMBL</a></li>
+
+                                    <li><strong>HIMSS AI in Healthcare Forum Set for June 25–26 in Boston:</strong> As hospital adoption of predictive AI tied to electronic health records climbs (71% of hospitals in 2024, up from 66% in 2023), HIMSS's dedicated AI forum convenes health system leaders in Boston next week for case studies on real-world deployment rather than pilot-stage demos. Worth watching for signals on which AI use cases are actually surviving contact with hospital operations versus stalling after the pilot. <a href="https://himss1.eventsair.com/himss-ai-in-healthcare-forum-boston/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">HIMSS</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Research Papers -->
+                        <div class="section">
+                            <h2>📚 Top Research Papers</h2>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2606.20174?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">Computational Methods and Challenges in Cell-Free DNA Analysis for Multi-Cancer Early Detection</a></h4>
+                                <p><strong>arXiv 2606.20174 | June 18, 2026</strong></p>
+                                <p>A comprehensive review of computational methods (2022–2025) for detecting cancer from cell-free DNA (cfDNA) in a single blood draw — covering how fragmentomics and epigenetic features are extracted and analyzed across classical statistical methods, machine learning, and deep learning frameworks including autoencoder-based models. Evaluates each approach on biological interpretability, validation rigor, and clinical-integration readiness.</p>
+                                <p><strong>Impact:</strong> Multi-cancer early detection (MCED) from a single blood draw is one of the highest-leverage applications of AI in oncology, since it targets cancers with no existing screening program. This review is a useful map for any team building or evaluating an MCED pipeline, and its call for standardized evaluation protocols highlights a real gap: without comparable benchmarks, clinical adoption decisions are currently being made on apples-to-oranges evidence.</p>
+                                <span class="impact-tag">Liquid Biopsy</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2606.20303?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">GEN-Guard: Correcting Generalization Failures for Deployable Federated Surgical AI</a></h4>
+                                <p><strong>arXiv 2606.20303 | June 18, 2026</strong></p>
+                                <p>Identifies and fixes a specific failure mode in federated learning for surgical video AI: "performance leakage," where the model selected as best during training overfits to the hospitals in the federation and fails on unseen institutions. GEN-Guard adds client-blocked evaluation to catch the leakage and disagreement-aware distillation to correct it — showing model-selection failures exceeding 80% under standard evaluation, substantially corrected on laparoscopic cholecystectomy and colonoscopy polyp segmentation benchmarks.</p>
+                                <p><strong>Impact:</strong> Federated learning is the standard answer to "how do we train hospital AI without sharing patient data" — but this paper shows the standard way of picking the "winning" federated model is quietly broken more often than not. An 80%+ model-selection failure rate is a serious, previously under-recognized deployment risk hiding inside a technique many health systems already treat as solved.</p>
+                                <span class="impact-tag">Surgical AI</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2606.20143?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">HECKTOR 2025: Benchmark of Segmentation, Diagnosis, and Prognosis in Multimodal PET/CT</a></h4>
+                                <p><strong>arXiv 2606.20143 | June 18, 2026</strong></p>
+                                <p>Results from the HECKTOR 2025 challenge, a multi-institutional benchmark (1,100+ patients, 10 centers worldwide) for automated head and neck cancer analysis from PET/CT imaging and electronic health records. Thirty-five teams competed across tumor/lymph-node segmentation, recurrence-free survival prediction, and HPV status classification. Top results: 0.75 Dice score for segmentation, 0.66 concordance index for survival, 0.56 balanced accuracy for HPV classification.</p>
+                                <p><strong>Impact:</strong> Head and neck cancer treatment planning depends on labor-intensive manual tumor delineation with high inter-observer variability — exactly the kind of task automated segmentation should fix. The relatively modest HPV-classification accuracy is the more interesting result: an honest signal that noninvasive HPV status prediction from imaging alone isn't there yet, which matters because HPV status changes treatment intensity decisions in the clinic today.</p>
+                                <span class="impact-tag">Oncology Imaging</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2606.20164?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">MedRLM: Recursive Multimodal Health Intelligence for Long-Context Clinical Reasoning</a></h4>
+                                <p><strong>arXiv 2606.20164 | June 18, 2026</strong></p>
+                                <p>Proposes a framework for clinical decision support that treats a patient's case as an environment to be recursively inspected rather than a single prompt to be answered. MedRLM coordinates specialized agents across clinical text, longitudinal EHR data, imaging, physiological sensor streams, and guideline retrieval, connected through a shared "Clinical Evidence Graph" memory — with deeper reasoning triggered automatically when abnormal patterns are detected, and uncertainty-gated handoff to clinicians for high-risk cases.</p>
+                                <p><strong>Impact:</strong> Most clinical LLM systems still compress a patient's entire record into one prompt, which breaks down for complex, longitudinal cases — exactly where decision support is needed most. The agent-decomposition approach here is architecturally similar to where general-purpose AI agent design has been heading, applied to the specific constraint set (auditability, uncertainty-gating, referral logic) that clinical deployment actually requires.</p>
+                                <span class="impact-tag">Clinical Decision Support</span>
+                            </div>
+                        </div>
+
+                        <!-- GitHub Repos -->
+                        <div class="section">
+                            <h2>💻 Top GitHub Repos of the Week</h2>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/google-deepmind/alphafold3?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">google-deepmind/alphafold3</a></h4>
+                                <span class="star-count">⭐ ~7,900 stars | AlphaFold 3 inference pipeline</span>
+                                <p>The inference pipeline for AlphaFold 3, predicting the structure of proteins, DNA, RNA, and ligands together rather than proteins alone. With John Jumper — the scientist most associated with this entire model lineage — now headed to Anthropic, this repository is the clearest available answer to "what is DeepMind's flagship structural biology tool today, independent of who's leading it." Apache 2.0 licensed as of this year.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/google-deepmind/alphagenome?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">google-deepmind/alphagenome</a></h4>
+                                <span class="star-count">⭐ ~1,800 stars | Programmatic access to AlphaGenome</span>
+                                <p>Programmatic access to AlphaGenome, DeepMind's model for predicting regulatory effects of DNA sequences up to a million base pairs long. Directly tied to this week's adoption milestone — nearly 3,000 scientists in 160 countries are now hitting this API roughly a million times a day. The repository is the on-ramp for any genomics team that wants to integrate that capability into their own pipeline.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/scverse/scvi-tools?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">scverse/scvi-tools</a></h4>
+                                <span class="star-count">⭐ ~1,600 stars | Deep generative modeling for single-cell &amp; spatial omics</span>
+                                <p>Deep generative modeling toolkit for single-cell and spatial omics data — probabilistic models for batch correction, cell-type annotation, and trajectory inference. As BIO 2026's AI Summit benchmarks adoption across "modality," single-cell and spatial multiomics remain the data type where AI tooling is most mature, and scvi-tools is the deep-learning-native layer in that stack.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/google-deepmind/alphamissense?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">google-deepmind/alphamissense</a></h4>
+                                <span class="star-count">⭐ ~630 stars | Pathogenicity prediction for missense variants</span>
+                                <p>Predicts whether a missense (single amino-acid-changing) genetic variant is likely pathogenic or benign, built on AlphaFold's structural representations. As cfDNA-based multi-cancer detection and clinical genomics pipelines (this week's top research paper pick) increasingly need to classify variants of uncertain significance at scale, AlphaMissense-class tools are the structural-prediction layer that feeds those clinical interpretation pipelines.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/danielecook/Awesome-Bioinformatics?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">danielecook/Awesome-Bioinformatics</a></h4>
+                                <span class="star-count">⭐ ~3,700 stars | Curated bioinformatics resource list</span>
+                                <p>A curated, actively maintained list of bioinformatics libraries, tools, and learning resources spanning sequence analysis, structural biology, and pipeline frameworks. With this week's news cycle dominated by talent and capital moving toward a handful of well-resourced labs, this repository is worth flagging as a counterweight: a free, open, continuously updated map of the field for anyone trying to break in from outside those institutions.</p>
+                            </div>
+                        </div>
+
+                        <!-- AI Products -->
+                        <div class="section">
+                            <h2>🛠️ Top AI Products of the Week</h2>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/mood-5?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">Mood — A Quiet Daily Record of How You Feel</a></h4>
+                                <p><span class="upvote-count">90 upvotes</span> &nbsp;| Product Hunt, June 16, 2026</p>
+                                <p>A minimalist mood-tracking app — tap, label, pixel, day by day — that turned out to be this week's highest-engagement health launch on Product Hunt by a wide margin. No AI insights layer, no coaching — just frictionless daily logging. A useful reminder that the basic data-capture layer underneath every "AI health insight" product still has to be this simple to get people to actually use it.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/lineaj-pronounced-lineage?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">LineaJ — On-Device Personal and Family Health Record Analysis</a></h4>
+                                <p><span class="upvote-count">6 upvotes</span> &nbsp;| Product Hunt, June 18, 2026</p>
+                                <p>Built solo by a founder who said the idea came from hours of manual research connecting health issues across family history that no clinician had flagged. Organizes personal and family medical history, analyzes it against government and peer-reviewed sources, and generates a prioritized report to bring to an appointment — on-device by default, which matters given how sensitive multi-generational health data is.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/a1c-insights-early-access-beta?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">A1C Console (Sally AI) — Clinical-Grade Biomarker Reasoning, Now an MCP Endpoint</a></h4>
+                                <p><span class="upvote-count">4 upvotes</span> &nbsp;| Product Hunt, June 20, 2026</p>
+                                <p>Sally AI reads 64+ biomarkers — vitals, blood sugar, sleep, activity, environment — and explains what's actually driving a person's energy levels. This week's release exposes that same reasoning layer as an MCP endpoint and REST API, so other agents can call it directly. A small but telling example of health-data AI moving from "app you open" to "capability other agents query."</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/norfolk-diabetes-support?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_06_22">Norfolk Diabetes Support — An AI Type-2 Diabetes Pharmacist, Built by a Clinical Pharmacist</a></h4>
+                                <p><span class="upvote-count">6 upvotes</span> &nbsp;| Product Hunt, June 16, 2026</p>
+                                <p>Built by a clinical pharmacist specializing in type 2 diabetes and nutrition, frustrated that NHS appointments are 10–15 minutes and far apart. Offers 24/7 AI support grounded in the founder's own clinical knowledge, a glucose log with clinical interpretation, a medical text translator, and a human escalation path. A clear, narrow example of a domain expert encoding their own judgment into a tool.</p>
+                            </div>
+                        </div>
+
+                        <!-- AI Criticism -->
+                        <div class="section">
+                            <h2>⚠️ AI Criticism &amp; Concerns</h2>
+
+                            <div class="concern-card">
+                                <h4>The Jumper Hire Is a Symptom of a Bigger Talent Concentration Problem</h4>
+                                <p>Recruiting the AlphaFold lead is a genuine coup for Anthropic, but it's also a data point in a trend researchers have been flagging for years: AI talent is clustering inside a shrinking number of frontier labs, and the salary gap between industry and academia (now in the seven figures at the top end) makes that pull structural, not incidental. Global mobility of highly skilled AI talent fell nearly 12% in 2025 even as competition for that talent intensified. Universities historically diffused knowledge through open publication and PhD training; concentrated inside a handful of commercial labs, the same expertise increasingly stays proprietary. AlphaFold itself was a triumph partly because DeepMind published and open-sourced it. Whether the next AlphaFold-scale breakthrough gets the same treatment is now a genuinely open question.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>The FDA's Own Officials Don't Trust "Approve Once, Trust Forever"</h4>
+                                <p>Internal FDA pushback against proposals to ease AI medical device oversight made a sharp point this year: approving one AI device from a company doesn't demonstrate that the company's future products will be safe, and leaning too heavily on manufacturers' internal monitoring systems leaves the agency with insufficient independent visibility. That's a reasonable, conservative position — but it sits in tension with an industry moving toward continuous model updates, where the traditional one-time approval model is already a poor fit. Neither side of this has been fully resolved, and hospitals are deploying AI tools in that gap right now.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>Healthcare AI Regulation Is Becoming 50 Different Compliance Problems</h4>
+                                <p>With no comprehensive federal AI statute, states have taken the lead: 21 states had enacted 33 healthcare-AI-specific laws by the end of 2025, and lawmakers across 47 states introduced more than 250 related bills that year. For any health system or AI vendor operating across state lines — which is most of them — that's not a regulatory environment, it's a compliance maze that changes underneath them every legislative session. Patchwork regulation protects patients unevenly by geography, which is its own kind of inequity.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>Clinicians Are Carrying Liability Risk That Policy Hasn't Caught Up To Yet</h4>
+                                <p>As AI recommender systems increasingly shape clinical decisions, the liability question — who's responsible when a clinician follows a flawed AI recommendation — remains genuinely unsettled. A UK National Commission's formal recommendations on this aren't expected until summer 2026, which means the policy answer is arriving well after the tools are already embedded in clinical workflows. Until liability frameworks catch up, individual clinicians are effectively absorbing systemic risk that AI vendors and health system administrators created.</p>
+                            </div>
+                        </div>
+
+                        <!-- Closing Note -->
+                        <div class="section">
+                            <h2>Closing Note</h2>
+                            <p>Most weeks in this newsletter, the headline is a result: a trial readout, a funding round, a benchmark score. This week's headline is a person changing employers — and that's precisely what makes it worth sitting with. AlphaFold wasn't built by one person, but John Jumper became its public face because the work was genuinely his to lead, and where he goes next is a reasonable proxy for where the field's center of gravity is moving.</p>
+
+                            <p>What's underneath that move is the more durable story: Anthropic spent a year quietly assembling wet labs, biology agents, and HHMI/Allen Institute partnerships before this hire ever became public. AlphaGenome's adoption curve, BIO 2026's AI-ROI benchmarking, and Scribe Therapeutics' publicly funded AI-CRISPR platform are all pointing at the same underlying shift: the organizations that can afford to combine top scientific talent, massive compute, and proprietary data are pulling away from everyone else, including the universities that trained that talent in the first place.</p>
+
+                            <p>None of this makes the science less real — AlphaFold's 200 million structures and AlphaGenome's million daily queries are genuine public goods, freely available right now. But "freely available" and "openly developed" are different properties, and as the next generation of tools gets built inside private labs with Nobel laureates on staff, it's worth watching closely which one survives.</p>
+
+                            <p>Thank you for reading. Reply anytime — I read every message.</p>
+                            <p><strong>Md Rasheduzzaman</strong></p>
+                        </div>
+
+                    </td>
+                </tr>
+
+                <!-- Share Section -->
+                <tr>
+                    <td class="share-section">
+                        <h2>Share This Newsletter</h2>
+                        <p>Found this week's insights valuable? Share with your network!</p>
+                        <div class="share-buttons">
+                            <a href="https://twitter.com/intent/tweet?text=🧬%20This%20week%20in%20AI%20%2B%20Biology%3A%20Nobel%20laureate%20John%20Jumper%20leaves%20DeepMind%20for%20Anthropic%2C%20AlphaGenome%20hits%201M%20API%20calls%20a%20day%2C%20and%20BIO%202026%20opens%20in%20San%20Diego.%20%40PythRaSh%27s%20newsletter%3A&url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn" target="_blank">Share on Twitter/X</a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&title=PythRaSh%27s%20AI%20Newsletter%20%23036%20%E2%80%94%20Science%27s%20New%20Power%20Centers&summary=Nobel%20laureate%20John%20Jumper%20leaves%20DeepMind%20for%20Anthropic%2C%20AlphaGenome%20scales%20to%201M%20daily%20API%20calls%2C%20BIO%202026%20opens%20in%20San%20Diego%2C%20and%20Scribe%20Therapeutics%20lands%20CIRM%20funding%20for%20AI-assisted%20CRISPR." class="share-btn" target="_blank">Share on LinkedIn</a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&quote=Check%20out%20this%20week%27s%20AI%20%2B%20Biology%20newsletter%20%E2%80%94%20Nobel%20laureate%20John%20Jumper%27s%20move%20to%20Anthropic%20and%20the%20talent%20consolidation%20reshaping%20AI-driven%20biology." class="share-btn" target="_blank">Share on Facebook</a>
+                            <a href="mailto:?subject=PythRaSh%27s%20AI%20Newsletter%20%23036%20%E2%80%94%20Must%20Read%21&body=Hi%2C%0A%0AI%20thought%20you%27d%20find%20this%20week%27s%20AI%20%2B%20Biology%20newsletter%20interesting.%20It%20covers%20Nobel%20laureate%20John%20Jumper%27s%20move%20from%20DeepMind%20to%20Anthropic%2C%20AlphaGenome%27s%20scale%20milestone%2C%20and%20the%20BIO%20International%20Convention%27s%20AI%20Summit.%0A%0ACheck%20it%20out%3A%20https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn">Forward via Email</a>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Footer -->
+                <tr>
+                    <td class="footer">
+                        <div class="footer-links">
+                            <a href="https://forms.gle/ueS3aqeJsujHA48L9">Unsubscribe</a> |
+                            <a href="https://forms.gle/ueS3aqeJsujHA48L9">Update Preferences</a> |
+                            <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026-06-22.html">View in Browser</a>
+                        </div>
+
+                        <p><strong>PythRaSh's AI Newsletter</strong></p>
+                        <div class="address">Fleischerwiese 4, Greifswald-17489, Germany</div>
+
+                        <div class="social-links" style="margin-top:20px;">
+                            <a href="https://mdrasheduz-zaman.github.io/PythRaSh/">Website</a> |
+                            <a href="https://www.linkedin.com/in/md-rashed-uz-zaman">LinkedIn</a> |
+                            <a href="https://github.com/mdrasheduz-zaman">GitHub</a>
+                        </div>
+
+                        <p style="margin-top:15px; font-size:12px; color:#999;">
+                            Questions? Reply to this email or contact Md Rasheduzzaman<br>
+                            md.rasheduzzaman.ugoe@gmail.com
+                        </p>
+                    </td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

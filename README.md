@@ -14,6 +14,7 @@ Add this RSS feed to your favorite reader (Feedly, Inoreader, etc.) to get notif
 
 ## 📰 Latest Issues
 
+- **Issue #36** - [June 22, 2026](https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_06_22.html)
 - **Issue #35** - [June 15, 2026](https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_06_15.html)
 - **Issue #34** - [June 08, 2026](https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_06_08.html)
 - **Issue #33** - [May 28, 2026](https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_05_28.html)
