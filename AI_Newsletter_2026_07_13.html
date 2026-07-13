@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PythRaSh's AI Newsletter - Issue #38 | Week of July 7, 2026</title>
+    <style>
+        /* Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111111; background-color: #f5f5f5; }
+        table { border-collapse: collapse; width: 100%; }
+
+        /* Container */
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #FFFFFF; }
+
+        /* Header */
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+
+        /* Content */
+        .content { padding: 30px 20px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #667eea; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #111111; font-size: 20px; margin-bottom: 15px; }
+        .section p { margin-bottom: 15px; font-size: 16px; }
+
+        /* Event card */
+        .event-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; box-shadow: 0 4px 8px rgba(102,126,234,0.1); }
+        .event-card h3 { color: #667eea; font-size: 21px; margin-bottom: 15px; }
+        .event-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .event-card a:hover { text-decoration: underline; }
+        .event-card ul { padding-left: 20px; margin-bottom: 15px; }
+        .event-card li { margin-bottom: 8px; font-size: 15px; }
+        .event-card p { font-size: 15px; }
+
+        /* Quick updates */
+        .quick-updates { background: #f8f9ff; border-radius: 8px; padding: 20px; }
+        .quick-updates ul { list-style: none; }
+        .quick-updates li { margin-bottom: 15px; padding: 15px; background: white; border-radius: 6px; border-left: 3px solid #667eea; font-size: 15px; }
+        .quick-updates li strong { color: #667eea; }
+        .quick-updates a { color: #667eea; text-decoration: none; }
+        .quick-updates a:hover { text-decoration: underline; }
+
+        /* Research papers */
+        .research-paper { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .research-paper h4 { color: #111111; font-size: 17px; margin-bottom: 10px; }
+        .research-paper h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .research-paper h4 a:hover { text-decoration: underline; }
+        .research-paper p { font-size: 15px; margin-bottom: 10px; }
+        .impact-tag { background: #667eea; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 6px; }
+
+        /* Repos */
+        .repo-card { background: #f8f9ff; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 3px solid #667eea; }
+        .repo-card h4 { color: #111111; margin-bottom: 6px; }
+        .repo-card h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .repo-card h4 a:hover { text-decoration: underline; }
+        .repo-card p { font-size: 15px; margin-bottom: 0; }
+        .star-count { color: #666; font-size: 13px; display: block; margin-bottom: 8px; }
+
+        /* Products */
+        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .product-card h4 { color: #111111; margin-bottom: 6px; }
+        .product-card h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .product-card h4 a:hover { text-decoration: underline; }
+        .product-card p { font-size: 15px; margin-bottom: 8px; }
+        .upvote-count { background: #667eea; color: white; padding: 2px 8px; border-radius: 3px; font-size: 12px; }
+
+        /* Critics */
+        .concern-card { background: #fff8f0; border: 1px solid #ffe0b2; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 4px solid #ff9800; }
+        .concern-card h4 { color: #e65100; font-size: 17px; margin-bottom: 10px; }
+        .concern-card p { font-size: 15px; margin-bottom: 0; }
+
+        /* Share section */
+        .share-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px 20px; text-align: center; }
+        .share-section h2 { color: white; margin-bottom: 10px; border-bottom: none; }
+        .share-section p { color: rgba(255,255,255,0.9); font-size: 16px; margin-bottom: 0; }
+        .share-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+        .share-btn { background: rgba(255,255,255,0.2); color: white; padding: 12px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; }
+        .share-btn:hover { background: rgba(255,255,255,0.3); }
+
+        /* Footer */
+        .footer { background: #f5f5f5; padding: 30px 20px; text-align: center; color: #666; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #667eea; text-decoration: none; margin: 0 10px; font-size: 14px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer p { font-size: 14px; margin-bottom: 10px; }
+        .footer .address { font-size: 12px; color: #999; margin-top: 10px; }
+        .footer .social-links a { color: #667eea; text-decoration: none; margin: 0 8px; font-size: 14px; }
+
+        /* Mobile */
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .content { padding: 20px 15px !important; }
+            .header { padding: 30px 15px !important; }
+            .header h1 { font-size: 22px !important; }
+            .share-buttons { flex-direction: column !important; gap: 10px !important; }
+            .share-btn { display: block !important; width: 100% !important; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+        <td align="center" style="background-color:#f5f5f5; padding:20px 0;">
+            <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0">
+
+                <!-- View in Browser -->
+                <tr>
+                    <td style="text-align:center; padding:10px; font-size:12px; color:#666;">
+                        <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026-07-13.html" style="color:#667eea; text-decoration:none;">View in Browser</a>
+                    </td>
+                </tr>
+
+                <!-- Header -->
+                <tr>
+                    <td class="header">
+                        <h1>PythRaSh's AI Newsletter</h1>
+                        <p>Issue #38 &nbsp;|&nbsp; Week of July 7, 2026</p>
+                    </td>
+                </tr>
+
+                <!-- Content -->
+                <tr>
+                    <td class="content">
+
+                        <!-- Intro -->
+                        <div class="section">
+                            <p><strong>Hi, There!</strong></p>
+                            <p>Two weeks' worth of news to catch up on, and the throughline is unmistakable: the AI companies aren't content supplying tools to biology and medicine anymore — they're becoming biology and medicine companies themselves. On June 30, Anthropic launched Claude Science and announced it will develop its own drugs for diseases Big Pharma won't touch. Days later, Stanford's Biomni showed an AI agent operating as a genuine biomedical co-scientist in a peer-reviewed <em>Science</em> paper. OpenAI dropped a genomics benchmark hard enough that its own best model only solves it 3 times in 10. And in the clinic, an AI-designed vaccine cleared its first human safety trial while an AI liver model became the first computational tool the FDA has ever formally recognized as a drug development instrument. This issue covers the best of both weeks — June 30 through July 13.</p>
+                        </div>
+
+                        <!-- Big Story -->
+                        <div class="section">
+                            <h2>🚀 BIG STORY OF THE WEEK</h2>
+                            <div class="event-card">
+                                <h3><a href="https://www.cnbc.com/2026/06/30/anthropic-launches-ai-drug-discovery-program-claude-science.html?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">Anthropic Launches Claude Science and Its Own Drug Discovery Program</a></h3>
+
+                                <p>On June 30, Anthropic unveiled <strong>Claude Science</strong>, a research workbench built specifically for scientists and pharmaceutical R&amp;D teams — and, in the same announcement, revealed it is standing up an <strong>internal drug discovery program</strong> of its own.</p>
+
+                                <p><strong>What Claude Science does:</strong></p>
+                                <ul>
+                                    <li>Integrates <strong>60+ scientific databases and connectors</strong> across genomics, proteomics, structural biology, and cheminformatics into one environment</li>
+                                    <li>Connects established tools researchers already use — PubMed, Jupyter, R — instead of replacing them</li>
+                                    <li>Runs autonomously on high-level instructions, tracing every artifact back to its underlying code and calculations via built-in reviewer agents that check citations and computations</li>
+                                    <li>Manages compute environments on demand, so a researcher can move from literature review to a running analysis without switching tools</li>
+                                </ul>
+
+                                <p><strong>The drug discovery angle is the more striking part.</strong> Anthropic's life sciences head, Eric Kauderer-Abrams, said the company will target <strong>"neglected" diseases</strong> that traditional biopharma considers commercially unattractive. His rationale: <em>"We're doing this because we believe first and foremost that to build the right models, products and tools to accelerate the industry, we need to live it along with all of you."</em> In other words — Anthropic is eating its own dog food by becoming a drug developer, not just a drug-development tool vendor.</p>
+
+                                <p><strong>Anthropic is also funding outside researchers directly:</strong> up to $30,000 in Claude Science credits for up to 50 external research projects, with applications open through July 15, 2026.</p>
+
+                                <p><strong>Why this matters:</strong> This is the second major AI-lab-turned-life-sciences-infrastructure move in three weeks, following NVIDIA's BioNeMo Agent Toolkit launch at BIO2026. Two of the industry's most consequential AI companies are now racing to become indispensable — and increasingly primary — players inside biology and drug development, not just suppliers to it.</p>
+
+                                <p><strong>Key takeaways:</strong></p>
+                                <ul>
+                                    <li>Claude Science launched June 30, 2026 as a beta research workbench for Pro, Max, Team, and Enterprise users</li>
+                                    <li>Anthropic's internal drug discovery arm will target neglected diseases first</li>
+                                    <li>$30,000 in research credits available to external scientists through July 15</li>
+                                    <li>Follows a broader pattern: frontier AI labs are no longer just tool providers to biotech — they're becoming biotech companies</li>
+                                </ul>
+
+                                <p style="margin-top:15px; font-size:14px; color:#555;">
+                                    <strong>Sources:</strong>
+                                    <a href="https://www.cnbc.com/2026/06/30/anthropic-launches-ai-drug-discovery-program-claude-science.html?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">CNBC</a> |
+                                    <a href="https://www.technologyreview.com/2026/06/30/1139987/claude-science-is-anthropics-newest-flagship-product/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">MIT Technology Review</a> |
+                                    <a href="https://www.statnews.com/2026/06/30/anthropic-release-claude-science-ceo-dario-amodei/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">STAT News</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Updates -->
+                        <div class="section">
+                            <h2>⚡ Quick Updates</h2>
+                            <div class="quick-updates">
+                                <ul>
+                                    <li><strong>Stanford's Biomni Debuts as a Peer-Reviewed AI Biomedical Co-Scientist:</strong> Published in <em>Science</em>, Biomni is a general-purpose biomedical AI agent layering 150 specialized tools, 105 software packages, and 59 databases across all 25 bioRxiv-defined biomedical subdomains. It has demonstrated strong generalization across causal gene prioritization, drug repurposing, rare-disease diagnosis, microbiome analysis, and molecular cloning — without task-specific tuning. Open-sourced by the snap-stanford lab. <a href="https://news.stanford.edu/stories/2026/07/biomni-ai-powered-biomedical-co-scientist?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">Stanford Report</a></li>
+
+                                    <li><strong>OpenAI's GeneBench-Pro Exposes the Real Gap Between AI Hype and Genomics Expertise:</strong> Released June 30, GeneBench-Pro is a 129-problem benchmark where a typical question takes a human expert 20–40 hours to solve. OpenAI's best model, GPT-5.6 Sol Pro, reached only a 31.5% pass rate; Anthropic's Claude Opus 4.8 managed 16.0%; Gemini 3.5 Flash scored 8.1%. OpenAI itself projects the benchmark could be "saturated" by end of 2026 — a stark admission of how far current models still are from genuine computational biology expertise. <a href="https://openai.com/index/introducing-genebench-pro/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">OpenAI</a></li>
+
+                                    <li><strong>Cambridge's AI-Designed Universal Coronavirus Vaccine Clears First Human Trial:</strong> Researchers at Cambridge and spinout DIOSynVax announced their AI-engineered vaccine — the first vaccine whose active component was designed entirely by AI — completed a Phase I trial in 39 healthy volunteers with no significant side effects. It triggered immune responses not just against SARS-CoV-2 and the original SARS virus, but against related bat coronaviruses with pandemic potential. A larger ~200-person trial is next. <a href="https://geneticliteracyproject.org/2026/07/08/worlds-first-ai-designed-vaccine-explained/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">Genetic Literacy Project</a></li>
+
+                                    <li><strong>FDA Accepts First-Ever AI Drug Development Tool Into Its Qualification Program:</strong> On July 7, Absentia Labs' Digital Liver Model — which predicts drug-induced liver injury by combining mechanistic biology with drug-response data — became the first AI-driven tool accepted into the FDA's ISTAND (Innovative Science and Technology Approaches for New Drugs) qualification pathway. It's currently at the Letter of Intent stage of a three-stage process, aiming to reduce reliance on animal testing for liver toxicity screening before human trials. <a href="https://www.biospace.com/press-releases/absentia-labs-digital-liver-model-becomes-first-ai-drug-development-tool-accepted-into-fda-qualification-program?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">BioSpace</a></li>
+
+                                    <li><strong>Med-Tech M&amp;A Hits $75.7B in H1 2026 — Highest Since 2022:</strong> Medical technology mergers and acquisitions reached $75.73 billion in collective value in the first half of 2026, the strongest H1 total since 2022's $120.4 billion. The surge reflects growing confidence that AI-native health and life-sciences platforms are now mature enough to justify large strategic acquisitions rather than just venture bets. <a href="https://endpoints.news/the-biggest-health-tech-stories-of-2026-so-far/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">Endpoints News</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Research Papers -->
+                        <div class="section">
+                            <h2>📚 Top Research Papers</h2>
+
+                            <div class="research-paper">
+                                <h4><a href="https://www.science.org/doi/10.1126/science.adz4351?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">Autonomous Biomedical Research with an Artificial Intelligence Agent (Biomni)</a></h4>
+                                <p><strong>Huang, Zou, Leskovec et al. | Science | July 2026</strong></p>
+                                <p>Introduces Biomni, a general-purpose biomedical AI agent that autonomously plans and executes multi-step research workflows — retrieving from 59 databases, running 105 software packages, and selecting from 150 specialized tools spanning 25 biomedical subdomains. Demonstrated strong generalization across causal gene prioritization, drug repurposing, rare-disease diagnosis, microbiome analysis, and molecular cloning without any task-specific fine-tuning.</p>
+                                <p><strong>Impact:</strong> The first peer-reviewed, general-purpose (not narrowly-scoped) biomedical research agent — a direct proof point that autonomous AI can meaningfully accelerate the "tedious legwork" bottleneck in biomedical discovery, not just automate a single narrow task.</p>
+                                <span class="impact-tag">Autonomous Research Agent</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2607.09526?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">ALICE: Learning a General-Purpose Pathology Foundation Model from Vision, Vision-Language, and Slide-Level Experts</a></h4>
+                                <p><strong>Li, Guan, Shi et al. | arXiv 2607.09526 | July 10, 2026</strong></p>
+                                <p>ALICE unifies eight separate specialized pathology teacher models — vision-only, vision-language, and slide-level — into a single foundation model via multi-stage agglomerative distillation. Pretrained on nearly 25 million tile-level pathology images, it was evaluated across 96 downstream tasks and 48 data sources, achieving the best average rank among task-matched pathology foundation models in every evaluation setting.</p>
+                                <p><strong>Impact:</strong> Consolidating fragmented, specialist pathology models into one backbone is exactly the kind of infrastructure work needed to make AI-assisted cancer diagnosis and biomarker discovery (like last issue's SPARK framework) practically deployable at scale, rather than requiring a different model per task.</p>
+                                <span class="impact-tag">Pathology AI</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2607.09577?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">A Censoring-Aware Target Interface for Tabular Foundation Models in Survival Prediction (SurvFM-RMST)</a></h4>
+                                <p><strong>Lyu, Lin, Huang, Li | arXiv 2607.09577 | July 10, 2026</strong></p>
+                                <p>Tabular foundation models are increasingly used for patient prognosis, but nearly all assume fully observed outcomes — a poor fit for real clinical data, where patient follow-up is frequently cut short (right-censored). SurvFM-RMST converts survival outcomes into pseudo-observation targets, letting general-purpose tabular models perform horizon-specific survival prediction without survival-specific retraining. Tested across 36 real clinical datasets.</p>
+                                <p><strong>Impact:</strong> A practical bridge letting hospitals reuse general-purpose AI models for prognosis instead of building bespoke survival models from scratch for every new dataset — directly lowering the engineering cost of deploying prognostic AI in real clinical settings.</p>
+                                <span class="impact-tag">Clinical Prognosis</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2607.09535?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">Global Testing of SNP-Methylation Interactions on Binary Phenotypes via a Logistic Functional Regression Model</a></h4>
+                                <p><strong>Gansou, Oualkacha, Cremona, Lakhal-Chaieb | arXiv 2607.09535 | July 10, 2026</strong></p>
+                                <p>Proposes a statistical framework for testing whether interactions between DNA methylation and genetic variants (SNPs) jointly influence disease risk, modeling methylation as a smooth functional predictor rather than isolated CpG sites. Shows well-calibrated error rates and improved statistical power over classical pairwise SNP-methylation tests, demonstrated on an obesity case-control dataset.</p>
+                                <p><strong>Impact:</strong> Most genetic-epigenetic interaction studies test one SNP-CpG pair at a time, missing weaker but real region-level effects. This region-level approach could surface disease mechanisms that pairwise testing — the current standard in most clinical genomics pipelines — simply cannot detect.</p>
+                                <span class="impact-tag">Genetic Epigenetics</span>
+                            </div>
+                        </div>
+
+                        <!-- GitHub Repos -->
+                        <div class="section">
+                            <h2>💻 Top GitHub Repos of the Week</h2>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/snap-stanford/Biomni?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">snap-stanford/Biomni</a></h4>
+                                <span class="star-count">⭐ ~2,800 stars | General-purpose biomedical AI agent</span>
+                                <p>Stanford's general-purpose biomedical AI agent, open-sourced alongside its <em>Science</em> publication this week. Apache 2.0 licensed, with a no-code web interface at biomni.stanford.edu. The reference implementation for anyone wanting to build or evaluate an autonomous biomedical research agent.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/WonderLandxD/ALICE?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">WonderLandxD/ALICE</a></h4>
+                                <span class="star-count">⭐ new | Unified pathology foundation model</span>
+                                <p>Code release accompanying this week's ALICE pathology foundation model paper — a unified backbone distilled from eight specialist pathology models, evaluated across 96 downstream tasks. Fresh off arXiv, already the reference point for consolidated (rather than fragmented) computational pathology models.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/Bin-Chen-Lab/Awesome_BigData_AI_DrugDiscovery?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">Bin-Chen-Lab/Awesome_BigData_AI_DrugDiscovery</a></h4>
+                                <span class="star-count">⭐ curated | Big data &amp; AI drug discovery resources</span>
+                                <p>A curated orientation resource for big-data-and-AI-driven drug discovery — exactly the kind of map new researchers need as Anthropic, NVIDIA, and OpenAI all race to build competing drug-discovery infrastructure simultaneously.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/hail-is/hail?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">hail-is/hail</a></h4>
+                                <span class="star-count">⭐ established | Cloud-native genomic dataframes</span>
+                                <p>Cloud-native genomic dataframes and batch computing, Python-based. Powers the analysis layer behind gnomAD and UK Biobank's rapid GWAS pipelines. As AI agents like Biomni increasingly need to query and manipulate population-scale genomic data programmatically, Hail remains the standard infrastructure layer underneath.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">AgenticHealthAI/Awesome-AI-Agents-for-Healthcare</a></h4>
+                                <span class="star-count">⭐ trending | Community-curated agentic AI for healthcare</span>
+                                <p>Community-curated index of agentic AI for healthcare — now covering Biomni, Claude Science, and GeneBench-Pro alongside earlier entries like MIRA and SPARK. The best single place to track how fast this specific corner of AI is moving.</p>
+                            </div>
+                        </div>
+
+                        <!-- AI Products -->
+                        <div class="section">
+                            <h2>🛠️ Top AI Products of the Week</h2>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/mito-health?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">Mito Health — Get Transparent Pricing on Labs</a></h4>
+                                <p><span class="upvote-count">90 upvotes</span> &nbsp;| Product Hunt, July 1, 2026</p>
+                                <p>Unbundles the standard "100 biomarkers, one price" lab-test model. A 60-second questionnaire tells you exactly which tests answer your actual health question, which to skip, and what each costs individually — buy only what you need.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/andy-anxiety-stress-tracker?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">Andy — Anxiety &amp; Stress Tracker</a></h4>
+                                <p><span class="upvote-count">21 upvotes</span> &nbsp;| Product Hunt, June 30, 2026</p>
+                                <p>Free anxiety tracker that logs not just mood but triggers — time of day, weekday, activity — so patterns emerge instead of guesswork. Built to bring structured data into therapy sessions, with clean PDF export.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/chum-wellness?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">Chum Wellness</a></h4>
+                                <p><span class="upvote-count">14 upvotes</span> &nbsp;| Product Hunt, July 2, 2026</p>
+                                <p>Bangladesh's mental health telehealth platform, connecting users with 35+ licensed clinical psychologists for CBT-based online or in-person (Dhaka) sessions — targeting corporate burnout, anxiety, and couples counseling in a market historically underserved by mental health infrastructure.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/instantly-get-a-personal-california-doc?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_13">Resonant Health — Instantly Get a Personal California Doc</a></h4>
+                                <p><span class="upvote-count">12 upvotes</span> &nbsp;| Product Hunt, July 10, 2026</p>
+                                <p>Connects Southern California patients with Stanford- and Harvard-trained primary care physicians who use AI to cut down paperwork time, freeing up longer, relationship-centered visits focused on staying healthy rather than just treating illness.</p>
+                            </div>
+                        </div>
+
+                        <!-- AI Criticism -->
+                        <div class="section">
+                            <h2>⚠️ AI Criticism &amp; Concerns</h2>
+
+                            <div class="concern-card">
+                                <h4>Anthropic is now grading its own homework</h4>
+                                <p>Anthropic builds the AI model, builds the Claude Science tooling, and is now using both to develop its own drugs. When the same company controls the model, the platform, and the pharma pipeline built on top of it, external validation gets structurally harder — who audits a drug candidate discovered by a company evaluating its own AI's output? The "neglected diseases" framing is genuinely good PR and possibly good medicine, but it doesn't resolve the conflict-of-interest question at the core of vertically integrating AI-lab-plus-drugmaker.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>GeneBench-Pro's low scores are being under-covered relative to the launch hype</h4>
+                                <p>A 31.5% pass rate on real genomics problems — meaning the best available model still fails roughly 7 out of 10 questions a human expert solves in a day's work — is a sobering number that got far less attention than the flashy "AI co-scientist" and "PhD-level agent" framing dominating this same two-week period (Biomni, Claude Science, BioNeMo). The gap between marketing language and benchmarked reality in computational biology AI remains wide, and worth remembering before any of these tools get near a real clinical or drug-development decision.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>FDA's Digital Liver Model precedent moves fast, with limited public transparency</h4>
+                                <p>Absentia Labs' Digital Liver Model becoming the first AI drug-development tool in the FDA's ISTAND program is a landmark — but the underlying model's training data, validation methodology, and failure modes are not fully public. If this qualification becomes a template other AI toxicology tools follow, the industry needs a public benchmark for what "qualified" AI safety tooling actually requires, not just a single company's internal claims plus a three-stage bureaucratic process most outside observers can't inspect.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>AI mental health apps are proliferating faster than any clinical validation can follow</h4>
+                                <p>This two-week window alone produced at least four new AI-powered mental health and mood-tracking products (Andy, Emote, ZenGen, Chum Wellness) launching on Product Hunt with zero peer-reviewed efficacy data. Some explicitly position themselves as tools to "bring into your next therapy session" — a reasonable, complementary use case — but the line between "structured self-reflection tool" and "unlicensed therapeutic intervention" is blurring faster than regulators or clinical researchers can study it.</p>
+                            </div>
+                        </div>
+
+                        <!-- Closing Note -->
+                        <div class="section">
+                            <h2>Closing Note</h2>
+                            <p>Two weeks compressed into one issue, but the pattern holds regardless of the window: the biggest AI labs no longer want to be vendors to biology and medicine — they want to be biology and medicine companies. Anthropic is developing its own drugs. NVIDIA (last issue) gave agents a pharma research lab's toolkit. Stanford proved in <em>Science</em> that a general-purpose agent can already do real biomedical research work. And OpenAI, to its credit, published a benchmark honest enough to show its own best model still fails most of what a working genomics scientist handles in an afternoon.</p>
+
+                            <p>That last point matters most. The Cambridge vaccine and the FDA's liver model both represent AI succeeding at a narrow, well-defined task with real clinical stakes and real validation behind them. GeneBench-Pro is a reminder that "narrow and validated" and "general and autonomous" are very different bars — and most of what's launching right now, however impressively branded, is still closer to the first than the second.</p>
+
+                            <p>Thank you for reading. Reply anytime — I read every message.</p>
+                            <p><strong>Md Rasheduzzaman</strong></p>
+                        </div>
+
+                    </td>
+                </tr>
+
+                <!-- Share Section -->
+                <tr>
+                    <td class="share-section">
+                        <h2>Share This Newsletter</h2>
+                        <p>Found this week's insights valuable? Share with your network!</p>
+                        <div class="share-buttons">
+                            <a href="https://twitter.com/intent/tweet?text=🧬%20This%20week%20in%20AI%20%2B%20Biology%3A%20Anthropic%20launches%20Claude%20Science%20%2B%20its%20own%20drug%20discovery%20program%2C%20Stanford%27s%20Biomni%20debuts%20in%20Science%2C%20and%20an%20AI-designed%20vaccine%20clears%20its%20first%20human%20trial.%20%40PythRaSh%27s%20newsletter%3A&url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn" target="_blank">Share on Twitter/X</a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&title=PythRaSh%27s%20AI%20Newsletter%20%23038%20%E2%80%94%20The%20Labs%20Build%20Their%20Own%20Labs&summary=Anthropic%20launches%20Claude%20Science%20and%20its%20own%20drug%20discovery%20program%2C%20Stanford%27s%20Biomni%20debuts%20as%20a%20biomedical%20co-scientist%20in%20Science%2C%20OpenAI%27s%20GeneBench-Pro%20exposes%20the%20genomics%20AI%20gap%2C%20and%20an%20AI-designed%20vaccine%20clears%20human%20trials." class="share-btn" target="_blank">Share on LinkedIn</a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&quote=Check%20out%20this%20week%27s%20AI%20%2B%20Biology%20newsletter%20%E2%80%94%20Anthropic%27s%20new%20drug%20discovery%20program%20and%20Stanford%27s%20AI%20biomedical%20co-scientist." class="share-btn" target="_blank">Share on Facebook</a>
+                            <a href="mailto:?subject=PythRaSh%27s%20AI%20Newsletter%20%23038%20%E2%80%94%20Must%20Read%21&body=Hi%2C%0A%0AI%20thought%20you%27d%20find%20this%20week%27s%20AI%20%2B%20Biology%20newsletter%20interesting.%20It%20covers%20Anthropic%27s%20Claude%20Science%20and%20drug%20discovery%20launch%2C%20Stanford%27s%20Biomni%20agent%20in%20Science%2C%20and%20an%20AI-designed%20vaccine%20clearing%20human%20trials.%0A%0ACheck%20it%20out%3A%20https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn">Forward via Email</a>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Footer -->
+                <tr>
+                    <td class="footer">
+                        <div class="footer-links">
+                            <a href="https://forms.gle/ueS3aqeJsujHA48L9">Unsubscribe</a> |
+                            <a href="https://forms.gle/ueS3aqeJsujHA48L9">Update Preferences</a> |
+                            <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026-07-13.html">View in Browser</a>
+                        </div>
+
+                        <p><strong>PythRaSh's AI Newsletter</strong></p>
+                        <div class="address">Fleischerwiese 4, Greifswald-17489, Germany</div>
+
+                        <div class="social-links" style="margin-top:20px;">
+                            <a href="https://mdrasheduz-zaman.github.io/PythRaSh/">Website</a> |
+                            <a href="https://www.linkedin.com/in/md-rashed-uz-zaman">LinkedIn</a> |
+                            <a href="https://github.com/mdrasheduz-zaman">GitHub</a>
+                        </div>
+
+                        <p style="margin-top:15px; font-size:12px; color:#999;">
+                            Questions? Reply to this email or contact Md Rasheduzzaman<br>
+                            md.rasheduzzaman.ugoe@gmail.com
+                        </p>
+                    </td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
