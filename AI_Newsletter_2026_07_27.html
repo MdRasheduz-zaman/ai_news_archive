@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PythRaSh's AI Newsletter - Issue #40 | Week of July 21, 2026</title>
+    <style>
+        /* Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111111; background-color: #f5f5f5; }
+        table { border-collapse: collapse; width: 100%; }
+
+        /* Container */
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #FFFFFF; }
+
+        /* Header */
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+
+        /* Content */
+        .content { padding: 30px 20px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #667eea; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #111111; font-size: 20px; margin-bottom: 15px; }
+        .section p { margin-bottom: 15px; font-size: 16px; }
+
+        /* Event card */
+        .event-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; box-shadow: 0 4px 8px rgba(102,126,234,0.1); }
+        .event-card h3 { color: #667eea; font-size: 21px; margin-bottom: 15px; }
+        .event-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .event-card a:hover { text-decoration: underline; }
+        .event-card ul { padding-left: 20px; margin-bottom: 15px; }
+        .event-card li { margin-bottom: 8px; font-size: 15px; }
+        .event-card p { font-size: 15px; }
+
+        /* Quick updates */
+        .quick-updates { background: #f8f9ff; border-radius: 8px; padding: 20px; }
+        .quick-updates ul { list-style: none; }
+        .quick-updates li { margin-bottom: 15px; padding: 15px; background: white; border-radius: 6px; border-left: 3px solid #667eea; font-size: 15px; }
+        .quick-updates li strong { color: #667eea; }
+        .quick-updates a { color: #667eea; text-decoration: none; }
+        .quick-updates a:hover { text-decoration: underline; }
+
+        /* Research papers */
+        .research-paper { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .research-paper h4 { color: #111111; font-size: 17px; margin-bottom: 10px; }
+        .research-paper h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .research-paper h4 a:hover { text-decoration: underline; }
+        .research-paper p { font-size: 15px; margin-bottom: 10px; }
+        .impact-tag { background: #667eea; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 6px; }
+
+        /* Repos */
+        .repo-card { background: #f8f9ff; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 3px solid #667eea; }
+        .repo-card h4 { color: #111111; margin-bottom: 6px; }
+        .repo-card h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .repo-card h4 a:hover { text-decoration: underline; }
+        .repo-card p { font-size: 15px; margin-bottom: 0; }
+        .star-count { color: #666; font-size: 13px; display: block; margin-bottom: 8px; }
+
+        /* Products */
+        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .product-card h4 { color: #111111; margin-bottom: 6px; }
+        .product-card h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .product-card h4 a:hover { text-decoration: underline; }
+        .product-card p { font-size: 15px; margin-bottom: 8px; }
+        .upvote-count { background: #667eea; color: white; padding: 2px 8px; border-radius: 3px; font-size: 12px; }
+
+        /* Critics */
+        .concern-card { background: #fff8f0; border: 1px solid #ffe0b2; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 4px solid #ff9800; }
+        .concern-card h4 { color: #e65100; font-size: 17px; margin-bottom: 10px; }
+        .concern-card p { font-size: 15px; margin-bottom: 0; }
+
+        /* Share section */
+        .share-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px 20px; text-align: center; }
+        .share-section h2 { color: white; margin-bottom: 10px; border-bottom: none; }
+        .share-section p { color: rgba(255,255,255,0.9); font-size: 16px; margin-bottom: 0; }
+        .share-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+        .share-btn { background: rgba(255,255,255,0.2); color: white; padding: 12px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; }
+        .share-btn:hover { background: rgba(255,255,255,0.3); }
+
+        /* Footer */
+        .footer { background: #f5f5f5; padding: 30px 20px; text-align: center; color: #666; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #667eea; text-decoration: none; margin: 0 10px; font-size: 14px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer p { font-size: 14px; margin-bottom: 10px; }
+        .footer .address { font-size: 12px; color: #999; margin-top: 10px; }
+        .footer .social-links a { color: #667eea; text-decoration: none; margin: 0 8px; font-size: 14px; }
+
+        /* Mobile */
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .content { padding: 20px 15px !important; }
+            .header { padding: 30px 15px !important; }
+            .header h1 { font-size: 22px !important; }
+            .share-buttons { flex-direction: column !important; gap: 10px !important; }
+            .share-btn { display: block !important; width: 100% !important; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+        <td align="center" style="background-color:#f5f5f5; padding:20px 0;">
+            <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0">
+
+                <!-- View in Browser -->
+                <tr>
+                    <td style="text-align:center; padding:10px; font-size:12px; color:#666;">
+                        <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_07_27.html" style="color:#667eea; text-decoration:none;">View in Browser</a>
+                    </td>
+                </tr>
+
+                <!-- Header -->
+                <tr>
+                    <td class="header">
+                        <h1>PythRaSh's AI Newsletter</h1>
+                        <p>Issue #40 &nbsp;|&nbsp; Week of July 21, 2026</p>
+                    </td>
+                </tr>
+
+                <!-- Content -->
+                <tr>
+                    <td class="content">
+
+                        <!-- Intro -->
+                        <div class="section">
+                            <p><strong>Hi, There!</strong></p>
+                            <p>OpenAI rolled ChatGPT Health out to every adult user in the U.S. this week — 300 million weekly health-related queries, now backed by connected Apple Health data and medical records from Epic, Oracle Health, and more. It happened one day after a Florida man sued the company, alleging ChatGPT talked him out of seeking care for symptoms that nearly killed him. Meanwhile, a national survey found 92% of healthcare leaders won't trust AI at scale without deep clinical expertise behind it, and Teladoc unveiled a new virtual-care model that puts 100% of its own fees at risk against patient outcomes. If last week was about regulators catching up to AI, this week was about what happens when a hundred million people start using it before anyone's finished checking the brakes.</p>
+                        </div>
+
+                        <!-- Big Story -->
+                        <div class="section">
+                            <h2>🚀 BIG STORY OF THE WEEK</h2>
+                            <div class="event-card">
+                                <h3><a href="https://techcrunch.com/2026/07/23/openai-makes-chatgpt-health-available-to-all-u-s-users/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">OpenAI Launches ChatGPT Health for All U.S. Users — One Day After a Lawsuit Says It Nearly Killed Someone</a></h3>
+
+                                <p>On <strong>July 23, 2026</strong>, OpenAI made <strong>Health in ChatGPT</strong> available to all logged-in U.S. users 18 and older, across every plan tier — Free, Go, Plus, and Pro, on web and iOS. The feature lets users connect Apple Health data and medical records from hospital systems (Epic, Oracle Health) and platforms like One Medical and Function Health, tag a message with <code>@Health</code> to pull that data into a conversation, and view labs, medications, activity, and sleep data in one place.</p>
+
+                                <p><strong>The scale is enormous:</strong> OpenAI says over 300 million people already engage with ChatGPT weekly for health-related questions — this launch formalizes and expands that existing behavior rather than creating it from scratch.</p>
+
+                                <p><strong>The timing is not enormous — it's uncomfortable.</strong> One day before the launch, on July 22, a former Florida pastor named <strong>Scott Winters</strong> filed suit against OpenAI and Sam Altman in San Francisco Superior Court. The complaint, filed with Tech Justice Law and the Social Media Victims Law Center, alleges that ChatGPT-4o repeatedly downplayed his dizziness and blood pressure swings — telling him they were "not something dangerous" and that he'd need "eight to 10 more episodes" before it would be a real concern — while he was actually experiencing what became a near-fatal pulmonary embolism. The suit accuses OpenAI of negligence and the "unauthorized practice of medicine," and explicitly asks the court to <strong>block ChatGPT Health from operating</strong> pending a safety evaluation.</p>
+
+                                <p><strong>OpenAI's position:</strong> the company maintains ChatGPT is not intended for diagnosis or treatment and continues to direct users to verify information with licensed professionals — a disclaimer that sits in obvious tension with a product literally named "Health" that ingests your lab results and medication list.</p>
+
+                                <p><strong>Why this matters:</strong> This is the starkest real-world test yet of the gap flagged in this newsletter last week — 83% of clinicians already use AI without employer guidance, and now the same dynamic is playing out at consumer scale, with a company simultaneously expanding a health product and defending it in court over an allegation that it actively discouraged someone from seeking emergency care. Whatever the legal outcome, the product is live, today, for over a hundred million adults.</p>
+
+                                <p><strong>Key takeaways:</strong></p>
+                                <ul>
+                                    <li>Health in ChatGPT launched to all U.S. adult users July 23, integrating Apple Health, Epic, Oracle Health, One Medical, and Function Health data</li>
+                                    <li>300M+ people already ask ChatGPT health questions weekly</li>
+                                    <li>A lawsuit filed one day prior alleges the chatbot's advice contributed to a near-fatal medical emergency and seeks to block the product entirely</li>
+                                    <li>OpenAI maintains the tool isn't for diagnosis or treatment — language that will be tested hard against a product marketed as "Health"</li>
+                                </ul>
+
+                                <p style="margin-top:15px; font-size:14px; color:#555;">
+                                    <strong>Sources:</strong>
+                                    <a href="https://techcrunch.com/2026/07/23/openai-makes-chatgpt-health-available-to-all-u-s-users/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">TechCrunch</a> |
+                                    <a href="https://www.cbsnews.com/news/chatgpt-dangerous-medical-advice-openai-lawsuit/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">CBS News</a> |
+                                    <a href="https://siliconangle.com/2026/07/23/openai-launches-health-chatgpt-day-lawsuit-seeks-block/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">SiliconANGLE</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Updates -->
+                        <div class="section">
+                            <h2>⚡ Quick Updates</h2>
+                            <div class="quick-updates">
+                                <ul>
+                                    <li><strong>Survey: 92% of Healthcare Leaders Won't Trust AI at Scale Without Deep Clinical Expertise:</strong> A Carta Healthcare national survey found AI is "proving its worth but failing to expand" — 92% of respondents said deep healthcare domain expertise is critical when evaluating an AI vendor (half gave it the maximum possible score), yet 71% of organizations aren't expanding AI deployment at pace even where it's delivered measurable value. Where AI ownership is clearly defined, it sits with clinical leadership (41%) far more often than IT (15%) — but 26% of organizations report no clear owner for AI strategy at all. <a href="https://www.prnewswire.com/news-releases/92-of-healthcare-leaders-wont-trust-ai-at-scale-without-deep-clinical-expertise-302829772.html?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">PR Newswire</a></li>
+
+                                    <li><strong>Teladoc Unveils "Teladoc One" — Puts 100% of Its Fees at Risk Against Patient Outcomes:</strong> Announced July 23, Teladoc One pairs multidisciplinary care teams (clinicians, dietitians, mental health therapists) and a human "Care Guide" with always-on AI support between visits, starting with cardiometabolic conditions. Notably, Teladoc is tying 100% of its fees to actual medical cost savings and clinical outcomes rather than utilization — a genuine skin-in-the-game bet on AI-assisted care actually working. Select clients launch September 2026; broader rollout January 2027. <a href="https://hitconsultant.net/2026/07/23/teladoc-health-launches-teladoc-one-connected-virtual-care-model/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">HIT Consultant</a></li>
+
+                                    <li><strong>ONC Names 9 Phase 1 Winners in EHIgnite Challenge to Make EHR Exports AI-Readable:</strong> From nearly 100 proposals, ONC selected 9 teams (including Avista Development, CareLead, HealthLink360, and HubChart) to advance in a challenge using AI to turn dense, hard-to-parse electronic health information exports into clear, actionable summaries for patients and clinicians. Each winner receives $10,000 and advances to Phase 2, with a showcase webinar scheduled for August 6. <a href="https://www.techtarget.com/searchhealthit/news/366646156/ONC-names-9-EHIgnite-Challenge-phase-one-winners?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">TechTarget</a></li>
+
+                                    <li><strong>Renewed Attention on Stanford's AI-Discovered "Natural Ozempic" Peptide (BRP):</strong> Coverage this week revisited Stanford Medicine's AI-assisted discovery of BRP, a naturally occurring peptide that suppressed appetite and cut food intake by up to 50% in animal studies — without the nausea, muscle loss, or constipation associated with GLP-1 drugs like Ozempic. AI helped identify the molecule by pattern-matching brain signaling pathways; the underlying study was originally published in Nature, and the senior author has co-founded a company now planning human trials. BRP has not been tested in humans or reviewed by the FDA. <a href="https://www.sciencedaily.com/releases/2026/07/260719230608.htm?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">ScienceDaily</a></li>
+
+                                    <li><strong>Cold Spring Harbor and Scripps Restore a Failing Antibiotic's Power Against Superbugs:</strong> Researchers found that pairing vancomycin with a small molecule (pghi-4) that blocks a bacterial resistance enzyme restored the antibiotic's ability to kill drug-resistant <em>E. faecium</em>. Published July 22, this "revival" approach — fixing old antibiotics instead of discovering entirely new ones — is exactly the kind of low-cost intervention computational screening (increasingly AI-assisted) is best positioned to scale into a broader search across other failing antibiotics. <a href="https://www.sciencedaily.com/releases/2026/07/260722032108.htm?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">ScienceDaily</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Research Papers -->
+                        <div class="section">
+                            <h2>📚 Top Research Papers</h2>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2607.22504?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">Kidney Function and Kidney Failure Prediction in a Large Multiethnic Population</a></h4>
+                                <p><strong>Diao, Sanchez, Sommer, Zitnik et al. | arXiv 2607.22504 | July 24, 2026</strong></p>
+                                <p>A massive, decade-long retrospective study (1.9 million adults, 2012–2025 follow-up) comparing how well different kidney-function equations — including newer "race-neutral" formulas — predict kidney failure across a multiethnic population. The oldest equation (2006 MDRD) was actually the <em>most</em> discriminative for 5-year kidney failure risk; the newest European equation (2021 EKFC) was the <em>least</em>. Estimated CKD prevalence swung from 8.5% to 10.8% depending purely on which equation was used.</p>
+                                <p><strong>Impact:</strong> A sobering reminder that "newer" and "race-neutral" don't automatically mean "better" for clinical prediction — the choice of equation alone changes who gets flagged as having kidney disease, with real consequences for diagnosis and treatment access across different regions of birth.</p>
+                                <span class="impact-tag">Clinical Prediction</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2607.22514?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">Dysphagia Risk Stratification in Head and Neck Cancer via Two-Stage PRO-Clinical Stacking</a></h4>
+                                <p><strong>Zhao, Anyimadu, Brumm, Fuller et al. | arXiv 2607.22514 | July 24, 2026</strong></p>
+                                <p>Swallowing impairment (dysphagia) is a common, debilitating late effect of head and neck cancer treatment, but definitive assessment requires specialized videofluoroscopic imaging that's too burdensome for routine surveillance. This paper builds an interpretable model that predicts dysphagia risk using only patient-reported symptom surveys and structured clinical variables — no imaging required.</p>
+                                <p><strong>Impact:</strong> A practical, imaging-free way to flag at-risk cancer survivors for further evaluation using data clinics already collect, potentially catching swallowing problems earlier in patients who'd otherwise go unmonitored between imaging visits.</p>
+                                <span class="impact-tag">Oncology Survivorship</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2607.22505?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">Loom: Multi-Region Analysis of Spatial Transcriptomics with Local Neighborhoods and Global Trajectories</a></h4>
+                                <p><strong>Zhao, Nipu, Fathollahian, Marai et al. | arXiv 2607.22505 | July 24, 2026</strong></p>
+                                <p>Spatial transcriptomics measures gene expression while preserving where in a tissue sample each measurement came from — but analyzing pseudo-temporal patterns (how cell states evolve) across regions and samples is technically hard. Loom introduces a visual computing system with a novel glyph-based interface, validated with tissue pathologists and oncologists, to make cross-sample, cross-region spatial-temporal analysis tractable.</p>
+                                <p><strong>Impact:</strong> Spatial omics is one of the fastest-growing data types in cancer and developmental biology research; tools like Loom that make this data genuinely usable by clinicians and pathologists — not just computational biologists — are a real bottleneck-breaker.</p>
+                                <span class="impact-tag">Spatial Omics</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2607.22508?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">Interpretable EEG Biomarkers with Bag-of-Waves: Spatial and Temporal Waveform Dictionaries for Low-Data Regimes</a></h4>
+                                <p><strong>Papastathopoulos-Katsaros, Lee, Yao, Liu et al. | arXiv 2607.22508 | July 24, 2026</strong></p>
+                                <p>Most EEG analysis relies on either rigid predefined spectral features or opaque deep learning models that need huge datasets. "Bag-of-waves" learns a small, inspectable dictionary of recurring EEG waveform shapes without labels, then represents any EEG recording as a sequence of these interpretable "atoms" — achieving performance competitive with deep foundation models while working in genuinely low-data clinical settings.</p>
+                                <p><strong>Impact:</strong> Most neurological conditions don't have huge labeled EEG datasets behind them. A method that stays interpretable and works well with just sixteen animals or a modest clinical cohort is far more useful in practice than a deep model that needs thousands of labeled recordings to even get started.</p>
+                                <span class="impact-tag">Neuro Diagnostics</span>
+                            </div>
+                        </div>
+
+                        <!-- GitHub Repos -->
+                        <div class="section">
+                            <h2>💻 Top GitHub Repos of the Week</h2>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/maziyarpanahi/openmed?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">maziyarpanahi/openmed</a></h4>
+                                <span class="star-count">⭐ growing | Local-first clinical NER &amp; HIPAA de-identification</span>
+                                <p>Local-first healthcare AI: clinical NER and HIPAA PII de-identification that runs 100% on-device across 2,200+ medical models and 21 languages — no cloud, no patient data leaving your network. A direct counterpoint to this week's ChatGPT Health story: proof that clinical AI doesn't have to mean sending health data to a third-party server.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/azizilab/starfysh?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">azizilab/starfysh</a></h4>
+                                <span class="star-count">⭐ established | Reference-free spatial transcriptomics deconvolution</span>
+                                <p>An end-to-end toolbox for spatial transcriptomics analysis, offering reference-free deconvolution of cell types and states, improvable with paired histology images. The applied counterpart to this week's Loom paper for teams who need a working pipeline today.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/crisglav/discover-eeg?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">crisglav/discover-eeg</a></h4>
+                                <span class="star-count">⭐ established | Automated resting-state EEG biomarker pipeline</span>
+                                <p>A fully automated pipeline to preprocess, analyze, and visualize resting-state EEG data for biomarker discovery in clinical neuroscience, built on EEGLAB and FieldTrip. Pairs naturally with this week's interpretable bag-of-waves EEG paper.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/JuneYaooo/awesome-medical-ai?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">JuneYaooo/awesome-medical-ai</a></h4>
+                                <span class="star-count">⭐ curated | Curated open-source medical &amp; healthcare AI list</span>
+                                <p>A curated list of open-source medical and healthcare AI projects — LLMs, imaging, multi-agent systems, clinical software — spanning the full landscape this newsletter has been tracking week to week.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/kakoni/awesome-healthcare?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">kakoni/awesome-healthcare</a></h4>
+                                <span class="star-count">⭐ curated | Curated open-source healthcare software list</span>
+                                <p>A broader curated list of open-source healthcare software, libraries, tools, and resources beyond just AI — useful context for understanding what infrastructure AI health tools actually need to plug into (EHR systems, HL7/FHIR interoperability, hospital management).</p>
+                            </div>
+                        </div>
+
+                        <!-- AI Products -->
+                        <div class="section">
+                            <h2>🛠️ Top AI Products of the Week</h2>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/healthynotch?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">HealthyNotch — Work Shouldn't Cost You Your Health</a></h4>
+                                <p><span class="upvote-count">138 upvotes</span> &nbsp;| Product Hunt, July 24, 2026</p>
+                                <p>A quiet Mac menu-bar app that nudges you to stand, drink water, blink, and stretch before hours at your desk take a toll — no dashboards, no logging, no subscription. This week's runaway favorite, a reminder that not every winning health product needs an AI layer.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/nervana-2?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">Nervana — Retrain Your Nervous System, Break the Chronic Symptom Loop</a></h4>
+                                <p><span class="upvote-count">20 upvotes</span> &nbsp;| Product Hunt, July 21, 2026</p>
+                                <p>Helps people with chronic pain, brain fog, IBS, and fatigue access research-backed mind-body treatment via bite-sized education, voice AI coaching, and personalized next steps — built from the founder's own lived experience with chronic symptoms.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/hedical?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">Hedical — AI That Reads Your Medical Bills and Flags Errors</a></h4>
+                                <p><span class="upvote-count">9 upvotes</span> &nbsp;| Product Hunt, July 21, 2026</p>
+                                <p>Upload medical bills, EOBs, and denial letters; vision AI reads them directly from photos or PDFs, flags errors with citations to the specific line item and code, and drafts appeal letters you review before sending — no insurance login required.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/mind-journal-2?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_07_27">Mind Journal — A Private Emotion Journal With On-Device AI Reflection</a></h4>
+                                <p><span class="upvote-count">6 upvotes</span> &nbsp;| Product Hunt, July 27, 2026</p>
+                                <p>A local-first emotion diary where on-device models (Gemma or Gemini Nano, where supported) generate reflections without journal content ever leaving an encrypted local database — a small but pointed contrast to this week's cloud-connected ChatGPT Health story.</p>
+                            </div>
+                        </div>
+
+                        <!-- AI Criticism -->
+                        <div class="section">
+                            <h2>⚠️ AI Criticism &amp; Concerns</h2>
+
+                            <div class="concern-card">
+                                <h4>A lawsuit alleging near-fatal harm didn't slow the rollout by a single day</h4>
+                                <p>OpenAI launched ChatGPT Health to all U.S. adults the day after being sued over an allegation that the same underlying product talked a man out of seeking care for a life-threatening condition. Whatever the legal merits, the optics are hard to defend: a company simultaneously expanding a product's reach while a court is being asked to shut it down over a safety failure in that exact product. "Not intended for diagnosis or treatment" is doing enormous liability work for a feature literally named Health that ingests your labs and medications.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>The 92% survey and the ChatGPT Health launch are describing two different AI adoption realities</h4>
+                                <p>Healthcare leaders say they won't trust AI at scale without deep clinical expertise behind it — yet a consumer AI chatbot with no dedicated clinical oversight structure just became the default health information tool for a huge fraction of the U.S. adult population, seemingly overnight. Enterprise healthcare AI is moving cautiously exactly because institutions are accountable for outcomes; consumer AI health tools face no equivalent structural accountability, and this week showed why that gap matters.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>Teladoc's fees-at-risk model is a good incentive — until AI becomes the scapegoat for missed outcomes</h4>
+                                <p>Tying 100% of fees to clinical outcomes is a genuinely good structural incentive: it forces the company to prove its AI-assisted care model actually works rather than just bill for utilization. But it also creates pressure to attribute poor outcomes to patient non-adherence or external factors rather than gaps in the AI-supported care model itself — a dynamic worth watching closely once real outcomes data starts rolling in from September's pilot clients.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>The "natural Ozempic" framing is racing ahead of a molecule that's never touched a human</h4>
+                                <p>BRP is a genuinely interesting AI-assisted discovery, but "natural Ozempic without the side effects" is a headline built entirely on mouse and pig data. No human safety data exists, the FDA hasn't reviewed it, and the senior author has already co-founded a company positioned to commercialize it — a familiar pattern where AI-driven discovery excitement outruns the years of human trials still required before any of this reaches a pharmacy shelf.</p>
+                            </div>
+                        </div>
+
+                        <!-- Closing Note -->
+                        <div class="section">
+                            <h2>Closing Note</h2>
+                            <p>This week made the abstract argument from recent issues suddenly concrete: a hundred million people now have a health AI tool integrated with their actual medical records, launched the day after a lawsuit argued the same tool nearly got someone killed. Enterprise healthcare, meanwhile, is moving at the pace its own leaders say is appropriate — cautious, clinically-governed, still mostly not "expanding at pace" even where it works. Those two speeds are now operating in the same world at the same time, on the same underlying technology.</p>
+
+                            <p>Nothing about this week suggests AI health tools are broken or that the optimistic case has collapsed — Teladoc's outcomes-tied model, the EHIgnite winners, and BRP's early promise are all real signals of progress. But the ChatGPT Health lawsuit is the first time this newsletter has covered an allegation that a mainstream consumer AI product's health advice directly endangered someone's life, at the exact moment that product reached its largest audience yet. That's not a footnote — it's the story this year has been building toward.</p>
+
+                            <p>Thank you for reading. Reply anytime — I read every message.</p>
+                            <p><strong>Md Rasheduzzaman</strong></p>
+                        </div>
+
+                    </td>
+                </tr>
+
+                <!-- Share Section -->
+                <tr>
+                    <td class="share-section">
+                        <h2>Share This Newsletter</h2>
+                        <p>Found this week's insights valuable? Share with your network!</p>
+                        <div class="share-buttons">
+                            <a href="https://twitter.com/intent/tweet?text=🧬%20This%20week%20in%20AI%20%2B%20Medicine%3A%20OpenAI%20launches%20ChatGPT%20Health%20for%20all%20US%20users%20a%20day%20after%20a%20lawsuit%20alleges%20it%20nearly%20killed%20someone%2C%20plus%2092%25%20of%20healthcare%20leaders%20say%20they%20won%27t%20trust%20AI%20without%20deep%20clinical%20expertise.%20%40PythRaSh%27s%20newsletter%3A&url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn" target="_blank">Share on Twitter/X</a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&title=PythRaSh%27s%20AI%20Newsletter%20%23040%20%E2%80%94%20A%20Very%20Public%20Stress%20Test&summary=OpenAI%20launches%20ChatGPT%20Health%20for%20all%20US%20users%20one%20day%20after%20a%20lawsuit%20alleges%20it%20nearly%20killed%20someone%2C%2092%25%20of%20healthcare%20leaders%20say%20they%20won%27t%20trust%20AI%20without%20deep%20clinical%20expertise%2C%20and%20Teladoc%20puts%20100%25%20of%20its%20fees%20at%20risk%20on%20outcomes." class="share-btn" target="_blank">Share on LinkedIn</a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&quote=Check%20out%20this%20week%27s%20AI%20%2B%20Medicine%20newsletter%20%E2%80%94%20ChatGPT%20Health%27s%20nationwide%20launch%20and%20the%20lawsuit%20that%20shadowed%20it." class="share-btn" target="_blank">Share on Facebook</a>
+                            <a href="mailto:?subject=PythRaSh%27s%20AI%20Newsletter%20%23040%20%E2%80%94%20Must%20Read%21&body=Hi%2C%0A%0AI%20thought%20you%27d%20find%20this%20week%27s%20AI%20%2B%20Medicine%20newsletter%20interesting.%20It%20covers%20OpenAI%27s%20nationwide%20ChatGPT%20Health%20launch%2C%20the%20lawsuit%20that%20shadowed%20it%2C%20and%20a%20survey%20showing%2092%25%20of%20healthcare%20leaders%20won%27t%20trust%20AI%20without%20deep%20clinical%20expertise.%0A%0ACheck%20it%20out%3A%20https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn">Forward via Email</a>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Footer -->
+                <tr>
+                    <td class="footer">
+                        <div class="footer-links">
+                            <a href="https://forms.gle/ueS3aqeJsujHA48L9">Unsubscribe</a> |
+                            <a href="https://forms.gle/ueS3aqeJsujHA48L9">Update Preferences</a> |
+                            <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_07_27.html">View in Browser</a>
+                        </div>
+
+                        <p><strong>PythRaSh's AI Newsletter</strong></p>
+                        <div class="address">Fleischerwiese 4, Greifswald-17489, Germany</div>
+
+                        <div class="social-links" style="margin-top:20px;">
+                            <a href="https://mdrasheduz-zaman.github.io/PythRaSh/">Website</a> |
+                            <a href="https://www.linkedin.com/in/md-rashed-uz-zaman">LinkedIn</a> |
+                            <a href="https://github.com/mdrasheduz-zaman">GitHub</a>
+                        </div>
+
+                        <p style="margin-top:15px; font-size:12px; color:#999;">
+                            Questions? Reply to this email or contact Md Rasheduzzaman<br>
+                            md.rasheduzzaman.ugoe@gmail.com
+                        </p>
+                    </td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
