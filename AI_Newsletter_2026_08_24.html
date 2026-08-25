@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PythRaSh's AI Newsletter - Issue #43 | Week of August 18, 2026</title>
+    <style>
+        /* Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111111; background-color: #f5f5f5; }
+        table { border-collapse: collapse; width: 100%; }
+
+        /* Container */
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #FFFFFF; }
+
+        /* Header */
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+
+        /* Content */
+        .content { padding: 30px 20px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #667eea; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #111111; font-size: 20px; margin-bottom: 15px; }
+        .section p { margin-bottom: 15px; font-size: 16px; }
+
+        /* Event card */
+        .event-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; box-shadow: 0 4px 8px rgba(102,126,234,0.1); }
+        .event-card h3 { color: #667eea; font-size: 21px; margin-bottom: 15px; }
+        .event-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .event-card a:hover { text-decoration: underline; }
+        .event-card ul { padding-left: 20px; margin-bottom: 15px; }
+        .event-card li { margin-bottom: 8px; font-size: 15px; }
+        .event-card p { font-size: 15px; }
+
+        /* Quick updates */
+        .quick-updates { background: #f8f9ff; border-radius: 8px; padding: 20px; }
+        .quick-updates ul { list-style: none; }
+        .quick-updates li { margin-bottom: 15px; padding: 15px; background: white; border-radius: 6px; border-left: 3px solid #667eea; font-size: 15px; }
+        .quick-updates li strong { color: #667eea; }
+        .quick-updates a { color: #667eea; text-decoration: none; }
+        .quick-updates a:hover { text-decoration: underline; }
+
+        /* Research papers */
+        .research-paper { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .research-paper h4 { color: #111111; font-size: 17px; margin-bottom: 10px; }
+        .research-paper h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .research-paper h4 a:hover { text-decoration: underline; }
+        .research-paper p { font-size: 15px; margin-bottom: 10px; }
+        .impact-tag { background: #667eea; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 6px; }
+
+        /* Repos */
+        .repo-card { background: #f8f9ff; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 3px solid #667eea; }
+        .repo-card h4 { color: #111111; margin-bottom: 6px; }
+        .repo-card h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .repo-card h4 a:hover { text-decoration: underline; }
+        .repo-card p { font-size: 15px; margin-bottom: 0; }
+        .star-count { color: #666; font-size: 13px; display: block; margin-bottom: 8px; }
+
+        /* Products */
+        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .product-card h4 { color: #111111; margin-bottom: 6px; }
+        .product-card h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .product-card h4 a:hover { text-decoration: underline; }
+        .product-card p { font-size: 15px; margin-bottom: 8px; }
+        .upvote-count { background: #667eea; color: white; padding: 2px 8px; border-radius: 3px; font-size: 12px; }
+
+        /* Critics */
+        .concern-card { background: #fff8f0; border: 1px solid #ffe0b2; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 4px solid #ff9800; }
+        .concern-card h4 { color: #e65100; font-size: 17px; margin-bottom: 10px; }
+        .concern-card p { font-size: 15px; margin-bottom: 0; }
+
+        /* Share section */
+        .share-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px 20px; text-align: center; }
+        .share-section h2 { color: white; margin-bottom: 10px; border-bottom: none; }
+        .share-section p { color: rgba(255,255,255,0.9); font-size: 16px; margin-bottom: 0; }
+        .share-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+        .share-btn { background: rgba(255,255,255,0.2); color: white; padding: 12px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; }
+        .share-btn:hover { background: rgba(255,255,255,0.3); }
+
+        /* Footer */
+        .footer { background: #f5f5f5; padding: 30px 20px; text-align: center; color: #666; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #667eea; text-decoration: none; margin: 0 10px; font-size: 14px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer p { font-size: 14px; margin-bottom: 10px; }
+        .footer .address { font-size: 12px; color: #999; margin-top: 10px; }
+        .footer .social-links a { color: #667eea; text-decoration: none; margin: 0 8px; font-size: 14px; }
+
+        /* Mobile */
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .content { padding: 20px 15px !important; }
+            .header { padding: 30px 15px !important; }
+            .header h1 { font-size: 22px !important; }
+            .share-buttons { flex-direction: column !important; gap: 10px !important; }
+            .share-btn { display: block !important; width: 100% !important; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+        <td align="center" style="background-color:#f5f5f5; padding:20px 0;">
+            <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0">
+
+                <!-- View in Browser -->
+                <tr>
+                    <td style="text-align:center; padding:10px; font-size:12px; color:#666;">
+                        <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_08_24.html" style="color:#667eea; text-decoration:none;">View in Browser</a>
+                    </td>
+                </tr>
+
+                <!-- Header -->
+                <tr>
+                    <td class="header">
+                        <h1>PythRaSh's AI Newsletter</h1>
+                        <p>Issue #43 &nbsp;|&nbsp; Week of August 18, 2026</p>
+                    </td>
+                </tr>
+
+                <!-- Content -->
+                <tr>
+                    <td class="content">
+
+                        <!-- Intro -->
+                        <div class="section">
+                            <p><strong>Hi, There!</strong></p>
+                            <p>For all the talk of AI drug discovery this year, the industry's actual bottleneck has rarely been the models — it's been the data. This week, a well-funded startup built a genuinely novel answer: a "human biological datacenter" of robotic labs that grows and doses real human tissue at a scale twice the size of every clinical trial in the U.S. combined. Around that story, the FDA opened a formal comment period on how to regulate generative AI medical devices, Epic showcased its expanding AI agent platform to 20,000 health-system attendees, and researchers at UC San Diego used machine learning on half a million DNA sequences to decode a genetic "on switch" present in 60% of human genes. A week about infrastructure, not headlines — which might be exactly the kind of week that matters most.</p>
+                        </div>
+
+                        <!-- Big Story -->
+                        <div class="section">
+                            <h2>🚀 BIG STORY OF THE WEEK</h2>
+                            <div class="event-card">
+                                <h3><a href="https://techcrunch.com/2026/08/19/ai-isnt-close-to-curing-cancer-this-startup-says-it-knows-what-it-will-take/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">A Startup Built the "World's Largest Human Biological Datacenter" to Fix AI Drug Discovery's Data Problem</a></h3>
+
+                                <p>On <strong>August 19, 2026</strong>, Vivodyne announced what it's calling the world's largest human biological datacenter — a network of <strong>12 robotic HIVE laboratories</strong> with the annual capacity to run controlled trials on <strong>3.1 million large human tissues per year</strong>, roughly <strong>twice the scale of every clinical trial conducted in the United States combined</strong>.</p>
+
+                                <p><strong>The actual problem this solves:</strong> AI drug discovery models are only as good as their training data, and the industry's dirty secret is that almost none of that data comes from real human tissue under controlled, repeatable conditions — it comes from animal models that frequently fail to predict human response, or from sparse, expensive clinical trial data collected after a drug has already been designed. Vivodyne's pitch, as TechCrunch summarized it: <em>"AI isn't close to curing cancer. This startup says it knows what it will take."</em></p>
+
+                                <p><strong>How HIVE actually works:</strong> Each robotic lab uses a new <strong>Series 2 TissueDisk</strong> — a wafer-scale biological chip that simultaneously grows hundreds of functional, living human tissues — then autonomously doses and monitors them. The underlying bet is architectural: manufacture an environment stable and scalable enough that the same reinforcement-learning approach that drove the leap in AI language models can finally be applied to learning the actual mechanics of human physiology, rather than a proxy for it.</p>
+
+                                <p><strong>The money behind it:</strong> Vivodyne raised <strong>$40 million in Series A funding led by Khosla Ventures</strong>, with new investors Lingotto Investment Management, Helena Capital, and Fortius Ventures joining existing backers Kairos Ventures, CS Ventures, Bison Ventures, and MBX Capital — bringing the company's total raised to just under $80 million across two rounds. The company says it's working with multiple major pharmaceutical companies, though it won't name them publicly.</p>
+
+                                <p><strong>Why this matters:</strong> Most of this year's AI-and-biology headlines have been about smarter models — bigger genome language models, better protein predictors, more capable clinical agents. Vivodyne's bet is different and, in some ways, more fundamental: that the ceiling on AI drug discovery isn't model architecture at all, but the scarcity and poor quality of the human biological data those models are trained on. If that diagnosis is right, infrastructure like HIVE — unglamorous, expensive, physically real — may matter more to whether AI actually delivers new medicines than any single model release this year.</p>
+
+                                <p><strong>Key takeaways:</strong></p>
+                                <ul>
+                                    <li>12 robotic HIVE labs, 3.1 million human tissue trials/year — roughly 2x all U.S. clinical trials combined</li>
+                                    <li>Series 2 TissueDisk grows hundreds of living human tissues simultaneously on a single wafer-scale chip</li>
+                                    <li>$40M Series A led by Khosla Ventures; ~$80M raised total across two rounds</li>
+                                    <li>Explicit goal: generate training data rich enough to make reinforcement learning on human physiology actually work</li>
+                                </ul>
+
+                                <p style="margin-top:15px; font-size:14px; color:#555;">
+                                    <strong>Sources:</strong>
+                                    <a href="https://techcrunch.com/2026/08/19/ai-isnt-close-to-curing-cancer-this-startup-says-it-knows-what-it-will-take/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">TechCrunch</a> |
+                                    <a href="https://finance.yahoo.com/healthcare/articles/vivodyne-launches-world-largest-human-130000478.html?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">Yahoo Finance</a> |
+                                    <a href="https://www.thecooldown.com/green-tech/robotic-hives-grow-human-tissue-drug-tests/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">The Cool Down</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Updates -->
+                        <div class="section">
+                            <h2>⚡ Quick Updates</h2>
+                            <div class="quick-updates">
+                                <ul>
+                                    <li><strong>FDA Opens Formal Comment Period on Regulating Generative AI-Enabled Medical Devices:</strong> On August 18, the FDA's Digital Health Center of Excellence published a discussion paper with 26 specific questions covering risk assessment, premarket evaluation, postmarket monitoring, and considerations unique to foundation models and agentic AI systems in medical devices. Public feedback is open under docket FDA-2026-N-7874 through <strong>October 19, 2026</strong>. <a href="https://www.fda.gov/news-events/press-announcements/fda-seeks-public-feedback-inform-regulatory-approach-generative-ai-enabled-medical-devices?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">FDA.gov</a></li>
+
+                                    <li><strong>AI Decodes the DNA "On Switch" Present in 60% of Human Genes:</strong> UC San Diego researchers led by Professor James Kadonaga used high-throughput sequencing on roughly 500,000 DNA variants, then applied machine learning (a support vector regression model) to decode the precise nucleotide pattern of the "initiator" — the regulatory element that starts transcription in most human genes. The model can now predict whether a specific single-letter mutation in the initiator will reduce gene activation by 5% or 50%, a capability that didn't previously exist and that has direct implications for understanding cancer-causing mutations. <a href="https://www.sciencedaily.com/releases/2026/08/260823014943.htm?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">ScienceDaily</a></li>
+
+                                    <li><strong>Evaxion Pivots to an AI-Designed Glioblastoma Vaccine, Partners With Duke:</strong> Evaxion discontinued its EVX-03 solid tumor program to refocus on EVX-05, an AI-designed off-the-shelf brain cancer vaccine targeting endogenous retrovirus antigens shared across glioblastoma patients — identified using Evaxion's AI-Immunology platform. Duke University School of Medicine will lead initial clinical testing, offering a lower-cost path toward a Phase 1 trial for a cancer where roughly half of patients die within a year of diagnosis. <a href="https://www.biospace.com/press-releases/evaxion-expands-and-refocuses-r-d-pipeline-with-evx-05-an-ai-designed-off-the-shelf-brain-cancer-vaccine-program?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">BioSpace</a></li>
+
+                                    <li><strong>Epic Showcases Expanding AI Agent Platform to 20,000 Health System Attendees:</strong> At its Users Group Meeting (Aug 17–20), Epic unveiled "Ergo" — a new AI-native clinical interface arriving in November — alongside "Agent Factory," which lets health systems deploy any of 120 out-of-the-box AI agents, customize them with their own policies, or build new ones without code. Epic also expanded its outbreak detection system (13 alerts issued since an April launch) and its Cosmos-powered "Curiosity" tool for population health prediction. <a href="https://www.fiercehealthcare.com/health-tech/epic-expands-ai-ambitions-agent-platform-cosmos-powered-predictions-and-deeper-workflow?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">Fierce Healthcare</a></li>
+
+                                    <li><strong>Hubble Launches an API to Retrieve Medical Records Other APIs Can't — Draws 200+ Product Hunt Votes:</strong> A patient verifies their identity once, and Hubble assembles records from across every provider they've ever seen — resolving fax lines, phone trees, and forgotten portal logins into a single API endpoint built specifically for AI agents to query. This week's runaway favorite on Product Hunt, and a direct answer to the "AI agent can't actually get the patient data it needs" problem underlying tools like Epic's new Agent Factory. <a href="https://www.producthunt.com/products/hubble-11?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">Product Hunt</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Research Papers -->
+                        <div class="section">
+                            <h2>📚 Top Research Papers</h2>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2608.21563?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">Explainable AI-Based Decision Support for Nocturnal Hypoglycemia Prevention in Type 1 Diabetes</a></h4>
+                                <p><strong>Roquemen-Echeverri, Jacobs, Wilson, Pinsonault et al. | arXiv 2608.21563 | August 21, 2026</strong></p>
+                                <p>Using real trial data from 20 adults with type 1 diabetes on multiple daily injections (502 nights analyzed, NCT05967260), researchers built an explainable evidential neural network that forecasts overnight glucose minimums and uses SHAP values to identify which factors drive nocturnal hypoglycemia risk. Bedtime glucose was the strongest predictor; the model also surfaced counterintuitive, likely-behavioral associations around physical activity timing.</p>
+                                <p><strong>Impact:</strong> Real clinical decision support needs to say not just "risk is high" but "here's why, and here's what to do" — a bedtime snack, an insulin adjustment, a conversation with your care team. This is a rare example of explainable AI translating directly into an actionable, patient-facing recommendation rather than staying an academic interpretability exercise.</p>
+                                <span class="impact-tag">Diabetes Clinical Decision Support</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2608.21349?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">PerturbRx: Learning Treatment-Conditioned Latent Transitions for Patient Drug Response Prediction</a></h4>
+                                <p><strong>Inoue, Jeong, Hero, Kuang, Luna | arXiv 2608.21349 | August 21, 2026</strong></p>
+                                <p>Rather than predicting drug response only from a patient's pretreatment molecular profile, PerturbRx learns how a drug and dose actually shift a cell's molecular state — trained on matched control/treated single-cell populations — then transfers that learned "transition" to real patient profiles without needing post-treatment measurements from the patient themselves. It posted the strongest aggregate performance across TCGA and patient-derived xenograft benchmarks.</p>
+                                <p><strong>Impact:</strong> This week's Vivodyne story is about generating more real biological data; PerturbRx is a complementary bet on getting more predictive mileage out of the perturbation data we already have — directly relevant to the tumor-heterogeneity problem that limits patient-level cancer treatment matching today.</p>
+                                <span class="impact-tag">Cancer Treatment Prediction</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2608.22097?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">Pretreatment DCE-MRI Resolves Response Quality Within Pathologic Endpoints in Neoadjuvant Breast Cancer</a></h4>
+                                <p><strong>Kantha, Loew | arXiv 2608.22097 | August 22, 2026</strong></p>
+                                <p>Across four cohorts totaling 1,200 breast cancer patients, this study shows that a "pathologic complete response" to treatment — currently treated as a uniformly good outcome — actually hides meaningfully different recurrence risks depending on pretreatment tumor heterogeneity, measurable via routine MRI entropy. In one HER2-positive subgroup, recurrence was 12.5% in patients with favorable pretreatment structure versus 80.0% in those with adverse structure, despite both groups achieving the same "complete response" classification.</p>
+                                <p><strong>Impact:</strong> A stark demonstration that today's standard cancer-treatment success metrics can mask enormous differences in who's actually going to relapse — and that the information needed to tell them apart was sitting in a pretreatment scan clinicians already had, unused.</p>
+                                <span class="impact-tag">Oncology Imaging</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2608.22029?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">ARCHER: Amortized Cross-Specimen Pose Estimation for Cryo-Electron Microscopy</a></h4>
+                                <p><strong>Nguyen, Pham | arXiv 2608.22029 | August 22, 2026</strong></p>
+                                <p>Cryo-EM structure determination traditionally requires solving pose estimation from scratch for every new protein specimen. ARCHER instead trains a single model that generalizes zero-shot across different protein structures, conditioned on a reference volume — achieving a median angular error of just 2.5° on real experimental particles, matching specialist per-structure estimators.</p>
+                                <p><strong>Impact:</strong> A meaningful step toward removing one of the most computationally expensive, specimen-specific bottlenecks in structural biology — the kind of unglamorous infrastructure improvement that, like this week's big story, quietly determines how fast the rest of the field can move.</p>
+                                <span class="impact-tag">Structural Biology</span>
+                            </div>
+                        </div>
+
+                        <!-- GitHub Repos -->
+                        <div class="section">
+                            <h2>💻 Top GitHub Repos of the Week</h2>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/shap/shap?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">shap/shap</a></h4>
+                                <span class="star-count">⭐ ~23,000 | Game-theoretic model explainability</span>
+                                <p>The reference implementation of SHapley Additive exPlanations, the game-theoretic interpretability method behind this week's nocturnal hypoglycemia paper. The standard tool for making any black-box model's predictions explainable, with optimized support for tree ensembles, deep learning, and kernel-based explanations.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/Perturbation-Response-Prediction/PRnet?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">Perturbation-Response-Prediction/PRnet</a></h4>
+                                <span class="star-count">⭐ established | Perturbation-conditioned transcriptional response model</span>
+                                <p>A flexible, scalable perturbation-conditioned generative model predicting transcriptional responses to unseen complex perturbations at bulk and single-cell levels — the applied open-source counterpart to this week's PerturbRx drug-response paper.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/phonchi/Computational-CryoEM?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">phonchi/Computational-CryoEM</a></h4>
+                                <span class="star-count">⭐ curated | Curated computational cryo-EM methods list</span>
+                                <p>A curated list of awesome computational cryo-EM methods and tools. As pose-estimation approaches like this week's ARCHER paper push toward specimen-agnostic generalization, this list is a useful map of the broader computational cryo-EM toolchain they plug into.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/ChangLabSNU/VaxLab?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">ChangLabSNU/VaxLab</a></h4>
+                                <span class="star-count">⭐ established | Integrated mRNA vaccine design platform</span>
+                                <p>An integrated, open-source platform for designing optimized mRNA vaccine candidates end-to-end, including generative-model-based UTR design. Directly relevant to this week's Evaxion story — the applied, open alternative to a proprietary AI-vaccine-design platform.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/JuneYaooo/awesome-medical-ai?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">JuneYaooo/awesome-medical-ai</a></h4>
+                                <span class="star-count">⭐ curated | Curated open-source medical &amp; healthcare AI list</span>
+                                <p>A curated list of open-source medical and healthcare AI projects spanning LLMs, imaging, multi-agent systems, and clinical software — a useful map as this week's threads (drug-discovery infrastructure, explainable clinical AI, structural biology tools) keep multiplying.</p>
+                            </div>
+                        </div>
+
+                        <!-- AI Products -->
+                        <div class="section">
+                            <h2>🛠️ Top AI Products of the Week</h2>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/hubble-11?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">Hubble — Retrieve Medical Records Other APIs Can't</a></h4>
+                                <p><span class="upvote-count">204 upvotes</span> &nbsp;| Product Hunt, August 18, 2026</p>
+                                <p>A patient verifies their identity once, and Hubble assembles their records from across every provider into a single API — built specifically for AI agents to query, resolving the fax-lines-and-forgotten-portals problem that quietly limits most healthcare AI tools today.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/stateshift?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">Stateshift — Rewire Your Anxiety in 15 Days</a></h4>
+                                <p><span class="upvote-count">28 upvotes</span> &nbsp;| Product Hunt, August 20, 2026</p>
+                                <p>A structured 15-day practice program designed to address the physiological root causes of anxiety rather than just its surface symptoms, aiming to help people regulate their nervous system response well enough to fully re-engage with work and relationships.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/oatmeal-3?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">Oatmeal — Nutrition Tracking You'll Actually Stick To</a></h4>
+                                <p><span class="upvote-count">4 upvotes</span> &nbsp;| Product Hunt, August 19, 2026</p>
+                                <p>An AI-powered nutrition tracker that logs meals from text, voice, or photo and returns personalized macro insights, streak tracking, and smart coaching — positioned as the friction-free alternative to manual calorie logging.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/bite4-health-food-tracker?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_24">Bite4 — Health Food Tracker</a></h4>
+                                <p><span class="upvote-count">3 upvotes</span> &nbsp;| Product Hunt, August 24, 2026</p>
+                                <p>A minimalist food tracker that keeps just four active food categories on screen at a time, letting users scan a food photo or type a food name for instant category suggestions and one-tap logging, without calorie counting.</p>
+                            </div>
+                        </div>
+
+                        <!-- AI Criticism -->
+                        <div class="section">
+                            <h2>⚠️ AI Criticism &amp; Concerns</h2>
+
+                            <div class="concern-card">
+                                <h4>"World's largest human biological datacenter" is still an unproven bet on RL for physiology</h4>
+                                <p>Vivodyne's core thesis — that the reinforcement-learning approach behind AI language models can be transplanted onto human physiology given enough tissue data — is a genuine scientific gamble, not a settled fact. Language has a discrete, learnable structure that biology may not share at the same tractable scale, even with 3.1 million tissue trials a year. The infrastructure is real and impressive; whether it actually produces better drugs, versus just better-funded animal-model replacement, remains to be demonstrated.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>The FDA's 26 questions are a genuine invitation — but also 26 unresolved problems</h4>
+                                <p>A formal discussion paper with 26 open questions about foundation models and agentic AI in medical devices is honest regulatory humility, not evasion — but it also means the FDA itself doesn't yet have answers for how to premarket-evaluate or postmarket-monitor the exact category of AI tools already shipping in products like Epic's Agent Factory. Health systems are deploying agentic AI clinical tools today, while the regulator responsible for their safety is still asking the public what the right questions even are.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>Epic's "Agent Factory" concentrates enormous power in one EHR vendor</h4>
+                                <p>Letting health systems deploy 120 out-of-the-box AI agents inside the dominant EHR platform is operationally convenient, but it also means Epic — already the gatekeeper for the majority of U.S. patient records — becomes the gatekeeper for which AI agents get to act on those records too. A tool like this week's Hubble exists precisely because that kind of vendor concentration makes it hard for anyone outside Epic's ecosystem to build competing agentic tools with equivalent data access.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>A vaccine "identified by AI" is still years and one discontinued program away from patients</h4>
+                                <p>Evaxion's pivot to EVX-05 is genuinely promising — but it came alongside discontinuing EVX-03, a reminder that AI-identified drug candidates fail and get deprioritized just like conventionally discovered ones. "AI-designed" describes how a candidate was found, not a guarantee it will work; the actual clinical validation for EVX-05 hasn't started yet, and glioblastoma has defeated many promising immunotherapy approaches before this one.</p>
+                            </div>
+                        </div>
+
+                        <!-- Closing Note -->
+                        <div class="section">
+                            <h2>Closing Note</h2>
+                            <p>Not every consequential week in AI and biology looks like an alarm bell. This one looked more like plumbing: a startup building physical infrastructure to solve a data bottleneck nobody outside the field talks about, a regulator publicly admitting it doesn't have all the answers yet, and an EHR vendor consolidating the rails that AI agents will need to actually reach patient data. None of it is as viscerally striking as an AI-designed virus. All of it will probably matter more to whether any of this year's AI-and-biology promises actually reach a patient.</p>
+
+                            <p>The theme underneath all four stories this week is the same: capability isn't the bottleneck anymore. Data, regulation, and access are. Whoever solves those unglamorous problems first may end up mattering more than whoever ships the next flashy model.</p>
+
+                            <p>Thank you for reading. Reply anytime — I read every message.</p>
+                            <p><strong>Md Rasheduzzaman</strong></p>
+                        </div>
+
+                    </td>
+                </tr>
+
+                <!-- Share Section -->
+                <tr>
+                    <td class="share-section">
+                        <h2>Share This Newsletter</h2>
+                        <p>Found this week's insights valuable? Share with your network!</p>
+                        <div class="share-buttons">
+                            <a href="https://twitter.com/intent/tweet?text=🧬%20This%20week%20in%20AI%20%2B%20Biology%3A%20A%20startup%20built%20the%20%22world%27s%20largest%20human%20biological%20datacenter%22%20to%20fix%20AI%20drug%20discovery%27s%20data%20problem%2C%20plus%20FDA%27s%20new%20generative%20AI%20device%20rules%20and%20Epic%27s%20AI%20agent%20platform.%20%40PythRaSh%27s%20newsletter%3A&url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn" target="_blank">Share on Twitter/X</a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&title=PythRaSh%27s%20AI%20Newsletter%20%23043%20%E2%80%94%20Solving%20the%20Data%20Problem&summary=A%20startup%20built%20the%20world%27s%20largest%20human%20biological%20datacenter%20to%20fix%20AI%20drug%20discovery%27s%20data%20problem%2C%20the%20FDA%20opened%20comment%20on%20generative%20AI%20medical%20devices%2C%20and%20Epic%20showcased%20its%20AI%20agent%20platform%20to%2020%2C000%20health%20system%20attendees." class="share-btn" target="_blank">Share on LinkedIn</a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&quote=Check%20out%20this%20week%27s%20AI%20%2B%20Biology%20newsletter%20%E2%80%94%20how%20a%20startup%20is%20solving%20AI%20drug%20discovery%27s%20real%20bottleneck%3A%20data." class="share-btn" target="_blank">Share on Facebook</a>
+                            <a href="mailto:?subject=PythRaSh%27s%20AI%20Newsletter%20%23043%20%E2%80%94%20Must%20Read%21&body=Hi%2C%0A%0AI%20thought%20you%27d%20find%20this%20week%27s%20AI%20%2B%20Biology%20newsletter%20interesting.%20It%20covers%20a%20startup%27s%20%22world%27s%20largest%20human%20biological%20datacenter%2C%22%20the%20FDA%27s%20new%20generative%20AI%20medical%20device%20rules%2C%20and%20Epic%27s%20expanding%20AI%20agent%20platform.%0A%0ACheck%20it%20out%3A%20https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn">Forward via Email</a>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Footer -->
+                <tr>
+                    <td class="footer">
+                        <div class="footer-links">
+                            <a href="https://forms.gle/ueS3aqeJsujHA48L9">Unsubscribe</a> |
+                            <a href="https://forms.gle/ueS3aqeJsujHA48L9">Update Preferences</a> |
+                            <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_08_24.html">View in Browser</a>
+                        </div>
+
+                        <p><strong>PythRaSh's AI Newsletter</strong></p>
+                        <div class="address">Fleischerwiese 4, Greifswald-17489, Germany</div>
+
+                        <div class="social-links" style="margin-top:20px;">
+                            <a href="https://mdrasheduz-zaman.github.io/PythRaSh/">Website</a> |
+                            <a href="https://www.linkedin.com/in/md-rashed-uz-zaman">LinkedIn</a> |
+                            <a href="https://github.com/mdrasheduz-zaman">GitHub</a>
+                        </div>
+
+                        <p style="margin-top:15px; font-size:12px; color:#999;">
+                            Questions? Reply to this email or contact Md Rasheduzzaman<br>
+                            md.rasheduzzaman.ugoe@gmail.com
+                        </p>
+                    </td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
