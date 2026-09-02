@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PythRaSh's AI Newsletter - Issue #44 | Week of August 25, 2026</title>
+    <style>
+        /* Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111111; background-color: #f5f5f5; }
+        table { border-collapse: collapse; width: 100%; }
+
+        /* Container */
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #FFFFFF; }
+
+        /* Header */
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+
+        /* Content */
+        .content { padding: 30px 20px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #667eea; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #111111; font-size: 20px; margin-bottom: 15px; }
+        .section p { margin-bottom: 15px; font-size: 16px; }
+
+        /* Event card */
+        .event-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; box-shadow: 0 4px 8px rgba(102,126,234,0.1); }
+        .event-card h3 { color: #667eea; font-size: 21px; margin-bottom: 15px; }
+        .event-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .event-card a:hover { text-decoration: underline; }
+        .event-card ul { padding-left: 20px; margin-bottom: 15px; }
+        .event-card li { margin-bottom: 8px; font-size: 15px; }
+        .event-card p { font-size: 15px; }
+
+        /* Quick updates */
+        .quick-updates { background: #f8f9ff; border-radius: 8px; padding: 20px; }
+        .quick-updates ul { list-style: none; }
+        .quick-updates li { margin-bottom: 15px; padding: 15px; background: white; border-radius: 6px; border-left: 3px solid #667eea; font-size: 15px; }
+        .quick-updates li strong { color: #667eea; }
+        .quick-updates a { color: #667eea; text-decoration: none; }
+        .quick-updates a:hover { text-decoration: underline; }
+
+        /* Research papers */
+        .research-paper { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .research-paper h4 { color: #111111; font-size: 17px; margin-bottom: 10px; }
+        .research-paper h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .research-paper h4 a:hover { text-decoration: underline; }
+        .research-paper p { font-size: 15px; margin-bottom: 10px; }
+        .impact-tag { background: #667eea; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 6px; }
+
+        /* Repos */
+        .repo-card { background: #f8f9ff; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 3px solid #667eea; }
+        .repo-card h4 { color: #111111; margin-bottom: 6px; }
+        .repo-card h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .repo-card h4 a:hover { text-decoration: underline; }
+        .repo-card p { font-size: 15px; margin-bottom: 0; }
+        .star-count { color: #666; font-size: 13px; display: block; margin-bottom: 8px; }
+
+        /* Products */
+        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .product-card h4 { color: #111111; margin-bottom: 6px; }
+        .product-card h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .product-card h4 a:hover { text-decoration: underline; }
+        .product-card p { font-size: 15px; margin-bottom: 8px; }
+        .upvote-count { background: #667eea; color: white; padding: 2px 8px; border-radius: 3px; font-size: 12px; }
+
+        /* Critics */
+        .concern-card { background: #fff8f0; border: 1px solid #ffe0b2; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 4px solid #ff9800; }
+        .concern-card h4 { color: #e65100; font-size: 17px; margin-bottom: 10px; }
+        .concern-card p { font-size: 15px; margin-bottom: 0; }
+
+        /* Share section */
+        .share-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px 20px; text-align: center; }
+        .share-section h2 { color: white; margin-bottom: 10px; border-bottom: none; }
+        .share-section p { color: rgba(255,255,255,0.9); font-size: 16px; margin-bottom: 0; }
+        .share-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+        .share-btn { background: rgba(255,255,255,0.2); color: white; padding: 12px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; }
+        .share-btn:hover { background: rgba(255,255,255,0.3); }
+
+        /* Footer */
+        .footer { background: #f5f5f5; padding: 30px 20px; text-align: center; color: #666; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #667eea; text-decoration: none; margin: 0 10px; font-size: 14px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer p { font-size: 14px; margin-bottom: 10px; }
+        .footer .address { font-size: 12px; color: #999; margin-top: 10px; }
+        .footer .social-links a { color: #667eea; text-decoration: none; margin: 0 8px; font-size: 14px; }
+
+        /* Mobile */
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .content { padding: 20px 15px !important; }
+            .header { padding: 30px 15px !important; }
+            .header h1 { font-size: 22px !important; }
+            .share-buttons { flex-direction: column !important; gap: 10px !important; }
+            .share-btn { display: block !important; width: 100% !important; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+        <td align="center" style="background-color:#f5f5f5; padding:20px 0;">
+            <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0">
+
+                <!-- View in Browser -->
+                <tr>
+                    <td style="text-align:center; padding:10px; font-size:12px; color:#666;">
+                        <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_08_31.html" style="color:#667eea; text-decoration:none;">View in Browser</a>
+                    </td>
+                </tr>
+
+                <!-- Header -->
+                <tr>
+                    <td class="header">
+                        <h1>PythRaSh's AI Newsletter</h1>
+                        <p>Issue #44 &nbsp;|&nbsp; Week of August 25, 2026</p>
+                    </td>
+                </tr>
+
+                <!-- Content -->
+                <tr>
+                    <td class="content">
+
+                        <!-- Intro -->
+                        <div class="section">
+                            <p><strong>Hi, There!</strong></p>
+                            <p>This week's biggest AI-and-healthcare story wasn't about a new model or a new drug — it was about who gets a say in how AI is actually used on hospital floors. On August 27, registered nurses staged the largest coordinated protest of their kind to date, across eight U.S. cities, demanding hospitals cut ties with Palantir over its role in automated staffing decisions. It's a genuinely different kind of AI story than this newsletter usually covers: not a lab announcement, not a regulatory filing, but frontline healthcare workers pushing back on a system already deployed at scale. Around that, the AI infrastructure kept building regardless — HIMSS launched the first standardized framework for measuring healthcare AI's actual ROI, and two new AI agents went live inside real clinical workflows for prescribing and dictation.</p>
+                        </div>
+
+                        <!-- Big Story -->
+                        <div class="section">
+                            <h2>🚀 BIG STORY OF THE WEEK</h2>
+                            <div class="event-card">
+                                <h3><a href="https://www.healthcareitnews.com/news/nurses-nationwide-protest-palantir-technology-hospitals?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">Nurses Stage Largest-Ever Nationwide Protest Against Palantir's Role in Hospital Staffing</a></h3>
+
+                                <p>On <strong>August 27, 2026</strong>, National Nurses United — the largest nursing union in the U.S. — coordinated demonstrations in <strong>eight cities</strong> (Palo Alto, Los Angeles, Chicago, Washington D.C., Portland ME, Asheville, Austin, and New Orleans), the union's <strong>largest actions to date</strong> against a single technology vendor: Palantir Technologies.</p>
+
+                                <p><strong>What Palantir actually does inside hospitals:</strong> The company's <strong>Timpani</strong> platform automates nurse scheduling and staffing decisions — expanded to 76 HCA Healthcare facilities in 2025, with more slated for 2026. Separately, Mount Sinai Health System uses Palantir products to evaluate patient records and determine eligibility for at-home care. HCA describes Timpani as built "with the clinicians' voice as its guide."</p>
+
+                                <p><strong>What nurses say is actually happening:</strong> A pediatric nurse who spoke to reporters put it plainly: <em>"It's affecting staffing decisions and care decisions in ways that are not in line with what healthcare should be."</em> The union's core complaints are that automated staffing platforms are disruptive in practice, that they're exacerbating an already severe nationwide understaffing crisis, and that opaque data practices leave nurses without meaningful input into decisions that directly affect patient safety. This isn't a new grievance — nearly 15,000 nurses at NYC hospital systems including Mount Sinai went on strike in January 2026 over unmanageable patient loads, and AI safeguards were explicitly among their demands.</p>
+
+                                <p><strong>It's not just labor pushing back:</strong> In early August, <strong>Mass General Brigham</strong> — one of the country's most prestigious health systems — quietly walked away from talks with Palantir, according to Boston Globe reporting. That's a signal the concerns aren't confined to frontline staff.</p>
+
+                                <p><strong>The broader context fueling the anger:</strong> Palantir has also drawn criticism for a $30 million Department of Homeland Security contract to build an AI system identifying immigrants for deportation — meaning nurses' objections to its healthcare role are inseparable from a wider distrust of the company itself, not purely a critique of the staffing technology in isolation.</p>
+
+                                <p><strong>Why this matters:</strong> Most of this year's AI-and-healthcare coverage — including in this newsletter — has centered on what labs, regulators, and hospital executives are building or approving. This week is a reminder that the people actually working the floors these systems govern have their own read on whether "AI-assisted staffing" is working as advertised, and that read is, right now, a resounding no. Whether hospitals listen may say more about the near-term trajectory of clinical AI than any model release this year.</p>
+
+                                <p><strong>Key takeaways:</strong></p>
+                                <ul>
+                                    <li>Nationwide protests across 8 cities on Aug 27 — NNU's largest coordinated action against a single AI vendor to date</li>
+                                    <li>Palantir's Timpani staffing platform runs in 76+ HCA facilities as of 2025, expanding in 2026</li>
+                                    <li>Mass General Brigham independently pulled out of Palantir talks in early August</li>
+                                    <li>January 2026's 15,000-nurse NYC strike already included AI safeguards among its demands — this week's protest continues that fight, not starts it</li>
+                                </ul>
+
+                                <p style="margin-top:15px; font-size:14px; color:#555;">
+                                    <strong>Sources:</strong>
+                                    <a href="https://www.healthcareitnews.com/news/nurses-nationwide-protest-palantir-technology-hospitals?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">Healthcare IT News</a> |
+                                    <a href="https://www.kqed.org/news/12097097/bay-area-nurses-protest-use-of-palantirs-ai-tech-at-hospitals?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">KQED</a> |
+                                    <a href="https://www.nationalnursesunited.org/press/nnu-nurses-to-participate-in-nationwide-protests-against-palantir?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">National Nurses United</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Updates -->
+                        <div class="section">
+                            <h2>⚡ Quick Updates</h2>
+                            <div class="quick-updates">
+                                <ul>
+                                    <li><strong>HIMSS Launches the First Standardized Framework for Measuring Healthcare AI's Actual ROI:</strong> At HIMSS26 APAC in Singapore (Aug 26), HIMSS unveiled the AI Outcomes Framework — described as the world's first evidence-based, longitudinal standard for measuring the clinical, operational, and financial impact of healthcare AI. Founding partners contributing real-world outcome data include SingHealth, National University Hospital Singapore, Asan Medical Center, Seoul National University Hospital, and Taichung Veterans General Hospital. HIMSS CEO Hal Wolf has been blunt about the gap this fills: organizations are deploying AI rapidly, but measuring whether it actually works has lagged badly behind. <a href="https://hitconsultant.net/2026/08/26/himss-signs-mous-himss26-apac-ai-outcomes-framework-snubh-malaysia/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">HIT Consultant</a></li>
+
+                                    <li><strong>AI Detects Cardiovascular Disease Risk From Routine Breast Cancer Mammograms:</strong> Presented at the European Society of Cardiology Congress 2026, a deep-learning model developed by Chaim Sheba Medical Center and Tel Aviv University extracts cardiovascular signals — markers of hypertension, ischemic heart disease, and prior stroke — from standard mammography images. Since cardiovascular disease is chronically underdiagnosed in women who nonetheless attend routine breast screening, the approach could catch cardiac risk in a population that's already in the room but not being screened for it. ESC's Elena Arbelo cautioned the field still needs to "move from experimentation to clinical implementation." <a href="https://www.escardio.org/news/press/press-releases/ai-could-help-detect-common-cardiovascular-diseases-from-mammograms/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">ESC Press Release</a></li>
+
+                                    <li><strong>FDB Launches First Commercial AI Prescribing Agent:</strong> First Databank's Script Agent went live in production (Aug 30) with independent-practice platform Tebra, turning patient-visit dialogue directly into structured, clinician-reviewable prescriptions rather than just clinical notes. Unlike simple NLP transcription, Script Agent uses FDB's clinically validated medication intelligence to assemble prescription details — with an early adopter targeting a 70% reduction in manual prescribing documentation time. <a href="https://infomeddnews.com/fdb/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">InfoMedd News</a></li>
+
+                                    <li><strong>Suki Launches Standalone AI Dictation Built Natively Into Epic and MEDITECH:</strong> Announced Aug 25, Suki Dictation lets clinicians generate or edit notes by speaking directly into their EHR, positioned for high-acuity, procedural fields (surgery, emergency medicine, critical care) where incomplete operative notes currently drive incorrect coding in up to 28% of cases and average $18,200 in lost reimbursement per case. It can run standalone or alongside Suki's existing ambient documentation product. <a href="https://www.healthcaredive.com/news/suki-launches-ai-dictation-tool-with-ehr-integration-capabilities/828837/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">Healthcare Dive</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Research Papers -->
+                        <div class="section">
+                            <h2>📚 Top Research Papers</h2>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2608.29453?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">AI Can Be Easily Persuaded in Clinical Decision Making</a></h4>
+                                <p><strong>Zhu, Pan, Liu, Hu, Wu | arXiv 2608.29453 | August 29, 2026</strong></p>
+                                <p>Through controlled experiments, researchers found that AI clinical decision-making can be swayed by professional authority, claimed institutional affiliation, invoked past performance, and simple repeated pressure — the same persuasive input shifted about 10% more decisions when attributed to a senior clinician than a medical student. Most strikingly, a fabricated clinician opinion could persuade the AI away from a correct diagnosis toward an incorrect one, even when the "supporting" view had no real basis.</p>
+                                <p><strong>Impact:</strong> This lands the same week as a nationwide protest over trust in hospital AI systems — and for good reason. A model that changes its clinical judgment based on who's asking rather than what's true is a genuine patient-safety liability the moment it's deployed in any setting where a confident wrong opinion could walk in the door.</p>
+                                <span class="impact-tag">Clinical AI Safety</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2608.28990?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">Agentic AI Uncovers Conserved Cross-Tissue Protein Co-Abundance Programs Inaccessible to Single-Dataset Analysis</a></h4>
+                                <p><strong>Guan, Wu, Xie, Li, Wang | arXiv 2608.28990 | August 29, 2026</strong></p>
+                                <p>An LLM-agent framework systematically compared protein co-abundance patterns across all 820 possible pairwise combinations of 41 human tissues and fluids — a search space too large for hypothesis-driven, pre-selected tissue-pair studies to ever fully cover. It surfaced 1,833 conserved clusters across 406 tissue pairs, including a non-obvious skin–bone marrow connection that turned out stronger than the anatomically "obvious" bone–bone marrow pairing, plus cancer-relevant colon–breast clusters involving extracellular-matrix remodeling and immune modulation.</p>
+                                <p><strong>Impact:</strong> A genuine example of agentic AI doing something a human research team structurally couldn't — exhaustively searching every possible tissue-pair combination rather than the handful biologists would think to test first, then surfacing therapeutic hypotheses (like a brain-gut redox/serotonin axis) that weren't on anyone's radar.</p>
+                                <span class="impact-tag">Agentic Discovery</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2608.28849?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">Confounder-Aware Feature Correction for Single-Cell Batch Integration (ConDo)</a></h4>
+                                <p><strong>McCarter | arXiv 2608.28849 | August 28, 2026</strong></p>
+                                <p>Most single-cell batch-correction methods align the average expression levels across experimental batches — but that quietly erases real biological signal whenever cell-type composition legitimately differs between batches (which is common). ConDo instead matches expression conditional on cell type, preserving genuine biological variation while still correcting technical batch effects. On the Open Problems Batch Integration Benchmark, it ranked first among all feature-space methods on five of six datasets, and first among every method tested (including opaque deep-embedding approaches) on four of six.</p>
+                                <p><strong>Impact:</strong> Unlike most competing methods, ConDo returns corrected gene-expression values researchers can actually read and use for downstream biomarker work — not just an opaque embedding — while matching or beating deep learning approaches on accuracy.</p>
+                                <span class="impact-tag">Single-Cell Genomics</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2608.28820?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">Explainable Artificial Intelligence (XAI) in Computational Pathology: Definitions, Taxonomy, and Recommendations</a></h4>
+                                <p><strong>Innani, You, Shephard, Baheti et al. (MICCAI SIG-CompPath) | arXiv 2608.28820 | August 28, 2026</strong></p>
+                                <p>A field-wide consensus effort proposing a standardized vocabulary (seven core terms), a taxonomy spanning methodological families, and a task-driven framework mapping five real clinical questions to recommended XAI methods for computational pathology. The authors identify five specific gaps between current XAI capability and what clinical deployment actually requires.</p>
+                                <p><strong>Impact:</strong> Computational pathology's explainability literature has been genuinely fragmented — different papers using the same term to mean different things. A field-wide vocabulary and evaluation framework, backed by a major imaging conference's own working group, is unglamorous infrastructure work that makes every future pathology-AI paper easier to actually compare.</p>
+                                <span class="impact-tag">Computational Pathology</span>
+                            </div>
+                        </div>
+
+                        <!-- GitHub Repos -->
+                        <div class="section">
+                            <h2>💻 Top GitHub Repos of the Week</h2>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/Gry1005/AgenticAI-conserved-cross-tissue-protein-co-abundance?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">Gry1005/AgenticAI-conserved-cross-tissue-protein-co-abundance</a></h4>
+                                <span class="star-count">⭐ new | Cross-tissue protein co-abundance discovery pipeline</span>
+                                <p>Code and data release accompanying this week's cross-tissue protein co-abundance paper — the full pairwise-comparison pipeline across all 820 human tissue combinations, openly available for anyone wanting to explore the conserved clusters directly.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/calvinmccarter/condo-adapter?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">calvinmccarter/condo-adapter</a></h4>
+                                <span class="star-count">⭐ established | Confounded domain adaptation for single-cell data</span>
+                                <p>The reference implementation of ConDo, this week's top-ranked single-cell batch integration method. A practical drop-in for any single-cell genomics pipeline currently relying on marginal-distribution batch correction that risks erasing real biological signal.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/mahmoodlab/CLAM?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">mahmoodlab/CLAM</a></h4>
+                                <span class="star-count">⭐ well-established | Interpretable whole-slide-image classification</span>
+                                <p>Open-source, high-throughput, interpretable whole-slide-image classification for computational pathology — published in <em>Nature Biomedical Engineering</em>. Directly relevant to this week's XAI-in-pathology taxonomy paper as a working example of an interpretable-by-design pathology AI method already in wide use.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/ai-in-health/medllmspracticalguide?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">ai-in-health/MedLLMsPracticalGuide</a></h4>
+                                <span class="star-count">⭐ curated | Practical guide to medical LLMs</span>
+                                <p>A curated, Nature Reviews Bioengineering–featured guide to medical LLMs — model family trees, benchmark tables, and papers. Worth revisiting given this week's persuadability findings: understanding a model's training lineage and known failure modes matters more, not less, once you know it can be talked out of a correct diagnosis.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/j3soon/nurse-scheduling?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">j3soon/nurse-scheduling</a></h4>
+                                <span class="star-count">⭐ established | Open, transparent nurse scheduling web app</span>
+                                <p>An open, transparent nurse-scheduling web application, verified by domain experts and used successfully in complex multi-ward hospital scenarios involving up to ~100 nurses. A direct, inspectable counterpoint to this week's big story — proof that AI-assisted staffing doesn't have to mean an opaque, proprietary black box.</p>
+                            </div>
+                        </div>
+
+                        <!-- AI Products -->
+                        <div class="section">
+                            <h2>🛠️ Top AI Products of the Week</h2>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/hey-susan?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">Hey Susan — The AI Assistant New Moms Text at 3am</a></h4>
+                                <p><span class="upvote-count">9 upvotes</span> &nbsp;| Product Hunt, August 25, 2026</p>
+                                <p>An AI assistant for pregnancy and new-parent life that proactively notices and messages you first when something looks off (never a diagnosis), built on nine faculties loosely modeled on memory and attention, plus companion tools for weekly planning and drafting kinder messages during exhausted 3am moments.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/careconnect-2?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">CareConnect — Your Personal Medicine &amp; Remedy Safety Checker</a></h4>
+                                <p><span class="upvote-count">6 upvotes</span> &nbsp;| Product Hunt, August 29, 2026</p>
+                                <p>Scan or upload prescriptions and discharge papers to get plain-language medicine explanations in 7 languages, with dosage alarms, drug-interaction checks, and a recovery timeline — built for patients and caregivers managing a parent's or grandparent's recovery.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/eirene?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">Eirene — She Matters Too</a></h4>
+                                <p><span class="upvote-count">6 upvotes</span> &nbsp;| Product Hunt, August 29, 2026</p>
+                                <p>A digital postpartum wellbeing companion built using insights from 800 postpartum cases across 70 demographic and wellbeing attributes, offering personalized check-ins and compassionate AI support centered on the mother, not just the baby — explicitly not a diagnostic tool.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/pharmasafe?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_08_31">PharmaSafe — Pharmacovigilance &amp; Drug Safety Analytics</a></h4>
+                                <p><span class="upvote-count">5 upvotes</span> &nbsp;| Product Hunt, August 30, 2026</p>
+                                <p>A drug safety analytics platform for students, researchers, and professionals to explore adverse drug reaction data, compare drugs, and generate safety insights in one accessible interface.</p>
+                            </div>
+                        </div>
+
+                        <!-- AI Criticism -->
+                        <div class="section">
+                            <h2>⚠️ AI Criticism &amp; Concerns</h2>
+
+                            <div class="concern-card">
+                                <h4>"Built with the clinicians' voice as its guide" and nationwide nurse protests can't both be fully true</h4>
+                                <p>HCA's own description of Timpani directly contradicts what the nurses who actually use it are saying in the streets. Both framings can't be simultaneously accurate — either the "clinician voice" that shaped the tool wasn't representative of frontline staff, or genuine early input got lost somewhere between design and deployment at scale. Either way, the gap between vendor messaging and worker experience is itself the story, independent of whether Palantir's algorithms are technically sound.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>A model that can be talked out of a correct diagnosis by a fake "senior clinician" opinion is not ready for the staffing decisions nurses are protesting</h4>
+                                <p>This week's persuadability research and the Palantir protests are, structurally, the same concern from two different angles. If AI clinical judgment shifts based on perceived authority rather than evidence, then any AI system making or influencing real staffing and care decisions inherits that vulnerability — and unlike a single wrong diagnosis, a systematically biased staffing algorithm affects every patient on a unit, every shift, at scale.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>HIMSS's new outcomes framework is genuinely useful — and arrives years after mass deployment, not before it</h4>
+                                <p>Standardizing how healthcare AI's ROI gets measured is exactly the right move, but Timpani has already been running in 76+ hospitals, ambient scribes are already documenting the majority of some hospitals' notes, and dozens of AI prescribing and dictation tools launched this year alone before any comparable evidence standard existed. Retrofitting rigorous measurement onto systems already embedded in patient care is a much harder problem than building it in from day one — and it's the problem healthcare AI has chosen, repeatedly, to solve backwards.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>AI-designed conserved protein clusters still need wet-lab validation before they mean anything clinically</h4>
+                                <p>This week's cross-tissue protein co-abundance paper is a genuinely clever use of agentic AI to search a space no human team would fully cover — but a computationally "conserved cluster" is a hypothesis, not a finding. The brain-gut redox/serotonin axis and other novel relationships the system surfaced are promising leads for wet-lab researchers to chase, not validated biology yet, and the paper's own framing as "hypothesis-generating" deserves to travel with every summary of this result.</p>
+                            </div>
+                        </div>
+
+                        <!-- Closing Note -->
+                        <div class="section">
+                            <h2>Closing Note</h2>
+                            <p>Two threads ran through this week that don't usually appear side by side: a labor movement pushing back on AI at the exact moment academic research quietly confirmed one of their core fears — that these systems can be swayed by authority and confidence rather than evidence. Nurses aren't protesting Palantir because they misunderstand the technology. They're protesting because they're the ones watching it make decisions in real time, and what they're describing lines up uncomfortably well with what this week's persuadability research found in a controlled setting.</p>
+
+                            <p>None of this means AI has no place in hospital operations — the HIMSS framework, the new prescribing and dictation agents, and the genomics and pathology infrastructure covered above are all real, useful progress. But "useful in principle" and "trusted by the people who have to live with it every shift" are turning out to be two very different bars to clear, and this week made clear which one healthcare AI is still failing.</p>
+
+                            <p>Thank you for reading. Reply anytime — I read every message.</p>
+                            <p><strong>Md Rasheduzzaman</strong></p>
+                        </div>
+
+                    </td>
+                </tr>
+
+                <!-- Share Section -->
+                <tr>
+                    <td class="share-section">
+                        <h2>Share This Newsletter</h2>
+                        <p>Found this week's insights valuable? Share with your network!</p>
+                        <div class="share-buttons">
+                            <a href="https://twitter.com/intent/tweet?text=🧬%20This%20week%20in%20AI%20%2B%20Medicine%3A%20Nurses%20stage%20the%20largest-ever%20nationwide%20protest%20against%20Palantir%27s%20role%20in%20hospital%20staffing%2C%20plus%20new%20research%20shows%20AI%20can%20be%20easily%20persuaded%20in%20clinical%20decisions.%20%40PythRaSh%27s%20newsletter%3A&url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn" target="_blank">Share on Twitter/X</a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&title=PythRaSh%27s%20AI%20Newsletter%20%23044%20%E2%80%94%20Whose%20AI%20Is%20It%2C%20Anyway%3F&summary=Nurses%20stage%20the%20largest-ever%20nationwide%20protest%20against%20Palantir%27s%20role%20in%20hospital%20staffing%2C%20HIMSS%20launches%20the%20first%20healthcare%20AI%20outcomes%20framework%2C%20and%20new%20research%20shows%20AI%20clinical%20decisions%20can%20be%20easily%20persuaded%20by%20authority%20rather%20than%20evidence." class="share-btn" target="_blank">Share on LinkedIn</a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&quote=Check%20out%20this%20week%27s%20AI%20%2B%20Medicine%20newsletter%20%E2%80%94%20nurses%20push%20back%20on%20AI%20in%20hospitals%2C%20nationwide." class="share-btn" target="_blank">Share on Facebook</a>
+                            <a href="mailto:?subject=PythRaSh%27s%20AI%20Newsletter%20%23044%20%E2%80%94%20Must%20Read%21&body=Hi%2C%0A%0AI%20thought%20you%27d%20find%20this%20week%27s%20AI%20%2B%20Medicine%20newsletter%20interesting.%20It%20covers%20nurses%27%20largest-ever%20nationwide%20protest%20against%20Palantir%27s%20role%20in%20hospital%20staffing%2C%20HIMSS%27s%20new%20AI%20outcomes%20framework%2C%20and%20research%20on%20how%20easily%20AI%20clinical%20decisions%20can%20be%20swayed.%0A%0ACheck%20it%20out%3A%20https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn">Forward via Email</a>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Footer -->
+                <tr>
+                    <td class="footer">
+                        <div class="footer-links">
+                            <a href="https://forms.gle/ueS3aqeJsujHA48L9">Unsubscribe</a> |
+                            <a href="https://forms.gle/ueS3aqeJsujHA48L9">Update Preferences</a> |
+                            <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_08_31.html">View in Browser</a>
+                        </div>
+
+                        <p><strong>PythRaSh's AI Newsletter</strong></p>
+                        <div class="address">Fleischerwiese 4, Greifswald-17489, Germany</div>
+
+                        <div class="social-links" style="margin-top:20px;">
+                            <a href="https://mdrasheduz-zaman.github.io/PythRaSh/">Website</a> |
+                            <a href="https://www.linkedin.com/in/md-rashed-uz-zaman">LinkedIn</a> |
+                            <a href="https://github.com/mdrasheduz-zaman">GitHub</a>
+                        </div>
+
+                        <p style="margin-top:15px; font-size:12px; color:#999;">
+                            Questions? Reply to this email or contact Md Rasheduzzaman<br>
+                            md.rasheduzzaman.ugoe@gmail.com
+                        </p>
+                    </td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
