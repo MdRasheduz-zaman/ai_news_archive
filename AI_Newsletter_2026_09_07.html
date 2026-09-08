@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PythRaSh's AI Newsletter - Issue #45 | Week of September 1, 2026</title>
+    <style>
+        /* Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111111; background-color: #f5f5f5; }
+        table { border-collapse: collapse; width: 100%; }
+
+        /* Container */
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #FFFFFF; }
+
+        /* Header */
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+
+        /* Content */
+        .content { padding: 30px 20px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #667eea; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #111111; font-size: 20px; margin-bottom: 15px; }
+        .section p { margin-bottom: 15px; font-size: 16px; }
+
+        /* Event card */
+        .event-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; box-shadow: 0 4px 8px rgba(102,126,234,0.1); }
+        .event-card h3 { color: #667eea; font-size: 21px; margin-bottom: 15px; }
+        .event-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .event-card a:hover { text-decoration: underline; }
+        .event-card ul { padding-left: 20px; margin-bottom: 15px; }
+        .event-card li { margin-bottom: 8px; font-size: 15px; }
+        .event-card p { font-size: 15px; }
+
+        /* Quick updates */
+        .quick-updates { background: #f8f9ff; border-radius: 8px; padding: 20px; }
+        .quick-updates ul { list-style: none; }
+        .quick-updates li { margin-bottom: 15px; padding: 15px; background: white; border-radius: 6px; border-left: 3px solid #667eea; font-size: 15px; }
+        .quick-updates li strong { color: #667eea; }
+        .quick-updates a { color: #667eea; text-decoration: none; }
+        .quick-updates a:hover { text-decoration: underline; }
+
+        /* Research papers */
+        .research-paper { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .research-paper h4 { color: #111111; font-size: 17px; margin-bottom: 10px; }
+        .research-paper h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .research-paper h4 a:hover { text-decoration: underline; }
+        .research-paper p { font-size: 15px; margin-bottom: 10px; }
+        .impact-tag { background: #667eea; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 6px; }
+
+        /* Repos */
+        .repo-card { background: #f8f9ff; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 3px solid #667eea; }
+        .repo-card h4 { color: #111111; margin-bottom: 6px; }
+        .repo-card h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .repo-card h4 a:hover { text-decoration: underline; }
+        .repo-card p { font-size: 15px; margin-bottom: 0; }
+        .star-count { color: #666; font-size: 13px; display: block; margin-bottom: 8px; }
+
+        /* Products */
+        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .product-card h4 { color: #111111; margin-bottom: 6px; }
+        .product-card h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .product-card h4 a:hover { text-decoration: underline; }
+        .product-card p { font-size: 15px; margin-bottom: 8px; }
+        .upvote-count { background: #667eea; color: white; padding: 2px 8px; border-radius: 3px; font-size: 12px; }
+
+        /* Critics */
+        .concern-card { background: #fff8f0; border: 1px solid #ffe0b2; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 4px solid #ff9800; }
+        .concern-card h4 { color: #e65100; font-size: 17px; margin-bottom: 10px; }
+        .concern-card p { font-size: 15px; margin-bottom: 0; }
+
+        /* Share section */
+        .share-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px 20px; text-align: center; }
+        .share-section h2 { color: white; margin-bottom: 10px; border-bottom: none; }
+        .share-section p { color: rgba(255,255,255,0.9); font-size: 16px; margin-bottom: 0; }
+        .share-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+        .share-btn { background: rgba(255,255,255,0.2); color: white; padding: 12px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; }
+        .share-btn:hover { background: rgba(255,255,255,0.3); }
+
+        /* Footer */
+        .footer { background: #f5f5f5; padding: 30px 20px; text-align: center; color: #666; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #667eea; text-decoration: none; margin: 0 10px; font-size: 14px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer p { font-size: 14px; margin-bottom: 10px; }
+        .footer .address { font-size: 12px; color: #999; margin-top: 10px; }
+        .footer .social-links a { color: #667eea; text-decoration: none; margin: 0 8px; font-size: 14px; }
+
+        /* Mobile */
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .content { padding: 20px 15px !important; }
+            .header { padding: 30px 15px !important; }
+            .header h1 { font-size: 22px !important; }
+            .share-buttons { flex-direction: column !important; gap: 10px !important; }
+            .share-btn { display: block !important; width: 100% !important; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+        <td align="center" style="background-color:#f5f5f5; padding:20px 0;">
+            <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0">
+
+                <!-- View in Browser -->
+                <tr>
+                    <td style="text-align:center; padding:10px; font-size:12px; color:#666;">
+                        <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_09_07.html" style="color:#667eea; text-decoration:none;">View in Browser</a>
+                    </td>
+                </tr>
+
+                <!-- Header -->
+                <tr>
+                    <td class="header">
+                        <h1>PythRaSh's AI Newsletter</h1>
+                        <p>Issue #45 &nbsp;|&nbsp; Week of September 1, 2026</p>
+                    </td>
+                </tr>
+
+                <!-- Content -->
+                <tr>
+                    <td class="content">
+
+                        <!-- Intro -->
+                        <div class="section">
+                            <p><strong>Hi, There!</strong></p>
+                            <p>OpenAI pushed ChatGPT Health deeper into the clinical workflow this week, connecting it directly to Epic patient records for approved health systems — the same week Congress introduced a bipartisan bill to keep AI out of a very specific kind of healthcare decision: whether your insurance actually has to pay. Both stories are, in their own way, about the same question this newsletter keeps circling back to: as AI gets closer to the actual moment of clinical and financial decision-making, who's actually accountable when it gets something wrong? Meanwhile, the FDA opened a new pathway letting generative AI health devices reach patients before full authorization, and a Nobel laureate launched a $95 million bet that AI can finally crack how biology designs things.</p>
+                        </div>
+
+                        <!-- Big Story -->
+                        <div class="section">
+                            <h2>🚀 BIG STORY OF THE WEEK</h2>
+                            <div class="event-card">
+                                <h3><a href="https://techcrunch.com/2026/09/01/chatgpt-health-adds-epic-integration-for-clinicians-to-import-patient-data/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">OpenAI Connects ChatGPT Health Directly to Epic Patient Records</a></h3>
+
+                                <p>On <strong>September 1, 2026</strong>, OpenAI announced that healthcare organizations can now connect their <strong>Epic</strong> electronic health record environments directly to ChatGPT for Healthcare — pulling authorized patient context straight into a clinician's conversation with the model, alongside a new <strong>Healthcare Public Data plugin</strong> consolidating structured access to nine official sources including ClinicalTrials.gov, PubMed, DailyMed, RxNorm, and CMS Coverage.</p>
+
+                                <p><strong>What actually changes for a clinician:</strong> Instead of manually searching across appointment notes, lab results, medications, and specialist documentation, a clinician can ask ChatGPT questions grounded directly in a patient's authorized Epic record. Epic alone holds data for more than <strong>325 million patients</strong>, making this one of the largest EHR integrations any consumer-facing AI product has attempted.</p>
+
+                                <p><strong>The numbers OpenAI is leading with:</strong> Across an evaluation of 4,300 responses from physicians spanning 27 clinical use cases, the company reports <strong>99.1% were rated safe</strong>. For the five connected public data sources independently tested, <strong>more than 93% of responses were rated "good" accuracy or better</strong>. <strong>Seven health systems are launch partners</strong>, with UCSF Health as the cited pilot site.</p>
+
+                                <p><strong>Why this is a bigger deal than it sounds:</strong> This isn't ChatGPT Health's debut — that happened in July, and it arrived one day after a lawsuit alleging the same product's advice nearly killed someone (see Issue #40). What's new here is depth: moving from a general-purpose health assistant into a system with structured, authorized access to a specific patient's actual chart, sitting inside a clinical workflow already crowded with Epic's own AI tools (Curiosity, Ergo, Agent Factory — see Issue #43) and a growing list of third-party ambient scribes and dictation agents. One health-system CIO outlet framed it bluntly: ChatGPT's Epic integration stacks a <strong>third AI layer</strong> on the chart, and leaves hospital IT departments to sort out the overlap.</p>
+
+                                <p><strong>Why this matters:</strong> Every additional AI system with access to a patient's record is another surface where errors, bias, or hallucination can enter clinical decision-making — and another system a hospital has to govern, audit, and reconcile against the others already running. OpenAI's safety numbers are genuinely strong on their own terms, but "99.1% safe across 4,300 evaluated responses" is also a number that, at the scale of 325 million patients, still implies real errors reaching real patients.</p>
+
+                                <p><strong>Key takeaways:</strong></p>
+                                <ul>
+                                    <li>Epic EHR integration + Healthcare Public Data plugin launched Sept 1, 2026</li>
+                                    <li>99.1% of 4,300 physician-evaluated responses rated safe; &gt;93% "good" accuracy on connected public data sources</li>
+                                    <li>Seven health systems as launch partners; UCSF Health is the cited pilot</li>
+                                    <li>Follows July's nationwide ChatGPT Health launch, which came one day after a lawsuit over the same product's health advice</li>
+                                </ul>
+
+                                <p style="margin-top:15px; font-size:14px; color:#555;">
+                                    <strong>Sources:</strong>
+                                    <a href="https://techcrunch.com/2026/09/01/chatgpt-health-adds-epic-integration-for-clinicians-to-import-patient-data/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">TechCrunch</a> |
+                                    <a href="https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">OpenAI</a> |
+                                    <a href="https://www.fiercehealthcare.com/ai-and-machine-learning/chatgpt-healthcare-unveils-new-integrations-epic-ehr-public-health-data?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">Fierce Healthcare</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Updates -->
+                        <div class="section">
+                            <h2>⚡ Quick Updates</h2>
+                            <div class="quick-updates">
+                                <ul>
+                                    <li><strong>Bipartisan "Doctors Not AI Act of 2026" Introduced in Congress:</strong> On September 1, Reps. Greg Landsman (D-OH), Buddy Carter (R-GA), Kim Schrier (D-WA), and Tom Barrett (R-MI) introduced H.R. 10210, which would prohibit AI systems from issuing or dictating adverse insurance benefit determinations involving clinical judgment — requiring a licensed professional to make those decisions independently instead. The bill also mandates disclosure whenever AI was used in a coverage decision and treats AI-driven utilization review as a treatment limitation under mental health parity law. It lands one week after nurses' nationwide protest against Palantir's staffing algorithms (Issue #44), continuing a fast-building political thread around AI's role in healthcare decisions that directly affect patients. <a href="https://landsman.house.gov/posts/landsman-introduces-bipartisan-legislation-to-keep-ai-from-making-health-care-decisions?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">Rep. Landsman's Office</a></li>
+
+                                    <li><strong>FDA's New TEMPO Pilot Lets Generative AI Health Devices Reach Patients Before Full Authorization:</strong> Announced Sept 3, the FDA's TEMPO pilot (Technology-Enabled Meaningful Patient Outcomes) — paired with a CMS Innovation Center Medicare payment model called ACCESS — lets select digital health companies release generative-AI products without premarket marketing authorization, in exchange for reporting real-world outcomes data to CMS. Four companies were accepted, including Limbic (an AI voice agent delivering CBT-based therapy to Medicare enrollees, clinician-overseen) and Cadence (HypertensionOS, helping clinicians manage Stage 2 hypertension medication). It's an explicit "try first, evaluate later" model for a regulator that, two weeks ago, was still asking the public 26 open questions about how to regulate generative AI devices at all. <a href="https://www.statnews.com/2026/09/03/tempo-fda-pilor-generative-ai-medical-device-regulation/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">STAT News</a></li>
+
+                                    <li><strong>Nobel Laureate David Baker Launches $95M Open-Science AI Biology Accelerator:</strong> On September 3, the Allen Institute, University of Washington, and Fred Hutch Cancer Center launched "AI BioDesign," led by 2024 Nobel Chemistry laureate David Baker alongside genome scientist Jay Shendure. Funded by the Fund for Science and Technology, the accelerator pairs bench biology teams with dedicated machine-learning units to "learn nature's design rules" — with an explicit commitment to release resulting models, datasets, and tools openly, aimed at applications from new cancer and neurodegeneration drugs to plastic-degrading enzymes and ultra-efficient biological computers. <a href="https://www.geekwire.com/2026/allen-institute-uw-and-fred-hutch-launch-95m-open-science-initiative/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">GeekWire</a></li>
+
+                                    <li><strong>Intellia's Lonvo-Z Accepted for FDA Priority Review — Poised to Be the First In Vivo CRISPR Therapy:</strong> On September 8, Intellia Therapeutics announced the FDA accepted its Biologics License Application for lonvoguran ziclumeran (lonvo-z), a hereditary angioedema treatment, and granted Priority Review with a target action date of March 10, 2027. If approved, it would be the world's first in vivo CRISPR-based therapy and the only one-time treatment for the condition — a single outpatient dose permanently lowering kallikrein by inactivating the KLKB1 gene. <a href="https://www.securities.io/fda-grants-priority-review-to-intellia-bla-for-crispr-therapy-lonvo-z/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">Securities.io</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Research Papers -->
+                        <div class="section">
+                            <h2>📚 Top Research Papers</h2>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2609.03366?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">Accountable AI with Grounded, Faithful, Consistent, Actionable Rationales: A Case Study in Clinical Trial Matching with VERDICT</a></h4>
+                                <p><strong>Zhou, Jin, Xu, Wang, Chao, Lam | arXiv 2609.03366 | September 3, 2026</strong></p>
+                                <p>VERDICT is a neurosymbolic system that translates a clinical trial matching decision, its constraints, and the applicable eligibility policy into formal logic (Satisfiability Modulo Theories), then derives the match using an SMT solver rather than letting a language model reason freely to a conclusion. Across multiple benchmark datasets, VERDICT achieved the strongest decision accuracy among LLM-only and prior neurosymbolic baselines, applied policy with perfect consistency, and produced explanations clinicians preferred over free-text LLM rationales. Accepted to EMNLP 2026.</p>
+                                <p><strong>Impact:</strong> This is close to a direct engineering answer to last issue's finding that AI clinical judgment can be swayed by confidence and authority rather than evidence — by grounding the decision in verified formal logic instead of fluent free-text reasoning, VERDICT is accountable by construction rather than by hoping the model reasoned well.</p>
+                                <span class="impact-tag">Clinical AI Accountability</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2609.05400?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">A Generalizable Feature Extractor for Alzheimer's-Related Brain MRI Tasks</a></h4>
+                                <p><strong>Rajabli, Collins | arXiv 2609.05400 | September 4, 2026</strong></p>
+                                <p>Rather than training a new deep learning model for each Alzheimer's-related MRI task, this paper freezes a compact 3D CNN (7.18 million weights) originally trained only to predict brain age, then adapts it to six different downstream tasks using Low-Rank Adaptation — requiring only ~1% additional trainable parameters per task. The adapted model hit 0.964 AUC classifying dementia on ADNI, and transferred to an entirely unseen cohort (OASIS-3) with no retraining at 0.871 AUC, plus strong performance predicting amyloid positivity and hippocampal volume directly from structural MRI.</p>
+                                <p><strong>Impact:</strong> A practical demonstration that a single well-designed foundation model, lightly adapted, can replace a whole family of task-specific Alzheimer's imaging models — meaningfully lowering the data and compute bar for smaller labs and hospitals to deploy neuroimaging AI without training from scratch.</p>
+                                <span class="impact-tag">Neuroimaging Foundation Models</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2609.05223?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">FedDRAW: Federated Dual Reputation Annealing Weighting for Heterogeneous Multi-Institutional Chest Radiograph Classification</a></h4>
+                                <p><strong>Moradpour, Hauschild | arXiv 2609.05223 | September 4, 2026</strong></p>
+                                <p>Standard federated learning weights each hospital's contribution to a shared model by how much data it has — which can systematically undervalue smaller institutions whose data is actually more informative. FedDRAW instead combines data-size weighting with a measure of parameter similarity under a dual annealing schedule, and outperformed seven baseline federated-learning methods across 12 simulated multi-institutional scenarios on CheXpert and ChestMNIST chest radiograph datasets, with statistically significant gains confirmed by Friedman testing.</p>
+                                <p><strong>Impact:</strong> A concrete fix for a real equity problem in federated medical AI — under the standard approach, a small rural hospital's genuinely valuable data can get drowned out simply because a large academic center has more patients, which is exactly backwards from what the model should be learning from.</p>
+                                <span class="impact-tag">Federated Medical AI</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2609.03377?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">SimpleDesign: A Joint Model for Protein Sequence and Structure Codesign</a></h4>
+                                <p><strong>Lu, Wang, Zhang, Gu, Jaitly, Susskind, Bautista | arXiv 2609.03377 | September 3, 2026</strong></p>
+                                <p>Most generative protein design models tokenize structure into discrete bins before generation, losing precision. SimpleDesign instead trains directly in continuous data space, combining a discrete cross-entropy loss for amino acid sequences with a regression objective for 3D structure in a single end-to-end model, using a Mixture-of-Transformer architecture that lets each modality get specialized processing while still attending across both. Trained on over 2 million sequence-structure pairs, it posts competitive results across multiple protein generation benchmarks.</p>
+                                <p><strong>Impact:</strong> Lands the same week as the AI BioDesign accelerator launch — a timely reminder that the "AI designs functional proteins directly, no intermediate tokenization losses" approach this week's big biology story is betting on is already producing competitive results in the open research literature, not just inside a well-funded new lab.</p>
+                                <span class="impact-tag">Protein Design</span>
+                            </div>
+                        </div>
+
+                        <!-- GitHub Repos -->
+                        <div class="section">
+                            <h2>💻 Top GitHub Repos of the Week</h2>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/stanford-oval/clinical-trial-matching?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">stanford-oval/clinical-trial-matching</a></h4>
+                                <span class="star-count">⭐ new | Accountable neurosymbolic clinical trial matching</span>
+                                <p>Code, prompts, and evaluation artifacts for this week's VERDICT paper — a working, accountable-by-construction clinical trial matching system anyone can inspect down to the formal logic behind each decision.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/apple/ml-simplefold?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">apple/ml-simplefold</a></h4>
+                                <span class="star-count">⭐ established | Flow-matching protein folding, general transformer layers</span>
+                                <p>Apple's flow-matching-based protein folding model, built by the same research team behind this week's SimpleDesign paper, using purely general-purpose transformer layers rather than protein-specific architectural tricks. The natural companion repo for anyone exploring the sequence/structure codesign work above.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/NVIDIA/NVFlare?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">NVIDIA/NVFlare</a></h4>
+                                <span class="star-count">⭐ well-established | Open-source federated learning SDK</span>
+                                <p>NVIDIA's open-source federated learning SDK, already powering real-world medical imaging and genomic analysis deployments. The production-grade infrastructure layer this week's FedDRAW weighting method would plug into for an actual multi-hospital deployment.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/RosettaCommons/RFdiffusion?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">RosettaCommons/RFdiffusion</a></h4>
+                                <span class="star-count">⭐ well-established | De novo protein design</span>
+                                <p>David Baker lab's open-source generative model for de novo protein design, already widely used across structural biology. The existing flagship tool from the same lab now leading this week's $95M AI BioDesign accelerator — worth revisiting as context for what that lab's track record actually looks like in the open.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/bijiuni/brain_age?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">bijiuni/brain_age</a></h4>
+                                <span class="star-count">⭐ established | Brain age prediction from MRI</span>
+                                <p>An open deep learning model for predicting individual brain age from MRI, in the same family of approach as this week's Alzheimer's feature-extractor paper. A useful starting point for anyone wanting to explore brain-age-as-foundation-model themselves.</p>
+                            </div>
+                        </div>
+
+                        <!-- AI Products -->
+                        <div class="section">
+                            <h2>🛠️ Top AI Products of the Week</h2>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/stress-less?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">Stress Less 2.0 — On-Device AI Stress Relief</a></h4>
+                                <p><span class="upvote-count">12 upvotes</span> &nbsp;| Product Hunt, September 2, 2026</p>
+                                <p>Rebuilt to hand you an actual relief action the moment stress hits, rather than just logging it — pattern-detection AI runs entirely on-device, so stress data never leaves your phone.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/hommik?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">HOMMIK — One Personalized Message a Day for a Calmer Mind</a></h4>
+                                <p><span class="upvote-count">8 upvotes</span> &nbsp;| Product Hunt, September 1, 2026</p>
+                                <p>An AI-powered daily encouragement app delivering a single personalized reflective message once a day — deliberately no feed, no engagement pressure, just one quiet moment.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/luno-self-care?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">Luno — AI Mental Health Companion</a></h4>
+                                <p><span class="upvote-count">7 upvotes</span> &nbsp;| Product Hunt, September 3, 2026</p>
+                                <p>Generates personalized daily self-care plans from check-ins, covering anxiety, sleep, and CBT-based techniques — explicitly positioned as a complement to therapy, not a replacement.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/healthvocate-com?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_07">Healthvocate.com — Fights Health Insurance Companies With You</a></h4>
+                                <p><span class="upvote-count">3 upvotes</span> &nbsp;| Product Hunt, September 4, 2026</p>
+                                <p>A 15-tool AI platform that audits medical bills, explains EOBs, finds prescription and equipment savings, identifies benefits, and drafts citation-backed insurance appeals — while keeping the user in control of every action sent. A fittingly-timed launch the same week Congress debated keeping AI out of insurance denial decisions.</p>
+                            </div>
+                        </div>
+
+                        <!-- AI Criticism -->
+                        <div class="section">
+                            <h2>⚠️ AI Criticism &amp; Concerns</h2>
+
+                            <div class="concern-card">
+                                <h4>Three AI layers on one chart is a governance problem hiding as a feature list</h4>
+                                <p>Epic's own AI agents, Suki and FDB's third-party scribes and prescribing tools, and now ChatGPT Health all have some claim on reading or writing to the same patient record. Nobody has explained what happens when two of these systems disagree, which one a clinician is supposed to trust in that moment, or who's accountable when the disagreement itself causes harm. "99.1% safe" is a real, good number for a single system evaluated in isolation — it says nothing about what happens at the seams between three of them.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>A bill that only covers insurance denials leaves the staffing and clinical-decision uses of AI untouched</h4>
+                                <p>The "Doctors Not AI Act" is a genuine, meaningful step, but it's narrowly scoped to adverse benefit determinations — it says nothing about the Palantir staffing algorithms nurses protested last issue, or the clinical decision-support tools like ChatGPT Health integrating into charts this week. Insurance denials are one of the most visible and enraging AI failure modes, which may be exactly why Congress moved on this first and not the others — the easiest political target isn't necessarily the highest-stakes one.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>"Try first, evaluate later" inverts the burden of proof for exactly the AI systems that need it least reversed</h4>
+                                <p>The FDA's TEMPO pilot is a reasonable experiment in principle — real-world data genuinely beats simulated trial data for understanding how a generative AI device performs in practice. But letting products reach patients before authorization, with evaluation happening after the fact via CMS reporting, is a meaningfully different risk posture than the FDA has historically taken with anything touching direct patient care, and it's happening for the exact category of AI (generative, adaptive, harder to fully characterize in advance) where that caution has mattered most.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>"Open science" AI biology accelerators still concentrate enormous capability inside one geographic and institutional cluster</h4>
+                                <p>AI BioDesign's commitment to open models and datasets is genuinely admirable and a real point of contrast with proprietary efforts. But $95 million, a Nobel laureate, and three of the world's best-resourced research institutions landing in the same square mile of Seattle is also a reminder that "open" doesn't mean "evenly distributed" — the capability to actually build and run these systems remains concentrated in a small number of extremely well-funded places, even when the outputs get released for free.</p>
+                            </div>
+                        </div>
+
+                        <!-- Closing Note -->
+                        <div class="section">
+                            <h2>Closing Note</h2>
+                            <p>This week's two biggest stories — ChatGPT reaching deeper into the patient chart, and Congress drawing its first real line around where AI isn't allowed to make the call — are really the same conversation from opposite directions. One is capability moving forward into new territory; the other is accountability trying to catch up and define where that territory should stop. Neither side is winning outright, and that's probably the honest state of things: AI's actual footprint in healthcare decision-making is growing faster than anyone has cleanly mapped where the guardrails need to go.</p>
+
+                            <p>The FDA's TEMPO pilot captures that tension in miniature — a regulator explicitly choosing to let some of that footprint expand first and figure out the guardrails from real-world data after. Whether that's pragmatic adaptation to a technology moving too fast for the old playbook, or a genuine gap in patient protection, probably won't be clear for a while. Worth watching who TEMPO adds next.</p>
+
+                            <p>Thank you for reading. Reply anytime — I read every message.</p>
+                            <p><strong>Md Rasheduzzaman</strong></p>
+                        </div>
+
+                    </td>
+                </tr>
+
+                <!-- Share Section -->
+                <tr>
+                    <td class="share-section">
+                        <h2>Share This Newsletter</h2>
+                        <p>Found this week's insights valuable? Share with your network!</p>
+                        <div class="share-buttons">
+                            <a href="https://twitter.com/intent/tweet?text=🧬%20This%20week%20in%20AI%20%2B%20Medicine%3A%20OpenAI%20connects%20ChatGPT%20Health%20directly%20to%20Epic%20patient%20records%2C%20Congress%20introduces%20a%20bill%20to%20keep%20AI%20out%20of%20insurance%20denials%2C%20and%20a%20Nobel%20laureate%20launches%20a%20%2495M%20AI%20biology%20lab.%20%40PythRaSh%27s%20newsletter%3A&url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn" target="_blank">Share on Twitter/X</a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&title=PythRaSh%27s%20AI%20Newsletter%20%23045%20%E2%80%94%20The%20Chart%20Gets%20a%20Third%20AI%20Layer&summary=OpenAI%20connects%20ChatGPT%20Health%20directly%20to%20Epic%20patient%20records%2C%20Congress%20introduces%20a%20bipartisan%20bill%20to%20keep%20AI%20out%20of%20insurance%20denial%20decisions%2C%20the%20FDA%20launches%20a%20try-first%20pilot%20for%20generative%20AI%20devices%2C%20and%20Nobel%20laureate%20David%20Baker%20launches%20a%20%2495M%20open-science%20AI%20biology%20accelerator." class="share-btn" target="_blank">Share on LinkedIn</a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&quote=Check%20out%20this%20week%27s%20AI%20%2B%20Medicine%20newsletter%20%E2%80%94%20ChatGPT%20Health%20reaches%20deeper%20into%20the%20patient%20chart%20while%20Congress%20tries%20to%20draw%20the%20line." class="share-btn" target="_blank">Share on Facebook</a>
+                            <a href="mailto:?subject=PythRaSh%27s%20AI%20Newsletter%20%23045%20%E2%80%94%20Must%20Read%21&body=Hi%2C%0A%0AI%20thought%20you%27d%20find%20this%20week%27s%20AI%20%2B%20Medicine%20newsletter%20interesting.%20It%20covers%20OpenAI%27s%20new%20Epic%20integration%20for%20ChatGPT%20Health%2C%20a%20bipartisan%20bill%20to%20keep%20AI%20out%20of%20insurance%20denials%2C%20and%20a%20Nobel%20laureate%27s%20new%20%2495M%20AI%20biology%20accelerator.%0A%0ACheck%20it%20out%3A%20https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn">Forward via Email</a>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Footer -->
+                <tr>
+                    <td class="footer">
+                        <div class="footer-links">
+                            <a href="https://forms.gle/ueS3aqeJsujHA48L9">Unsubscribe</a> |
+                            <a href="https://forms.gle/ueS3aqeJsujHA48L9">Update Preferences</a> |
+                            <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_09_07.html">View in Browser</a>
+                        </div>
+
+                        <p><strong>PythRaSh's AI Newsletter</strong></p>
+                        <div class="address">Fleischerwiese 4, Greifswald-17489, Germany</div>
+
+                        <div class="social-links" style="margin-top:20px;">
+                            <a href="https://mdrasheduz-zaman.github.io/PythRaSh/">Website</a> |
+                            <a href="https://www.linkedin.com/in/md-rashed-uz-zaman">LinkedIn</a> |
+                            <a href="https://github.com/mdrasheduz-zaman">GitHub</a>
+                        </div>
+
+                        <p style="margin-top:15px; font-size:12px; color:#999;">
+                            Questions? Reply to this email or contact Md Rasheduzzaman<br>
+                            md.rasheduzzaman.ugoe@gmail.com
+                        </p>
+                    </td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
