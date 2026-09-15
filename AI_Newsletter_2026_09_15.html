@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PythRaSh's AI Newsletter - Issue #46 | Week of September 8, 2026</title>
+    <style>
+        /* Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #111111; background-color: #f5f5f5; }
+        table { border-collapse: collapse; width: 100%; }
+
+        /* Container */
+        .email-container { max-width: 600px; margin: 0 auto; background-color: #FFFFFF; }
+
+        /* Header */
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 40px 20px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.9; }
+
+        /* Content */
+        .content { padding: 30px 20px; }
+        .section { margin-bottom: 40px; }
+        .section h2 { color: #667eea; font-size: 24px; margin-bottom: 20px; border-bottom: 2px solid #667eea; padding-bottom: 10px; }
+        .section h3 { color: #111111; font-size: 20px; margin-bottom: 15px; }
+        .section p { margin-bottom: 15px; font-size: 16px; }
+
+        /* Event card */
+        .event-card { background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%); border-radius: 12px; padding: 25px; margin: 20px 0; border-left: 4px solid #667eea; box-shadow: 0 4px 8px rgba(102,126,234,0.1); }
+        .event-card h3 { color: #667eea; font-size: 21px; margin-bottom: 15px; }
+        .event-card a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .event-card a:hover { text-decoration: underline; }
+        .event-card ul { padding-left: 20px; margin-bottom: 15px; }
+        .event-card li { margin-bottom: 8px; font-size: 15px; }
+        .event-card p { font-size: 15px; }
+
+        /* Quick updates */
+        .quick-updates { background: #f8f9ff; border-radius: 8px; padding: 20px; }
+        .quick-updates ul { list-style: none; }
+        .quick-updates li { margin-bottom: 15px; padding: 15px; background: white; border-radius: 6px; border-left: 3px solid #667eea; font-size: 15px; }
+        .quick-updates li strong { color: #667eea; }
+        .quick-updates a { color: #667eea; text-decoration: none; }
+        .quick-updates a:hover { text-decoration: underline; }
+
+        /* Research papers */
+        .research-paper { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .research-paper h4 { color: #111111; font-size: 17px; margin-bottom: 10px; }
+        .research-paper h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .research-paper h4 a:hover { text-decoration: underline; }
+        .research-paper p { font-size: 15px; margin-bottom: 10px; }
+        .impact-tag { background: #667eea; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; display: inline-block; margin-top: 6px; }
+
+        /* Repos */
+        .repo-card { background: #f8f9ff; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 3px solid #667eea; }
+        .repo-card h4 { color: #111111; margin-bottom: 6px; }
+        .repo-card h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .repo-card h4 a:hover { text-decoration: underline; }
+        .repo-card p { font-size: 15px; margin-bottom: 0; }
+        .star-count { color: #666; font-size: 13px; display: block; margin-bottom: 8px; }
+
+        /* Products */
+        .product-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .product-card h4 { color: #111111; margin-bottom: 6px; }
+        .product-card h4 a { color: #667eea; text-decoration: none; font-weight: 600; }
+        .product-card h4 a:hover { text-decoration: underline; }
+        .product-card p { font-size: 15px; margin-bottom: 8px; }
+        .upvote-count { background: #667eea; color: white; padding: 2px 8px; border-radius: 3px; font-size: 12px; }
+
+        /* Critics */
+        .concern-card { background: #fff8f0; border: 1px solid #ffe0b2; border-radius: 8px; padding: 20px; margin-bottom: 15px; border-left: 4px solid #ff9800; }
+        .concern-card h4 { color: #e65100; font-size: 17px; margin-bottom: 10px; }
+        .concern-card p { font-size: 15px; margin-bottom: 0; }
+
+        /* Share section */
+        .share-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px 20px; text-align: center; }
+        .share-section h2 { color: white; margin-bottom: 10px; border-bottom: none; }
+        .share-section p { color: rgba(255,255,255,0.9); font-size: 16px; margin-bottom: 0; }
+        .share-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+        .share-btn { background: rgba(255,255,255,0.2); color: white; padding: 12px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px; }
+        .share-btn:hover { background: rgba(255,255,255,0.3); }
+
+        /* Footer */
+        .footer { background: #f5f5f5; padding: 30px 20px; text-align: center; color: #666; }
+        .footer-links { margin-bottom: 20px; }
+        .footer-links a { color: #667eea; text-decoration: none; margin: 0 10px; font-size: 14px; }
+        .footer-links a:hover { text-decoration: underline; }
+        .footer p { font-size: 14px; margin-bottom: 10px; }
+        .footer .address { font-size: 12px; color: #999; margin-top: 10px; }
+        .footer .social-links a { color: #667eea; text-decoration: none; margin: 0 8px; font-size: 14px; }
+
+        /* Mobile */
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .content { padding: 20px 15px !important; }
+            .header { padding: 30px 15px !important; }
+            .header h1 { font-size: 22px !important; }
+            .share-buttons { flex-direction: column !important; gap: 10px !important; }
+            .share-btn { display: block !important; width: 100% !important; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+    <tr>
+        <td align="center" style="background-color:#f5f5f5; padding:20px 0;">
+            <table class="email-container" role="presentation" cellspacing="0" cellpadding="0" border="0">
+
+                <!-- View in Browser -->
+                <tr>
+                    <td style="text-align:center; padding:10px; font-size:12px; color:#666;">
+                        <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_09_15.html" style="color:#667eea; text-decoration:none;">View in Browser</a>
+                    </td>
+                </tr>
+
+                <!-- Header -->
+                <tr>
+                    <td class="header">
+                        <h1>PythRaSh's AI Newsletter</h1>
+                        <p>Issue #46 &nbsp;|&nbsp; Week of September 8, 2026</p>
+                    </td>
+                </tr>
+
+                <!-- Content -->
+                <tr>
+                    <td class="content">
+
+                        <!-- Intro -->
+                        <div class="section">
+                            <p><strong>Hi, There!</strong></p>
+                            <p>Last issue we asked who's accountable as AI gets closer to the actual moment of clinical decision-making. This week ARPA-H answered with an experiment: a $62.7 million bet on the first FDA-authorized autonomous AI for heart failure care — one AI agent managing patients between visits, and a second AI agent built specifically to watch the first one for mistakes. Meanwhile Google DeepMind quietly reshaped genomics by publishing molecular predictions for all 9 billion possible single-letter changes to human DNA, the FDA cleared a heart-attack-detecting algorithm through its rare "de novo" pathway, and a JAMA review found autonomous AI already beating physician-AI teams on several core diagnostic tasks — with the very real caveat that most of that evidence comes from simulations, not hospitals.</p>
+                        </div>
+
+                        <!-- Big Story -->
+                        <div class="section">
+                            <h2>🚀 BIG STORY OF THE WEEK</h2>
+                            <div class="event-card">
+                                <h3><a href="https://arpa-h.gov/news-and-events/arpa-h-launches-worlds-first-bid-build-fda-authorized-clinical-ai-cardiovascular?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">ARPA-H Launches $62.7M Bid to Build the First FDA-Authorized Autonomous AI for Heart Failure Care</a></h3>
+
+                                <p>On <strong>September 9, 2026</strong>, the Advanced Research Projects Agency for Health (ARPA-H) launched <strong>ADVOCATE</strong> (Agentic AI-EnableD CardioVascular CAre TransfOrmation) — a four-year, <strong>$62.7 million</strong> program ($33.7 million committed in Year 1) to build what would be the first FDA-authorized clinical AI system providing continuous, autonomous support for heart failure patients between doctor visits.</p>
+
+                                <p><strong>How the program is structured:</strong> Three companies are building patient-facing clinical agents — <strong>Atman Health</strong> (up to $7.7M, a voice-first LLM decision engine), <strong>Tempus AI</strong> (up to $9.5M, extending its Olivia app with continuous monitoring), and <strong>UpDoc</strong> (up to $9.2M, an agentic system recommending diagnostic and treatment actions under physician oversight). <strong>Stanford University</strong> ($15M) is building a separate "supervisory AI" whose entire job is watching the other agents for unsafe recommendations. <strong>Duke</strong> ($15.5M) and <strong>Kaiser Permanente</strong> ($16.3M) will run multi-site validation across five health systems and 2,500 real patients, with Johns Hopkins APL as an independent evaluator.</p>
+
+                                <p><strong>Why now:</strong> Nearly half of U.S. counties lack a practicing cardiologist, and cardiovascular disease kills more than 200,000 Americans annually from causes considered preventable with timely care. ARPA-H is betting that autonomous, always-on AI support — not just another dashboard for an already-scarce specialist — is the only way to close that gap at scale, projecting roughly <strong>$28 billion</strong> in annual savings on heart failure treatment if the approach works.</p>
+
+                                <p><strong>The regulatory reality:</strong> Every performer must submit its first FDA-authorization package within 24 months. Program manager Dr. Haider Warraich put the legal tightrope plainly: "The FDA cannot authorize an AI doctor, but they can authorize a technology that improves outcomes for patients with heart failure" — envisioned as "a clinician-extender: autonomous yet capable of engaging clinical teams when needed." Only predictive AI has ever received FDA authorization before; ADVOCATE is aiming for something that acts, not just predicts.</p>
+
+                                <p><strong>Why this matters:</strong> This is the most concrete test yet of whether "autonomous AI in medicine" can survive contact with real regulatory, safety, and accountability requirements rather than staying a benchmark headline. The American Medical Association is already on record with concerns (see Criticism, below), and the program's own design — building a second AI just to supervise the first — is a tacit admission that nobody yet knows how to make one autonomous clinical AI trustworthy on its own, let alone three.</p>
+
+                                <p><strong>Key takeaways:</strong></p>
+                                <ul>
+                                    <li>ADVOCATE: $62.7M over 4 years, first bid at FDA-authorized autonomous clinical AI for cardiovascular care</li>
+                                    <li>Atman Health, Tempus AI, and UpDoc build patient-facing agents; Stanford builds a supervisory AI to police them</li>
+                                    <li>Duke and Kaiser Permanente validate across 5 health systems and 2,500 patients; Johns Hopkins APL is independent evaluator</li>
+                                    <li>FDA-authorization packages due within 24 months; projected $28B in annual savings if successful</li>
+                                </ul>
+
+                                <p style="margin-top:15px; font-size:14px; color:#555;">
+                                    <strong>Sources:</strong>
+                                    <a href="https://arpa-h.gov/news-and-events/arpa-h-launches-worlds-first-bid-build-fda-authorized-clinical-ai-cardiovascular?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">ARPA-H</a> |
+                                    <a href="https://www.statnews.com/2026/09/09/arpa-h-advocate-program-autonomous-ai-bots-for-heart-failure/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">STAT News</a> |
+                                    <a href="https://www.fiercehealthcare.com/ai-and-machine-learning/arpa-h-launches-63m-cardiovascular-ai-initiative-naming-updoc-tempus-ai?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">Fierce Healthcare</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Quick Updates -->
+                        <div class="section">
+                            <h2>⚡ Quick Updates</h2>
+                            <div class="quick-updates">
+                                <ul>
+                                    <li><strong>Google DeepMind Releases AlphaGenome Atlas — Predictions for All 9 Billion Possible Human DNA Variants:</strong> On September 8, DeepMind published a 1-petabyte dataset — 30x larger than the AlphaFold Database — precomputing AlphaGenome's molecular-effect predictions for every possible single-nucleotide variant across the human genome, spanning hundreds of human and mouse cell types. A new AlphaGenome Variant Impact (AVI) score folds AlphaGenome and AlphaMissense into a single ranking number. It's free for academic use through a web portal and API, with collaborators including the Broad Institute, Harvard, and Boston Children's Hospital, and commercial access via Google Cloud. <a href="https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">Google DeepMind</a></li>
+
+                                    <li><strong>FDA Grants Rare "De Novo" Authorization to "Queen of Hearts" Algorithm for Hidden Heart Attacks:</strong> Powerful Medical's "Queen of Hearts" algorithm won FDA de novo classification last week — a pathway that typically demands more clinical evidence than a standard 510(k) clearance — to flag occluded myocardial infarction (OMI), a category of heart attack with blocked arteries that standard ST-segment EKG analysis often misses. Catching it earlier could shave hours off the time to the cardiac catheterization lab. It's the second major cardiovascular-AI authorization story this week alongside ADVOCATE. <a href="https://www.statnews.com/2026/09/11/fda-new-ekg-heart-attack-detection-algo-queen-of-hearts/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">STAT News</a></li>
+
+                                    <li><strong>Apple Adds AI "Health Age" and Daily Readiness Score to iPhone and Watch:</strong> Announced September 9 alongside Apple Watch Series 12 and Watch Ultra 4, Apple's redesigned Health app uses Apple Intelligence to calculate a "Health Age" — how your VO2 max, resting heart rate, sleep, and heart-rate variability compare to your chronological age — plus a daily 0–10 "Readiness Score" recommending whether to rest or push training. New Watch sensors take HRV readings every 5 minutes, 24x more often than before, and the app can schedule lab tests through roughly 2,000 Quest Diagnostics locations; movement assessments run entirely on-device via the iPhone camera. <a href="https://www.apple.com/newsroom/2026/09/apple-advances-health-and-fitness-capabilities-using-apple-intelligence/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">Apple Newsroom</a></li>
+
+                                    <li><strong>JAMA Review: Autonomous AI Already Beats Physician-AI Teams on Several Core Medical Tasks — With Caveats:</strong> A JAMA review by Ezekiel Emanuel and colleagues, covered September 9, found autonomous AI outperformed physician-AI teams in 9 of 13 head-to-head studies — by 21.3 percentage points on differential diagnosis in one comparison, with Microsoft's AI Diagnostic Orchestrator reaching correct diagnoses 4x more often than physicians (80.4% vs. 20%) at 19% lower testing cost. The authors caveat that most evidence comes from simulated cases rather than real deployments, and predict real-world rollout for some tasks by 2030 at the earliest. <a href="https://www.statnews.com/2026/09/09/ai-medicine-assisted-physicians-research-autonomy/?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">STAT News</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Research Papers -->
+                        <div class="section">
+                            <h2>📚 Top Research Papers</h2>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2609.11877?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">Biology-in-the-loop: Amortized Adaptive Hit Discovery in CRISPR Screens</a></h4>
+                                <p><strong>Edwards, De Brouwer, Li, Lee, Hajiramezanali, Biton, Mostafavi, Chao, Scalia | arXiv 2609.11877 | September 10, 2026</strong></p>
+                                <p>Introduces AssayBench-Loop, a benchmark of 1,389 CRISPR screens across five phenotype categories, and AssayLoop — a transformer-based acquisition policy combined with LLM-derived biological priors that decides which gene to test next under a fixed experimental budget, adapting after every round of feedback. It achieves 5.67x enrichment over random selection and recovers 27.7% of true hits after assaying only ~5% of the candidate library, with performance that transfers to phenotype categories never seen in training.</p>
+                                <p><strong>Impact:</strong> A genuinely practical way to stretch CRISPR screening budgets further — this is adaptive experimental design doing real work, not just a benchmark exercise, and it directly complements this week's supervisory-AI theme by putting an AI in the loop of deciding what to test next rather than only interpreting results after the fact.</p>
+                                <span class="impact-tag">Adaptive Experimental Design</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2609.08059?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">MI-PEFT: Mixture-of-Experts Integrated Parameter-Efficient Fine-Tuning Protein Language Models Improves Acidophilic Proteins Classification</a></h4>
+                                <p><strong>Honghan Shen | arXiv 2609.08059 | September 7, 2026</strong></p>
+                                <p>Fine-tunes the ESM C-600M protein language model with LoRA-based parameter-efficient methods and a DeepSeekMoE-style classification head to identify acidophilic proteins — proteins that function in highly acidic environments and are valuable for industrial biotech but traditionally require slow experimental screening to find.</p>
+                                <p><strong>Impact:</strong> A clean demonstration that large protein language models can be adapted to a narrow, class-imbalanced task without full retraining — exactly the kind of parameter-efficient fine-tuning approach that matters for anyone adapting nucleotide or protein foundation models to a specialized, low-resource dataset rather than training from scratch.</p>
+                                <span class="impact-tag">Protein Language Models</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2609.10831?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">scDEFT: A Deep Learning Framework for Drug-Effect Prediction and Counterfactual Reasoning</a></h4>
+                                <p><strong>Murthy Devarakonda | arXiv 2609.10831 | September 9, 2026</strong></p>
+                                <p>Models why patients on the same medication respond differently by treating drugs as operators that modulate single-cell representations, using per-cell supervision and dual prediction heads to forecast state changes and responder status from longitudinal single-cell data — tested on 1.16 million cells from an inflammatory bowel disease atlas across three cohorts and two drug classes.</p>
+                                <p><strong>Impact:</strong> Reaches an AUROC of 0.70 stratifying responders before treatment even starts, well above chance, plus an interpretability stage that maps predictive signal back to specific genes — a real step toward personalized prescribing grounded in single-cell mechanism rather than population averages.</p>
+                                <span class="impact-tag">Single-Cell Drug Response</span>
+                            </div>
+
+                            <div class="research-paper">
+                                <h4><a href="https://arxiv.org/abs/2609.10890?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">Discovering Subtypes of Neurodegenerative Progression with a Scalable Connectome-Constrained Dynamic Model</a></h4>
+                                <p><strong>Semchin, d'Angremont, Ding, Antar, Lorenzi, Arfanakis, van der Werf, Thompson, Gutman | arXiv 2609.10890 | September 9, 2026</strong></p>
+                                <p>Applies a connectome-constrained disease-progression model to 85 imaging and clinical biomarkers from the PPMI cohort, jointly estimating each patient's individual disease trajectory alongside data-driven subtypes of Parkinson's disease progression from longitudinal brain imaging.</p>
+                                <p><strong>Impact:</strong> Identifies four morphologically distinct progression subtypes that correspond meaningfully to clinical motor presentations and known genetic variants, outperforming the widely used SuStaIn benchmark — evidence that Parkinson's should be studied and treated as several diseases with a shared name rather than one.</p>
+                                <span class="impact-tag">Neurodegenerative Disease Modeling</span>
+                            </div>
+                        </div>
+
+                        <!-- GitHub Repos -->
+                        <div class="section">
+                            <h2>💻 Top GitHub Repos of the Week</h2>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/google-deepmind/alphagenome?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">google-deepmind/alphagenome</a></h4>
+                                <span class="star-count">⭐ new | Client & API for AlphaGenome Atlas</span>
+                                <p>Client and API for this week's AlphaGenome Atlas release — the exact toolkit behind the 9-billion-variant genomics dataset, free for academic research.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/huggingface/peft?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">huggingface/peft</a></h4>
+                                <span class="star-count">⭐ well-established | State-of-the-art parameter-efficient fine-tuning</span>
+                                <p>Hugging Face's Parameter-Efficient Fine-Tuning library — the standard implementation of the LoRA-based methods this week's MI-PEFT paper uses to adapt protein language models cheaply.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/evolutionaryscale/esm?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">evolutionaryscale/esm</a></h4>
+                                <span class="star-count">⭐ established | ESM C, ESMFold 2 & ESM Atlas</span>
+                                <p>ESM C, ESMFold 2, and ESM Atlas — the protein language model family whose ESM-C backbone is exactly what this week's MI-PEFT paper fine-tunes for acidophilic protein classification.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/scverse/scvi-tools?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">scverse/scvi-tools</a></h4>
+                                <span class="star-count">⭐ well-established | Deep probabilistic single-cell & spatial omics</span>
+                                <p>Deep probabilistic modeling for single-cell and spatial omics data — the production-grade single-cell toolkit this week's scDEFT drug-response paper builds on conceptually.</p>
+                            </div>
+
+                            <div class="repo-card">
+                                <h4><a href="https://github.com/ANTsX/ANTs?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">ANTsX/ANTs</a></h4>
+                                <span class="star-count">⭐ well-established | Advanced Normalization Tools for brain imaging</span>
+                                <p>Advanced Normalization Tools for high-dimensional brain image mapping, award-winning in medical image analysis competitions — the standard registration toolkit underlying connectome-based work like this week's Parkinson's progression-subtyping paper.</p>
+                            </div>
+                        </div>
+
+                        <!-- AI Products -->
+                        <div class="section">
+                            <h2>🛠️ Top AI Products of the Week</h2>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/moon-7?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">Moon — AI Mood Tracker</a></h4>
+                                <p><span class="upvote-count">15 upvotes</span> &nbsp;| Product Hunt, September 9, 2026</p>
+                                <p>An AI mood diary for iPhone that surfaces the factors behind mood swings rather than giving generic advice — no account or sign-up required.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/suvo?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">Suvo — Scan, Track, Understand Your Supplement Stack</a></h4>
+                                <p><span class="upvote-count">7 upvotes</span> &nbsp;| Product Hunt, September 14, 2026</p>
+                                <p>Scans a user's supplement stack to flag interactions and time doses around meals and sleep — practical harm-reduction for a largely unregulated space.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/vocari-health?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">Vocari Health — AI Front Desk That Scales With Your Clinic</a></h4>
+                                <p><span class="upvote-count">6 upvotes</span> &nbsp;| Product Hunt, September 10, 2026</p>
+                                <p>Handles patient calls end-to-end against a clinic's own schedules, policies, and escalation rules — an operations-layer AI agent for clinic administrative bottlenecks.</p>
+                            </div>
+
+                            <div class="product-card">
+                                <h4><a href="https://www.producthunt.com/products/med-ai-clinical-intelligence?utm_source=pythrash_ai_newsletter&utm_medium=email&utm_campaign=week_2026_09_15">Med-AI Clinical Intelligence — AI Drafts and Validates, Clinicians Sign Off</a></h4>
+                                <p><span class="upvote-count">2 upvotes</span> &nbsp;| Product Hunt, September 13, 2026</p>
+                                <p>Open-source radiology report QA, review queues, and audit-ready sign-off, built for supervised validation pilots rather than autonomous diagnosis.</p>
+                            </div>
+                        </div>
+
+                        <!-- AI Criticism -->
+                        <div class="section">
+                            <h2>⚠️ AI Criticism &amp; Concerns</h2>
+
+                            <div class="concern-card">
+                                <h4>The American Medical Association is on record: heart failure is the wrong place to start with autonomous AI</h4>
+                                <p>The AMA's response to ADVOCATE was blunt — "heart care is complex, and mistakes in diagnosis or treatment can be life-threatening" — and the organization wants clear physician oversight rather than autonomous delivery of care. ARPA-H's own program manager concedes the legal tightrope: "The FDA cannot authorize an AI doctor, but they can authorize a technology that improves outcomes for patients with heart failure" is a careful distinction that may not feel very different to a patient whose diuretic dose an AI just adjusted on its own.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>ADVOCATE is designed to help exactly the populations most likely to be underrepresented in its own training data</h4>
+                                <p>The program's entire premise is closing the cardiology gap for rural, older, and lower-access patients — but AI models trained on historical clinical data tend to underrepresent those same populations. Layer in that incorrect diuretic dosing can cause dehydration or kidney injury, and "who is accountable when an automated dose change goes wrong" is, as multiple observers note, still an open legal and clinical question with a $62.7 million program already underway to answer it in practice rather than in theory.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>Promoting AI to rural hospitals can look like a distraction from the funding cuts actually threatening them</h4>
+                                <p>CMS head Mehmet Oz pitched AI avatars as a fix for rural healthcare access this week, but rural health leaders pushed back: providers face roughly $1 trillion in Medicaid cuts over the next decade, and AI tools that work well on clear-cut, data-rich decisions may struggle with judgment calls like medical frailty exemptions. The worry isn't that AI can't help at the margins — it's that leading with AI as the headline solution can crowd out the harder conversation about whether these hospitals survive at all.</p>
+                            </div>
+
+                            <div class="concern-card">
+                                <h4>"Autonomous AI beats doctors" headlines are mostly measuring AI against a simulation, not a hospital</h4>
+                                <p>This week's widely covered JAMA review found autonomous AI outperforming physician-AI teams in 9 of 13 studies — genuinely striking numbers. But the authors' own caveats matter as much as the results: most evidence comes from simulated cases rather than real deployments, regulatory barriers have limited real-world trials, and AI still can't perform a physical exam or hold a scalpel. A benchmark win in a controlled comparison is not the same claim as "ready to practice medicine unsupervised by 2030," even though the two get conflated in coverage almost every time this kind of study lands.</p>
+                            </div>
+                        </div>
+
+                        <!-- Closing Note -->
+                        <div class="section">
+                            <h2>Closing Note</h2>
+                            <p>This week made the "who's accountable" question from last issue concrete in a way it hasn't been before: ARPA-H isn't asking whether autonomous AI belongs in medicine, it's funding the specific engineering problem of building an AI to watch the AI that's watching the patient. That's either the most honest acknowledgment yet that autonomy needs its own safety net, or a sign that we're two layers deep into a problem nobody has solved at one layer.</p>
+
+                            <p>Meanwhile AlphaGenome Atlas is a reminder that the quieter, less politically fraught side of AI-in-biology keeps compounding regardless of how the accountability debate resolves — a free, petabyte-scale map of what every possible DNA change might do is the kind of infrastructure that outlasts any single product launch or funding fight. Worth watching which one changes more by this time next year: the governance of autonomous care, or the map of the genome underneath it.</p>
+
+                            <p>Thank you for reading. Reply anytime — I read every message.</p>
+                            <p><strong>Md Rasheduzzaman</strong></p>
+                        </div>
+
+                    </td>
+                </tr>
+
+                <!-- Share Section -->
+                <tr>
+                    <td class="share-section">
+                        <h2>Share This Newsletter</h2>
+                        <p>Found this week's insights valuable? Share with your network!</p>
+                        <div class="share-buttons">
+                            <a href="https://twitter.com/intent/tweet?text=%F0%9F%A7%AC%20This%20week%20in%20AI%20%2B%20Medicine%3A%20ARPA-H%20launches%20a%20%2462.7M%20bid%20to%20build%20the%20first%20FDA-authorized%20autonomous%20AI%20for%20heart%20failure%20care%2C%20plus%20DeepMind%27s%20AlphaGenome%20Atlas%20maps%209%20billion%20DNA%20variants.%20%40PythRaSh%27s%20newsletter%3A&url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn" target="_blank">Share on Twitter/X</a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&title=PythRaSh%27s%20AI%20Newsletter%20%23046%20%E2%80%94%20Who%27s%20Driving%3A%20The%20Doctor%2C%20the%20Agent%2C%20or%20the%20Supervisor%20Watching%20the%20Agent%3F&summary=ARPA-H%20launches%20a%20%2462.7M%20bid%20to%20build%20the%20first%20FDA-authorized%20autonomous%20AI%20for%20heart%20failure%20care%2C%20Google%20DeepMind%20releases%20AlphaGenome%20Atlas%20mapping%209%20billion%20DNA%20variants%2C%20and%20a%20JAMA%20review%20finds%20autonomous%20AI%20already%20beating%20physician-AI%20teams%20on%20core%20diagnostic%20tasks." class="share-btn" target="_blank">Share on LinkedIn</a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F&quote=Check%20out%20this%20week%27s%20AI%20%2B%20Medicine%20newsletter%20%E2%80%94%20ARPA-H%27s%20%2462.7M%20bet%20on%20autonomous%20AI%20for%20heart%20failure%20care%2C%20plus%20DeepMind%27s%20new%20map%20of%20the%20entire%20human%20genome%27s%20possible%20mutations." class="share-btn" target="_blank">Share on Facebook</a>
+                            <a href="mailto:?subject=PythRaSh%27s%20AI%20Newsletter%20%23046%20%E2%80%94%20Must%20Read%21&body=Hi%2C%0A%0AI%20thought%20you%27d%20find%20this%20week%27s%20AI%20%2B%20Medicine%20newsletter%20interesting.%20It%20covers%20ARPA-H%27s%20%2462.7M%20bid%20to%20build%20the%20first%20FDA-authorized%20autonomous%20AI%20for%20heart%20failure%20care%2C%20Google%20DeepMind%27s%20new%20AlphaGenome%20Atlas%2C%20and%20a%20JAMA%20review%20on%20autonomous%20AI%20vs%20physicians.%0A%0ACheck%20it%20out%3A%20https%3A%2F%2Fmdrasheduz-zaman.github.io%2FPythRaSh%2F" class="share-btn">Forward via Email</a>
+                        </div>
+                    </td>
+                </tr>
+
+                <!-- Footer -->
+                <tr>
+                    <td class="footer">
+                        <div class="footer-links">
+                            <a href="https://forms.gle/ueS3aqeJsujHA48L9">Unsubscribe</a> |
+                            <a href="https://forms.gle/ueS3aqeJsujHA48L9">Update Preferences</a> |
+                            <a href="https://mdrasheduz-zaman.github.io/ai_news_archive/AI_Newsletter_2026_09_15.html">View in Browser</a>
+                        </div>
+
+                        <p><strong>PythRaSh's AI Newsletter</strong></p>
+                        <div class="address">Fleischerwiese 4, Greifswald-17489, Germany</div>
+
+                        <div class="social-links" style="margin-top:20px;">
+                            <a href="https://mdrasheduz-zaman.github.io/PythRaSh/">Website</a> |
+                            <a href="https://www.linkedin.com/in/md-rashed-uz-zaman">LinkedIn</a> |
+                            <a href="https://github.com/mdrasheduz-zaman">GitHub</a>
+                        </div>
+
+                        <p style="margin-top:15px; font-size:12px; color:#999;">
+                            Questions? Reply to this email or contact Md Rasheduzzaman<br>
+                            md.rasheduzzaman.ugoe@gmail.com
+                        </p>
+                    </td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
