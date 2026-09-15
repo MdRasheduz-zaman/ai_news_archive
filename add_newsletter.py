@@ -37,9 +37,31 @@ def update_index_html():
         content = f.read()
     
     # Find the newsletter grid section
-    grid_start = content.find('<div class="newsletter-grid" id="newsletterGrid">')
-    grid_end = content.find('</div>', grid_start) if grid_start != -1 else -1
-    
+    open_tag = '<div class="newsletter-grid" id="newsletterGrid">'
+    grid_start = content.find(open_tag)
+    grid_end = -1
+    if grid_start != -1:
+        # Walk forward counting nested <div> opens/closes to find the TRUE
+        # matching closing </div> for the grid, instead of naively matching
+        # the first </div> found (which only closes the first newsletter-item
+        # and silently duplicates the whole grid on every run).
+        pos = grid_start + len(open_tag)
+        depth = 1
+        while depth > 0:
+            next_open = content.find('<div', pos)
+            next_close = content.find('</div>', pos)
+            if next_close == -1:
+                grid_end = -1
+                break
+            if next_open != -1 and next_open < next_close:
+                depth += 1
+                pos = next_open + 4
+            else:
+                depth -= 1
+                pos = next_close + 6
+        else:
+            grid_end = pos - 6
+
     if grid_start == -1 or grid_end == -1:
         print("❌ Error: Could not find newsletter grid in index.html")
         return False
